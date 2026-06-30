@@ -52,6 +52,12 @@ export default function HomePage() {
           >
             Open the discovery map
           </Link>
+          <Link
+            href="/timeline"
+            className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-signal/50"
+          >
+            Travel through time
+          </Link>
         </div>
       </section>
 

@@ -111,5 +111,17 @@ export function getOnThisDay(now: Date = new Date()): Discovery {
   })[0];
 }
 
+/** Earliest discovery year and an upper bound (today's year). */
+export function getYearBounds(now: Date = new Date()): {
+  minYear: number;
+  maxYear: number;
+} {
+  const years = discoveries.map((d) => d.year);
+  return {
+    minYear: Math.min(...years),
+    maxYear: Math.max(now.getFullYear(), ...years),
+  };
+}
+
 /** Re-export category helpers so pages can import from one module. */
 export { categories, getCategory };
