@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0c1326"/><stop offset="1" stop-color="#03040a"/>
+  </linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <circle cx="950" cy="160" r="220" fill="none" stroke="#38e1ff" stroke-width="2" opacity="0.4"/>
+  <circle cx="950" cy="160" r="140" fill="none" stroke="#7c4dff" stroke-width="2" opacity="0.4"/>
+  <text x="80" y="300" font-family="system-ui, sans-serif" font-size="84" font-weight="800" fill="#e2e8f0">Beyond Signal</text>
+  <text x="84" y="360" font-family="system-ui, sans-serif" font-size="34" fill="#38e1ff">A directory of scientific discovery</text>
+</svg>

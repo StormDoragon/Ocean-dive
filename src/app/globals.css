@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-abyss-950 text-slate-200 antialiased;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(124, 77, 255, 0.18), transparent),
+    radial-gradient(900px 500px at 90% 8%, rgba(56, 225, 255, 0.12), transparent);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply rounded-xl border border-white/10 bg-abyss-800/60 backdrop-blur-sm;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300;
+  }
+
+  .link-glow {
+    @apply text-signal transition-colors hover:text-signal-400;
+  }
+}
+
+/* Leaflet map sizing + dark popups */
+.leaflet-container {
+  background: #070b1a;
+  font-family: var(--font-sans);
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: #0c1326;
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.leaflet-popup-content a {
+  color: #38e1ff;
+}
