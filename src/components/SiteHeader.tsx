@@ -12,7 +12,7 @@ export function SiteHeader() {
           <span className="text-lg text-white">{site.name}</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm text-slate-300 sm:flex">
+        <nav className="hidden items-center gap-5 text-sm text-slate-300 lg:flex">
           {nav.map((item) => (
             <Link key={item.href} href={item.href} className="transition-colors hover:text-white">
               {item.label}

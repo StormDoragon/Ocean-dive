@@ -22,6 +22,7 @@ export function SiteFooter() {
             <li><Link href="/discoveries" className="hover:text-white">All discoveries</Link></li>
             <li><Link href="/timeline" className="hover:text-white">Timeline</Link></li>
             <li><Link href="/depth" className="hover:text-white">Ocean depth explorer</Link></li>
+            <li><Link href="/tree" className="hover:text-white">Tree of life</Link></li>
             <li><Link href="/categories" className="hover:text-white">Categories</Link></li>
             <li><Link href="/map" className="hover:text-white">Discovery map &amp; globe</Link></li>
             <li><Link href="/about" className="hover:text-white">About</Link></li>

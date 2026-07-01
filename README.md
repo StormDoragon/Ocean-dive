@@ -107,11 +107,11 @@ actual discoveries. To use real photos later, drop image hosts into
 - ✅ Interactive **3D globe** (`/map`, toggle with the flat map)
 - ✅ AI-style **natural-language search** (`/ask`), local now, Claude-ready
 - ✅ **Ocean depth explorer** (`/depth`) — descend the ocean's zones by scroll
+- ✅ **Tree of life** (`/tree`) — zoom Life → Kingdom → … → species
 
 **Still to come** (the data model is structured so these can layer in):
 
 - User accounts: saved discoveries, collections, notes, badges
-- **Tree of life** taxonomy explorer
 - Premium membership; real ad / affiliate / store integrations
 - A hosted database or CMS once the catalog outgrows flat files
 
