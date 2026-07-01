@@ -47,6 +47,12 @@ export default function HomePage() {
             Start exploring
           </Link>
           <Link
+            href="/ask"
+            className="rounded-full border border-signal/40 bg-signal/10 px-5 py-2.5 text-sm font-semibold text-signal transition-colors hover:bg-signal/20"
+          >
+            ✨ Ask a question
+          </Link>
+          <Link
             href="/map"
             className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-signal/50"
           >

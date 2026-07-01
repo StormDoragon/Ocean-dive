@@ -31,7 +31,9 @@ documented discoveries across eight fields of science.
 - [Next.js 15](https://nextjs.org) (App Router) + TypeScript
 - Tailwind CSS (deep-ocean / cosmic theme)
 - [Fuse.js](https://fusejs.io) for client-side search
-- [react-leaflet](https://react-leaflet.js.org) + Leaflet for maps
+- [react-leaflet](https://react-leaflet.js.org) + Leaflet for the flat map
+- [react-globe.gl](https://github.com/vasturiano/react-globe.gl) + three.js for the 3D globe
+- Built-in natural-language `/ask` engine, with an optional Claude upgrade
 
 ## Getting started
 
@@ -48,10 +50,25 @@ npm run start    # serve the production build
 npm run lint
 ```
 
-Optional environment variable:
+Optional environment variables (see `.env.example`):
 
 - `NEXT_PUBLIC_SITE_URL` — canonical base URL used in metadata and the sitemap
   (defaults to a placeholder).
+- `ANTHROPIC_API_KEY` — **optional.** Leave unset to use the built-in local
+  search engine. Set it to upgrade `/ask` to Claude-powered answers.
+- `ANTHROPIC_MODEL` — optional model override (defaults to `claude-sonnet-5`).
+
+### Natural-language search (`/ask`)
+
+The `/ask` page answers plain-English questions about the catalog — depth
+(`deeper than 3,000 m`), field, time (`since 2019`, `this year`, `the 2010s`),
+counts, and rankings (`which countries discover the most?`). It works with **no
+API key** via a dependency-free rule-based engine (`src/lib/ask/engine.ts`).
+
+When `ANTHROPIC_API_KEY` is set, the `/api/ask` route instead asks Claude
+(`src/lib/ask/llm.ts`) and gracefully falls back to the local engine on any
+error. The key is read server-side only and never reaches the browser; the UI
+shows whether answers came from the local engine or the AI.
 
 ## Project structure
 
@@ -82,15 +99,18 @@ actual discoveries. To use real photos later, drop image hosts into
 `next.config.mjs` (`images.remotePatterns`) and point each discovery's
 `heroImage`/`gallery` at them.
 
-## Roadmap (deferred from v1)
+## Roadmap
 
-These are intentionally **not** built yet; the v1 data model is structured so
-they can layer in:
+**Shipped in phase 2:**
 
-- AI natural-language search ("show every species discovered deeper than 3,000 m")
+- ✅ Discovery **timeline** scrubber (`/timeline`)
+- ✅ Interactive **3D globe** (`/map`, toggle with the flat map)
+- ✅ AI-style **natural-language search** (`/ask`), local now, Claude-ready
+
+**Still to come** (the data model is structured so these can layer in):
+
 - User accounts: saved discoveries, collections, notes, badges
-- Discovery **timeline** scrubber, **ocean depth explorer**, and **tree of life**
-- Interactive 3D globe
+- **Ocean depth explorer** and **tree of life**
 - Premium membership; real ad / affiliate / store integrations
 - A hosted database or CMS once the catalog outgrows flat files
 

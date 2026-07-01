@@ -1,4 +1,9 @@
-import type { Discovery } from "./types";
+import type { Discovery, DiscoveryLocation } from "./types";
+
+/** Discovery as authored below — country is attached programmatically. */
+type RawDiscovery = Omit<Discovery, "location"> & {
+  location: Omit<DiscoveryLocation, "country">;
+};
 
 /**
  * v1 seed catalog of real, well-documented scientific discoveries.
@@ -6,7 +11,7 @@ import type { Discovery } from "./types";
  * For space discoveries, `location` is the primary Earth observatory/site
  * where the work was done, so every entry has a coherent point on the map.
  */
-export const discoveries: Discovery[] = [
+const discoveriesData: RawDiscovery[] = [
   // ───────────────────────────── Ocean ─────────────────────────────
   {
     slug: "casper-ghost-octopus",
@@ -653,3 +658,38 @@ export const discoveries: Discovery[] = [
     tags: ["quantum computing", "qubits", "google", "supercomputing"],
   },
 ];
+
+/**
+ * Country credited with each discovery (the find's location, or the lead
+ * institution's country for international/space work). "International" is used
+ * where no single nation clearly leads.
+ */
+const countryBySlug: Record<string, string> = {
+  "casper-ghost-octopus": "USA",
+  "lost-city-hydrothermal-field": "USA",
+  "scaly-foot-gastropod": "Japan",
+  "trappist-1-system": "Belgium",
+  "m87-black-hole-image": "International",
+  "sagittarius-a-image": "International",
+  "spinosaurus-swimming-tail": "Morocco",
+  "dreadnoughtus-titanosaur": "Argentina",
+  "eumillipes-persephone": "Australia",
+  "homo-naledi": "South Africa",
+  "gobekli-tepe": "Turkey",
+  "sanxingdui-sacrificial-pits": "China",
+  "lake-vostok-reached": "Russia",
+  "hunga-tonga-eruption": "Tonga",
+  "higgs-boson": "Switzerland",
+  "gravitational-waves-gw150914": "USA",
+  "nif-fusion-ignition": "USA",
+  "alphafold-protein-structures": "United Kingdom",
+  "sycamore-quantum-supremacy": "USA",
+};
+
+export const discoveries: Discovery[] = discoveriesData.map((d) => ({
+  ...d,
+  location: {
+    ...d.location,
+    country: countryBySlug[d.slug] ?? "International",
+  },
+}));

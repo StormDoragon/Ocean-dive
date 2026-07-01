@@ -24,6 +24,8 @@ export interface DiscoveryLocation {
   name: string;
   lat: number;
   lng: number;
+  /** Country (or "International") credited with the discovery. */
+  country: string;
   /** Depth below sea level in meters, when relevant (ocean finds). */
   depthMeters?: number;
 }
