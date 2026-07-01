@@ -160,11 +160,11 @@ export default function HomePage() {
           <div>
             <h2 className="text-2xl font-bold text-white">🗺 The discovery map</h2>
             <p className="mt-1 text-slate-400">
-              Every glowing point marks where a discovery was made.
+              Every glowing point marks where a discovery was made — also explorable as a 3D globe.
             </p>
           </div>
           <Link href="/map" className="text-sm font-medium text-signal">
-            Open full map →
+            Open globe & map →
           </Link>
         </div>
         <div className="mt-5">

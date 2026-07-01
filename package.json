@@ -15,13 +15,16 @@
     "next": "^15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-leaflet": "^5.0.0"
+    "react-globe.gl": "^2.38.0",
+    "react-leaflet": "^5.0.0",
+    "three": "^0.185.0"
   },
   "devDependencies": {
     "@types/leaflet": "^1.9.16",
     "@types/node": "^22.10.7",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
+    "@types/three": "^0.185.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.18.0",
     "eslint-config-next": "^15.1.6",
