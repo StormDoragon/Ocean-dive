@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { nav, site } from "@/lib/site";
 import { SavedNavLink } from "@/components/account/SavedNavLink";
+import { MobileMenu } from "@/components/MobileMenu";
 
 export function SiteHeader() {
   return (
@@ -25,10 +26,11 @@ export function SiteHeader() {
           <SavedNavLink />
           <Link
             href="/discoveries"
-            className="rounded-full border border-signal/40 bg-signal/10 px-4 py-1.5 text-sm font-medium text-signal transition-colors hover:bg-signal/20"
+            className="hidden rounded-full border border-signal/40 bg-signal/10 px-4 py-1.5 text-sm font-medium text-signal transition-colors hover:bg-signal/20 sm:block"
           >
             Search
           </Link>
+          <MobileMenu />
         </div>
       </div>
     </header>

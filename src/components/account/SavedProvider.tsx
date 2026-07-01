@@ -49,6 +49,13 @@ export function SavedProvider({ children }: { children: React.ReactNode }) {
   const usingSupabase = configured && Boolean(user);
   const source: "supabase" | "local" = usingSupabase ? "supabase" : "local";
   const migratedFor = useRef<string | null>(null);
+  // Mirror of `saved` so toggle() can compute the next set synchronously
+  // (and stay correct across rapid toggles) without side effects inside a
+  // React state updater.
+  const savedRef = useRef(saved);
+  useEffect(() => {
+    savedRef.current = saved;
+  }, [saved]);
 
   useEffect(() => {
     let cancelled = false;
@@ -96,30 +103,29 @@ export function SavedProvider({ children }: { children: React.ReactNode }) {
 
   const toggle = useCallback(
     (slug: string) => {
-      setSaved((prev) => {
-        const next = new Set(prev);
-        const adding = !next.has(slug);
-        if (adding) next.add(slug);
-        else next.delete(slug);
+      const next = new Set(savedRef.current);
+      const adding = !next.has(slug);
+      if (adding) next.add(slug);
+      else next.delete(slug);
+      savedRef.current = next;
+      setSaved(next);
 
-        const supabase = getSupabaseClient();
-        if (usingSupabase && supabase && user) {
-          if (adding) {
-            void supabase
-              .from("saved_discoveries")
-              .insert({ user_id: user.id, discovery_slug: slug });
-          } else {
-            void supabase
-              .from("saved_discoveries")
-              .delete()
-              .eq("user_id", user.id)
-              .eq("discovery_slug", slug);
-          }
+      const supabase = getSupabaseClient();
+      if (usingSupabase && supabase && user) {
+        if (adding) {
+          void supabase
+            .from("saved_discoveries")
+            .insert({ user_id: user.id, discovery_slug: slug });
         } else {
-          writeLocal([...next]);
+          void supabase
+            .from("saved_discoveries")
+            .delete()
+            .eq("user_id", user.id)
+            .eq("discovery_slug", slug);
         }
-        return next;
-      });
+      } else {
+        writeLocal([...next]);
+      }
     },
     [usingSupabase, user],
   );

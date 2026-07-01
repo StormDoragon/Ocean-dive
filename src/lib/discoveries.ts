@@ -97,6 +97,12 @@ export function getOnThisDay(now: Date = new Date()): Discovery {
 
   const dayOfYear = (d: Date) => d.getMonth() * 31 + d.getDate();
   const target = month * 31 + day;
+  // Circular distance on the ~372-point month*31+day scale, so late December
+  // and early January count as neighbors rather than a year apart.
+  const distance = (d: Date) => {
+    const raw = Math.abs(dayOfYear(d) - target);
+    return Math.min(raw, 372 - raw);
+  };
 
   const exact = all.filter((d) => {
     const date = new Date(d.dateDiscovered);
@@ -104,11 +110,9 @@ export function getOnThisDay(now: Date = new Date()): Discovery {
   });
   if (exact.length > 0) return exact[0];
 
-  return [...all].sort((a, b) => {
-    const da = Math.abs(dayOfYear(new Date(a.dateDiscovered)) - target);
-    const db = Math.abs(dayOfYear(new Date(b.dateDiscovered)) - target);
-    return da - db;
-  })[0];
+  return [...all].sort(
+    (a, b) => distance(new Date(a.dateDiscovered)) - distance(new Date(b.dateDiscovered)),
+  )[0];
 }
 
 /** Earliest discovery year and an upper bound (today's year). */

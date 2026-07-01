@@ -107,12 +107,29 @@ function toDiscovery(page) {
   };
 }
 
+/**
+ * Notion SDK v5 queries *data sources*, not databases. Accept either kind of
+ * ID: if it resolves as a database, use its first data source; otherwise
+ * assume the ID is already a data source ID.
+ */
+async function resolveDataSourceId(id) {
+  try {
+    const db = await notion.databases.retrieve({ database_id: id });
+    const ds = db.data_sources?.[0]?.id;
+    if (ds) return ds;
+  } catch {
+    /* not a database id — fall through */
+  }
+  return id;
+}
+
 async function main() {
+  const dataSourceId = await resolveDataSourceId(NOTION_DISCOVERIES_DB_ID);
   const results = [];
   let cursor;
   do {
-    const res = await notion.databases.query({
-      database_id: NOTION_DISCOVERIES_DB_ID,
+    const res = await notion.dataSources.query({
+      data_source_id: dataSourceId,
       start_cursor: cursor,
       page_size: 100,
     });

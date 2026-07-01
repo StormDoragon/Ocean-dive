@@ -46,9 +46,7 @@ export function TreeExplorer({ root }: { root: TaxNode }) {
       <div className="mt-4 flex flex-wrap items-baseline gap-3">
         <h2 className="text-3xl font-bold text-white">{current.name}</h2>
         <span className="pill">{current.rank}</span>
-        <span className="text-sm text-slate-400">
-          {current.count} {current.count === 1 ? "species" : "species"} below
-        </span>
+        <span className="text-sm text-slate-400">{current.count} species below</span>
       </div>
 
       {path.length > 0 && (

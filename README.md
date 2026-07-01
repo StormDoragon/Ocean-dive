@@ -146,12 +146,12 @@ actual discoveries. To use real photos later, drop image hosts into
 - ✅ **Tree of life** (`/tree`) — zoom Life → Kingdom → … → species
 - ✅ **Accounts, saved discoveries & badges** (`/saved`) — guest mode now,
   Supabase-backed accounts when configured
+- ✅ **Editable content via Notion** (`npm run sync:notion`, optional)
 
 **Still to come** (the data model is structured so these can layer in):
 
 - Collections & notes UI (schema already in the Supabase migration)
 - Premium membership; real ad / affiliate / store integrations
-- Editable content via Notion (`npm run sync:notion`, scaffolded below)
 
 ## Monetization (planned, disclosed)
 

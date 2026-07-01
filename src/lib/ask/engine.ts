@@ -82,7 +82,9 @@ function parse(raw: string): ParsedQuery {
   } else if (shallowMatch) {
     parsed.depth = { op: "lt", meters: toMeters(shallowMatch[2], shallowMatch[3]) };
     parsed.requiresDepth = true;
-  } else if (/\b(deep|deepest|depth|abyssal)\b/.test(q)) {
+  } else if (/\b(deepest|depth|abyssal)\b/.test(q) || /\bdeep[- ]sea\b/.test(q)) {
+    // Bare "deep" is deliberately excluded — it appears in unrelated phrases
+    // like "deep learning" and would wrongly filter to depth-tagged finds.
     parsed.requiresDepth = true;
   }
 

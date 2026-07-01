@@ -147,9 +147,13 @@ export function TimelineExplorer({
           aria-label="Year"
           className="w-full accent-signal"
         />
-        <div className="mt-1 flex justify-between text-xs text-slate-500">
+        <div className="relative mt-1 h-4 text-xs text-slate-500">
           {ticks.map((t) => (
-            <span key={t} className="tabular-nums">
+            <span
+              key={t}
+              className="absolute -translate-x-1/2 tabular-nums"
+              style={{ left: `${pct(t)}%` }}
+            >
               {t}
             </span>
           ))}
