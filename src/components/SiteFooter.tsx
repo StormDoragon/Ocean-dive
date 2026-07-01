@@ -20,8 +20,10 @@ export function SiteFooter() {
           <h3 className="text-sm font-semibold text-white">Explore</h3>
           <ul className="mt-3 space-y-2 text-sm text-slate-400">
             <li><Link href="/discoveries" className="hover:text-white">All discoveries</Link></li>
+            <li><Link href="/timeline" className="hover:text-white">Timeline</Link></li>
+            <li><Link href="/depth" className="hover:text-white">Ocean depth explorer</Link></li>
             <li><Link href="/categories" className="hover:text-white">Categories</Link></li>
-            <li><Link href="/map" className="hover:text-white">Discovery map</Link></li>
+            <li><Link href="/map" className="hover:text-white">Discovery map &amp; globe</Link></li>
             <li><Link href="/about" className="hover:text-white">About</Link></li>
           </ul>
         </div>

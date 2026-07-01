@@ -657,6 +657,246 @@ const discoveriesData: RawDiscovery[] = [
     relatedSlugs: ["alphafold-protein-structures"],
     tags: ["quantum computing", "qubits", "google", "supercomputing"],
   },
+
+  // ───────────────── Ocean (depth-explorer coverage) ────────────────
+  {
+    slug: "cape-york-detached-reef",
+    title: "A 500-Metre Detached Coral Reef",
+    categorySlug: "ocean",
+    subtopic: "Coral reefs",
+    year: 2020,
+    dateDiscovered: "2020-10-20",
+    location: {
+      name: "Cape York, northern Great Barrier Reef, Australia",
+      lat: -13.5,
+      lng: 143.9,
+      depthMeters: 40,
+    },
+    discoveringOrg: "Schmidt Ocean Institute",
+    scientificName: undefined,
+    classification: "Geology · Detached coral reef",
+    conservationStatus: "Within Great Barrier Reef Marine Park",
+    heroImage: "/images/categories/ocean.svg",
+    summary:
+      "The first detached reef found in over a century — taller than the Empire State Building at ~500 m, with its peak just 40 m below the surface.",
+    story: {
+      whyThere:
+        "The research vessel Falkor was mapping the seafloor of the northern Great Barrier Reef in high resolution.",
+      howFound:
+        "The underwater robot SuBastian live-streamed its dive up the blade-like reef, confirming its towering size.",
+      whatMakesUnique:
+        "It is the first such detached reef discovered since the 1800s and stands taller than most of the world's skyscrapers.",
+    },
+    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    paperUrl: "https://schmidtocean.org/cruise-log-post/exploring-the-depths-off-cape-york/",
+    videoUrls: [],
+    relatedSlugs: ["casper-ghost-octopus", "scaly-foot-gastropod"],
+    tags: ["coral reef", "great barrier reef", "australia", "mapping", "epipelagic"],
+  },
+  {
+    slug: "giant-squid-filmed",
+    title: "Giant Squid Filmed in the Deep",
+    categorySlug: "ocean",
+    subtopic: "Ocean mysteries",
+    year: 2012,
+    dateDiscovered: "2012-07-10",
+    location: {
+      name: "Off Chichijima, Ogasawara Islands, Japan",
+      lat: 27.0,
+      lng: 142.2,
+      depthMeters: 630,
+    },
+    discoveringOrg: "NHK / National Museum of Nature and Science, Japan",
+    scientificName: "Architeuthis dux",
+    classification: "Animalia · Mollusca · Cephalopoda · Oegopsida",
+    conservationStatus: "Not evaluated",
+    heroImage: "/images/categories/ocean.svg",
+    summary:
+      "The first footage of a live giant squid in its natural deep-sea habitat, ending centuries of the animal being known mostly from carcasses.",
+    story: {
+      whyThere:
+        "A team led by Tsunemi Kubodera set out to film the legendary giant squid where it actually lives.",
+      howFound:
+        "Using a dim-light submersible and glowing bait, they recorded a three-metre squid rising from the twilight zone at about 630 m.",
+      whatMakesUnique:
+        "It was the first time the near-mythical animal had ever been filmed alive in the deep, not washed up or netted.",
+    },
+    gallery: ["/images/categories/ocean.svg", "/images/textures/grid.svg"],
+    paperUrl: "https://www.kahaku.go.jp/english/",
+    videoUrls: [],
+    relatedSlugs: ["macropinna-barreleye", "casper-ghost-octopus"],
+    tags: ["giant squid", "cephalopod", "japan", "mesopelagic", "twilight zone"],
+  },
+  {
+    slug: "macropinna-barreleye",
+    title: "The Barreleye Fish with a Transparent Head",
+    categorySlug: "ocean",
+    subtopic: "Ocean mysteries",
+    year: 2009,
+    dateDiscovered: "2009-02-23",
+    location: {
+      name: "Monterey Bay, California, USA",
+      lat: 36.7,
+      lng: -122.0,
+      depthMeters: 750,
+    },
+    discoveringOrg: "Monterey Bay Aquarium Research Institute (MBARI)",
+    scientificName: "Macropinna microstoma",
+    classification: "Animalia · Chordata · Actinopterygii · Argentiniformes",
+    conservationStatus: "Not evaluated",
+    heroImage: "/images/categories/ocean.svg",
+    summary:
+      "The first images of a living barreleye — a fish whose transparent, fluid-filled head lets its tubular eyes rotate to peer up through its own skull.",
+    story: {
+      whyThere:
+        "MBARI's remotely operated vehicles routinely survey the twilight zone of Monterey Bay.",
+      howFound:
+        "They filmed an intact barreleye at about 750 m — earlier specimens had always been destroyed by nets.",
+      whatMakesUnique:
+        "Its see-through dome and upward-swivelling green eyes let it spot prey silhouetted against the faint light above.",
+    },
+    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    paperUrl: "https://www.mbari.org/news/researchers-solve-mystery-of-deep-sea-fish-with-tubular-eyes-and-transparent-head/",
+    videoUrls: [],
+    relatedSlugs: ["giant-squid-filmed", "lost-city-hydrothermal-field"],
+    tags: ["fish", "barreleye", "transparent", "mesopelagic", "mbari"],
+  },
+  {
+    slug: "kiwa-yeti-crab",
+    title: "The Yeti Crab",
+    categorySlug: "ocean",
+    subtopic: "New species",
+    year: 2005,
+    dateDiscovered: "2005-03-07",
+    location: {
+      name: "Pacific-Antarctic Ridge, South Pacific",
+      lat: -37.8,
+      lng: -110.9,
+      depthMeters: 2228,
+    },
+    discoveringOrg: "MBARI / Ifremer vent expedition",
+    scientificName: "Kiwa hirsuta",
+    classification: "Animalia · Arthropoda · Malacostraca · Decapoda",
+    conservationStatus: "Not evaluated",
+    heroImage: "/images/categories/ocean.svg",
+    summary:
+      "A blind, silky-clawed crab from hydrothermal vents so distinctive it required an entirely new family — nicknamed the 'yeti crab' for its hairy arms.",
+    story: {
+      whyThere:
+        "A submersible dive explored hydrothermal vents along the Pacific-Antarctic Ridge.",
+      howFound:
+        "Near the vents the team found a pale crustacean whose claws were covered in dense, hair-like bristles.",
+      whatMakesUnique:
+        "The bristles host bacteria the crab may farm for food, and the animal was placed in a brand-new genus and family, Kiwaidae.",
+    },
+    gallery: ["/images/categories/ocean.svg", "/images/textures/grid.svg"],
+    paperUrl: "https://www.mbari.org/",
+    videoUrls: [],
+    relatedSlugs: ["scaly-foot-gastropod", "lost-city-hydrothermal-field"],
+    tags: ["yeti crab", "hydrothermal vent", "crustacean", "new species", "bathypelagic"],
+  },
+  {
+    slug: "osedax-bone-worms",
+    title: "Bone-Eating 'Zombie' Worms",
+    categorySlug: "ocean",
+    subtopic: "New species",
+    year: 2004,
+    dateDiscovered: "2004-07-30",
+    location: {
+      name: "Monterey Canyon, California, USA",
+      lat: 36.6,
+      lng: -122.4,
+      depthMeters: 2893,
+    },
+    discoveringOrg: "Monterey Bay Aquarium Research Institute (MBARI)",
+    scientificName: "Osedax",
+    classification: "Animalia · Annelida · Polychaeta · Siboglinidae",
+    conservationStatus: "Not evaluated",
+    heroImage: "/images/categories/ocean.svg",
+    summary:
+      "Rootless worms that bore into whale bones on the seafloor, dissolving them with acid and feeding through symbiotic bacteria — a new genus found on a sunken whale.",
+    story: {
+      whyThere:
+        "MBARI robots were investigating a whale carcass, or 'whale fall,' deep in Monterey Canyon.",
+      howFound:
+        "The bones were carpeted in red-plumed worms that, on inspection, had no mouth, gut, or eyes.",
+      whatMakesUnique:
+        "They digest bone using root-like tissues and bacteria, earning the name Osedax — Latin for 'bone-devourer.'",
+    },
+    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    paperUrl: "https://www.science.org/doi/10.1126/science.1098650",
+    videoUrls: [],
+    relatedSlugs: ["kiwa-yeti-crab", "casper-ghost-octopus"],
+    tags: ["osedax", "whale fall", "annelid", "new species", "mbari"],
+  },
+  {
+    slug: "dumbo-octopus-deep",
+    title: "The Deepest Octopus Ever Seen",
+    categorySlug: "ocean",
+    subtopic: "Ocean mysteries",
+    year: 2020,
+    dateDiscovered: "2020-05-26",
+    location: {
+      name: "Java Trench, Indian Ocean",
+      lat: -11.1,
+      lng: 114.6,
+      depthMeters: 6957,
+    },
+    discoveringOrg: "University of Western Australia / Caladan Oceanic",
+    scientificName: "Grimpoteuthis sp. (Dumbo octopus)",
+    classification: "Animalia · Mollusca · Cephalopoda · Octopoda",
+    conservationStatus: "Not evaluated",
+    heroImage: "/images/categories/ocean.svg",
+    summary:
+      "A Dumbo octopus filmed at 6,957 m in the Java Trench — nearly 2 km deeper than any confirmed octopus before, pushing the group into the hadal zone.",
+    story: {
+      whyThere:
+        "Baited landers were dropped into the Java Trench to survey life at extreme depth.",
+      howFound:
+        "The cameras recorded two ear-finned, gelatinous octopuses drifting near 7,000 m.",
+      whatMakesUnique:
+        "The sighting shattered the previous octopus depth record and showed octopuses can survive across roughly 99% of the seafloor.",
+    },
+    gallery: ["/images/categories/ocean.svg", "/images/textures/grid.svg"],
+    paperUrl: "https://royalsocietypublishing.org/doi/10.1098/rsos.201161",
+    videoUrls: [],
+    relatedSlugs: ["mariana-snailfish", "casper-ghost-octopus"],
+    tags: ["dumbo octopus", "java trench", "hadal", "cephalopod", "record"],
+  },
+  {
+    slug: "mariana-snailfish",
+    title: "The Mariana Snailfish, Deepest Fish",
+    categorySlug: "ocean",
+    subtopic: "New species",
+    year: 2017,
+    dateDiscovered: "2017-11-28",
+    location: {
+      name: "Mariana Trench, western Pacific Ocean",
+      lat: 11.35,
+      lng: 142.2,
+      depthMeters: 8000,
+    },
+    discoveringOrg: "University of Washington / international team",
+    scientificName: "Pseudoliparis swirei",
+    classification: "Animalia · Chordata · Actinopterygii · Scorpaeniformes",
+    conservationStatus: "Not evaluated",
+    heroImage: "/images/categories/ocean.svg",
+    summary:
+      "A small, translucent snailfish that thrives near 8,000 m in the Mariana Trench — the deepest-living fish ever described.",
+    story: {
+      whyThere:
+        "Baited landers were dropped into the Mariana Trench to study its hadal-zone food web.",
+      howFound:
+        "Cameras and traps captured the pale, tadpole-shaped fish at depths where pressure exceeds 800 atmospheres.",
+      whatMakesUnique:
+        "Specialised proteins keep its cells stable under crushing pressure, and it sits at the top of the trench food chain.",
+    },
+    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    paperUrl: "https://www.mapress.com/zt/article/view/zootaxa.4358.1.7",
+    videoUrls: [],
+    relatedSlugs: ["dumbo-octopus-deep", "casper-ghost-octopus"],
+    tags: ["snailfish", "mariana trench", "hadal", "deepest fish", "new species"],
+  },
 ];
 
 /**
@@ -684,6 +924,13 @@ const countryBySlug: Record<string, string> = {
   "nif-fusion-ignition": "USA",
   "alphafold-protein-structures": "United Kingdom",
   "sycamore-quantum-supremacy": "USA",
+  "cape-york-detached-reef": "Australia",
+  "giant-squid-filmed": "Japan",
+  "macropinna-barreleye": "USA",
+  "kiwa-yeti-crab": "France",
+  "osedax-bone-worms": "USA",
+  "dumbo-octopus-deep": "Australia",
+  "mariana-snailfish": "USA",
 };
 
 export const discoveries: Discovery[] = discoveriesData.map((d) => ({

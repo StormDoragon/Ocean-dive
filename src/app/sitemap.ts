@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ask",
     "/discoveries",
     "/timeline",
+    "/depth",
     "/categories",
     "/map",
     "/about",

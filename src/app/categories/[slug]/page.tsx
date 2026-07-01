@@ -57,6 +57,14 @@ export default async function CategoryPage({
             <span key={s} className="pill">{s}</span>
           ))}
         </div>
+        {category.slug === "ocean" ? (
+          <Link
+            href="/depth"
+            className="mt-5 inline-flex rounded-full border border-signal/40 bg-signal/10 px-4 py-2 text-sm font-semibold text-signal transition-colors hover:bg-signal/20"
+          >
+            🌊 Explore these by depth →
+          </Link>
+        ) : null}
       </header>
 
       <section className="mt-8">
