@@ -76,6 +76,24 @@ API values into `.env.local`. Sign-in appears, saves sync to the account, and
 any guest saves migrate over on first sign-in. Auth/data live in
 `src/lib/supabase/` and `src/components/account/`.
 
+### Editable content via Notion (`npm run sync:notion`)
+
+By default the catalog lives in `src/content/discoveries.ts` (version-controlled
+TypeScript). To let non-developers add and edit discoveries, connect a Notion
+database instead:
+
+1. Create a Notion integration (https://www.notion.so/my-integrations), copy its
+   token, and share your discoveries database with it.
+2. Set `NOTION_API_KEY` and `NOTION_DISCOVERIES_DB_ID` in `.env.local`.
+3. Run `npm run sync:notion`. It pulls every row into
+   `src/content/discoveries.generated.json`, which the app automatically prefers
+   over the built-in catalog. Commit the generated file and rebuild (or run the
+   sync as a build step).
+
+The required Notion database columns are documented at the top of
+`scripts/sync-notion.mjs`. Without the env vars the script is a safe no-op, so
+the built-in catalog keeps working.
+
 ### Natural-language search (`/ask`)
 
 The `/ask` page answers plain-English questions about the catalog — depth

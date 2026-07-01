@@ -1,4 +1,5 @@
 import type { Discovery, DiscoveryLocation } from "./types";
+import generated from "./discoveries.generated.json";
 
 /** Discovery as authored below — country is attached programmatically. */
 type RawDiscovery = Omit<Discovery, "location"> & {
@@ -933,10 +934,21 @@ const countryBySlug: Record<string, string> = {
   "mariana-snailfish": "USA",
 };
 
-export const discoveries: Discovery[] = discoveriesData.map((d) => ({
+const builtInDiscoveries: Discovery[] = discoveriesData.map((d) => ({
   ...d,
   location: {
     ...d.location,
     country: countryBySlug[d.slug] ?? "International",
   },
 }));
+
+/**
+ * If the catalog has been synced from Notion (`npm run sync:notion` writes
+ * discoveries.generated.json), use it; otherwise fall back to the hand-authored
+ * seed catalog above. This keeps the app fully static either way.
+ */
+const syncedDiscoveries = generated as unknown as Discovery[];
+
+export const discoveries: Discovery[] =
+  syncedDiscoveries.length > 0 ? syncedDiscoveries : builtInDiscoveries;
+
