@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { QuickFacts } from "@/components/QuickFacts";
 import { Gallery } from "@/components/Gallery";
 import { RelatedDiscoveries } from "@/components/RelatedDiscoveries";
+import { SaveButton } from "@/components/account/SaveButton";
 import { AffiliateCallout } from "@/components/Monetization";
 import { DiscoveryMapLoader } from "@/components/map/DiscoveryMapLoader";
 import { getAll, getBySlug, getRelated } from "@/lib/discoveries";
@@ -112,6 +113,9 @@ export default async function DiscoveryPage({
         </div>
         <h1 className="mt-3 text-3xl font-bold text-white sm:text-4xl">{discovery.title}</h1>
         <p className="mt-3 max-w-3xl text-lg text-slate-300">{discovery.summary}</p>
+        <div className="mt-4">
+          <SaveButton slug={discovery.slug} />
+        </div>
       </header>
 
       {/* Body grid */}

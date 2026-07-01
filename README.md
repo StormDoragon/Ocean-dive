@@ -57,6 +57,24 @@ Optional environment variables (see `.env.example`):
 - `ANTHROPIC_API_KEY` — **optional.** Leave unset to use the built-in local
   search engine. Set it to upgrade `/ask` to Claude-powered answers.
 - `ANTHROPIC_MODEL` — optional model override (defaults to `claude-sonnet-5`).
+- `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` — **optional.**
+  Leave unset to run accounts in guest mode (saves persist to the browser).
+  Set both to enable Supabase-backed accounts (see below).
+- `NOTION_API_KEY` / `NOTION_DISCOVERIES_DB_ID` — **optional.** Set to pull the
+  catalog from Notion via `npm run sync:notion` (see below).
+
+### Accounts, saved discoveries & badges (`/saved`)
+
+Every discovery has a **☆ Save** button, a header count, and a `/saved`
+collection page that awards badges as you explore. It works with **no
+backend** — saves persist to `localStorage` (guest mode).
+
+Set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` to switch to
+real accounts: create a Supabase project, run `supabase/migrations/0001_init.sql`
+(saved discoveries + collections tables with Row-Level Security), and paste the
+API values into `.env.local`. Sign-in appears, saves sync to the account, and
+any guest saves migrate over on first sign-in. Auth/data live in
+`src/lib/supabase/` and `src/components/account/`.
 
 ### Natural-language search (`/ask`)
 
@@ -108,12 +126,14 @@ actual discoveries. To use real photos later, drop image hosts into
 - ✅ AI-style **natural-language search** (`/ask`), local now, Claude-ready
 - ✅ **Ocean depth explorer** (`/depth`) — descend the ocean's zones by scroll
 - ✅ **Tree of life** (`/tree`) — zoom Life → Kingdom → … → species
+- ✅ **Accounts, saved discoveries & badges** (`/saved`) — guest mode now,
+  Supabase-backed accounts when configured
 
 **Still to come** (the data model is structured so these can layer in):
 
-- User accounts: saved discoveries, collections, notes, badges
+- Collections & notes UI (schema already in the Supabase migration)
 - Premium membership; real ad / affiliate / store integrations
-- A hosted database or CMS once the catalog outgrows flat files
+- Editable content via Notion (`npm run sync:notion`, scaffolded below)
 
 ## Monetization (planned, disclosed)
 

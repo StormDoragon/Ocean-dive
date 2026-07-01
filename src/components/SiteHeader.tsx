@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { nav, site } from "@/lib/site";
+import { SavedNavLink } from "@/components/account/SavedNavLink";
 
 export function SiteHeader() {
   return (
@@ -20,12 +21,15 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link
-          href="/discoveries"
-          className="rounded-full border border-signal/40 bg-signal/10 px-4 py-1.5 text-sm font-medium text-signal transition-colors hover:bg-signal/20"
-        >
-          Search
-        </Link>
+        <div className="flex items-center gap-2">
+          <SavedNavLink />
+          <Link
+            href="/discoveries"
+            className="rounded-full border border-signal/40 bg-signal/10 px-4 py-1.5 text-sm font-medium text-signal transition-colors hover:bg-signal/20"
+          >
+            Search
+          </Link>
+        </div>
       </div>
     </header>
   );
