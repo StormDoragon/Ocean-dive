@@ -63,9 +63,14 @@ export function getDiscoverySources(discovery: Discovery): PublicSource[] {
 }
 
 export function getReviewPresentation(discovery: Discovery) {
-  const status = discovery.reviewStatus ?? "preliminary";
-  const statusInfo = reviewStatuses[status];
   const sources = getDiscoverySources(discovery);
+  // An explicit status always wins. Otherwise derive an honest default: an
+  // entry with a traceable primary/institutional source is "source-verified"
+  // (its definition), everything else stays "preliminary". This never asserts
+  // an editorial review that has not been recorded.
+  const status =
+    discovery.reviewStatus ?? (sources.length > 0 ? "source-verified" : "preliminary");
+  const statusInfo = reviewStatuses[status];
   return {
     label: statusInfo.label,
     description: statusInfo.description,

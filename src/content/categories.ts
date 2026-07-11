@@ -31,7 +31,10 @@ export const categories: Category[] = [
       "Nebulae",
       "Galaxies",
       "Asteroids",
+      "Comets",
       "Space missions",
+      "Solar physics",
+      "Planetary defense",
     ],
     color: "#a78bfa",
   },
@@ -46,6 +49,7 @@ export const categories: Category[] = [
       "New dinosaur species",
       "Ancient mammals",
       "Fossil discoveries",
+      "Fossil reinterpretation",
       "Evolution timeline",
     ],
     color: "#f59e0b",
@@ -57,7 +61,7 @@ export const categories: Category[] = [
     tagline: "The living world",
     description:
       "New species, genetics, human evolution, and the microbial life that shapes every ecosystem.",
-    subtopics: ["New species", "Genetics", "Human evolution", "Microbiology"],
+    subtopics: ["New species", "Genetics", "Human evolution", "Microbiology", "Origins of life"],
     color: "#34d399",
   },
   {
