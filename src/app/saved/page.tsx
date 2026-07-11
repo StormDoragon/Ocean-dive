@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description:
     "Your saved discoveries, collections, and the badges you earn by exploring Beyond Signal.",
   alternates: { canonical: canonicalUrl("/saved") },
+  // Per-visitor content — nothing here is useful in search results.
+  robots: { index: false, follow: true },
 };
 
 export default function SavedPage() {

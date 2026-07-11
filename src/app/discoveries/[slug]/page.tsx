@@ -36,6 +36,11 @@ export async function generateMetadata({
   const seoTitle = `${discovery.title}: Discovery, Location and Scientific Significance`;
   const seoDescription = `${discovery.summary} Learn where it was found, how scientists identified it, and why the discovery matters.`;
 
+  // Only use the hero as a social card when it's a real photo/URL; SVG
+  // placeholders don't render on social platforms, so those inherit the
+  // site's generated PNG card (app/opengraph-image.tsx) instead.
+  const hasShareableHero = /^https?:\/\//i.test(discovery.heroImage);
+
   return {
     title: seoTitle,
     description: seoDescription,
@@ -45,7 +50,9 @@ export async function generateMetadata({
       url: canonical,
       title: seoTitle,
       description: seoDescription,
-      images: [absoluteImageUrl(discovery.heroImage)],
+      ...(hasShareableHero
+        ? { images: [absoluteImageUrl(discovery.heroImage)] }
+        : {}),
     },
   };
 }
@@ -200,8 +207,12 @@ export default async function DiscoveryPage({
           <section className="card border-dashed p-6 text-center">
             <h2 className="text-lg font-semibold text-white">Community discussion</h2>
             <p className="mt-2 text-sm text-slate-400">
-              Comments, notes, and collections are coming soon. Sign-in and saved
-              discoveries are planned for a future release.
+              Comments and shared notes are coming soon. In the meantime, use the
+              ☆ Save button to add this discovery to{" "}
+              <Link href="/saved" className="link-glow">
+                your collection
+              </Link>
+              .
             </p>
           </section>
         </div>

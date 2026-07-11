@@ -130,10 +130,13 @@ links — picks it up automatically.
 ## A note on content
 
 Discovery facts are summarized from public reporting and linked to a source
-where available. Images are **local SVG placeholders**, not photographs of the
-actual discoveries. To use real photos later, drop image hosts into
-`next.config.mjs` (`images.remotePatterns`) and point each discovery's
-`heroImage`/`gallery` at them.
+where available. Newer entries use **real, credited imagery** (with
+`imageCredit`, `imageSourceUrl`, and `imageLicense` fields); older seed entries
+still use **local SVG placeholders**. To add real photos, whitelist the image
+host in `next.config.mjs` (`images.remotePatterns`) and point the discovery's
+`heroImage`/`gallery` at it, filling in the credit/license fields. Social share
+cards are generated as PNGs at build time (`src/app/opengraph-image.tsx`), so
+placeholder entries still get a branded preview when shared.
 
 ## Roadmap
 
