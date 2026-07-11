@@ -31,6 +31,16 @@ export const metadata: Metadata = {
     // Social card image is supplied by app/twitter-image.tsx (generated PNG).
   },
   alternates: { canonical: canonicalUrl("/") },
+  // Search-engine ownership verification (Workstream 4). Set the tokens in the
+  // environment to emit the meta tags; unset, nothing is rendered.
+  verification: {
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : {}),
+    ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { other: { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } }
+      : {}),
+  },
 };
 
 const siteJsonLd = {

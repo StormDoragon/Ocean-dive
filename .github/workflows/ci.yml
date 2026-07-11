@@ -1,0 +1,29 @@
+name: CI
+
+# Release quality gate (Phase 4, Workstream 5): lint, validate content and SEO
+# integrity, and build. The content validator fails the job before publication
+# when a content-integrity or SEO requirement is not met.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Validate content + SEO integrity
+        run: npm run validate
+      - name: Build
+        run: npm run build
