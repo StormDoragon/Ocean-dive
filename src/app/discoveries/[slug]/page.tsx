@@ -13,6 +13,7 @@ import { toMapPoints } from "@/lib/map";
 import { getCategory } from "@/content/categories";
 import {
   breadcrumbJsonLd,
+  absoluteImageUrl,
   discoveryArticleJsonLd,
   discoveryCanonicalUrl,
   serializeJsonLd,
