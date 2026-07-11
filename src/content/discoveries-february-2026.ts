@@ -43,28 +43,28 @@ export const february2026Discoveries: Discovery[] = [
     year: 2026,
     dateDiscovered: "2026-02-12",
     location: {
-      name: "Salk Institute, La Jolla, California, USA",
-      lat: 32.89,
-      lng: -117.24,
-      country: "United States",
+      name: "MRC Laboratory of Molecular Biology, Cambridge, United Kingdom",
+      lat: 52.18,
+      lng: 0.14,
+      country: "United Kingdom",
     },
-    discoveringOrg: "Salk Institute-led origins-of-life research team",
-    scientificName: "45-nucleotide polymerase ribozyme",
+    discoveringOrg: "MRC Laboratory of Molecular Biology-led research team",
+    scientificName: "QT45 polymerase ribozyme",
     classification: "Biochemistry · Catalytic RNA replicase",
     conservationStatus: undefined,
     heroImage: "/images/categories/biology.svg",
     summary:
-      "A compact catalytic RNA molecule synthesized both its complementary strand and a copy of itself, strengthening a central prediction of the RNA-world hypothesis.",
+      "A compact 45-nucleotide catalytic RNA synthesized both its complementary strand and a copy of itself, strengthening a central prediction of the RNA-world hypothesis.",
     story: {
       whyThere:
         "Researchers were searching random RNA sequence space for simpler catalysts capable of RNA-templated RNA synthesis.",
       howFound:
-        "Laboratory selection isolated a 45-nucleotide ribozyme and tests showed it could build a complementary strand and reproduce its own sequence with useful accuracy.",
+        "Laboratory selection isolated the QT45 ribozyme and tests showed it could build a complementary strand and reproduce its own sequence with useful accuracy.",
       whatMakesUnique:
         "Its small size suggests primitive RNA replicases may be easier to evolve than previously assumed, narrowing a major gap in models for life's chemical beginnings.",
     },
     gallery: ["/images/categories/biology.svg", "/images/textures/grid.svg"],
-    paperUrl: "https://www.science.org/doi/10.1126/science.adz8283",
+    paperUrl: "https://pubmed.ncbi.nlm.nih.gov/41678588/",
     videoUrls: [],
     relatedSlugs: ["alphafold-protein-structures", "eumillipes-persephone"],
     tags: ["rna", "ribozyme", "origin of life", "self replication", "biochemistry"],
