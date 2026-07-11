@@ -12,7 +12,6 @@ import { getAll, getBySlug, getRelated } from "@/lib/discoveries";
 import { toMapPoints } from "@/lib/map";
 import { getCategory } from "@/content/categories";
 import {
-  absoluteImageUrl,
   breadcrumbJsonLd,
   discoveryArticleJsonLd,
   discoveryCanonicalUrl,
@@ -36,11 +35,8 @@ export async function generateMetadata({
   const seoTitle = `${discovery.title}: Discovery, Location and Scientific Significance`;
   const seoDescription = `${discovery.summary} Learn where it was found, how scientists identified it, and why the discovery matters.`;
 
-  // Only use the hero as a social card when it's a real photo/URL; SVG
-  // placeholders don't render on social platforms, so those inherit the
-  // site's generated PNG card (app/opengraph-image.tsx) instead.
-  const hasShareableHero = /^https?:\/\//i.test(discovery.heroImage);
-
+  // The social card is generated per discovery by opengraph-image.tsx (it
+  // embeds the real hero when there is one), so no images field is set here.
   return {
     title: seoTitle,
     description: seoDescription,
@@ -50,9 +46,6 @@ export async function generateMetadata({
       url: canonical,
       title: seoTitle,
       description: seoDescription,
-      ...(hasShareableHero
-        ? { images: [absoluteImageUrl(discovery.heroImage)] }
-        : {}),
     },
   };
 }
