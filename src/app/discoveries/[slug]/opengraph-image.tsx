@@ -33,7 +33,13 @@ async function loadHero(heroImage: string): Promise<string | null> {
     });
     clearTimeout(timeout);
     if (!res.ok) return null;
-    const type = res.headers.get("content-type") ?? "image/jpeg";
+    const type = (res.headers.get("content-type") ?? "")
+      .split(";")[0]
+      .trim()
+      .toLowerCase();
+    // next/og/Satori cannot reliably decode every image format (notably WebP).
+    // Skip unsupported remote assets and use the stable branded gradient instead.
+    if (type !== "image/png" && type !== "image/jpeg") return null;
     const base64 = Buffer.from(await res.arrayBuffer()).toString("base64");
     return `data:${type};base64,${base64}`;
   } catch {
