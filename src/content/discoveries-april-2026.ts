@@ -18,7 +18,13 @@ export const april2026Discoveries: Discovery[] = [
     scientificName: "ASPIICS slow-solar-wind outflows",
     classification: "Heliophysics · Inner-corona plasma dynamics",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://www.asi.it/wp-content/uploads/2025/06/wb_wow_lasco_swap-300x300.png",
+    imageAlt:
+      "Composite scientific image of the solar corona assembled from Proba-3 ASPIICS, Proba-2, SOHO and NASA observations.",
+    imageCredit: "ESA/NASA/Proba-2/Proba-3/SOHO/SWAP/ASPIICS/LASCO C2",
+    imageSourceUrl: "https://www.asi.it/2025/06/proba-3-svela-le-prime-immagini-della-corona-solare/",
+    imageLicense: "Agency media image; verify reuse terms",
+    imageType: "data visualization",
     summary:
       "Artificial-eclipse observations showed small slow-solar-wind outflows racing through the inner corona three to four times faster than expected.",
     story: {
@@ -29,7 +35,10 @@ export const april2026Discoveries: Discovery[] = [
       whatMakesUnique:
         "The unexpectedly fast, widespread gusts challenge simplified models of slow-wind formation and demonstrate a new way to watch space weather being born close to the Sun.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/waves.svg"],
+    gallery: [
+      "https://www.asi.it/wp-content/uploads/2025/06/wb_wow_lasco_swap-300x300.png",
+      "/images/textures/waves.svg",
+    ],
     paperUrl: "https://arxiv.org/abs/2511.01679",
     videoUrls: [],
     relatedSlugs: ["comet-c-2026-a1-maps", "m87-black-hole-image"],
