@@ -46,6 +46,7 @@ export async function generateMetadata({
       url: canonical,
       title: seoTitle,
       description: seoDescription,
+      images: [absoluteImageUrl(`/discoveries/${discovery.slug}/opengraph-image`)],
     },
   };
 }
