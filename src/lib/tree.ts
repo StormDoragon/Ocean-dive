@@ -1,4 +1,4 @@
-import { discoveries } from "@/content/discoveries";
+import { discoveries } from "@/content/catalog";
 import type { Discovery } from "@/content/types";
 
 export interface TaxNode {
