@@ -1,8 +1,5 @@
 import type { Discovery } from "./types";
 
-const harvardRoundupUrl = "https://www.harvard.edu/in-focus/breakthroughs-of-2025/";
-const reviewedAt = "2026-07-11";
-
 /**
  * Selected, source-verified research breakthroughs featured in Harvard University's
  * "Breakthroughs of 2025" roundup. The entries are paraphrased and linked to
