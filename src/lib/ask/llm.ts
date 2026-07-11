@@ -1,4 +1,4 @@
-import { discoveries } from "@/content/discoveries";
+import { discoveries } from "@/content/catalog";
 import { getBySlug } from "@/lib/discoveries";
 import type { AskResult } from "./types";
 
