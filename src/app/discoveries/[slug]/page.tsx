@@ -39,8 +39,6 @@ export async function generateMetadata({
   const canonical = discoveryCanonicalUrl(discovery);
   const seoTitle = `${discovery.title}: Discovery, Location and Scientific Significance`;
   const seoDescription = `${discovery.summary} Learn where it was found, how scientists identified it, and why the discovery matters.`;
-  const hasShareableHero = /^https?:\\/\\//i.test(discovery.heroImage);
-
   return {
     title: seoTitle,
     description: seoDescription,
@@ -50,7 +48,7 @@ export async function generateMetadata({
       url: canonical,
       title: seoTitle,
       description: seoDescription,
-      ...(hasShareableHero\n        ? { images: [absoluteImageUrl(discovery.heroImage)] }\n        : {}),
+      images: [absoluteImageUrl(discovery.heroImage)],
     },
   };
 }
