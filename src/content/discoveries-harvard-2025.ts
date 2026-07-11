@@ -57,7 +57,7 @@ export const harvard2025Discoveries: Discovery[] = [
       }
     ],
     videoUrls: [],
-    relatedSlugs: ["popeve-rare-disease-ai","sevabertinib-lung-cancer"],
+    relatedSlugs: ["harvard-immune-memory-cells","sevabertinib-lung-cancer"],
     tags: ["gene editing","base editing","prime editing","genetics","medicine"],
   },
   {
