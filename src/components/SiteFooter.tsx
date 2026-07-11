@@ -27,6 +27,10 @@ export function SiteFooter() {
             <li><Link href="/categories" className="hover:text-white">Categories</Link></li>
             <li><Link href="/map" className="hover:text-white">Discovery map &amp; globe</Link></li>
             <li><Link href="/about" className="hover:text-white">About</Link></li>
+            <li><Link href="/sources" className="hover:text-white">Sources</Link></li>
+            <li><Link href="/editorial-standards" className="hover:text-white">Editorial standards</Link></li>
+            <li><Link href="/methodology" className="hover:text-white">Methodology</Link></li>
+            <li><Link href="/corrections" className="hover:text-white">Corrections</Link></li>
           </ul>
         </div>
 
@@ -46,8 +50,8 @@ export function SiteFooter() {
         <div>
           <h3 className="text-sm font-semibold text-white">About</h3>
           <p className="mt-3 text-sm text-slate-400">
-            A non-commercial educational prototype. Discovery facts are drawn from
-            public reporting; images are placeholders.
+            A non-commercial educational prototype. Discovery facts are source-linked,
+            and review status is shown honestly on every entry.
           </p>
         </div>
       </div>
