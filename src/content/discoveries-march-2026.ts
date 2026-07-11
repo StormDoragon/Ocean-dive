@@ -52,7 +52,13 @@ export const march2026Discoveries: Discovery[] = [
     scientificName: "Ξcc+",
     classification: "Physics · Doubly charmed baryon",
     conservationStatus: undefined,
-    heroImage: "/images/categories/physics.svg",
+    heroImage: "https://home.cern/wp-content/uploads/2026/04/Xicc-v01-00002-labels.png.webp",
+    imageAlt:
+      "CERN artist impression of the newly discovered doubly charmed baryon, showing two charm quarks and one down quark.",
+    imageCredit: "CERN",
+    imageSourceUrl: "https://home.cern/lhcb-collaboration-discovers-new-proton-particle/",
+    imageLicense: "CERN media image; verify reuse terms",
+    imageType: "artist impression",
     summary:
       "LHCb observed a proton-like particle containing two charm quarks and one down quark with discovery-level significance, resolving a long-running experimental puzzle.",
     story: {
@@ -63,7 +69,10 @@ export const march2026Discoveries: Discovery[] = [
       whatMakesUnique:
         "Together with its previously observed sibling Ξcc++, it gives researchers a rare controlled laboratory for studying how quarks assemble inside matter.",
     },
-    gallery: ["/images/categories/physics.svg", "/images/textures/waves.svg"],
+    gallery: [
+      "https://home.cern/wp-content/uploads/2026/04/Xicc-v01-00002-labels.png.webp",
+      "/images/textures/waves.svg",
+    ],
     paperUrl: "https://home.cern/news/news/physics/lhcb-collaboration-discovers-new-proton-particle",
     videoUrls: [],
     relatedSlugs: ["higgs-boson", "gravitational-waves-gw150914"],
