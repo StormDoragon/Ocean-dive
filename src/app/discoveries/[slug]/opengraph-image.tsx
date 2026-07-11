@@ -18,9 +18,18 @@ export function generateStaticParams() {
  * build never breaks on a slow or blocked image host. The photo is embedded
  * only where the build environment has egress to the image host (e.g. Vercel);
  * otherwise every card is the branded gradient, which is a fine default.
+ *
+ * Satori (the engine behind `next/og`) can only decode PNG, JPEG, and GIF.
+ * Handing it a WebP/AVIF/SVG throws mid-render ("is not iterable") and takes
+ * the whole build down, so we only embed formats it understands and fall back
+ * to the gradient for everything else.
  */
+const SATORI_IMAGE_TYPES = ["image/png", "image/jpeg", "image/gif"];
+
 async function loadHero(heroImage: string): Promise<string | null> {
   if (!/^https?:\/\//i.test(heroImage)) return null;
+  // Skip formats satori can't decode before we even fetch them.
+  if (/\.(webp|avif|svg)(\?|#|$)/i.test(heroImage)) return null;
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 5000);
@@ -33,13 +42,13 @@ async function loadHero(heroImage: string): Promise<string | null> {
     });
     clearTimeout(timeout);
     if (!res.ok) return null;
-    const type = (res.headers.get("content-type") ?? "")
+    const type = (res.headers.get("content-type") ?? "image/jpeg")
       .split(";")[0]
       .trim()
       .toLowerCase();
-    // next/og/Satori cannot reliably decode every image format (notably WebP).
-    // Skip unsupported remote assets and use the stable branded gradient instead.
-    if (type !== "image/png" && type !== "image/jpeg") return null;
+    // Only embed formats satori can decode; anything else falls back to the
+    // gradient rather than crashing the build.
+    if (!SATORI_IMAGE_TYPES.includes(type)) return null;
     const base64 = Buffer.from(await res.arrayBuffer()).toString("base64");
     return `data:${type};base64,${base64}`;
   } catch {
