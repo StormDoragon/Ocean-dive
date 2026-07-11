@@ -13,6 +13,10 @@ import { toMapPoints } from "@/lib/map";
 import { getCategory } from "@/content/categories";
 import { site } from "@/lib/site";
 
+function absoluteImageUrl(src: string): string {
+  return /^https?:\/\//.test(src) ? src : `${site.url}${src}`;
+}
+
 export function generateStaticParams() {
   return getAll().map((d) => ({ slug: d.slug }));
 }
@@ -33,7 +37,7 @@ export async function generateMetadata({
       type: "article",
       title: discovery.title,
       description: discovery.summary,
-      images: [discovery.heroImage],
+      images: [absoluteImageUrl(discovery.heroImage)],
     },
   };
 }
@@ -56,7 +60,7 @@ export default async function DiscoveryPage({
     "@type": "Article",
     headline: discovery.title,
     description: discovery.summary,
-    image: `${site.url}${discovery.heroImage}`,
+    image: absoluteImageUrl(discovery.heroImage),
     datePublished: discovery.dateDiscovered,
     about: discovery.scientificName ?? category?.name,
     locationCreated: {
@@ -92,7 +96,7 @@ export default async function DiscoveryPage({
         <div className="relative aspect-[21/9] overflow-hidden rounded-2xl border border-white/10">
           <Image
             src={discovery.heroImage}
-            alt={discovery.title}
+            alt={discovery.imageAlt ?? discovery.title}
             fill
             sizes="100vw"
             className="object-cover"
@@ -100,6 +104,25 @@ export default async function DiscoveryPage({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-abyss-950/80 to-transparent" />
         </div>
+        {discovery.imageCredit ? (
+          <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-500">
+            {discovery.imageType ? <span>{discovery.imageType}</span> : null}
+            {discovery.imageType ? <span aria-hidden="true">•</span> : null}
+            {discovery.imageSourceUrl ? (
+              <a
+                href={discovery.imageSourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-slate-700 underline-offset-2 hover:text-slate-300"
+              >
+                Image: {discovery.imageCredit}
+              </a>
+            ) : (
+              <span>Image: {discovery.imageCredit}</span>
+            )}
+            {discovery.imageLicense ? <span>({discovery.imageLicense})</span> : null}
+          </div>
+        ) : null}
         <div className="mt-5 flex flex-wrap items-center gap-2">
           <Link
             href={`/categories/${discovery.categorySlug}`}
@@ -134,7 +157,9 @@ export default async function DiscoveryPage({
           {/* Gallery */}
           <section>
             <h2 className="text-lg font-semibold text-white">Gallery</h2>
-            <p className="mt-1 text-xs text-slate-500">Placeholder imagery for this prototype.</p>
+            {!discovery.imageCredit ? (
+              <p className="mt-1 text-xs text-slate-500">Placeholder imagery for this prototype.</p>
+            ) : null}
             <div className="mt-4">
               <Gallery images={discovery.gallery} title={discovery.title} />
             </div>

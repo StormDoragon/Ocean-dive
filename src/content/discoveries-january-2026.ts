@@ -18,7 +18,14 @@ export const january2026Discoveries: Discovery[] = [
     scientificName: "C/2026 A1 (MAPS)",
     classification: "Astronomy · Kreutz-family sungrazing comet",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/C2026_A1_JWST_MIRI.jpg/1280px-C2026_A1_JWST_MIRI.jpg",
+    imageAlt:
+      "James Webb Space Telescope MIRI image of comet C/2026 A1 (MAPS), showing its bright nucleus and diffuse tail.",
+    imageCredit: "NASA/ESA/CSA JWST MIRI; processing by Melina Thévenot",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:C2026_A1_JWST_MIRI.jpg",
+    imageLicense: "Wikimedia Commons source",
+    imageType: "telescope image",
     summary:
       "A Kreutz sungrazer detected unusually far from the Sun, giving astronomers a rare multi-month warning before its extremely close solar pass.",
     story: {
@@ -29,7 +36,10 @@ export const january2026Discoveries: Discovery[] = [
       whatMakesUnique:
         "It was discovered farther from the Sun than previous ground-found Kreutz sungrazers, creating an unusually long observing window for this fragile comet family.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/C2026_A1_JWST_MIRI.jpg/1280px-C2026_A1_JWST_MIRI.jpg",
+      "/images/textures/grid.svg",
+    ],
     paperUrl: "https://arxiv.org/abs/2602.17626",
     videoUrls: [],
     relatedSlugs: ["trappist-1-system", "m87-black-hole-image"],

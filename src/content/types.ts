@@ -36,6 +36,15 @@ export interface DiscoveryStory {
   whatMakesUnique: string;
 }
 
+export type DiscoveryImageType =
+  | "photograph"
+  | "telescope image"
+  | "microscopy image"
+  | "data visualization"
+  | "artist impression"
+  | "reconstruction"
+  | "diagram";
+
 export interface Discovery {
   slug: string;
   title: string;
@@ -50,8 +59,18 @@ export interface Discovery {
   scientificName?: string;
   classification?: string;
   conservationStatus?: string;
-  /** Path to hero image (local SVG placeholder in v1). */
+  /** Local path or approved HTTPS URL for the hero visual. */
   heroImage: string;
+  /** Accessible description of what the hero visual shows. */
+  imageAlt?: string;
+  /** Person or institution that must be credited for the hero visual. */
+  imageCredit?: string;
+  /** Page where the image and its reuse terms can be verified. */
+  imageSourceUrl?: string;
+  /** Reuse status or licence label supplied by the source. */
+  imageLicense?: string;
+  /** Clarifies whether the visual is a photo, scientific image, or illustration. */
+  imageType?: DiscoveryImageType;
   summary: string;
   story: DiscoveryStory;
   gallery: string[];
