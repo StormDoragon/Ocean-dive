@@ -130,10 +130,13 @@ links — picks it up automatically.
 ## A note on content
 
 Discovery facts are summarized from public reporting and linked to a source
-where available. Images are **local SVG placeholders**, not photographs of the
-actual discoveries. To use real photos later, drop image hosts into
-`next.config.mjs` (`images.remotePatterns`) and point each discovery's
-`heroImage`/`gallery` at them.
+where available. Newer entries use **real, credited imagery** (with
+`imageCredit`, `imageSourceUrl`, and `imageLicense` fields); older seed entries
+still use **local SVG placeholders**. To add real photos, whitelist the image
+host in `next.config.mjs` (`images.remotePatterns`) and point the discovery's
+`heroImage`/`gallery` at it, filling in the credit/license fields. Social share
+cards are generated as PNGs at build time (`src/app/opengraph-image.tsx`), so
+placeholder entries still get a branded preview when shared.
 
 ## Roadmap
 
@@ -147,6 +150,23 @@ actual discoveries. To use real photos later, drop image hosts into
 - ✅ **Accounts, saved discoveries & badges** (`/saved`) — guest mode now,
   Supabase-backed accounts when configured
 - ✅ **Editable content via Notion** (`npm run sync:notion`, optional)
+
+**Phase 4 — Growth & authority operations (the operating system):**
+
+- ✅ **Content + SEO release gate** (`npm run validate`, wired into `build` and
+  CI) — unique slugs, valid dates, traceable sources, image rights, internal-link
+  integrity, review invariant, and sitemap coverage.
+- ✅ **Monthly ingestion workflow** (`npm run new-month 2026-07`) — scaffolds and
+  registers a batch; routes, archives, hubs, and the sitemap update themselves.
+- ✅ **Honest editorial review** — every entry shows an explicit status; nothing
+  is "editor reviewed" without a dated reviewer (enforced by the gate).
+- ✅ **Image SEO & rights** — honest placeholder labeling plus required metadata
+  for hosted photos.
+- ✅ **Search & performance reporting plumbing** — env-gated Search Console / Bing
+  verification and a documented monthly reporting loop.
+
+See [`docs/phase-4-operations.md`](docs/phase-4-operations.md) for the full
+operating guide.
 
 **Still to come** (the data model is structured so these can layer in):
 

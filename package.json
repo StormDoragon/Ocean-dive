@@ -5,9 +5,13 @@
   "description": "Beyond Signal — a searchable directory of scientific discoveries.",
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run validate",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "validate": "tsx scripts/validate-content.ts",
+    "validate:strict": "tsx scripts/validate-content.ts --strict",
+    "new-month": "node scripts/new-month.mjs",
     "sync:notion": "node scripts/sync-notion.mjs"
   },
   "dependencies": {
@@ -33,6 +37,7 @@
     "eslint-config-next": "^15.1.6",
     "postcss": "^8.5.1",
     "tailwindcss": "^3.4.17",
+    "tsx": "^4.23.0",
     "typescript": "^5.7.3"
   }
 }

@@ -14,9 +14,10 @@ import { getCategory } from "@/content/categories";
 import { editorialTeam } from "@/content/editorial";
 import { formatSourceType, getDiscoverySources, getReviewPresentation } from "@/lib/editorial";
 import { getSubtopics, slugify } from "@/lib/hubs";
+import { imagePresentation } from "@/lib/images";
 import {
-  absoluteImageUrl,
   breadcrumbJsonLd,
+  absoluteImageUrl,
   discoveryArticleJsonLd,
   discoveryCanonicalUrl,
   monthLabel,
@@ -48,7 +49,7 @@ export async function generateMetadata({
       url: canonical,
       title: seoTitle,
       description: seoDescription,
-      images: [absoluteImageUrl(discovery.heroImage)],
+      images: [absoluteImageUrl(`/discoveries/${discovery.slug}/opengraph-image`)],
     },
   };
 }
@@ -63,6 +64,7 @@ export default async function DiscoveryPage({
   if (!discovery) notFound();
 
   const category = getCategory(discovery.categorySlug);
+  const image = imagePresentation(discovery);
   const related = getRelated(discovery);
   const points = toMapPoints([discovery]);
   const discoveredDate = new Date(`${discovery.dateDiscovered}T00:00:00Z`);
@@ -110,8 +112,8 @@ export default async function DiscoveryPage({
       <header className="mt-4">
         <div className="relative aspect-[21/9] overflow-hidden rounded-2xl border border-white/10">
           <Image
-            src={discovery.heroImage}
-            alt={discovery.imageAlt ?? discovery.title}
+            src={image.src}
+            alt={image.alt}
             fill
             sizes="100vw"
             className="object-cover"
@@ -119,25 +121,27 @@ export default async function DiscoveryPage({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-abyss-950/80 to-transparent" />
         </div>
-        {discovery.imageCredit ? (
+        {image.credit ? (
           <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-500">
-            {discovery.imageType ? <span>{discovery.imageType}</span> : null}
-            {discovery.imageType ? <span aria-hidden="true">•</span> : null}
-            {discovery.imageSourceUrl ? (
+            <span>{image.visualType}</span>
+            <span aria-hidden="true">•</span>
+            {image.sourceUrl ? (
               <a
-                href={discovery.imageSourceUrl}
+                href={image.sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline decoration-slate-700 underline-offset-2 hover:text-slate-300"
               >
-                Image: {discovery.imageCredit}
+                Image: {image.credit}
               </a>
             ) : (
-              <span>Image: {discovery.imageCredit}</span>
+              <span>Image: {image.credit}</span>
             )}
-            {discovery.imageLicense ? <span>({discovery.imageLicense})</span> : null}
+            {image.license ? <span>({image.license})</span> : null}
           </div>
-        ) : null}
+        ) : (
+          <p className="mt-2 text-xs text-slate-500">{image.visualType}</p>
+        )}
         <div className="mt-5 flex flex-wrap items-center gap-2">
           <Link
             href={`/categories/${discovery.categorySlug}`}
@@ -217,8 +221,12 @@ export default async function DiscoveryPage({
           <section className="card border-dashed p-6 text-center">
             <h2 className="text-lg font-semibold text-white">Community discussion</h2>
             <p className="mt-2 text-sm text-slate-400">
-              Comments, notes, and collections are coming soon. Sign-in and saved
-              discoveries are planned for a future release.
+              Comments and shared notes are coming soon. In the meantime, use the
+              ☆ Save button to add this discovery to{" "}
+              <Link href="/saved" className="link-glow">
+                your collection
+              </Link>
+              .
             </p>
           </section>
         </div>
