@@ -5,6 +5,7 @@ import { march2026Discoveries } from "./discoveries-march-2026";
 import { april2026Discoveries } from "./discoveries-april-2026";
 import { may2026Discoveries } from "./discoveries-may-2026";
 import { june2026Discoveries } from "./discoveries-june-2026";
+import { harvard2025Discoveries } from "./discoveries-harvard-2025";
 import generated from "./discoveries.generated.json";
 import type { Discovery } from "./types";
 
@@ -20,6 +21,7 @@ const builtInCatalog: Discovery[] = [
   ...april2026Discoveries,
   ...may2026Discoveries,
   ...june2026Discoveries,
+  ...harvard2025Discoveries,
 ];
 
 /**
