@@ -13,7 +13,7 @@ import { toMapPoints } from "@/lib/map";
 import { getCategory } from "@/content/categories";
 import { editorialTeam } from "@/content/editorial";
 import { formatSourceType, getDiscoverySources, getReviewPresentation } from "@/lib/editorial";
-import { slugify } from "@/lib/hubs";
+import { getSubtopics, slugify } from "@/lib/hubs";
 import {
   absoluteImageUrl,
   breadcrumbJsonLd,
@@ -69,6 +69,11 @@ export default async function DiscoveryPage({
   const points = toMapPoints([discovery]);
   const discoveredDate = new Date(`${discovery.dateDiscovered}T00:00:00Z`);
   const discoveryMonth = discoveredDate.getUTCMonth() + 1;
+  const subtopicSlug = slugify(discovery.subtopic);
+  const hasSubtopicHub = getSubtopics(discovery.categorySlug).some((entry) => entry.slug === subtopicSlug);
+  const subtopicHref = hasSubtopicHub
+    ? `/${discovery.categorySlug}/${subtopicSlug}`
+    : `/categories/${discovery.categorySlug}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -143,7 +148,7 @@ export default async function DiscoveryPage({
           >
             {category?.emoji} {category?.name}
           </Link>
-          <Link href={`/${discovery.categorySlug}/${slugify(discovery.subtopic)}`} className="pill hover:border-signal/40">
+          <Link href={subtopicHref} className="pill hover:border-signal/40">
             {discovery.subtopic}
           </Link>
           <Link href={`/scientific-discoveries-${discovery.year}`} className="pill hover:border-signal/40">
