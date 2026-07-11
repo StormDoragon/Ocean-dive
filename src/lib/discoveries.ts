@@ -1,4 +1,4 @@
-import { discoveries } from "@/content/discoveries";
+import { discoveries } from "@/content/catalog";
 import { categories, getCategory } from "@/content/categories";
 import type { Category, CategorySlug, Discovery } from "@/content/types";
 
