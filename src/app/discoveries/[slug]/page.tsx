@@ -11,11 +11,13 @@ import { DiscoveryMapLoader } from "@/components/map/DiscoveryMapLoader";
 import { getAll, getBySlug, getRelated } from "@/lib/discoveries";
 import { toMapPoints } from "@/lib/map";
 import { getCategory } from "@/content/categories";
+import { slugify } from "@/lib/hubs";
 import {
   absoluteImageUrl,
   breadcrumbJsonLd,
   discoveryArticleJsonLd,
   discoveryCanonicalUrl,
+  monthLabel,
   serializeJsonLd,
 } from "@/lib/seo";
 
@@ -62,6 +64,8 @@ export default async function DiscoveryPage({
   const category = getCategory(discovery.categorySlug);
   const related = getRelated(discovery);
   const points = toMapPoints([discovery]);
+  const discoveredDate = new Date(`${discovery.dateDiscovered}T00:00:00Z`);
+  const discoveryMonth = discoveredDate.getUTCMonth() + 1;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -136,8 +140,15 @@ export default async function DiscoveryPage({
           >
             {category?.emoji} {category?.name}
           </Link>
-          <span className="pill">{discovery.subtopic}</span>
-          <span className="pill">{discovery.year}</span>
+          <Link href={`/${discovery.categorySlug}/${slugify(discovery.subtopic)}`} className="pill hover:border-signal/40">
+            {discovery.subtopic}
+          </Link>
+          <Link href={`/scientific-discoveries-${discovery.year}`} className="pill hover:border-signal/40">
+            {discovery.year}
+          </Link>
+          <Link href={`/discoveries/${discovery.year}/${monthLabel(discoveryMonth).toLowerCase()}`} className="pill hover:border-signal/40">
+            {monthLabel(discoveryMonth)} archive
+          </Link>
         </div>
         <h1 className="mt-3 text-3xl font-bold text-white sm:text-4xl">{discovery.title}</h1>
         <p className="mt-3 max-w-3xl text-lg text-slate-300">{discovery.summary}</p>
@@ -190,7 +201,7 @@ export default async function DiscoveryPage({
               <h2 className="text-lg font-semibold text-white">Tags</h2>
               <div className="mt-3 flex flex-wrap gap-2">
                 {discovery.tags.map((tag) => (
-                  <span key={tag} className="pill">#{tag}</span>
+                  <Link key={tag} href={`/tags/${slugify(tag)}`} className="pill hover:border-signal/40">#{tag}</Link>
                 ))}
               </div>
             </section>
