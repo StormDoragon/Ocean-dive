@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { editorialTeam } from "@/content/editorial";
 import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -58,8 +59,20 @@ export default function AboutPage() {
       <Section title="A note on accuracy">
         <p>
           Discovery facts are summarized from public reporting and linked to a
-          source where possible. Images in this prototype are placeholders, not
-          photographs of the actual discoveries.
+          source where possible. Each page now exposes its source tier, review
+          status, publication date, review date when recorded, image credit, and
+          correction history.
+        </p>
+      </Section>
+
+      <Section title="Editorial authority">
+        <p>
+          The public byline is {editorialTeam.name}. A page is not described as
+          editor reviewed unless a dated review is recorded. Read the full
+          <Link href="/editorial-standards" className="text-signal underline underline-offset-2"> editorial standards</Link>,
+          <Link href="/methodology" className="text-signal underline underline-offset-2"> methodology</Link>,
+          <Link href="/sources" className="text-signal underline underline-offset-2"> source index</Link>, and
+          <Link href="/corrections" className="text-signal underline underline-offset-2"> corrections policy</Link>.
         </p>
       </Section>
 
