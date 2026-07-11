@@ -5,6 +5,12 @@ import { DiscoveryCard } from "@/components/DiscoveryCard";
 import { categories, getCategory } from "@/content/categories";
 import { getByCategory } from "@/lib/discoveries";
 import type { CategorySlug } from "@/content/types";
+import {
+  breadcrumbJsonLd,
+  canonicalUrl,
+  itemListJsonLd,
+  serializeJsonLd,
+} from "@/lib/seo";
 
 export function generateStaticParams() {
   return categories.map((c) => ({ slug: c.slug }));
@@ -18,9 +24,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const category = getCategory(slug as CategorySlug);
   if (!category) return { title: "Category not found" };
+  const canonical = canonicalUrl(`/categories/${category.slug}`);
   return {
-    title: category.name,
+    title: `${category.name}: Discoveries and Scientific Research`,
     description: category.description,
+    alternates: { canonical },
+    openGraph: { type: "website", url: canonical },
   };
 }
 
@@ -34,9 +43,29 @@ export default async function CategoryPage({
   if (!category) notFound();
 
   const discoveries = getByCategory(category.slug);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      breadcrumbJsonLd([
+        { name: "Categories", path: "/categories" },
+        { name: category.name, path: `/categories/${category.slug}` },
+      ]),
+      itemListJsonLd(
+        `${category.name} discoveries`,
+        discoveries.map((d) => ({
+          name: d.title,
+          path: `/discoveries/${d.slug}`,
+        })),
+      ),
+    ],
+  };
 
   return (
     <div className="container-page py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
+      />
       <nav className="text-sm text-slate-400">
         <Link href="/categories" className="hover:text-white">Categories</Link>
         <span className="mx-2">/</span>

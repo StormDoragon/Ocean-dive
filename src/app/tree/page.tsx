@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { TreeExplorer } from "@/components/tree/TreeExplorer";
 import { buildTaxonomyTree } from "@/lib/tree";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Tree of life",
   description:
     "Zoom through the tree of life — from Life to Kingdom, Phylum, Class, and down to individual species — following the discoveries in the catalog.",
+  alternates: { canonical: canonicalUrl("/tree") },
 };
 
 export default function TreePage() {

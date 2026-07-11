@@ -36,6 +36,15 @@ export interface DiscoveryStory {
   whatMakesUnique: string;
 }
 
+export type DiscoveryImageType =
+  | "photograph"
+  | "telescope image"
+  | "microscopy image"
+  | "data visualization"
+  | "artist impression"
+  | "reconstruction"
+  | "diagram";
+
 export interface Discovery {
   slug: string;
   title: string;
@@ -45,17 +54,39 @@ export interface Discovery {
   year: number;
   /** ISO date (YYYY-MM-DD) used for "on this day" + recency. */
   dateDiscovered: string;
+  /** ISO date of the latest substantive editorial update, when available. */
+  dateUpdated?: string;
+  /** Editorial/source confidence label shown to readers. */
+  reviewStatus?: "editor-reviewed" | "source-verified" | "preliminary";
   location: DiscoveryLocation;
   discoveringOrg: string;
   scientificName?: string;
   classification?: string;
   conservationStatus?: string;
-  /** Path to hero image (local SVG placeholder in v1). */
+  /** Local path or approved HTTPS URL for the hero visual. */
   heroImage: string;
+  /** Accessible description of what the hero visual shows. */
+  imageAlt?: string;
+  /** Person or institution that must be credited for the hero visual. */
+  imageCredit?: string;
+  /** Page where the image and its reuse terms can be verified. */
+  imageSourceUrl?: string;
+  /** Reuse status or licence label supplied by the source. */
+  imageLicense?: string;
+  /** Clarifies whether the visual is a photo, scientific image, or illustration. */
+  imageType?: DiscoveryImageType;
   summary: string;
   story: DiscoveryStory;
   gallery: string[];
   paperUrl?: string;
+  /** Primary scientific or institutional source for the entry. */
+  primarySourceUrl?: string;
+  /** Additional sources that support or contextualize the entry. */
+  supportingSources?: Array<{
+    title: string;
+    url: string;
+    publisher: string;
+  }>;
   videoUrls: string[];
   relatedSlugs: string[];
   tags: string[];

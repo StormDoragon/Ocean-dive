@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { AskConsole } from "@/components/ask/AskConsole";
 import { isLlmConfigured } from "@/lib/ask/llm";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Ask — natural-language search",
   description:
     "Ask questions about scientific discoveries in plain English: filter by depth, field, and time, or rank countries and organizations.",
+  alternates: { canonical: canonicalUrl("/ask") },
 };
 
 export default function AskPage() {

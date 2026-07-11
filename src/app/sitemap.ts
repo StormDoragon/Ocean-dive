@@ -1,12 +1,9 @@
 import type { MetadataRoute } from "next";
-import { getAll } from "@/lib/discoveries";
+import { getAll, getAvailableMonths, getByCategory, getByMonth } from "@/lib/discoveries";
 import { categories } from "@/content/categories";
-import { site } from "@/lib/site";
+import { canonicalUrl, discoveryLastModified, monthSlug } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = site.url;
-  const now = new Date();
-
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
     "/ask",
@@ -19,25 +16,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/saved",
     "/about",
   ].map((path) => ({
-    url: `${base}${path}`,
-    lastModified: now,
+    url: canonicalUrl(path),
     changeFrequency: "weekly",
     priority: path === "" ? 1 : 0.7,
   }));
 
   const categoryRoutes: MetadataRoute.Sitemap = categories.map((c) => ({
-    url: `${base}/categories/${c.slug}`,
-    lastModified: now,
+    url: canonicalUrl(`/categories/${c.slug}`),
+    lastModified: getByCategory(c.slug).reduce(
+      (latest, d) => (discoveryLastModified(d) > latest ? discoveryLastModified(d) : latest),
+      "1970-01-01",
+    ),
     changeFrequency: "weekly",
     priority: 0.6,
   }));
 
   const discoveryRoutes: MetadataRoute.Sitemap = getAll().map((d) => ({
-    url: `${base}/discoveries/${d.slug}`,
-    lastModified: new Date(d.dateDiscovered),
+    url: canonicalUrl(`/discoveries/${d.slug}`),
+    lastModified: discoveryLastModified(d),
+    images: [d.heroImage.startsWith("http") ? d.heroImage : canonicalUrl(d.heroImage)],
     changeFrequency: "monthly",
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...categoryRoutes, ...discoveryRoutes];
+  const monthRoutes: MetadataRoute.Sitemap = getAvailableMonths().map(({ year, month }) => {
+    const discoveries = getByMonth(year, month);
+    const lastModified = discoveries.reduce(
+      (latest, d) => (discoveryLastModified(d) > latest ? discoveryLastModified(d) : latest),
+      "1970-01-01",
+    );
+    return {
+      url: canonicalUrl(`/discoveries/${year}/${monthSlug(month)}`),
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    };
+  });
+
+  return [...staticRoutes, ...categoryRoutes, ...monthRoutes, ...discoveryRoutes];
 }

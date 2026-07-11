@@ -2,10 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    // v1 ships local SVG placeholders, so no remote loader is required.
-    // To use real photos later, add remote hosts here, e.g.:
-    // remotePatterns: [{ protocol: "https", hostname: "upload.wikimedia.org" }],
-    remotePatterns: [],
+    remotePatterns: [
+      { protocol: "https", hostname: "upload.wikimedia.org" },
+      { protocol: "https", hostname: "home.cern" },
+      { protocol: "https", hostname: "www.asi.it" },
+    ],
   },
 };
 
