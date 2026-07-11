@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DiscoveryCard } from "@/components/DiscoveryCard";
 import { categories, getCategory } from "@/content/categories";
-import { getByCategory } from "@/lib/discoveries";
+import { getCategoryContext } from "@/lib/hubs";
 import type { CategorySlug } from "@/content/types";
 import {
   breadcrumbJsonLd,
@@ -42,7 +42,9 @@ export default async function CategoryPage({
   const category = getCategory(slug as CategorySlug);
   if (!category) notFound();
 
-  const discoveries = getByCategory(category.slug);
+  const context = getCategoryContext(category.slug);
+  if (!context) notFound();
+  const { discoveries, guide, subtopics } = context;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -96,6 +98,43 @@ export default async function CategoryPage({
         ) : null}
       </header>
 
+      <section className="mt-10 max-w-4xl" aria-labelledby="category-guide">
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-signal">
+          Field guide
+        </p>
+        <h2 id="category-guide" className="mt-2 text-2xl font-semibold text-white">
+          Understanding {category.name.toLowerCase()}
+        </h2>
+        <div className="mt-4 space-y-4 leading-relaxed text-slate-300">
+          {guide.overview.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </div>
+      </section>
+
+      {guide.sections.map((section) => (
+        <section key={section.heading} className="mt-8 max-w-4xl">
+          <h2 className="text-xl font-semibold text-white">{section.heading}</h2>
+          <p className="mt-2 leading-relaxed text-slate-300">{section.body}</p>
+        </section>
+      ))}
+
+      <section className="mt-10" aria-labelledby="subtopics">
+        <h2 id="subtopics" className="text-xl font-semibold text-white">Explore by subtopic</h2>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {subtopics.map((subtopic) => (
+            <Link
+              key={subtopic.slug}
+              href={`/${category.slug}/${subtopic.slug}`}
+              className="card p-4 transition-colors hover:border-signal/40"
+            >
+              <h3 className="font-semibold text-white">{subtopic.name}</h3>
+              <p className="mt-1 text-sm text-slate-400">
+                {subtopic.discoveries.length} catalogued {subtopic.discoveries.length === 1 ? "discovery" : "discoveries"}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section className="mt-8">
         <h2 className="text-lg font-semibold text-white">
           {discoveries.length} {discoveries.length === 1 ? "discovery" : "discoveries"}
@@ -111,6 +150,41 @@ export default async function CategoryPage({
             ))}
           </div>
         )}
+      </section>
+
+      <section className="mt-12 grid gap-8 lg:grid-cols-2">
+        <div>
+          <h2 className="text-xl font-semibold text-white">Major discoveries by year</h2>
+          <ol className="mt-4 space-y-3 border-l border-white/10 pl-5">
+            {discoveries.slice(0, 8).map((discovery) => (
+              <li key={discovery.slug} className="relative">
+                <span className="absolute -left-[1.65rem] top-1.5 h-2 w-2 rounded-full bg-signal" />
+                <Link href={`/discoveries/${discovery.slug}`} className="font-medium text-white hover:text-signal">
+                  {discovery.title}
+                </Link>
+                <p className="text-sm text-slate-500">{discovery.year} · {discovery.subtopic}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold text-white">Related scientific terms</h2>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {guide.relatedTerms.map((term) => <span key={term} className="pill">{term}</span>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-12 max-w-4xl" aria-labelledby="category-faq">
+        <h2 id="category-faq" className="text-xl font-semibold text-white">Frequently asked questions</h2>
+        <div className="mt-4 divide-y divide-white/10 rounded-2xl border border-white/10">
+          {guide.faqs.map((faq) => (
+            <details key={faq.question} className="group p-5">
+              <summary className="cursor-pointer font-medium text-white marker:text-signal">{faq.question}</summary>
+              <p className="mt-3 leading-relaxed text-slate-300">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
       </section>
     </div>
   );
