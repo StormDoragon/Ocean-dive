@@ -54,6 +54,10 @@ export interface Discovery {
   year: number;
   /** ISO date (YYYY-MM-DD) used for "on this day" + recency. */
   dateDiscovered: string;
+  /** ISO date of the latest substantive editorial update, when available. */
+  dateUpdated?: string;
+  /** Editorial/source confidence label shown to readers. */
+  reviewStatus?: "editor-reviewed" | "source-verified" | "preliminary";
   location: DiscoveryLocation;
   discoveringOrg: string;
   scientificName?: string;
@@ -75,6 +79,14 @@ export interface Discovery {
   story: DiscoveryStory;
   gallery: string[];
   paperUrl?: string;
+  /** Primary scientific or institutional source for the entry. */
+  primarySourceUrl?: string;
+  /** Additional sources that support or contextualize the entry. */
+  supportingSources?: Array<{
+    title: string;
+    url: string;
+    publisher: string;
+  }>;
   videoUrls: string[];
   relatedSlugs: string[];
   tags: string[];

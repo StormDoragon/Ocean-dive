@@ -3,11 +3,13 @@ import { GeoExplorer } from "@/components/geo/GeoExplorer";
 import { getAll } from "@/lib/discoveries";
 import { toMapPoints } from "@/lib/map";
 import { categories } from "@/content/categories";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Discovery map & globe",
   description:
     "Explore scientific discoveries on an interactive 3D globe or flat world map. Each glowing point marks where a discovery was made.",
+  alternates: { canonical: canonicalUrl("/map") },
 };
 
 export default function MapPage() {

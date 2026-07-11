@@ -17,6 +17,29 @@ export function getByCategory(categorySlug: CategorySlug): Discovery[] {
   return getAll().filter((d) => d.categorySlug === categorySlug);
 }
 
+export function getByMonth(year: number, month: number): Discovery[] {
+  return getAll().filter((d) => {
+    const date = new Date(`${d.dateDiscovered}T00:00:00Z`);
+    return date.getUTCFullYear() === year && date.getUTCMonth() + 1 === month;
+  });
+}
+
+export function getAvailableMonths(): Array<{ year: number; month: number }> {
+  const keys = new Set(
+    discoveries.map((d) => {
+      const date = new Date(`${d.dateDiscovered}T00:00:00Z`);
+      return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}`;
+    }),
+  );
+
+  return [...keys]
+    .map((key) => {
+      const [year, month] = key.split("-").map(Number);
+      return { year, month };
+    })
+    .sort((a, b) => b.year - a.year || b.month - a.month);
+}
+
 /** Resolve a discovery's related entries (deduped, valid only). */
 export function getRelated(discovery: Discovery): Discovery[] {
   return discovery.relatedSlugs

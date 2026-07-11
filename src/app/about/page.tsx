@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "About",
   description:
     "What Beyond Signal is, how it is built, and how it plans to stay free and sustainable.",
+  alternates: { canonical: canonicalUrl("/about") },
 };
 
 export default function AboutPage() {

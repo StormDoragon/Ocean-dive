@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { SavedView } from "@/components/account/SavedView";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Saved & badges",
   description:
     "Your saved discoveries, collections, and the badges you earn by exploring Beyond Signal.",
+  alternates: { canonical: canonicalUrl("/saved") },
 };
 
 export default function SavedPage() {

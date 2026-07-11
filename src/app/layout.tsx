@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Providers } from "@/components/account/Providers";
 import { site } from "@/lib/site";
+import { canonicalUrl, serializeJsonLd, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -27,6 +28,28 @@ export const metadata: Metadata = {
     description: site.description,
     images: ["/images/og-default.svg"],
   },
+  alternates: { canonical: canonicalUrl("/") },
+};
+
+const siteJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}#organization`,
+      name: site.name,
+      url: siteUrl,
+      logo: { "@type": "ImageObject", url: canonicalUrl("/icon.svg") },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}#website`,
+      name: site.name,
+      url: siteUrl,
+      description: site.description,
+      publisher: { "@id": `${siteUrl}#organization` },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -35,6 +58,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex min-h-screen flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(siteJsonLd) }}
+        />
         <Providers>
           <SiteHeader />
           <main className="flex-1">{children}</main>

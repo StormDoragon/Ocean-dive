@@ -11,11 +11,13 @@ import { DiscoveryMapLoader } from "@/components/map/DiscoveryMapLoader";
 import { getAll, getBySlug, getRelated } from "@/lib/discoveries";
 import { toMapPoints } from "@/lib/map";
 import { getCategory } from "@/content/categories";
-import { site } from "@/lib/site";
-
-function absoluteImageUrl(src: string): string {
-  return /^https?:\/\//.test(src) ? src : `${site.url}${src}`;
-}
+import {
+  absoluteImageUrl,
+  breadcrumbJsonLd,
+  discoveryArticleJsonLd,
+  discoveryCanonicalUrl,
+  serializeJsonLd,
+} from "@/lib/seo";
 
 export function generateStaticParams() {
   return getAll().map((d) => ({ slug: d.slug }));
@@ -30,13 +32,19 @@ export async function generateMetadata({
   const discovery = getBySlug(slug);
   if (!discovery) return { title: "Discovery not found" };
 
+  const canonical = discoveryCanonicalUrl(discovery);
+  const seoTitle = `${discovery.title}: Discovery, Location and Scientific Significance`;
+  const seoDescription = `${discovery.summary} Learn where it was found, how scientists identified it, and why the discovery matters.`;
+
   return {
-    title: discovery.title,
-    description: discovery.summary,
+    title: seoTitle,
+    description: seoDescription,
+    alternates: { canonical },
     openGraph: {
       type: "article",
-      title: discovery.title,
-      description: discovery.summary,
+      url: canonical,
+      title: seoTitle,
+      description: seoDescription,
       images: [absoluteImageUrl(discovery.heroImage)],
     },
   };
@@ -57,29 +65,24 @@ export default async function DiscoveryPage({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: discovery.title,
-    description: discovery.summary,
-    image: absoluteImageUrl(discovery.heroImage),
-    datePublished: discovery.dateDiscovered,
-    about: discovery.scientificName ?? category?.name,
-    locationCreated: {
-      "@type": "Place",
-      name: discovery.location.name,
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: discovery.location.lat,
-        longitude: discovery.location.lng,
-      },
-    },
-    publisher: { "@type": "Organization", name: site.name },
+    "@graph": [
+      discoveryArticleJsonLd(discovery),
+      breadcrumbJsonLd([
+        { name: "Discoveries", path: "/discoveries" },
+        {
+          name: category?.name ?? discovery.categorySlug,
+          path: `/categories/${discovery.categorySlug}`,
+        },
+        { name: discovery.title, path: `/discoveries/${discovery.slug}` },
+      ]),
+    ],
   };
 
   return (
     <article className="container-page py-8">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       {/* Breadcrumb */}
@@ -89,6 +92,8 @@ export default async function DiscoveryPage({
         <Link href={`/categories/${discovery.categorySlug}`} className="hover:text-white">
           {category?.name}
         </Link>
+        <span className="mx-2">/</span>
+        <span className="text-slate-300">{discovery.title}</span>
       </nav>
 
       {/* Hero */}
@@ -205,6 +210,8 @@ export default async function DiscoveryPage({
         <aside className="space-y-6 lg:sticky lg:top-20 lg:self-start">
           <QuickFacts discovery={discovery} />
 
+          <EditorialSources discovery={discovery} />
+
           {discovery.paperUrl ? (
             <a
               href={discovery.paperUrl}
@@ -241,5 +248,68 @@ function StoryBlock({ heading, body }: { heading: string; body: string }) {
       <h3 className="text-sm font-semibold uppercase tracking-wide text-signal">{heading}</h3>
       <p className="mt-1.5 leading-relaxed text-slate-300">{body}</p>
     </div>
+  );
+}
+
+function EditorialSources({ discovery }: { discovery: ReturnType<typeof getBySlug> }) {
+  if (!discovery) return null;
+  const primarySource = discovery.primarySourceUrl ?? discovery.paperUrl;
+  const statusLabel = {
+    "editor-reviewed": "Editor reviewed",
+    "source-verified": "Source verified",
+    preliminary: "Preliminary",
+  }[discovery.reviewStatus ?? "preliminary"];
+
+  return (
+    <section className="card p-4" aria-label="Editorial and source information">
+      <h2 className="text-sm font-semibold text-white">Editorial record</h2>
+      <dl className="mt-3 space-y-2 text-xs text-slate-400">
+        <div className="flex justify-between gap-4">
+          <dt>Published</dt>
+          <dd className="text-right text-slate-300">{discovery.dateDiscovered}</dd>
+        </div>
+        {discovery.dateUpdated ? (
+          <div className="flex justify-between gap-4">
+            <dt>Updated</dt>
+            <dd className="text-right text-slate-300">{discovery.dateUpdated}</dd>
+          </div>
+        ) : null}
+        <div className="flex justify-between gap-4">
+          <dt>Status</dt>
+          <dd className="text-right text-slate-300">{statusLabel}</dd>
+        </div>
+      </dl>
+      {primarySource ? (
+        <a
+          href={primarySource}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 block text-xs font-medium text-signal underline underline-offset-2"
+        >
+          Primary scientific source ↗
+        </a>
+      ) : (
+        <p className="mt-4 text-xs text-slate-500">Primary source pending.</p>
+      )}
+      {discovery.supportingSources?.length ? (
+        <div className="mt-3 border-t border-white/10 pt-3">
+          <p className="text-xs font-medium text-slate-300">Supporting sources</p>
+          <ul className="mt-2 space-y-1 text-xs">
+            {discovery.supportingSources.map((source) => (
+              <li key={source.url}>
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 underline underline-offset-2 hover:text-slate-200"
+                >
+                  {source.title} · {source.publisher} ↗
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+    </section>
   );
 }

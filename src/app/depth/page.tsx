@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { DepthExplorer } from "@/components/depth/DepthExplorer";
 import { getDepthZones, getDeepestDiscovery } from "@/lib/ocean";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Ocean depth explorer",
   description:
     "Descend from the sunlit surface to the hadal trenches and see what has been discovered at every level of the ocean.",
+  alternates: { canonical: canonicalUrl("/depth") },
 };
 
 export default function DepthPage() {
