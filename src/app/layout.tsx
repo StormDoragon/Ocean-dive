@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Providers } from "@/components/account/Providers";
 import { site } from "@/lib/site";
+import { editorialTeam } from "@/content/editorial";
 import { canonicalUrl, serializeJsonLd, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description: site.description,
+  authors: [{ name: editorialTeam.name, url: editorialTeam.url }],
   applicationName: site.name,
   icons: { icon: "/icon.svg" },
   openGraph: {
@@ -20,13 +22,13 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} — A directory of scientific discovery`,
     description: site.description,
-    images: ["/images/og-default.svg"],
+    // Social card image is supplied by app/opengraph-image.tsx (generated PNG).
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — A directory of scientific discovery`,
     description: site.description,
-    images: ["/images/og-default.svg"],
+    // Social card image is supplied by app/twitter-image.tsx (generated PNG).
   },
   alternates: { canonical: canonicalUrl("/") },
 };

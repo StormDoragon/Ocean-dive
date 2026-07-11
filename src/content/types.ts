@@ -45,6 +45,14 @@ export type DiscoveryImageType =
   | "reconstruction"
   | "diagram";
 
+export type SourceTier = "Tier 1" | "Tier 2" | "Tier 3" | "Tier 4" | "Tier 5";
+
+export interface DiscoveryCorrection {
+  date: string;
+  summary: string;
+  correctedBy?: string;
+}
+
 export interface Discovery {
   slug: string;
   title: string;
@@ -58,6 +66,16 @@ export interface Discovery {
   dateUpdated?: string;
   /** Editorial/source confidence label shown to readers. */
   reviewStatus?: "editor-reviewed" | "source-verified" | "preliminary";
+  /** ISO date when the entry was last checked by the editorial team. */
+  dateReviewed?: string;
+  /** Person or team responsible for the recorded review. */
+  reviewedBy?: string;
+  /** Internal source classification shown in the public editorial record. */
+  sourceTier?: SourceTier;
+  /** Source access date for auditability, when recorded. */
+  sourceAccessedAt?: string;
+  /** Public record of substantive corrections to this entry. */
+  correctionHistory?: DiscoveryCorrection[];
   location: DiscoveryLocation;
   discoveringOrg: string;
   scientificName?: string;
@@ -86,6 +104,9 @@ export interface Discovery {
     title: string;
     url: string;
     publisher: string;
+    tier?: SourceTier;
+    sourceType?: "paper" | "institutional" | "reporting" | "reference";
+    accessedAt?: string;
   }>;
   videoUrls: string[];
   relatedSlugs: string[];
