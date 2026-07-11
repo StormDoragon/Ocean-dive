@@ -5,6 +5,7 @@ export const site = {
     "Beyond Signal is a searchable directory of scientific discovery — from deep-sea species to exoplanets, fossils, and breakthroughs in physics. Browse, search, and map the milestones of human knowledge.",
   // Used for canonical/OpenGraph URLs. Override with NEXT_PUBLIC_SITE_URL.
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://beyond-signal.example.com",
+  editorialTeam: "Beyond Signal Editorial Team",
 } as const;
 
 export const nav = [

@@ -11,6 +11,8 @@ import { DiscoveryMapLoader } from "@/components/map/DiscoveryMapLoader";
 import { getAll, getBySlug, getRelated } from "@/lib/discoveries";
 import { toMapPoints } from "@/lib/map";
 import { getCategory } from "@/content/categories";
+import { editorialTeam } from "@/content/editorial";
+import { formatSourceType, getDiscoverySources, getReviewPresentation } from "@/lib/editorial";
 import { slugify } from "@/lib/hubs";
 import {
   absoluteImageUrl,
@@ -223,18 +225,6 @@ export default async function DiscoveryPage({
 
           <EditorialSources discovery={discovery} />
 
-          {discovery.paperUrl ? (
-            <a
-              href={discovery.paperUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card flex items-center justify-between p-4 transition-colors hover:border-signal/40"
-            >
-              <span className="text-sm font-medium text-white">📄 Scientific source</span>
-              <span className="text-signal">↗</span>
-            </a>
-          ) : null}
-
           <AffiliateCallout
             items={[
               "Field guide to the topic",
@@ -264,12 +254,8 @@ function StoryBlock({ heading, body }: { heading: string; body: string }) {
 
 function EditorialSources({ discovery }: { discovery: ReturnType<typeof getBySlug> }) {
   if (!discovery) return null;
-  const primarySource = discovery.primarySourceUrl ?? discovery.paperUrl;
-  const statusLabel = {
-    "editor-reviewed": "Editor reviewed",
-    "source-verified": "Source verified",
-    preliminary: "Preliminary",
-  }[discovery.reviewStatus ?? "preliminary"];
+  const review = getReviewPresentation(discovery);
+  const sources = getDiscoverySources(discovery);
 
   return (
     <section className="card p-4" aria-label="Editorial and source information">
@@ -286,27 +272,25 @@ function EditorialSources({ discovery }: { discovery: ReturnType<typeof getBySlu
           </div>
         ) : null}
         <div className="flex justify-between gap-4">
+          <dt>Last reviewed</dt>
+          <dd className="text-right text-slate-300">{review.lastReviewed ?? "Pending editorial review"}</dd>
+        </div>
+        <div className="flex justify-between gap-4">
           <dt>Status</dt>
-          <dd className="text-right text-slate-300">{statusLabel}</dd>
+          <dd className="text-right text-slate-300">{review.label}</dd>
         </div>
       </dl>
-      {primarySource ? (
-        <a
-          href={primarySource}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-4 block text-xs font-medium text-signal underline underline-offset-2"
-        >
-          Primary scientific source ↗
-        </a>
+      <p className="mt-3 text-xs leading-relaxed text-slate-500">{review.description}</p>
+      {review.isEditoriallyReviewed ? (
+        <p className="mt-3 text-xs text-slate-400">Reviewed by {review.reviewedBy ?? editorialTeam.name}.</p>
       ) : (
-        <p className="mt-4 text-xs text-slate-500">Primary source pending.</p>
+        <p className="mt-3 text-xs text-slate-500">Not yet independently reviewed by the editorial team.</p>
       )}
-      {discovery.supportingSources?.length ? (
-        <div className="mt-3 border-t border-white/10 pt-3">
-          <p className="text-xs font-medium text-slate-300">Supporting sources</p>
-          <ul className="mt-2 space-y-1 text-xs">
-            {discovery.supportingSources.map((source) => (
+      {sources.length ? (
+        <div className="mt-4 border-t border-white/10 pt-3">
+          <p className="text-xs font-medium text-slate-300">External citations</p>
+          <ul className="mt-2 space-y-2 text-xs">
+            {sources.map((source) => (
               <li key={source.url}>
                 <a
                   href={source.url}
@@ -316,11 +300,25 @@ function EditorialSources({ discovery }: { discovery: ReturnType<typeof getBySlu
                 >
                   {source.title} · {source.publisher} ↗
                 </a>
+                <span className="mt-0.5 block text-slate-600">{source.tier} · {formatSourceType(source.sourceType)}</span>
               </li>
             ))}
           </ul>
         </div>
+      ) : <p className="mt-4 text-xs text-slate-500">Primary source pending.</p>}
+      {discovery.correctionHistory?.length ? (
+        <div className="mt-4 border-t border-white/10 pt-3">
+          <p className="text-xs font-medium text-slate-300">Correction history</p>
+          <ul className="mt-2 space-y-1 text-xs text-slate-500">
+            {discovery.correctionHistory.map((correction) => <li key={`${correction.date}-${correction.summary}`}>{correction.date}: {correction.summary}</li>)}
+          </ul>
+        </div>
       ) : null}
+      <div className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-xs">
+        <Link href="/editorial-standards" className="text-signal underline underline-offset-2">Editorial standards</Link>
+        <Link href="/methodology" className="text-signal underline underline-offset-2">Methodology</Link>
+        <Link href="/corrections" className="text-signal underline underline-offset-2">Report a correction</Link>
+      </div>
     </section>
   );
 }

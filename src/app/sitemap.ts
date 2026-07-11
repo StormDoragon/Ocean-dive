@@ -16,6 +16,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/map",
     "/saved",
     "/about",
+    "/sources",
+    "/editorial-standards",
+    "/methodology",
+    "/corrections",
+    "/authors/beyond-signal-editorial-team",
   ].map((path) => ({
     url: canonicalUrl(path),
     changeFrequency: "weekly",
