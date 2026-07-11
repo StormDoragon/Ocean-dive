@@ -15,8 +15,8 @@ import { editorialTeam } from "@/content/editorial";
 import { formatSourceType, getDiscoverySources, getReviewPresentation } from "@/lib/editorial";
 import { getSubtopics, slugify } from "@/lib/hubs";
 import {
-  absoluteImageUrl,
   breadcrumbJsonLd,
+  absoluteImageUrl,
   discoveryArticleJsonLd,
   discoveryCanonicalUrl,
   monthLabel,
@@ -48,7 +48,7 @@ export async function generateMetadata({
       url: canonical,
       title: seoTitle,
       description: seoDescription,
-      images: [absoluteImageUrl(discovery.heroImage)],
+      images: [absoluteImageUrl(`/discoveries/${discovery.slug}/opengraph-image`)],
     },
   };
 }
@@ -217,8 +217,12 @@ export default async function DiscoveryPage({
           <section className="card border-dashed p-6 text-center">
             <h2 className="text-lg font-semibold text-white">Community discussion</h2>
             <p className="mt-2 text-sm text-slate-400">
-              Comments, notes, and collections are coming soon. Sign-in and saved
-              discoveries are planned for a future release.
+              Comments and shared notes are coming soon. In the meantime, use the
+              ☆ Save button to add this discovery to{" "}
+              <Link href="/saved" className="link-glow">
+                your collection
+              </Link>
+              .
             </p>
           </section>
         </div>
