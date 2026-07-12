@@ -160,6 +160,13 @@ export const blogPosts: BlogPost[] = [
           "Project Phoenix was a targeted search, not a survey of the whole sky. Astronomers drew up a list of roughly 800 nearby stars that resembled our Sun — stars old enough and stable enough to give life a chance — most of them within about 200 light-years of Earth.",
           "For each star, the telescope scanned a wide band of radio frequencies, splitting it into billions of narrow channels and searching for the tell-tale sign of technology: a signal squeezed into a single, unnaturally narrow frequency that nature does not produce. When the system flagged a promising candidate, an automated protocol immediately re-checked it and compared it against the second telescope. If a signal was really coming from the star and not from a passing satellite or a microwave oven on Earth, it would move across the sky with the star. Almost everything the search flagged turned out to be human-made interference.",
         ],
+        image: {
+          // TODO: replace with a reader-supplied licensed photograph.
+          src: "/images/categories/space.svg",
+          alt: "Illustration of a radio telescope control room analysing incoming signals. A verified photograph is being sourced.",
+          caption: "Placeholder illustration — a second related photograph will go here.",
+          placeholder: true,
+        },
       },
       {
         heading: "What it found — and why silence still matters",
