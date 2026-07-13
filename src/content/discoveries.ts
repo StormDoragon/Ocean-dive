@@ -148,7 +148,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "TRAPPIST-1 b–h",
     classification: "Astronomy · Ultracool dwarf planetary system",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Artist%E2%80%99s_impressions_of_the_TRAPPIST-1_planetary_system_%28eso1805b%29.jpg/1280px-Artist%E2%80%99s_impressions_of_the_TRAPPIST-1_planetary_system_%28eso1805b%29.jpg",
+    imageAlt: "Artist's impression of the seven Earth-sized planets of the TRAPPIST-1 system silhouetted against their red dwarf star.",
+    imageCredit: "ESO/M. Kornmesser",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impressions_of_the_TRAPPIST-1_planetary_system_%28eso1805b%29.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "artist impression",
     summary:
       "Seven Earth-sized planets circling a cool red dwarf 40 light-years away — three of them in the habitable zone.",
     story: {
@@ -159,7 +164,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It is the largest batch of Earth-sized, temperate planets ever found around a single star, and a prime target for atmospheric studies.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Artist%E2%80%99s_impressions_of_the_TRAPPIST-1_planetary_system_%28eso1805b%29.jpg/1280px-Artist%E2%80%99s_impressions_of_the_TRAPPIST-1_planetary_system_%28eso1805b%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nature.com/articles/nature21360",
     videoUrls: [],
     relatedSlugs: ["m87-black-hole-image", "sagittarius-a-image"],
@@ -181,7 +186,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "M87*",
     classification: "Astronomy · Supermassive black hole",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Black_hole_-_Messier_87.jpg/1280px-Black_hole_-_Messier_87.jpg",
+    imageAlt: "The Event Horizon Telescope's first image of the supermassive black hole M87*, a bright asymmetric orange ring around a dark central shadow.",
+    imageCredit: "Event Horizon Telescope Collaboration",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "data visualization",
     summary:
       "Humanity's first direct image of a black hole — a glowing ring of light around the shadow of M87*, 6.5 billion solar masses.",
     story: {
@@ -192,7 +202,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It confirmed a century-old prediction of general relativity by showing a black hole's shadow at the scale Einstein's math demanded.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Black_hole_-_Messier_87.jpg/1280px-Black_hole_-_Messier_87.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://iopscience.iop.org/article/10.3847/2041-8213/ab0ec7",
     videoUrls: [],
     relatedSlugs: ["sagittarius-a-image", "trappist-1-system"],
@@ -214,7 +224,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Sagittarius A*",
     classification: "Astronomy · Supermassive black hole (Milky Way)",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/A_view_of_the_Milky_Way_supermassive_black_hole_Sagittarius_A%2A_in_polarised_light_%28eso2406a%29.jpg/1280px-A_view_of_the_Milky_Way_supermassive_black_hole_Sagittarius_A%2A_in_polarised_light_%28eso2406a%29.jpg",
+    imageAlt: "An Event Horizon Telescope view of Sagittarius A*, the black hole at the centre of the Milky Way, shown in polarised light.",
+    imageCredit: "EHT Collaboration",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:A_view_of_the_Milky_Way_supermassive_black_hole_Sagittarius_A%2A_in_polarised_light_%28eso2406a%29.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "data visualization",
     summary:
       "The first image of the supermassive black hole at the center of our own galaxy, 27,000 light-years away.",
     story: {
@@ -225,7 +240,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It gave us a portrait of the giant black hole that anchors our own galaxy, confirming it weighs about four million Suns.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/A_view_of_the_Milky_Way_supermassive_black_hole_Sagittarius_A%2A_in_polarised_light_%28eso2406a%29.jpg/1280px-A_view_of_the_Milky_Way_supermassive_black_hole_Sagittarius_A%2A_in_polarised_light_%28eso2406a%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://iopscience.iop.org/journal/2041-8205/page/Focus_on_First_Sgr_A_Results",
     videoUrls: [],
     relatedSlugs: ["m87-black-hole-image", "trappist-1-system"],
@@ -249,7 +264,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Spinosaurus aegyptiacus",
     classification: "Animalia · Dinosauria · Theropoda · Spinosauridae",
     conservationStatus: "Extinct (~99 Ma)",
-    heroImage: "/images/categories/dinosaurs-fossils.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Spinosaurus_swimming.jpg",
+    imageAlt: "A mounted Spinosaurus skeleton cast displayed in a swimming posture with its tall dorsal sail.",
+    imageCredit: "Mike Bowler",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Spinosaurus_swimming.jpg",
+    imageLicense: "CC BY 2.0",
+    imageType: "photograph",
     summary:
       "A near-complete fossil tail showed Spinosaurus had a fin-like paddle — the strongest evidence yet of a swimming, water-propelled dinosaur.",
     story: {
@@ -260,7 +280,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It overturned the view of Spinosaurus as a wading shoreline hunter, recasting it as the first known aquatic-propulsion dinosaur.",
     },
-    gallery: ["/images/categories/dinosaurs-fossils.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/e/e3/Spinosaurus_swimming.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nature.com/articles/s41586-020-2190-3",
     videoUrls: [],
     relatedSlugs: ["dreadnoughtus-titanosaur"],
@@ -317,7 +337,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Eumillipes persephone",
     classification: "Animalia · Arthropoda · Diplopoda · Polyzoniida",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/biology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/1/15/Eumillipes_persephone_anatomy_a-c.jpg",
+    imageAlt: "The pale, eyeless millipede Eumillipes persephone, the first animal found with more than 1,000 legs.",
+    imageCredit: "Paul E. Marek et al. (Scientific Reports)",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Eumillipes_persephone_anatomy_a-c.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "photograph",
     summary:
       "A pale, eyeless arthropod with up to 1,306 legs — the first millipede ever found that literally has more than a thousand.",
     story: {
@@ -328,7 +353,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Despite the name 'millipede' (thousand feet), no species had ever topped 750 legs until Eumillipes persephone.",
     },
-    gallery: ["/images/categories/biology.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/1/15/Eumillipes_persephone_anatomy_a-c.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nature.com/articles/s41598-021-02447-0",
     videoUrls: [],
     relatedSlugs: ["homo-naledi"],
@@ -350,7 +375,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Homo naledi",
     classification: "Animalia · Chordata · Mammalia · Primates · Hominini",
     conservationStatus: "Extinct (~0.3 Ma)",
-    heroImage: "/images/categories/biology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Homo_naledi_skeletal_specimens.jpg",
+    imageAlt: "A layout of Homo naledi fossil bones recovered from the Dinaledi Chamber of the Rising Star cave system.",
+    imageCredit: "Lee Roger Berger et al. (eLife)",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Homo_naledi_skeletal_specimens.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "photograph",
     summary:
       "More than 1,500 fossil pieces from a deep cave chamber revealed a small-brained human relative with a surprising mix of ancient and modern traits.",
     story: {
@@ -361,7 +391,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Its blend of primitive and modern features — and possible deliberate placement of bodies — reshaped debate about the human family tree.",
     },
-    gallery: ["/images/categories/biology.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/e/e1/Homo_naledi_skeletal_specimens.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://elifesciences.org/articles/09560",
     videoUrls: [],
     relatedSlugs: ["eumillipes-persephone", "gobekli-tepe"],
@@ -385,7 +415,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Archaeology · Pre-Pottery Neolithic monumental site",
     conservationStatus: "UNESCO World Heritage Site",
-    heroImage: "/images/categories/archaeology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/c/c4/G%C3%B6bekli_Tepe_site_%281%29.JPG",
+    imageAlt: "The excavated T-shaped limestone pillars of Göbekli Tepe in southeastern Turkey.",
+    imageCredit: "Teomancimit",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:G%C3%B6bekli_Tepe_site_%281%29.JPG",
+    imageLicense: "CC BY-SA 4.0",
+    imageType: "photograph",
     summary:
       "Massive carved stone pillars built ~11,000 years ago — monumental architecture from hunter-gatherers, predating Stonehenge by six millennia.",
     story: {
@@ -396,7 +431,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It showed complex ritual architecture before farming and pottery, upending the idea that cities had to come first.",
     },
-    gallery: ["/images/categories/archaeology.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/c/c4/G%C3%B6bekli_Tepe_site_%281%29.JPG", "/images/textures/grid.svg"],
     paperUrl: "https://whc.unesco.org/en/list/1572/",
     videoUrls: [],
     relatedSlugs: ["sanxingdui-sacrificial-pits", "homo-naledi"],
@@ -418,7 +453,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Archaeology · Bronze Age Shu civilization",
     conservationStatus: "Protected archaeological site",
-    heroImage: "/images/categories/archaeology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/5/55/Ancient_Bronze_Mask_from_Sanxingdui_3.jpg",
+    imageAlt: "A large bronze mask with exaggerated almond-shaped eyes from the Sanxingdui site in Sichuan, China.",
+    imageCredit: "Tyg728",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Ancient_Bronze_Mask_from_Sanxingdui_3.jpg",
+    imageLicense: "CC BY-SA 4.0",
+    imageType: "photograph",
     summary:
       "Six newly opened pits yielded thousands of artifacts — gold masks, bronze trees, and ivory — from the mysterious 3,000-year-old Shu kingdom.",
     story: {
@@ -429,7 +469,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The finds deepen the puzzle of the Shu — a sophisticated Bronze Age culture that left dazzling art but no deciphered writing.",
     },
-    gallery: ["/images/categories/archaeology.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/5/55/Ancient_Bronze_Mask_from_Sanxingdui_3.jpg", "/images/textures/waves.svg"],
     paperUrl: "http://en.chnmuseum.cn/",
     videoUrls: [],
     relatedSlugs: ["gobekli-tepe"],
@@ -453,7 +493,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Earth science · Subglacial lake",
     conservationStatus: undefined,
-    heroImage: "/images/categories/earth-science.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/2/29/Russian_station_Vostok.jpg",
+    imageAlt: "Vostok Station, the remote Russian Antarctic research base above subglacial Lake Vostok.",
+    imageCredit: "Todd Sowers, LDEO, Columbia University (NOAA)",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Russian_station_Vostok.jpg",
+    imageLicense: "Public domain",
+    imageType: "photograph",
     summary:
       "Drillers reached the surface of a vast lake sealed beneath ~3.8 km of Antarctic ice and isolated from the surface for millions of years.",
     story: {
@@ -464,7 +509,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It offered a glimpse of a pristine, long-isolated ecosystem — and a testbed for how to explore oceans beneath icy moons.",
     },
-    gallery: ["/images/categories/earth-science.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/2/29/Russian_station_Vostok.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nature.com/articles/nature11440",
     videoUrls: [],
     relatedSlugs: ["hunga-tonga-eruption"],
@@ -521,7 +566,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Higgs boson (H)",
     classification: "Physics · Elementary particle",
     conservationStatus: undefined,
-    heroImage: "/images/categories/physics.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/1/1c/CMS_Higgs-event.jpg",
+    imageAlt: "A CMS detector event display showing a Higgs boson candidate decaying into a spray of particle tracks.",
+    imageCredit: "CERN / CMS Collaboration",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:CMS_Higgs-event.jpg",
+    imageLicense: "CC BY-SA 4.0",
+    imageType: "data visualization",
     summary:
       "The Large Hadron Collider revealed the particle behind the field that gives other particles mass — the keystone of the Standard Model.",
     story: {
@@ -532,7 +582,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It completed the Standard Model and earned the 2013 Nobel Prize for the theorists who predicted the Higgs field.",
     },
-    gallery: ["/images/categories/physics.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/1/1c/CMS_Higgs-event.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.sciencedirect.com/science/article/pii/S037026931200857X",
     videoUrls: [],
     relatedSlugs: ["gravitational-waves-gw150914", "nif-fusion-ignition"],
@@ -554,7 +604,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "GW150914",
     classification: "Physics · Spacetime ripples from merging black holes",
     conservationStatus: undefined,
-    heroImage: "/images/categories/physics.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/4/48/Estimated_gravitational-wave_strain_amplitude_from_GW150914.png",
+    imageAlt: "The gravitational-wave strain signal of GW150914 recorded by the LIGO Hanford and Livingston detectors.",
+    imageCredit: "LIGO Scientific Collaboration / Caltech / MIT",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Estimated_gravitational-wave_strain_amplitude_from_GW150914.png",
+    imageLicense: "CC BY 3.0",
+    imageType: "data visualization",
     summary:
       "LIGO recorded the spacetime ripple from two black holes colliding 1.3 billion years ago — confirming a key prediction of general relativity.",
     story: {
@@ -565,7 +620,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It opened gravitational-wave astronomy, a whole new way to observe the universe, and won the 2017 Nobel Prize.",
     },
-    gallery: ["/images/categories/physics.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/4/48/Estimated_gravitational-wave_strain_amplitude_from_GW150914.png", "/images/textures/waves.svg"],
     paperUrl: "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061102",
     videoUrls: [],
     relatedSlugs: ["higgs-boson", "m87-black-hole-image"],
@@ -587,7 +642,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Physics · Inertial confinement fusion",
     conservationStatus: undefined,
-    heroImage: "/images/categories/physics.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Preamplifier_at_the_National_Ignition_Facility.jpg/1920px-Preamplifier_at_the_National_Ignition_Facility.jpg",
+    imageAlt: "The preamplifier support structure of the National Ignition Facility, glowing during laser operation.",
+    imageCredit: "Damien Jemison / Lawrence Livermore National Laboratory",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Preamplifier_at_the_National_Ignition_Facility.jpg",
+    imageLicense: "Public domain (LLNL/DOE)",
+    imageType: "photograph",
     summary:
       "For the first time, a fusion reaction produced more energy than the laser energy delivered to the fuel — crossing the long-sought ignition threshold.",
     story: {
@@ -598,7 +658,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It was the first laboratory demonstration of fusion ignition, a milestone pursued for more than half a century.",
     },
-    gallery: ["/images/categories/physics.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Preamplifier_at_the_National_Ignition_Facility.jpg/1920px-Preamplifier_at_the_National_Ignition_Facility.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.llnl.gov/news/national-ignition-facility-achieves-fusion-ignition",
     videoUrls: [],
     relatedSlugs: ["higgs-boson", "gravitational-waves-gw150914"],
@@ -655,7 +715,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Technology · Superconducting quantum processor",
     conservationStatus: undefined,
-    heroImage: "/images/categories/technology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/0/07/Google_Sycamore_Chip_001.png",
+    imageAlt: "Google's Sycamore superconducting quantum processor chip mounted in its cryogenic housing.",
+    imageCredit: "Google AI Quantum",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Google_Sycamore_Chip_001.png",
+    imageLicense: "CC BY-SA 4.0",
+    imageType: "photograph",
     summary:
       "A 53-qubit processor performed in minutes a sampling task estimated to take a classical supercomputer thousands of years.",
     story: {
@@ -666,7 +731,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It was the first widely reported claim of 'quantum supremacy,' a landmark — and a much-debated one — for the field.",
     },
-    gallery: ["/images/categories/technology.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/0/07/Google_Sycamore_Chip_001.png", "/images/textures/waves.svg"],
     paperUrl: "https://www.nature.com/articles/s41586-019-1666-5",
     videoUrls: [],
     relatedSlugs: ["alphafold-protein-structures"],

@@ -161,7 +161,12 @@ export const june2026Discoveries: Discovery[] = [
       "British Geological Survey and Geological Survey of Northern Ireland",
     classification: "Earth science · Paleogene flood-basalt volcanism",
     conservationStatus: "UNESCO World Heritage Site",
-    heroImage: "/images/categories/earth-science.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Giant%27s_Causeway_%2814%29.JPG",
+    imageAlt: "The interlocking hexagonal basalt columns of the Giant's Causeway on the Antrim coast of Northern Ireland.",
+    imageCredit: "Chmee2 / Valtameri",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Giant%27s_Causeway_%2814%29.JPG",
+    imageLicense: "CC BY 3.0",
+    imageType: "photograph",
     summary:
       "High-precision dating compressed the region's volcanic history into about 5.5 million years and tied the Causeway to a North Atlantic event recorded from Scotland to Greenland.",
     story: {
