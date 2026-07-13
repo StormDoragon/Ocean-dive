@@ -25,7 +25,10 @@ derive from the catalog data, so **no route or sitemap file is edited by hand.**
    - Give the hero an honest image. Placeholder category art is fine; a hosted
      photo must include `imageAlt`, `imageCredit`, `imageSourceUrl`, and
      `imageLicense`.
-   - Add `tags` and a couple of `relatedSlugs` so the entry is not an orphan.
+   - Add `tags` and a couple of outbound `relatedSlugs`. Note the orphan check
+     is *inbound*: to clear an entry's `orphan-related` warning, at least one
+     **existing** entry must add the new slug to *its* `relatedSlugs` (a
+     reciprocal link) — pointing outward from the new entry alone is not enough.
 
 3. **Validate.**
 
@@ -51,6 +54,7 @@ derive from the catalog data, so **no route or sitemap file is edited by hand.**
 - [ ] Every entry links a primary/institutional source with an access date.
 - [ ] `subtopic` values exist on their category (or were added to it).
 - [ ] Images are honest: credited photo **or** labeled placeholder.
-- [ ] `relatedSlugs` connect the batch to existing entries.
+- [ ] `relatedSlugs` connect the batch to existing entries, and at least one
+      existing entry links **back** to each new entry (clears orphan warnings).
 - [ ] `npm run validate` passes with no errors.
 - [ ] `npm run build` succeeds.

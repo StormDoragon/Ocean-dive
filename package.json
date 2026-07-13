@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "description": "Beyond Signal — a searchable directory of scientific discoveries.",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "next dev",
     "prebuild": "npm run validate",

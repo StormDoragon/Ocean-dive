@@ -166,18 +166,20 @@ function matchesFilters(d: Discovery, p: ParsedQuery, now: Date): boolean {
   }
 
   if (p.period) {
-    const date = new Date(d.dateDiscovered);
-    if (p.period === "this-year" && date.getFullYear() !== now.getFullYear())
+    // Parse the entry date as UTC midnight and compare with UTC getters so the
+    // window is consistent regardless of the server/runtime time zone.
+    const date = new Date(`${d.dateDiscovered}T00:00:00Z`);
+    if (p.period === "this-year" && date.getUTCFullYear() !== now.getUTCFullYear())
       return false;
     if (
       p.period === "this-month" &&
-      (date.getFullYear() !== now.getFullYear() ||
-        date.getMonth() !== now.getMonth())
+      (date.getUTCFullYear() !== now.getUTCFullYear() ||
+        date.getUTCMonth() !== now.getUTCMonth())
     )
       return false;
     if (p.period === "this-week") {
       const weekAgo = new Date(now);
-      weekAgo.setDate(weekAgo.getDate() - 7);
+      weekAgo.setUTCDate(weekAgo.getUTCDate() - 7);
       if (date < weekAgo) return false;
     }
   }

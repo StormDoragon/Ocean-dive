@@ -44,7 +44,7 @@ export const june2026Discoveries: Discovery[] = [
     paperUrl:
       "https://www.livescience.com/animals/sharks/never-before-seen-shark-that-walks-on-land-discovered-off-papua-new-guinea",
     videoUrls: [],
-    relatedSlugs: ["cape-york-detached-reef", "kiwa-yeti-crab"],
+    relatedSlugs: ["cape-york-detached-reef", "kiwa-yeti-crab", "brazil-midwater-31-species"],
     tags: [
       "walking shark",
       "new species",

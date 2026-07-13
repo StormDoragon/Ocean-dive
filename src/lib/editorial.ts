@@ -21,13 +21,15 @@ function hostname(url: string): string {
 
 function inferSource(url: string): Pick<PublicSource, "tier" | "sourceType"> {
   const host = hostname(url);
-  if (/doi\.org|arxiv\.org|pubmed\.ncbi\.nlm\.nih\.gov|nature\.com/.test(host)) {
+  // Anchor host matches to the end of the (www-stripped) hostname so a lookalike
+  // like "nature.com.evil.example" cannot be mistaken for the real publisher.
+  if (/(?:doi\.org|arxiv\.org|pubmed\.ncbi\.nlm\.nih\.gov|nature\.com)$/.test(host)) {
     return { tier: "Tier 1", sourceType: "paper" };
   }
-  if (/\.gov$|\.edu$|cern\.ch$|noaa\.gov$|nasa\.gov$|esa\.int$|iucnredlist\.org$|museum/.test(host)) {
+  if (/(?:\.gov|\.edu|cern\.ch|noaa\.gov|nasa\.gov|esa\.int|iucnredlist\.org|\.museum)$|museum/.test(host)) {
     return { tier: "Tier 2", sourceType: "institutional" };
   }
-  if (/wired\.com|theguardian\.com|bbc\.com|sciencealert\.com|scientificamerican\.com/.test(host)) {
+  if (/(?:wired\.com|theguardian\.com|bbc\.com|sciencealert\.com|scientificamerican\.com)$/.test(host)) {
     return { tier: "Tier 3", sourceType: "reporting" };
   }
   return { tier: "Tier 4", sourceType: "reference" };

@@ -49,7 +49,7 @@ const discoveriesData: RawDiscovery[] = [
     gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/PMNM_-_Casper_-_New_Octopod_Species_%2830550423053%29.jpg/1280px-PMNM_-_Casper_-_New_Octopod_Species_%2830550423053%29.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://oceanexplorer.noaa.gov/okeanos/explorations/ex1603/welcome.html",
     videoUrls: [],
-    relatedSlugs: ["lost-city-hydrothermal-field", "scaly-foot-gastropod"],
+    relatedSlugs: ["lost-city-hydrothermal-field", "scaly-foot-gastropod", "microeledone-galapagensis"],
     tags: ["octopus", "deep sea", "cephalopod", "pacific", "rov"],
   },
   {
@@ -88,7 +88,7 @@ const discoveriesData: RawDiscovery[] = [
     gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Formation_at_Lost_City_Field.jpg/960px-Formation_at_Lost_City_Field.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nsf.gov/news/news_summ.jsp?cntn_id=104292",
     videoUrls: [],
-    relatedSlugs: ["scaly-foot-gastropod", "casper-ghost-octopus"],
+    relatedSlugs: ["scaly-foot-gastropod", "casper-ghost-octopus", "golden-orb-relicanthus-anemone"],
     tags: ["hydrothermal vent", "atlantic", "origin of life", "geology"],
   },
   {
@@ -162,7 +162,7 @@ const discoveriesData: RawDiscovery[] = [
     gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nature.com/articles/nature21360",
     videoUrls: [],
-    relatedSlugs: ["m87-black-hole-image", "sagittarius-a-image"],
+    relatedSlugs: ["m87-black-hole-image", "sagittarius-a-image", "rogue-planet-growth-spurt", "gj-887-d-habitable-zone-super-earth", "jwst-rules-out-2024-yr4-lunar-impact"],
     tags: ["exoplanet", "habitable zone", "red dwarf", "transit"],
   },
   {
@@ -195,7 +195,7 @@ const discoveriesData: RawDiscovery[] = [
     gallery: ["/images/categories/space.svg", "/images/textures/waves.svg"],
     paperUrl: "https://iopscience.iop.org/article/10.3847/2041-8213/ab0ec7",
     videoUrls: [],
-    relatedSlugs: ["sagittarius-a-image", "trappist-1-system"],
+    relatedSlugs: ["sagittarius-a-image", "trappist-1-system", "repeating-gamma-ray-burst-2025", "proba-3-speedy-slow-solar-wind"],
     tags: ["black hole", "event horizon", "general relativity", "radio astronomy"],
   },
   {
@@ -296,7 +296,7 @@ const discoveriesData: RawDiscovery[] = [
     gallery: ["/images/categories/dinosaurs-fossils.svg", "/images/textures/waves.svg"],
     paperUrl: "https://www.nature.com/articles/srep06196",
     videoUrls: [],
-    relatedSlugs: ["spinosaurus-swimming-tail"],
+    relatedSlugs: ["spinosaurus-swimming-tail", "jurassic-midge-gondwana"],
     tags: ["dinosaur", "sauropod", "titanosaur", "patagonia", "cretaceous"],
   },
 
@@ -331,7 +331,7 @@ const discoveriesData: RawDiscovery[] = [
     gallery: ["/images/categories/biology.svg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nature.com/articles/s41598-021-02447-0",
     videoUrls: [],
-    relatedSlugs: ["homo-naledi"],
+    relatedSlugs: ["homo-naledi", "praearcturus-giant-scorpion-reidentified"],
     tags: ["millipede", "arthropod", "subterranean", "australia", "new species"],
   },
   {
@@ -500,7 +500,7 @@ const discoveriesData: RawDiscovery[] = [
     gallery: ["/images/categories/earth-science.svg", "/images/textures/waves.svg"],
     paperUrl: "https://www.science.org/doi/10.1126/science.abo7063",
     videoUrls: [],
-    relatedSlugs: ["lake-vostok-reached"],
+    relatedSlugs: ["lake-vostok-reached", "solar-orbiter-sun-south-pole", "giants-causeway-volcanic-timeline"],
     tags: ["volcano", "tonga", "eruption", "atmosphere", "tsunami"],
   },
 
@@ -535,7 +535,7 @@ const discoveriesData: RawDiscovery[] = [
     gallery: ["/images/categories/physics.svg", "/images/textures/grid.svg"],
     paperUrl: "https://www.sciencedirect.com/science/article/pii/S037026931200857X",
     videoUrls: [],
-    relatedSlugs: ["gravitational-waves-gw150914", "nif-fusion-ignition"],
+    relatedSlugs: ["gravitational-waves-gw150914", "nif-fusion-ignition", "lead-to-gold-alice", "xi-cc-plus-doubly-charmed-baryon"],
     tags: ["particle physics", "standard model", "lhc", "cern", "nobel"],
   },
   {
@@ -636,7 +636,7 @@ const discoveriesData: RawDiscovery[] = [
     gallery: ["/images/categories/technology.svg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nature.com/articles/s41586-021-03819-2",
     videoUrls: [],
-    relatedSlugs: ["sycamore-quantum-supremacy"],
+    relatedSlugs: ["sycamore-quantum-supremacy", "flu-virus-live-imaging", "self-copying-polymerase-ribozyme"],
     tags: ["ai", "protein folding", "deep learning", "biology", "nobel"],
   },
   {
@@ -827,7 +827,7 @@ const discoveriesData: RawDiscovery[] = [
     gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Galath%C3%A9e_y%C3%A9ti%2C_un_habitant_des_profondeurs_abyssales_%28Ifremer_00569-68091_-_25272%29.jpg/960px-Galath%C3%A9e_y%C3%A9ti%2C_un_habitant_des_profondeurs_abyssales_%28Ifremer_00569-68091_-_25272%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.mbari.org/",
     videoUrls: [],
-    relatedSlugs: ["scaly-foot-gastropod", "lost-city-hydrothermal-field"],
+    relatedSlugs: ["scaly-foot-gastropod", "lost-city-hydrothermal-field", "osedax-bone-worms"],
     tags: ["yeti crab", "hydrothermal vent", "crustacean", "new species", "bathypelagic"],
   },
   {

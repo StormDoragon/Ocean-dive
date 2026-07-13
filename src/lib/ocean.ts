@@ -60,7 +60,7 @@ export const DEPTH_ZONES: DepthZone[] = [
     name: "The Trenches",
     scientific: "Hadal · 6,000–11,034 m",
     min: 6000,
-    max: 11034,
+    max: Infinity,
     blurb:
       "The deepest ocean trenches, where pressure is over 800 atmospheres and only the most specialised life survives.",
     color: "#050f1f",
@@ -94,7 +94,7 @@ export function getDepthZones(): ZoneWithDiscoveries[] {
 /** The single deepest ocean discovery on record, for the page summary. */
 export function getDeepestDiscovery(): Discovery | undefined {
   return discoveries
-    .filter((d) => d.location.depthMeters != null)
+    .filter((d) => d.categorySlug === "ocean" && d.location.depthMeters != null)
     .sort(
       (a, b) =>
         (b.location.depthMeters as number) - (a.location.depthMeters as number),

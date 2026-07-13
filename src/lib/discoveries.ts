@@ -94,7 +94,7 @@ export function getStats(now: Date = new Date()): DiscoveryStats {
   const weekAgo = new Date(now);
   weekAgo.setDate(weekAgo.getDate() - 7);
   const newThisWeekCount = all.filter(
-    (d) => new Date(d.dateDiscovered) >= weekAgo,
+    (d) => new Date(`${d.dateDiscovered}T00:00:00Z`) >= weekAgo,
   ).length;
 
   return {
@@ -114,11 +114,15 @@ export function getStats(now: Date = new Date()): DiscoveryStats {
  * always has something to show.
  */
 export function getOnThisDay(now: Date = new Date()): Discovery {
-  const month = now.getMonth();
-  const day = now.getDate();
+  // Compare in UTC on both sides so a "YYYY-MM-DD" entry (parsed as UTC
+  // midnight) lines up with today — matching getByMonth/getAvailableMonths and
+  // avoiding an off-by-one day in time zones behind UTC.
+  const month = now.getUTCMonth();
+  const day = now.getUTCDate();
   const all = getAll();
 
-  const dayOfYear = (d: Date) => d.getMonth() * 31 + d.getDate();
+  const parse = (d: Discovery) => new Date(`${d.dateDiscovered}T00:00:00Z`);
+  const dayOfYear = (d: Date) => d.getUTCMonth() * 31 + d.getUTCDate();
   const target = month * 31 + day;
   // Circular distance on the ~372-point month*31+day scale, so late December
   // and early January count as neighbors rather than a year apart.
@@ -128,13 +132,13 @@ export function getOnThisDay(now: Date = new Date()): Discovery {
   };
 
   const exact = all.filter((d) => {
-    const date = new Date(d.dateDiscovered);
-    return date.getMonth() === month && date.getDate() === day;
+    const date = parse(d);
+    return date.getUTCMonth() === month && date.getUTCDate() === day;
   });
   if (exact.length > 0) return exact[0];
 
   return [...all].sort(
-    (a, b) => distance(new Date(a.dateDiscovered)) - distance(new Date(b.dateDiscovered)),
+    (a, b) => distance(parse(a)) - distance(parse(b)),
   )[0];
 }
 

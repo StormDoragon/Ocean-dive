@@ -17,16 +17,28 @@ import {
 type AnnualHub = { slug: string; year: number; categorySlug?: CategorySlug; kind: "all" | "category" | "new-species" };
 
 function annualHubs(): AnnualHub[] {
-  return getYears().flatMap((year) => [
-    { slug: `scientific-discoveries-${year}`, year, kind: "all" as const },
-    { slug: `new-species-discovered-${year}`, year, kind: "new-species" as const },
-    ...categories.map((category) => ({
-      slug: `${category.slug}-discoveries-${year}`,
-      year,
-      categorySlug: category.slug,
-      kind: "category" as const,
-    })),
-  ]);
+  // Only emit a hub when it actually has entries, mirroring the sitemap gating
+  // in app/sitemap.ts so generateStaticParams never prerenders an empty index.
+  return getYears().flatMap((year) => {
+    const all = getAnnualDiscoveries(year);
+    const hubs: AnnualHub[] = [
+      { slug: `scientific-discoveries-${year}`, year, kind: "all" },
+    ];
+    if (all.some((d) => d.subtopic.toLowerCase().includes("new species"))) {
+      hubs.push({ slug: `new-species-discovered-${year}`, year, kind: "new-species" });
+    }
+    for (const category of categories) {
+      if (getAnnualDiscoveries(year, category.slug).length > 0) {
+        hubs.push({
+          slug: `${category.slug}-discoveries-${year}`,
+          year,
+          categorySlug: category.slug,
+          kind: "category",
+        });
+      }
+    }
+    return hubs;
+  });
 }
 
 function resolveAnnual(slug: string): AnnualHub | null {

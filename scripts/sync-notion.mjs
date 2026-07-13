@@ -57,6 +57,23 @@ if (!NOTION_API_KEY || !NOTION_DISCOVERIES_DB_ID) {
 
 const notion = new Client({ auth: NOTION_API_KEY });
 
+/** The 8 valid category slugs (mirrors src/content/types.ts CategorySlug). */
+const VALID_CATEGORIES = new Set([
+  "ocean", "space", "dinosaurs-fossils", "biology",
+  "archaeology", "earth-science", "physics", "technology",
+]);
+
+/** True for a strict YYYY-MM-DD calendar date. */
+function isValidIsoDate(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const [y, m, d] = value.split("-").map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  return dt.getUTCFullYear() === y && dt.getUTCMonth() + 1 === m && dt.getUTCDate() === d;
+}
+
+/** The date this sync ran, recorded as the source access date for auditability. */
+const SYNC_DATE = new Date().toISOString().slice(0, 10);
+
 // ── Property readers ────────────────────────────────────────────────────────
 const rich = (p) => (p?.rich_text ?? []).map((t) => t.plain_text).join("").trim();
 const title = (p) => (p?.title ?? []).map((t) => t.plain_text).join("").trim();
@@ -68,16 +85,22 @@ const url = (p) => p?.url ?? undefined;
 
 function toDiscovery(page) {
   const p = page.properties;
-  const categorySlug = select(p.Category) || "biology";
+  // Only accept one of the 8 known category slugs; anything else (a typo'd or
+  // new Notion select value) falls back to biology instead of producing a
+  // heroImage path to a category SVG that does not exist.
+  const rawCategory = select(p.Category);
+  const categorySlug = VALID_CATEGORIES.has(rawCategory) ? rawCategory : "biology";
   const slug = rich(p.Slug) || title(p.Title).toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const dateDiscovered = (date(p.Date) || "").slice(0, 10);
+  const paperUrl = url(p.PaperUrl);
 
   return {
     slug,
     title: title(p.Title),
     categorySlug,
     subtopic: rich(p.Subtopic),
-    year: num(p.Year) ?? new Date(date(p.Date) || Date.now()).getUTCFullYear(),
-    dateDiscovered: date(p.Date),
+    year: num(p.Year) ?? new Date(dateDiscovered || Date.now()).getUTCFullYear(),
+    dateDiscovered,
     location: {
       name: rich(p.LocationName),
       lat: num(p.Lat) ?? 0,
@@ -97,7 +120,10 @@ function toDiscovery(page) {
       whatMakesUnique: rich(p.StoryUnique),
     },
     gallery: [`/images/categories/${categorySlug}.svg`, "/images/textures/waves.svg"],
-    paperUrl: url(p.PaperUrl),
+    paperUrl,
+    // Mirror the hand-authored catalog: expose the same source as the primary
+    // traceable source and record when this sync accessed it.
+    ...(paperUrl ? { primarySourceUrl: paperUrl, sourceAccessedAt: SYNC_DATE } : {}),
     videoUrls: [],
     relatedSlugs: rich(p.RelatedSlugs)
       .split(",")
@@ -137,12 +163,19 @@ async function main() {
     cursor = res.has_more ? res.next_cursor : undefined;
   } while (cursor);
 
-  const discoveries = results
-    .map(toDiscovery)
-    .filter((d) => d.slug && d.title);
+  const mapped = results.map(toDiscovery);
+  // Drop rows missing an id/title or a valid date, so one incomplete Notion row
+  // cannot fail `npm run validate` (the build's prebuild gate).
+  const discoveries = mapped.filter(
+    (d) => d.slug && d.title && isValidIsoDate(d.dateDiscovered),
+  );
+  const skipped = mapped.length - discoveries.length;
 
   writeFileSync(OUT, JSON.stringify(discoveries, null, 2) + "\n");
-  console.log(`[sync-notion] Wrote ${discoveries.length} discoveries to ${OUT}`);
+  console.log(
+    `[sync-notion] Wrote ${discoveries.length} discoveries to ${OUT}` +
+      (skipped > 0 ? ` (skipped ${skipped} row(s) missing slug/title/valid date)` : ""),
+  );
 }
 
 main().catch((err) => {

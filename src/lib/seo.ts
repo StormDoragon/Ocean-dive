@@ -28,7 +28,7 @@ export function discoveryLastModified(discovery: Discovery): string {
 }
 
 export function monthLabel(month: number): string {
-  return new Intl.DateTimeFormat("en-US", { month: "long" }).format(
+  return new Intl.DateTimeFormat("en-US", { month: "long", timeZone: "UTC" }).format(
     new Date(Date.UTC(2020, month - 1, 1)),
   );
 }
