@@ -24,7 +24,12 @@ export const june2026Discoveries: Discovery[] = [
     scientificName: "Hemiscyllium dudgeonae",
     classification: "Animalia · Chordata · Chondrichthyes · Orectolobiformes",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Hemiscyllium_ocellatum.jpg/960px-Hemiscyllium_ocellatum.jpg",
+    imageAlt: "A close walking-shark relative, the epaulette shark Hemiscyllium ocellatum, photographed on Australia's Great Barrier Reef; used as a contextual image for Dudgeon's walking shark.",
+    imageCredit: "Richard Ling",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Hemiscyllium_ocellatum.jpg",
+    imageLicense: "CC BY-SA 2.0",
+    imageType: "photograph",
     summary:
       "A newly described walking shark from shallow Papua New Guinea reefs, identified by its distinctive spotted pattern and confirmed as a separate species through DNA comparisons.",
     story: {
@@ -35,7 +40,7 @@ export const june2026Discoveries: Discovery[] = [
       whatMakesUnique:
         "It is the tenth recognized walking-shark species and one of the rare new sharks discovered in water shallower than one metre, where it moves across reef flats using its paired fins.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Hemiscyllium_ocellatum.jpg/960px-Hemiscyllium_ocellatum.jpg", "/images/textures/waves.svg"],
     paperUrl:
       "https://www.livescience.com/animals/sharks/never-before-seen-shark-that-walks-on-land-discovered-off-papua-new-guinea",
     videoUrls: [],
@@ -66,7 +71,12 @@ export const june2026Discoveries: Discovery[] = [
       "Schmidt Ocean Institute, Smithsonian, MBARI, University of Western Australia and partners",
     classification: "Marine biology · Midwater biodiversity survey",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Physonect_siphonophore_Puerto_Rico_April_2015.png/960px-Physonect_siphonophore_Puerto_Rico_April_2015.png",
+    imageAlt: "A physonect siphonophore photographed in open midwater by NOAA, used as a contextual image for the Brazil midwater biodiversity expedition.",
+    imageCredit: "NOAA Office of Ocean Exploration and Research",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Physonect_siphonophore_Puerto_Rico_April_2015.png",
+    imageLicense: "Public domain (NOAA)",
+    imageType: "photograph",
     summary:
       "A two-week expedition off Brazil rapidly identified 31 likely new species, including jellyfish, comb jellies, siphonophores, worms, amphipods, larvaceans, and giant single-celled organisms.",
     story: {
@@ -77,7 +87,7 @@ export const june2026Discoveries: Discovery[] = [
       whatMakesUnique:
         "The expedition paired taxonomic experts with real-time imaging so candidate species could be recognized at extraordinary speed while their fragile anatomy was still intact.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Physonect_siphonophore_Puerto_Rico_April_2015.png/960px-Physonect_siphonophore_Puerto_Rico_April_2015.png", "/images/textures/grid.svg"],
     paperUrl:
       "https://www.theguardian.com/environment/2026/jun/26/marine-expedition-uncovers-31-new-species-two-weeks-brazil",
     videoUrls: [],
