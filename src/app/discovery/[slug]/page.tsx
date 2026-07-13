@@ -227,6 +227,7 @@ function Figure({
           fill
           priority={priority}
           sizes="(max-width: 768px) 100vw, 768px"
+          unoptimized={image.src.startsWith("/images/blog/")}
           className={image.placeholder ? "object-contain p-8 opacity-80" : "object-cover"}
           style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
         />
