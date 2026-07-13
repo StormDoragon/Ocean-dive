@@ -1,4 +1,5 @@
 import type { Discovery } from "@/content/types";
+import type { BlogPost } from "@/content/blog";
 import { site } from "@/lib/site";
 
 /** The site URL without a trailing slash, for stable canonical URLs. */
@@ -90,6 +91,53 @@ export function discoveryArticleJsonLd(discovery: Discovery) {
         longitude: discovery.location.lng,
       },
     },
+  };
+}
+
+export function blogCanonicalUrl(post: BlogPost): string {
+  return canonicalUrl(`/discovery/${post.slug}`);
+}
+
+export function blogArticleJsonLd(post: BlogPost) {
+  const canonical = blogCanonicalUrl(post);
+  return {
+    "@type": "BlogPosting",
+    "@id": `${canonical}#article`,
+    url: canonical,
+    headline: post.title,
+    description: post.description,
+    datePublished: post.datePublished,
+    dateModified: post.dateUpdated ?? post.datePublished,
+    mainEntityOfPage: canonical,
+    ...(post.tags?.length ? { keywords: post.tags.join(", ") } : {}),
+    author: {
+      "@type": "Organization",
+      name: site.name,
+      url: siteUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: site.name,
+      url: siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: canonicalUrl("/icon.svg"),
+      },
+    },
+  };
+}
+
+export function faqPageJsonLd(faqs: Array<{ question: string; answer: string }>) {
+  return {
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   };
 }
 

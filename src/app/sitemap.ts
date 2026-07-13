@@ -2,11 +2,13 @@ import type { MetadataRoute } from "next";
 import { getAll, getAvailableMonths, getByCategory, getByMonth } from "@/lib/discoveries";
 import { categories } from "@/content/categories";
 import { getAnnualDiscoveries, getLocations, getOrganizations, getSubtopics, getTags, getYears, slugify } from "@/lib/hubs";
+import { getAllBlogPosts, blogLastModified } from "@/content/blog";
 import { canonicalUrl, discoveryLastModified, monthSlug } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
+    "/discovery",
     "/ask",
     "/discoveries",
     "/timeline",
@@ -33,6 +35,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       "1970-01-01",
     ),
     changeFrequency: "weekly",
+    priority: 0.6,
+  }));
+
+  const blogRoutes: MetadataRoute.Sitemap = getAllBlogPosts().map((post) => ({
+    url: canonicalUrl(`/discovery/${post.slug}`),
+    lastModified: blogLastModified(post),
+    changeFrequency: "monthly",
     priority: 0.6,
   }));
 
@@ -131,6 +140,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes,
+    ...blogRoutes,
     ...categoryRoutes,
     ...monthRoutes,
     ...archiveRoutes,

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DiscoveryCard } from "@/components/DiscoveryCard";
+import { GuideCard } from "@/components/GuideCard";
 import { categories, getCategory } from "@/content/categories";
+import { getRecentBlogPosts } from "@/content/blog";
 import { getCategoryContext } from "@/lib/hubs";
 import type { CategorySlug } from "@/content/types";
 import {
@@ -45,6 +47,9 @@ export default async function CategoryPage({
   const context = getCategoryContext(category.slug);
   if (!context) notFound();
   const { discoveries, guide, subtopics } = context;
+  const guides = getRecentBlogPosts(undefined, category.slug);
+  const featuredGuides = guides.slice(0, 3);
+  const previousGuides = guides.slice(3);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -116,6 +121,44 @@ export default async function CategoryPage({
           <p className="mt-2 leading-relaxed text-slate-300">{section.body}</p>
         </section>
       ))}
+
+      {guides.length > 0 ? (
+        <section className="mt-10" aria-labelledby="category-guides">
+          <div className="flex items-end justify-between">
+            <h2 id="category-guides" className="text-xl font-semibold text-white">
+              {category.name} guides &amp; articles
+            </h2>
+            <Link href="/discovery" className="text-sm font-medium text-signal">
+              All guides →
+            </Link>
+          </div>
+          <div className="mt-4 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {featuredGuides.map((post) => (
+              <GuideCard key={post.slug} post={post} />
+            ))}
+          </div>
+
+          {previousGuides.length > 0 ? (
+            <div className="mt-6">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-400">
+                Previous articles
+              </h3>
+              <ul className="mt-3 space-y-2 border-l border-white/10 pl-5">
+                {previousGuides.map((post) => (
+                  <li key={post.slug}>
+                    <Link
+                      href={`/discovery/${post.slug}`}
+                      className="text-sm text-slate-300 hover:text-signal"
+                    >
+                      {post.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </section>
+      ) : null}
 
       <section className="mt-10" aria-labelledby="subtopics">
         <h2 id="subtopics" className="text-xl font-semibold text-white">Explore by subtopic</h2>

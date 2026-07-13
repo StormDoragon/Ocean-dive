@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { CategoryCard } from "@/components/CategoryCard";
 import { DiscoveryCard } from "@/components/DiscoveryCard";
+import { GuideCard } from "@/components/GuideCard";
 import { StatTile } from "@/components/StatTile";
 import { DiscoveryMapLoader } from "@/components/map/DiscoveryMapLoader";
 import { AdSlot } from "@/components/Monetization";
@@ -13,6 +14,7 @@ import {
   getRecent,
   getStats,
 } from "@/lib/discoveries";
+import { getRecentBlogPosts } from "@/content/blog";
 import { toMapPoints } from "@/lib/map";
 import { getCategory } from "@/content/categories";
 import { site } from "@/lib/site";
@@ -25,6 +27,7 @@ export default function HomePage() {
   const categories = getCategoriesWithCounts();
   const points = toMapPoints(getAll());
   const featuredCategory = getCategory(featured.categorySlug);
+  const recentGuides = getRecentBlogPosts(3);
 
   return (
     <div className="container-page py-10">
@@ -144,6 +147,28 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* Latest guides */}
+      {recentGuides.length > 0 ? (
+        <section className="mt-12">
+          <div className="flex items-end justify-between">
+            <div>
+              <h2 className="text-2xl font-bold text-white">📚 Latest guides</h2>
+              <p className="mt-1 text-slate-400">
+                In-depth explainers and stories from the Discovery hub.
+              </p>
+            </div>
+            <Link href="/discovery" className="text-sm font-medium text-signal">
+              View all →
+            </Link>
+          </div>
+          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {recentGuides.map((post) => (
+              <GuideCard key={post.slug} post={post} />
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <div className="mt-12">
         <AdSlot />
