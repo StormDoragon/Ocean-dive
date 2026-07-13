@@ -119,7 +119,7 @@ export const blogPosts: BlogPost[] = [
     category: "space",
     tags: ["SETI", "Project Phoenix", "Parkes Observatory", "radio astronomy"],
     heroImage: {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/CSIRO_ScienceImage_4350_CSIROs_Parkes_Radio_Telescope_with_moon_in_the_background.jpg/1280px-CSIRO_ScienceImage_4350_CSIROs_Parkes_Radio_Telescope_with_moon_in_the_background.jpg",
+      src: "/images/blog/project-phoenix/parkes-telescope-moon.jpg",
       alt: "The 64-metre CSIRO Parkes radio telescope silhouetted at dusk with the Moon rising behind the dish.",
       credit: "CSIRO",
       license: "CC BY 3.0",
@@ -154,7 +154,7 @@ export const blogPosts: BlogPost[] = [
           "The CSIRO Parkes radio telescope, a 64-metre dish that opened in 1961 and famously relayed television from the Apollo 11 Moon landing, was the largest telescope in the Southern Hemisphere and a critical hub for studying distant solar systems. From February 1995, Project Phoenix used Parkes as its primary ear on the cosmos, with the smaller Mopra antenna nearby acting as a second dish to help tell a genuine cosmic signal apart from local interference.",
         ],
         image: {
-          src: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Parkes.arp.750pix.jpg",
+          src: "/images/blog/project-phoenix/parkes-dish-daytime.jpg",
           alt: "Daytime view of the white 64-metre Parkes radio telescope dish tilted toward the sky.",
           credit: "Adrian Pingstone",
           license: "Public domain",
@@ -176,7 +176,7 @@ export const blogPosts: BlogPost[] = [
           "That is not the failure it might sound like. A search of a few hundred stars, in one slice of the radio spectrum, over a few years, is a single cup dipped into a cosmic ocean. Project Phoenix proved that a rigorous, sensitive, privately funded search was possible, and it sharpened the tools and the discipline that modern efforts rely on. Its direct descendants — the Allen Telescope Array, purpose-built for SETI, and the Breakthrough Listen initiative, which has itself observed from Parkes — carry the work forward across far more stars and far wider frequencies.",
         ],
         image: {
-          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Allen_Telescope_Array_-_Flickr_-_brewbooks.jpg/1280px-Allen_Telescope_Array_-_Flickr_-_brewbooks.jpg",
+          src: "/images/blog/project-phoenix/allen-telescope-array.jpg",
           alt: "A row of small white dish antennas of the Allen Telescope Array under a blue sky at Hat Creek, California.",
           credit: "brewbooks (Flickr)",
           license: "CC BY-SA 2.0",
