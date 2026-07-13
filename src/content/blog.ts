@@ -231,6 +231,23 @@ export function getBlogPostsByCategory(category: CategorySlug): BlogPost[] {
   return getAllBlogPosts().filter((post) => post.category === category);
 }
 
+/**
+ * Posts sorted most-recent-first (by publish date, then newest order). Pass a
+ * `category` to limit to that field, and a `limit` to cap the count — used for
+ * the homepage "latest guides" strip and each category's article section.
+ */
+export function getRecentBlogPosts(limit?: number, category?: CategorySlug): BlogPost[] {
+  const posts = blogPosts
+    .filter((post) => (category ? post.category === category : true))
+    .sort((a, b) => {
+      if (a.datePublished !== b.datePublished) {
+        return a.datePublished < b.datePublished ? 1 : -1;
+      }
+      return b.order - a.order;
+    });
+  return typeof limit === "number" ? posts.slice(0, limit) : posts;
+}
+
 /** Most recent edit across all posts, for the hub's `lastModified`. */
 export function blogLastModified(post: BlogPost): string {
   return post.dateUpdated ?? post.datePublished;
