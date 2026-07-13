@@ -30,7 +30,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Undescribed incirrate octopod",
     classification: "Animalia · Mollusca · Cephalopoda · Octopoda",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/PMNM_-_Casper_-_New_Octopod_Species_%2830550423053%29.jpg/1280px-PMNM_-_Casper_-_New_Octopod_Species_%2830550423053%29.jpg",
+    imageAlt: "The ghostly Casper octopod photographed by NOAA near Necker Island in Papahānaumokuākea Marine National Monument.",
+    imageCredit: "NOAA Office of Ocean Exploration and Research / National Marine Sanctuaries",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:PMNM_-_Casper_-_New_Octopod_Species_(30550423053).jpg",
+    imageLicense: "Public domain (NOAA)",
+    imageType: "photograph",
     summary:
       "A ghostly, pigmentless octopus filmed at 4,290 m off Hawaii — likely a previously unknown genus living deeper than any known finned octopod.",
     story: {
@@ -41,7 +46,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It lacks the pigment cells (chromatophores) of shallower octopods, giving it a translucent, ghost-like look that inspired the nickname \"Casper.\"",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/PMNM_-_Casper_-_New_Octopod_Species_%2830550423053%29.jpg/1280px-PMNM_-_Casper_-_New_Octopod_Species_%2830550423053%29.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://oceanexplorer.noaa.gov/okeanos/explorations/ex1603/welcome.html",
     videoUrls: [],
     relatedSlugs: ["lost-city-hydrothermal-field", "scaly-foot-gastropod"],
@@ -64,7 +69,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Geology · Serpentinite-hosted vent system",
     conservationStatus: "Proposed marine protected area",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Formation_at_Lost_City_Field.jpg/960px-Formation_at_Lost_City_Field.jpg",
+    imageAlt: "A carbonate formation at the Lost City hydrothermal field photographed during an Okeanos Explorer expedition.",
+    imageCredit: "NOAA",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Formation_at_Lost_City_Field.jpg",
+    imageLicense: "Public domain (NOAA)",
+    imageType: "photograph",
     summary:
       "A field of towering white carbonate chimneys — one over 60 m tall — driven by seawater reacting with mantle rock rather than volcanic heat.",
     story: {
@@ -75,7 +85,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Its alkaline, methane-rich chemistry is a leading model for how life could begin on Earth — and on icy ocean worlds like Enceladus.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Formation_at_Lost_City_Field.jpg/960px-Formation_at_Lost_City_Field.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nsf.gov/news/news_summ.jsp?cntn_id=104292",
     videoUrls: [],
     relatedSlugs: ["scaly-foot-gastropod", "casper-ghost-octopus"],
@@ -98,7 +108,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Chrysomallon squamiferum",
     classification: "Animalia · Mollusca · Gastropoda · Neomphalina",
     conservationStatus: "Endangered (IUCN)",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Chrysomallon_squamiferum_9.png/960px-Chrysomallon_squamiferum_9.png",
+    imageAlt: "An adult scaly-foot gastropod, Chrysomallon squamiferum, from the Longqi hydrothermal field.",
+    imageCredit: "Chong Chen, Katsuyuki Uematsu, Katrin Linse and Julia D. Sigwart",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Chrysomallon_squamiferum_9.png",
+    imageLicense: "CC BY 4.0",
+    imageType: "photograph",
     summary:
       "A deep-sea snail that armors its foot with iron-sulfide scales — the only animal known to build part of its skeleton from iron.",
     story: {
@@ -109,7 +124,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It incorporates iron sulfides into its shell and foot scales, and was the first species listed as endangered because of the threat of deep-sea mining.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Chrysomallon_squamiferum_9.png/960px-Chrysomallon_squamiferum_9.png", "/images/textures/waves.svg"],
     paperUrl: "https://www.iucnredlist.org/species/103636217/103636261",
     videoUrls: [],
     relatedSlugs: ["lost-city-hydrothermal-field", "casper-ghost-octopus"],
@@ -133,7 +148,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "TRAPPIST-1 b–h",
     classification: "Astronomy · Ultracool dwarf planetary system",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Artist%E2%80%99s_impressions_of_the_TRAPPIST-1_planetary_system_%28eso1805b%29.jpg/1280px-Artist%E2%80%99s_impressions_of_the_TRAPPIST-1_planetary_system_%28eso1805b%29.jpg",
+    imageAlt: "Artist's impression of the seven Earth-sized planets of the TRAPPIST-1 system silhouetted against their red dwarf star.",
+    imageCredit: "ESO/M. Kornmesser",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impressions_of_the_TRAPPIST-1_planetary_system_%28eso1805b%29.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "artist impression",
     summary:
       "Seven Earth-sized planets circling a cool red dwarf 40 light-years away — three of them in the habitable zone.",
     story: {
@@ -144,7 +164,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It is the largest batch of Earth-sized, temperate planets ever found around a single star, and a prime target for atmospheric studies.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Artist%E2%80%99s_impressions_of_the_TRAPPIST-1_planetary_system_%28eso1805b%29.jpg/1280px-Artist%E2%80%99s_impressions_of_the_TRAPPIST-1_planetary_system_%28eso1805b%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nature.com/articles/nature21360",
     videoUrls: [],
     relatedSlugs: ["m87-black-hole-image", "sagittarius-a-image"],
@@ -166,7 +186,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "M87*",
     classification: "Astronomy · Supermassive black hole",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Black_hole_-_Messier_87.jpg/1280px-Black_hole_-_Messier_87.jpg",
+    imageAlt: "The Event Horizon Telescope's first image of the supermassive black hole M87*, a bright asymmetric orange ring around a dark central shadow.",
+    imageCredit: "Event Horizon Telescope Collaboration",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "data visualization",
     summary:
       "Humanity's first direct image of a black hole — a glowing ring of light around the shadow of M87*, 6.5 billion solar masses.",
     story: {
@@ -177,7 +202,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It confirmed a century-old prediction of general relativity by showing a black hole's shadow at the scale Einstein's math demanded.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Black_hole_-_Messier_87.jpg/1280px-Black_hole_-_Messier_87.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://iopscience.iop.org/article/10.3847/2041-8213/ab0ec7",
     videoUrls: [],
     relatedSlugs: ["sagittarius-a-image", "trappist-1-system"],
@@ -199,7 +224,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Sagittarius A*",
     classification: "Astronomy · Supermassive black hole (Milky Way)",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/A_view_of_the_Milky_Way_supermassive_black_hole_Sagittarius_A%2A_in_polarised_light_%28eso2406a%29.jpg/1280px-A_view_of_the_Milky_Way_supermassive_black_hole_Sagittarius_A%2A_in_polarised_light_%28eso2406a%29.jpg",
+    imageAlt: "An Event Horizon Telescope view of Sagittarius A*, the black hole at the centre of the Milky Way, shown in polarised light.",
+    imageCredit: "EHT Collaboration",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:A_view_of_the_Milky_Way_supermassive_black_hole_Sagittarius_A%2A_in_polarised_light_%28eso2406a%29.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "data visualization",
     summary:
       "The first image of the supermassive black hole at the center of our own galaxy, 27,000 light-years away.",
     story: {
@@ -210,7 +240,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It gave us a portrait of the giant black hole that anchors our own galaxy, confirming it weighs about four million Suns.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/A_view_of_the_Milky_Way_supermassive_black_hole_Sagittarius_A%2A_in_polarised_light_%28eso2406a%29.jpg/1280px-A_view_of_the_Milky_Way_supermassive_black_hole_Sagittarius_A%2A_in_polarised_light_%28eso2406a%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://iopscience.iop.org/journal/2041-8205/page/Focus_on_First_Sgr_A_Results",
     videoUrls: [],
     relatedSlugs: ["m87-black-hole-image", "trappist-1-system"],
@@ -234,7 +264,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Spinosaurus aegyptiacus",
     classification: "Animalia · Dinosauria · Theropoda · Spinosauridae",
     conservationStatus: "Extinct (~99 Ma)",
-    heroImage: "/images/categories/dinosaurs-fossils.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Spinosaurus_swimming.jpg",
+    imageAlt: "A mounted Spinosaurus skeleton cast displayed in a swimming posture with its tall dorsal sail.",
+    imageCredit: "Mike Bowler",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Spinosaurus_swimming.jpg",
+    imageLicense: "CC BY 2.0",
+    imageType: "photograph",
     summary:
       "A near-complete fossil tail showed Spinosaurus had a fin-like paddle — the strongest evidence yet of a swimming, water-propelled dinosaur.",
     story: {
@@ -245,7 +280,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It overturned the view of Spinosaurus as a wading shoreline hunter, recasting it as the first known aquatic-propulsion dinosaur.",
     },
-    gallery: ["/images/categories/dinosaurs-fossils.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/e/e3/Spinosaurus_swimming.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nature.com/articles/s41586-020-2190-3",
     videoUrls: [],
     relatedSlugs: ["dreadnoughtus-titanosaur"],
@@ -267,7 +302,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Dreadnoughtus schrani",
     classification: "Animalia · Dinosauria · Sauropoda · Titanosauria",
     conservationStatus: "Extinct (~76 Ma)",
-    heroImage: "/images/categories/dinosaurs-fossils.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/0/03/Dreadnoughtus_Published_Reconstruction.jpg",
+    imageAlt: "A skeletal reconstruction of the giant titanosaur Dreadnoughtus schrani, with recovered bones shown against a body silhouette.",
+    imageCredit: "Lacovara et al. (Scientific Reports)",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Dreadnoughtus_Published_Reconstruction.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "reconstruction",
     summary:
       "One of the most complete giant dinosaurs ever found — a 26 m sauropod whose skeleton let scientists reliably estimate its ~59-tonne mass.",
     story: {
@@ -278,7 +318,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Its completeness made it one of the best mass estimates for any supermassive dinosaur, giving a rare accurate look at a true giant.",
     },
-    gallery: ["/images/categories/dinosaurs-fossils.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/0/03/Dreadnoughtus_Published_Reconstruction.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.nature.com/articles/srep06196",
     videoUrls: [],
     relatedSlugs: ["spinosaurus-swimming-tail"],
@@ -302,7 +342,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Eumillipes persephone",
     classification: "Animalia · Arthropoda · Diplopoda · Polyzoniida",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/biology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/1/15/Eumillipes_persephone_anatomy_a-c.jpg",
+    imageAlt: "The pale, eyeless millipede Eumillipes persephone, the first animal found with more than 1,000 legs.",
+    imageCredit: "Paul E. Marek et al. (Scientific Reports)",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Eumillipes_persephone_anatomy_a-c.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "photograph",
     summary:
       "A pale, eyeless arthropod with up to 1,306 legs — the first millipede ever found that literally has more than a thousand.",
     story: {
@@ -313,7 +358,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Despite the name 'millipede' (thousand feet), no species had ever topped 750 legs until Eumillipes persephone.",
     },
-    gallery: ["/images/categories/biology.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/1/15/Eumillipes_persephone_anatomy_a-c.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nature.com/articles/s41598-021-02447-0",
     videoUrls: [],
     relatedSlugs: ["homo-naledi"],
@@ -335,7 +380,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Homo naledi",
     classification: "Animalia · Chordata · Mammalia · Primates · Hominini",
     conservationStatus: "Extinct (~0.3 Ma)",
-    heroImage: "/images/categories/biology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Homo_naledi_skeletal_specimens.jpg",
+    imageAlt: "A layout of Homo naledi fossil bones recovered from the Dinaledi Chamber of the Rising Star cave system.",
+    imageCredit: "Lee Roger Berger et al. (eLife)",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Homo_naledi_skeletal_specimens.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "photograph",
     summary:
       "More than 1,500 fossil pieces from a deep cave chamber revealed a small-brained human relative with a surprising mix of ancient and modern traits.",
     story: {
@@ -346,7 +396,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Its blend of primitive and modern features — and possible deliberate placement of bodies — reshaped debate about the human family tree.",
     },
-    gallery: ["/images/categories/biology.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/e/e1/Homo_naledi_skeletal_specimens.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://elifesciences.org/articles/09560",
     videoUrls: [],
     relatedSlugs: ["eumillipes-persephone", "gobekli-tepe"],
@@ -370,7 +420,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Archaeology · Pre-Pottery Neolithic monumental site",
     conservationStatus: "UNESCO World Heritage Site",
-    heroImage: "/images/categories/archaeology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/c/c4/G%C3%B6bekli_Tepe_site_%281%29.JPG",
+    imageAlt: "The excavated T-shaped limestone pillars of Göbekli Tepe in southeastern Turkey.",
+    imageCredit: "Teomancimit",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:G%C3%B6bekli_Tepe_site_%281%29.JPG",
+    imageLicense: "CC BY-SA 4.0",
+    imageType: "photograph",
     summary:
       "Massive carved stone pillars built ~11,000 years ago — monumental architecture from hunter-gatherers, predating Stonehenge by six millennia.",
     story: {
@@ -381,7 +436,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It showed complex ritual architecture before farming and pottery, upending the idea that cities had to come first.",
     },
-    gallery: ["/images/categories/archaeology.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/c/c4/G%C3%B6bekli_Tepe_site_%281%29.JPG", "/images/textures/grid.svg"],
     paperUrl: "https://whc.unesco.org/en/list/1572/",
     videoUrls: [],
     relatedSlugs: ["sanxingdui-sacrificial-pits", "homo-naledi"],
@@ -403,7 +458,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Archaeology · Bronze Age Shu civilization",
     conservationStatus: "Protected archaeological site",
-    heroImage: "/images/categories/archaeology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/5/55/Ancient_Bronze_Mask_from_Sanxingdui_3.jpg",
+    imageAlt: "A large bronze mask with exaggerated almond-shaped eyes from the Sanxingdui site in Sichuan, China.",
+    imageCredit: "Tyg728",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Ancient_Bronze_Mask_from_Sanxingdui_3.jpg",
+    imageLicense: "CC BY-SA 4.0",
+    imageType: "photograph",
     summary:
       "Six newly opened pits yielded thousands of artifacts — gold masks, bronze trees, and ivory — from the mysterious 3,000-year-old Shu kingdom.",
     story: {
@@ -414,7 +474,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The finds deepen the puzzle of the Shu — a sophisticated Bronze Age culture that left dazzling art but no deciphered writing.",
     },
-    gallery: ["/images/categories/archaeology.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/5/55/Ancient_Bronze_Mask_from_Sanxingdui_3.jpg", "/images/textures/waves.svg"],
     paperUrl: "http://en.chnmuseum.cn/",
     videoUrls: [],
     relatedSlugs: ["gobekli-tepe"],
@@ -438,7 +498,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Earth science · Subglacial lake",
     conservationStatus: undefined,
-    heroImage: "/images/categories/earth-science.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/2/29/Russian_station_Vostok.jpg",
+    imageAlt: "Vostok Station, the remote Russian Antarctic research base above subglacial Lake Vostok.",
+    imageCredit: "Todd Sowers, LDEO, Columbia University (NOAA)",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Russian_station_Vostok.jpg",
+    imageLicense: "Public domain",
+    imageType: "photograph",
     summary:
       "Drillers reached the surface of a vast lake sealed beneath ~3.8 km of Antarctic ice and isolated from the surface for millions of years.",
     story: {
@@ -449,7 +514,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It offered a glimpse of a pristine, long-isolated ecosystem — and a testbed for how to explore oceans beneath icy moons.",
     },
-    gallery: ["/images/categories/earth-science.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/2/29/Russian_station_Vostok.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nature.com/articles/nature11440",
     videoUrls: [],
     relatedSlugs: ["hunga-tonga-eruption"],
@@ -471,7 +536,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Earth science · Submarine volcanic eruption",
     conservationStatus: undefined,
-    heroImage: "/images/categories/earth-science.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Tonga_Volcano_Plume_Reached_the_Mesosphere_%28GOES-17%29_15_January_2022.jpg",
+    imageAlt: "A GOES-17 satellite view of the towering eruption plume of Hunga Tonga-Hunga Ha'apai reaching into the mesosphere on 15 January 2022.",
+    imageCredit: "NOAA / NASA / CIRA",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Tonga_Volcano_Plume_Reached_the_Mesosphere_%28GOES-17%29_15_January_2022.jpg",
+    imageLicense: "Public domain",
+    imageType: "data visualization",
     summary:
       "An undersea volcano produced the tallest eruption plume ever recorded — reaching the mesosphere — and a pressure wave that circled the globe.",
     story: {
@@ -482,7 +552,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Its plume punched ~57 km high and injected enough water vapor into the stratosphere to subtly affect global climate.",
     },
-    gallery: ["/images/categories/earth-science.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/1/1b/Tonga_Volcano_Plume_Reached_the_Mesosphere_%28GOES-17%29_15_January_2022.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.science.org/doi/10.1126/science.abo7063",
     videoUrls: [],
     relatedSlugs: ["lake-vostok-reached"],
@@ -506,7 +576,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Higgs boson (H)",
     classification: "Physics · Elementary particle",
     conservationStatus: undefined,
-    heroImage: "/images/categories/physics.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/1/1c/CMS_Higgs-event.jpg",
+    imageAlt: "A CMS detector event display showing a Higgs boson candidate decaying into a spray of particle tracks.",
+    imageCredit: "CERN / CMS Collaboration",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:CMS_Higgs-event.jpg",
+    imageLicense: "CC BY-SA 4.0",
+    imageType: "data visualization",
     summary:
       "The Large Hadron Collider revealed the particle behind the field that gives other particles mass — the keystone of the Standard Model.",
     story: {
@@ -517,7 +592,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It completed the Standard Model and earned the 2013 Nobel Prize for the theorists who predicted the Higgs field.",
     },
-    gallery: ["/images/categories/physics.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/1/1c/CMS_Higgs-event.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.sciencedirect.com/science/article/pii/S037026931200857X",
     videoUrls: [],
     relatedSlugs: ["gravitational-waves-gw150914", "nif-fusion-ignition"],
@@ -539,7 +614,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "GW150914",
     classification: "Physics · Spacetime ripples from merging black holes",
     conservationStatus: undefined,
-    heroImage: "/images/categories/physics.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/4/48/Estimated_gravitational-wave_strain_amplitude_from_GW150914.png",
+    imageAlt: "The gravitational-wave strain signal of GW150914 recorded by the LIGO Hanford and Livingston detectors.",
+    imageCredit: "LIGO Scientific Collaboration / Caltech / MIT",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Estimated_gravitational-wave_strain_amplitude_from_GW150914.png",
+    imageLicense: "CC BY 3.0",
+    imageType: "data visualization",
     summary:
       "LIGO recorded the spacetime ripple from two black holes colliding 1.3 billion years ago — confirming a key prediction of general relativity.",
     story: {
@@ -550,7 +630,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It opened gravitational-wave astronomy, a whole new way to observe the universe, and won the 2017 Nobel Prize.",
     },
-    gallery: ["/images/categories/physics.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/4/48/Estimated_gravitational-wave_strain_amplitude_from_GW150914.png", "/images/textures/waves.svg"],
     paperUrl: "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.116.061102",
     videoUrls: [],
     relatedSlugs: ["higgs-boson", "m87-black-hole-image"],
@@ -572,7 +652,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Physics · Inertial confinement fusion",
     conservationStatus: undefined,
-    heroImage: "/images/categories/physics.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Preamplifier_at_the_National_Ignition_Facility.jpg/1920px-Preamplifier_at_the_National_Ignition_Facility.jpg",
+    imageAlt: "The preamplifier support structure of the National Ignition Facility, glowing during laser operation.",
+    imageCredit: "Damien Jemison / Lawrence Livermore National Laboratory",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Preamplifier_at_the_National_Ignition_Facility.jpg",
+    imageLicense: "Public domain (LLNL/DOE)",
+    imageType: "photograph",
     summary:
       "For the first time, a fusion reaction produced more energy than the laser energy delivered to the fuel — crossing the long-sought ignition threshold.",
     story: {
@@ -583,7 +668,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It was the first laboratory demonstration of fusion ignition, a milestone pursued for more than half a century.",
     },
-    gallery: ["/images/categories/physics.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Preamplifier_at_the_National_Ignition_Facility.jpg/1920px-Preamplifier_at_the_National_Ignition_Facility.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.llnl.gov/news/national-ignition-facility-achieves-fusion-ignition",
     videoUrls: [],
     relatedSlugs: ["higgs-boson", "gravitational-waves-gw150914"],
@@ -607,7 +692,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Technology · AI for structural biology",
     conservationStatus: undefined,
-    heroImage: "/images/categories/technology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/6/60/Myoglobin.png",
+    imageAlt: "A ribbon diagram of the folded three-dimensional structure of a protein, representative of the structures AlphaFold predicts.",
+    imageCredit: "AzaToth",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Myoglobin.png",
+    imageLicense: "Public domain",
+    imageType: "diagram",
     summary:
       "A neural network predicted protein 3D structures from sequence with near-experimental accuracy — cracking a 50-year grand challenge in biology.",
     story: {
@@ -618,7 +708,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It turned a problem that took years per protein into minutes, and earned a share of the 2024 Nobel Prize in Chemistry.",
     },
-    gallery: ["/images/categories/technology.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/6/60/Myoglobin.png", "/images/textures/grid.svg"],
     paperUrl: "https://www.nature.com/articles/s41586-021-03819-2",
     videoUrls: [],
     relatedSlugs: ["sycamore-quantum-supremacy"],
@@ -640,7 +730,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Technology · Superconducting quantum processor",
     conservationStatus: undefined,
-    heroImage: "/images/categories/technology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/0/07/Google_Sycamore_Chip_001.png",
+    imageAlt: "Google's Sycamore superconducting quantum processor chip mounted in its cryogenic housing.",
+    imageCredit: "Google AI Quantum",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Google_Sycamore_Chip_001.png",
+    imageLicense: "CC BY-SA 4.0",
+    imageType: "photograph",
     summary:
       "A 53-qubit processor performed in minutes a sampling task estimated to take a classical supercomputer thousands of years.",
     story: {
@@ -651,7 +746,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It was the first widely reported claim of 'quantum supremacy,' a landmark — and a much-debated one — for the field.",
     },
-    gallery: ["/images/categories/technology.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/0/07/Google_Sycamore_Chip_001.png", "/images/textures/waves.svg"],
     paperUrl: "https://www.nature.com/articles/s41586-019-1666-5",
     videoUrls: [],
     relatedSlugs: ["alphafold-protein-structures"],
@@ -676,7 +771,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Geology · Detached coral reef",
     conservationStatus: "Within Great Barrier Reef Marine Park",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Envisat_image_of_the_Great_Barrier_Reef_off_Australia%27s_Queensland_coast_ESA233136.jpg/960px-Envisat_image_of_the_Great_Barrier_Reef_off_Australia%27s_Queensland_coast_ESA233136.jpg",
+    imageAlt: "Satellite image of the northern Great Barrier Reef and Cape York coastline in Queensland, Australia.",
+    imageCredit: "European Space Agency / Envisat MERIS",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Envisat_image_of_the_Great_Barrier_Reef_off_Australia%27s_Queensland_coast_ESA233136.jpg",
+    imageLicense: "CC BY-SA 3.0 IGO",
+    imageType: "data visualization",
     summary:
       "The first detached reef found in over a century — taller than the Empire State Building at ~500 m, with its peak just 40 m below the surface.",
     story: {
@@ -687,7 +787,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It is the first such detached reef discovered since the 1800s and stands taller than most of the world's skyscrapers.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Envisat_image_of_the_Great_Barrier_Reef_off_Australia%27s_Queensland_coast_ESA233136.jpg/960px-Envisat_image_of_the_Great_Barrier_Reef_off_Australia%27s_Queensland_coast_ESA233136.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://schmidtocean.org/cruise-log-post/exploring-the-depths-off-cape-york/",
     videoUrls: [],
     relatedSlugs: ["casper-ghost-octopus", "scaly-foot-gastropod"],
@@ -710,7 +810,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Architeuthis dux",
     classification: "Animalia · Mollusca · Cephalopoda · Oegopsida",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Giant_squid_Ranheim2.jpg/960px-Giant_squid_Ranheim2.jpg",
+    imageAlt: "A giant squid specimen being measured by researchers at Ranheim, Norway.",
+    imageCredit: "NTNU Museum of Natural History and Archaeology",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Giant_squid_Ranheim2.jpg",
+    imageLicense: "CC BY 2.0",
+    imageType: "photograph",
     summary:
       "The first footage of a live giant squid in its natural deep-sea habitat, ending centuries of the animal being known mostly from carcasses.",
     story: {
@@ -721,7 +826,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It was the first time the near-mythical animal had ever been filmed alive in the deep, not washed up or netted.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Giant_squid_Ranheim2.jpg/960px-Giant_squid_Ranheim2.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.kahaku.go.jp/english/",
     videoUrls: [],
     relatedSlugs: ["macropinna-barreleye", "casper-ghost-octopus"],
@@ -744,7 +849,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Macropinna microstoma",
     classification: "Animalia · Chordata · Actinopterygii · Argentiniformes",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Barreleye-fish_GoK.jpg/960px-Barreleye-fish_GoK.jpg",
+    imageAlt: "A barreleye fish collected during NOAA's Gulf of Alaska seamount biodiversity expedition.",
+    imageCredit: "NOAA Ocean Exploration",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Barreleye-fish_GoK.jpg",
+    imageLicense: "Public domain (NOAA)",
+    imageType: "photograph",
     summary:
       "The first images of a living barreleye — a fish whose transparent, fluid-filled head lets its tubular eyes rotate to peer up through its own skull.",
     story: {
@@ -755,7 +865,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Its see-through dome and upward-swivelling green eyes let it spot prey silhouetted against the faint light above.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Barreleye-fish_GoK.jpg/960px-Barreleye-fish_GoK.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.mbari.org/news/researchers-solve-mystery-of-deep-sea-fish-with-tubular-eyes-and-transparent-head/",
     videoUrls: [],
     relatedSlugs: ["giant-squid-filmed", "lost-city-hydrothermal-field"],
@@ -778,7 +888,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Kiwa hirsuta",
     classification: "Animalia · Arthropoda · Malacostraca · Decapoda",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Galath%C3%A9e_y%C3%A9ti%2C_un_habitant_des_profondeurs_abyssales_%28Ifremer_00569-68091_-_25272%29.jpg/960px-Galath%C3%A9e_y%C3%A9ti%2C_un_habitant_des_profondeurs_abyssales_%28Ifremer_00569-68091_-_25272%29.jpg",
+    imageAlt: "The hairy white Yeti crab, Kiwa hirsuta, photographed at a deep-sea hydrothermal vent.",
+    imageCredit: "Alexis Fifis / IFREMER",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Galathée_yéti,_un_habitant_des_profondeurs_abyssales_(Ifremer_00569-68091_-_25272).jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "photograph",
     summary:
       "A blind, silky-clawed crab from hydrothermal vents so distinctive it required an entirely new family — nicknamed the 'yeti crab' for its hairy arms.",
     story: {
@@ -789,7 +904,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The bristles host bacteria the crab may farm for food, and the animal was placed in a brand-new genus and family, Kiwaidae.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Galath%C3%A9e_y%C3%A9ti%2C_un_habitant_des_profondeurs_abyssales_%28Ifremer_00569-68091_-_25272%29.jpg/960px-Galath%C3%A9e_y%C3%A9ti%2C_un_habitant_des_profondeurs_abyssales_%28Ifremer_00569-68091_-_25272%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.mbari.org/",
     videoUrls: [],
     relatedSlugs: ["scaly-foot-gastropod", "lost-city-hydrothermal-field"],
@@ -812,7 +927,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Osedax",
     classification: "Animalia · Annelida · Polychaeta · Siboglinidae",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Osedax_roseus.jpg/960px-Osedax_roseus.jpg",
+    imageAlt: "Osedax roseus bone-eating worms growing from a whale bone.",
+    imageCredit: "Robert C. Vrijenhoek, Shannon B. Johnson and Greg W. Rouse",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Osedax_roseus.jpg",
+    imageLicense: "CC BY 2.0",
+    imageType: "photograph",
     summary:
       "Rootless worms that bore into whale bones on the seafloor, dissolving them with acid and feeding through symbiotic bacteria — a new genus found on a sunken whale.",
     story: {
@@ -823,7 +943,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "They digest bone using root-like tissues and bacteria, earning the name Osedax — Latin for 'bone-devourer.'",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Osedax_roseus.jpg/960px-Osedax_roseus.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.science.org/doi/10.1126/science.1098650",
     videoUrls: [],
     relatedSlugs: ["kiwa-yeti-crab", "casper-ghost-octopus"],
@@ -846,7 +966,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Grimpoteuthis sp. (Dumbo octopus)",
     classification: "Animalia · Mollusca · Cephalopoda · Octopoda",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Dumbo_Octopus_%2849203817176%29.jpg/960px-Dumbo_Octopus_%2849203817176%29.jpg",
+    imageAlt: "A dumbo octopus observed during a NOAA deep-sea exploration dive.",
+    imageCredit: "NOAA Office of Ocean Exploration and Research",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Dumbo_Octopus_(49203817176).jpg",
+    imageLicense: "CC BY-SA 2.0",
+    imageType: "photograph",
     summary:
       "A Dumbo octopus filmed at 6,957 m in the Java Trench — nearly 2 km deeper than any confirmed octopus before, pushing the group into the hadal zone.",
     story: {
@@ -857,7 +982,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The sighting shattered the previous octopus depth record and showed octopuses can survive across roughly 99% of the seafloor.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Dumbo_Octopus_%2849203817176%29.jpg/960px-Dumbo_Octopus_%2849203817176%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://royalsocietypublishing.org/doi/10.1098/rsos.201161",
     videoUrls: [],
     relatedSlugs: ["mariana-snailfish", "casper-ghost-octopus"],
@@ -880,7 +1005,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Pseudoliparis swirei",
     classification: "Animalia · Chordata · Actinopterygii · Scorpaeniformes",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Pseudoliparis_swirei_%2810.11646-zootaxa.4358.1.7%29_Figure_8.jpg/960px-Pseudoliparis_swirei_%2810.11646-zootaxa.4358.1.7%29_Figure_8.jpg",
+    imageAlt: "A freshly caught Pseudoliparis swirei Mariana snailfish specimen documented in the species description.",
+    imageCredit: "Gerringer, Linley, Jamieson, Goetze and Drazen",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Pseudoliparis_swirei_(10.11646-zootaxa.4358.1.7)_Figure_8.jpg",
+    imageLicense: "CC BY 3.0",
+    imageType: "photograph",
     summary:
       "A small, translucent snailfish that thrives near 8,000 m in the Mariana Trench — the deepest-living fish ever described.",
     story: {
@@ -891,7 +1021,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Specialised proteins keep its cells stable under crushing pressure, and it sits at the top of the trench food chain.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Pseudoliparis_swirei_%2810.11646-zootaxa.4358.1.7%29_Figure_8.jpg/960px-Pseudoliparis_swirei_%2810.11646-zootaxa.4358.1.7%29_Figure_8.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.mapress.com/zt/article/view/zootaxa.4358.1.7",
     videoUrls: [],
     relatedSlugs: ["dumbo-octopus-deep", "casper-ghost-octopus"],
@@ -919,7 +1049,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "WASP-127b",
     classification: "Astronomy · Hot-Jupiter exoplanet",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg/1600px-Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg",
+    imageAlt: "Artist's impression of the giant exoplanet WASP-127b, whose equator is swept by supersonic jet-stream winds.",
+    imageCredit: "ESO/M. Kornmesser",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "artist impression",
     summary:
       "Astronomers measured equatorial winds on the exoplanet WASP-127b moving at up to 33,000 km/h — the fastest planetary jet stream of its kind measured at the time.",
     story: {
@@ -930,7 +1065,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The result exposed a supersonic equatorial jet stream wrapped around the planet, giving scientists a rare direct measurement of weather on a world beyond the Solar System.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg/1600px-Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.eso.org/public/news/eso2502/",
     primarySourceUrl: "https://www.eso.org/public/news/eso2502/",
     supportingSources: [
@@ -968,7 +1103,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "WASP-121b (Tylos)",
     classification: "Astronomy · Ultra-hot-Jupiter exoplanet",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg/1600px-Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg",
+    imageAlt: "Artist's concept of a hot-Jupiter exoplanet, representative of the ultra-hot world Tylos (WASP-121b) whose atmosphere was mapped in 3D.",
+    imageCredit: "NASA, ESA, CSA, R. Crawford (STScI)",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg",
+    imageLicense: "Public domain",
+    imageType: "artist impression",
     summary:
       "For the first time, astronomers mapped several layers of an exoplanet's atmosphere in three dimensions, revealing separate winds carrying iron, sodium, hydrogen, and titanium.",
     story: {
@@ -979,7 +1119,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The observations separated deep, middle, and upper atmospheric flows, showing a high-altitude equatorial jet and a lower circulation pattern unlike weather seen on any Solar System planet.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg/1600px-Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://doi.org/10.1038/s41586-025-08664-1",
     primarySourceUrl: "https://www.eso.org/public/news/eso2504/",
     supportingSources: [
@@ -1017,7 +1157,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Saturn's irregular satellite population",
     classification: "Astronomy · Planetary satellites",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg/1600px-Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg",
+    imageAlt: "A natural-colour view of Saturn and its rings captured by the Cassini spacecraft.",
+    imageCredit: "NASA / JPL / Space Science Institute",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg",
+    imageLicense: "Public domain",
+    imageType: "photograph",
     summary:
       "An international team found and confirmed 128 previously unrecognized small moons of Saturn, raising the planet's official total to 274 at the time of announcement.",
     story: {
@@ -1028,7 +1173,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The discovery more than doubled the number of newly recognized Saturnian moons in one announcement and revealed clusters of objects that may be fragments of ancient collisions.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg/1600px-Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://news.ubc.ca/2025/03/saturn-128-new-moons/",
     primarySourceUrl: "https://news.ubc.ca/2025/03/saturn-128-new-moons/",
     supportingSources: [
@@ -1066,7 +1211,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Eos molecular cloud",
     classification: "Astronomy · Molecular hydrogen cloud",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/7/74/Local_Interstellar_Clouds_with_motion_arrows.jpg",
+    imageAlt: "A map of the local interstellar clouds of gas surrounding the Sun, representative of nearby molecular-cloud material.",
+    imageCredit: "NASA / Adler / U. Chicago / Wesleyan",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Local_Interstellar_Clouds_with_motion_arrows.jpg",
+    imageLicense: "Public domain",
+    imageType: "data visualization",
     summary:
       "Astronomers discovered Eos, a vast molecular cloud only about 300 light-years away, by detecting ultraviolet fluorescence from molecular hydrogen — a first for this class of cloud.",
     story: {
@@ -1077,7 +1227,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Eos shows that nearby star-forming material can remain hidden in plain sight and provides a new way to study how molecular clouds form and disperse.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/7/74/Local_Interstellar_Clouds_with_motion_arrows.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://doi.org/10.1038/s41550-025-02541-7",
     primarySourceUrl: "https://mcdonaldobservatory.org/2025/04/vast-molecular-cloud-discovered-near-our-solar-system/",
     supportingSources: [
@@ -1123,7 +1273,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Gold nuclei produced from lead",
     classification: "Physics · Nuclear transmutation",
     conservationStatus: undefined,
-    heroImage: "/images/categories/physics.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/ALICE_experiment_at_CERN.jpg/1600px-ALICE_experiment_at_CERN.jpg",
+    imageAlt: "The ALICE detector at CERN, which measured lead nuclei transmuting into gold during near-miss collisions at the LHC.",
+    imageCredit: "CERN",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:ALICE_experiment_at_CERN.jpg",
+    imageLicense: "CC BY-SA 4.0",
+    imageType: "photograph",
     summary:
       "The ALICE experiment measured lead nuclei turning into gold during near-miss collisions at the Large Hadron Collider — in fleeting, subatomic quantities rather than usable metal.",
     story: {
@@ -1134,7 +1289,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It is modern nuclear transmutation in a new regime: the medieval dream of alchemy appeared for an instant, while also giving physicists a precise test of electromagnetic processes around heavy ions.",
     },
-    gallery: ["/images/categories/physics.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/ALICE_experiment_at_CERN.jpg/1600px-ALICE_experiment_at_CERN.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://alice-collaboration.web.cern.ch/2025-alice-lead-to-gold",
     primarySourceUrl: "https://alice-collaboration.web.cern.ch/2025-alice-lead-to-gold",
     supportingSources: [
@@ -1172,7 +1327,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Solar south pole",
     classification: "Space science · Solar physics",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg/2048px-Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg",
+    imageAlt: "A high-resolution view of the Sun captured by ESA's Solar Orbiter, the mission that returned the first clear views of the solar poles.",
+    imageCredit: "ESA & NASA / Solar Orbiter / EUI Team",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg",
+    imageLicense: "CC BY-SA 3.0 IGO",
+    imageType: "telescope image",
     summary:
       "ESA's Solar Orbiter returned humanity's first clear views of the Sun's south pole, revealing a tangled mixture of magnetic polarities during solar maximum.",
     story: {
@@ -1183,7 +1343,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The new angle opens a missing perspective on the Sun's magnetic field and its roughly 11-year cycle, which controls space weather reaching Earth.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg/2048px-Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles",
     primarySourceUrl: "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles",
     supportingSources: [
@@ -1221,7 +1381,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "HOPS-315",
     classification: "Astronomy · Protostar and protoplanetary disc",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg/1600px-Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg",
+    imageAlt: "Artist's impression of a young star surrounded by a planet-forming disc, representative of the earliest planet formation seen around HOPS-315.",
+    imageCredit: "NASA, ESA, CSA / Ralf Crawford (STScI)",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "artist impression",
     summary:
       "Astronomers observed the first specks of planet-forming minerals beginning to solidify around a young star, catching a process analogous to the birth of our Solar System.",
     story: {
@@ -1232,7 +1397,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The observations connect a chemical transition in a distant disc to the first stage of terrestrial planet formation, before larger rocks and worlds have assembled.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg/1600px-Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.eso.org/public/news/eso2512/",
     primarySourceUrl: "https://www.eso.org/public/news/eso2512/",
     supportingSources: [
@@ -1270,7 +1435,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "S/2025 U1",
     classification: "Astronomy · Uranian inner satellite",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Uranus_-_Voyager_2.jpg",
+    imageAlt: "The pale blue-green disc of Uranus as imaged by NASA's Voyager 2 spacecraft.",
+    imageCredit: "NASA / JPL-Caltech",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Uranus_-_Voyager_2.jpg",
+    imageLicense: "Public domain",
+    imageType: "telescope image",
     summary:
       "The James Webb Space Telescope found a previously unknown inner moon of Uranus, provisionally designated S/2025 U1 and estimated at roughly 10 km across.",
     story: {
@@ -1281,7 +1451,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The discovery raised Uranus's known moon count to 29 and showed that even a planet visited by Voyager 2 still hides small worlds from earlier surveys.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/2/2c/Uranus_-_Voyager_2.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://science.nasa.gov/blogs/webb/2025/08/19/new-moon-discovered-orbiting-uranus-using-nasas-webb-telescope/",
     primarySourceUrl: "https://science.nasa.gov/blogs/webb/2025/08/19/new-moon-discovered-orbiting-uranus-using-nasas-webb-telescope/",
     supportingSources: [
@@ -1319,7 +1489,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "GRB 250702B",
     classification: "Astronomy · Gamma-ray burst",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg/1600px-Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg",
+    imageAlt: "Artist's impression of a gamma-ray burst, an intense flash of high-energy radiation from a distant cosmic explosion.",
+    imageCredit: "ESO / A. Roquette",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "artist impression",
     summary:
       "GRB 250702B produced repeated gamma-ray flashes across a day, an unusually long and unlike-anything-seen-before explosion traced to a source outside the Milky Way.",
     story: {
@@ -1330,7 +1505,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Its long, repeating behavior does not fit the usual pattern of a single short-lived burst, leaving the physical engine under active investigation.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg/1600px-Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.eso.org/public/news/eso2514/",
     primarySourceUrl: "https://www.eso.org/public/news/eso2514/",
     supportingSources: [
@@ -1368,7 +1543,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Cha 1107-7626",
     classification: "Astronomy · Free-floating planetary-mass object",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/9/95/Rogueplanet.jpg",
+    imageAlt: "Artist's impression of a free-floating, planetary-mass object drifting through space without a host star.",
+    imageCredit: "NASA / JPL-Caltech",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Rogueplanet.jpg",
+    imageLicense: "Public domain",
+    imageType: "artist impression",
     summary:
       "Astronomers observed the free-floating planetary-mass object Cha 1107-7626 accreting gas and dust at about six billion tonnes per second — the fastest growth rate recorded for a rogue planet.",
     story: {
@@ -1379,7 +1559,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The burst blurred the line between planetary and stellar formation: magnetic activity and water vapor appeared in a process previously associated mainly with young stars.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/9/95/Rogueplanet.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.eso.org/public/news/eso2516/",
     primarySourceUrl: "https://www.eso.org/public/news/eso2516/",
     supportingSources: [
@@ -1466,7 +1646,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Influenza A virus",
     classification: "Biology · Virology · Host–pathogen interaction",
     conservationStatus: undefined,
-    heroImage: "/images/categories/biology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/a/a4/EM_of_influenza_virus.jpg",
+    imageAlt: "A transmission electron micrograph of influenza virus particles.",
+    imageCredit: "CDC / F. A. Murphy",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:EM_of_influenza_virus.jpg",
+    imageLicense: "Public domain",
+    imageType: "microscopy image",
     summary:
       "A new combined microscopy method let scientists watch influenza viruses invade living cells in real time, revealing that cells actively help capture the virus.",
     story: {
@@ -1477,7 +1662,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The live view showed cells reaching out and reshaping their surface to grab incoming viruses, a detail that could guide more targeted antiviral research.",
     },
-    gallery: ["/images/categories/biology.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/a/a4/EM_of_influenza_virus.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://ethz.ch/en/news-and-events/eth-news/news/2025/12/how-influenza-viruses-enter-our-cells.html",
     primarySourceUrl: "https://ethz.ch/en/news-and-events/eth-news/news/2025/12/how-influenza-viruses-enter-our-cells.html",
     supportingSources: [
