@@ -84,13 +84,17 @@ export function validateCatalog(options: ValidateOptions = {}): ContentIssue[] {
     }
   }
 
-  // Inbound related-link graph, used for orphan detection (WS3).
+  // Undirected related-link degree, used for orphan detection (WS3). Related
+  // links render bidirectionally (see getRelated), so an entry is reachable in
+  // the related graph if it has an inbound link *or* an outbound one.
   const inbound = new Map<string, number>();
   for (const d of discoveries) {
     for (const related of d.relatedSlugs) {
       inbound.set(related, (inbound.get(related) ?? 0) + 1);
     }
   }
+  const relatedDegree = (slug: string, outbound: number) =>
+    (inbound.get(slug) ?? 0) + outbound;
 
   for (const d of discoveries) {
     const at = (code: string, message: string, level: IssueLevel = "error") =>
@@ -164,9 +168,10 @@ export function validateCatalog(options: ValidateOptions = {}): ContentIssue[] {
         at("broken-relation", `relatedSlugs points to "${related}", which does not exist.`);
       }
     }
-    // Orphan (WS3) — reachable via lists, but isolated in the related graph.
-    if ((inbound.get(d.slug) ?? 0) === 0) {
-      at("orphan-related", "No other discovery links here via relatedSlugs.", "warn");
+    // Orphan (WS3) — isolated in the related graph even counting both
+    // directions, so it never surfaces from another discovery's page.
+    if (relatedDegree(d.slug, d.relatedSlugs.length) === 0) {
+      at("orphan-related", "No related links in either direction; the entry never surfaces from another discovery.", "warn");
     }
 
     // Image SEO and rights (WS2).
