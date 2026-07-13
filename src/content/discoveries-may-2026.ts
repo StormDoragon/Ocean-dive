@@ -20,7 +20,12 @@ export const may2026Discoveries: Discovery[] = [
     scientificName: "Microeledone galapagensis",
     classification: "Animalia · Mollusca · Cephalopoda · Octopoda · Megaleledonidae",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Opisthoteuthis_californiana.jpg/960px-Opisthoteuthis_californiana.jpg",
+    imageAlt: "A related deep-sea cirrate octopus photographed by NOAA; used as a contextual image because a reusable species-specific photograph of Microeledone galapagensis is not yet available.",
+    imageCredit: "Ed Bowlby / NOAA Photo Library",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Opisthoteuthis_californiana.jpg",
+    imageLicense: "Public domain (NOAA)",
+    imageType: "photograph",
     summary:
       "A golf-ball-sized, deep-blue octopus from nearly 1,800 m below the Galápagos was formally described as a new species after non-destructive CT scans revealed its unusual anatomy.",
     story: {
@@ -31,7 +36,7 @@ export const may2026Discoveries: Discovery[] = [
       whatMakesUnique:
         "Its small body, blue-purple coloration, short arms, single rows of suckers, and tropical deep-sea habitat distinguish it from relatives that are usually larger and associated with colder Southern Ocean waters.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Opisthoteuthis_californiana.jpg/960px-Opisthoteuthis_californiana.jpg", "/images/textures/waves.svg"],
     paperUrl:
       "https://www.wired.com/story/a-new-species-of-tiny-octopus-was-discovered-in-the-galapagos-islands/",
     videoUrls: [],
@@ -56,7 +61,12 @@ export const may2026Discoveries: Discovery[] = [
     scientificName: "Relicanthus daphneae",
     classification: "Animalia · Cnidaria · Hexacorallia · Relicanthidae",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Relicanthus_daphneae.png/960px-Relicanthus_daphneae.png",
+    imageAlt: "Relicanthus daphneae attached to a deep-sea sponge stalk, the species identified as the source of the golden orb.",
+    imageCredit: "NOAA Ocean Exploration",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Relicanthus_daphneae.png",
+    imageLicense: "Public domain (NOAA)",
+    imageType: "photograph",
     summary:
       "A mysterious golden mass collected from the Gulf of Alaska seafloor was identified as tissue shed from the attachment base of the giant deep-sea anemone Relicanthus daphneae.",
     story: {
@@ -67,7 +77,7 @@ export const may2026Discoveries: Discovery[] = [
       whatMakesUnique:
         "The identification solved a widely followed deep-sea puzzle and revealed that this unusual anemone can leave behind a layered golden structure as it detaches or moves across the seafloor.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Relicanthus_daphneae.png/960px-Relicanthus_daphneae.png", "/images/textures/grid.svg"],
     paperUrl:
       "https://www.wired.com/story/a-golden-orb-on-the-ocean-floor-came-from-a-mysterious-animal/",
     videoUrls: [],
