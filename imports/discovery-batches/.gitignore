@@ -1,0 +1,8 @@
+# Supplied batch payloads are integrated into the catalog by the importer
+# (`npm run import:discoveries`). They are transient inputs, not repository
+# content, so the actual records and images are not committed here. Only the
+# directory structure and documentation are tracked.
+*/discoveries.json
+*/image-rights.csv
+*/images/*
+!*/images/.gitkeep

@@ -45,6 +45,14 @@ export type DiscoveryImageType =
   | "reconstruction"
   | "diagram";
 
+/**
+ * How the hero visual relates to the discovery itself:
+ *  - "exact"        — depicts the actual specimen, object, site, or event.
+ *  - "contextual"   — a representative relative, instrument, or environment.
+ *  - "illustration" — an artist impression, reconstruction, or diagram.
+ */
+export type DiscoveryImageRelation = "exact" | "contextual" | "illustration";
+
 export type SourceTier = "Tier 1" | "Tier 2" | "Tier 3" | "Tier 4" | "Tier 5";
 
 export interface DiscoveryCorrection {
@@ -101,7 +109,7 @@ export interface Discovery {
    * Placeholders resolve to "illustration" automatically; set this explicitly
    * for any real photo that is representative rather than exact.
    */
-  imageRelation?: "exact" | "contextual" | "illustration";
+  imageRelation?: DiscoveryImageRelation;
   summary: string;
   story: DiscoveryStory;
   gallery: string[];
