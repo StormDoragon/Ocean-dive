@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DiscoveryCard } from "@/components/DiscoveryCard";
 import { categories, getCategory } from "@/content/categories";
+import { getBlogPostsByCategory } from "@/content/blog";
 import { getCategoryContext } from "@/lib/hubs";
 import type { CategorySlug } from "@/content/types";
 import {
@@ -45,6 +46,7 @@ export default async function CategoryPage({
   const context = getCategoryContext(category.slug);
   if (!context) notFound();
   const { discoveries, guide, subtopics } = context;
+  const guides = getBlogPostsByCategory(category.slug);
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -116,6 +118,29 @@ export default async function CategoryPage({
           <p className="mt-2 leading-relaxed text-slate-300">{section.body}</p>
         </section>
       ))}
+
+      {guides.length > 0 ? (
+        <section className="mt-10" aria-labelledby="category-guides">
+          <h2 id="category-guides" className="text-xl font-semibold text-white">
+            Guides &amp; explainers
+          </h2>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            {guides.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/discovery/${post.slug}`}
+                className="card p-4 transition-colors hover:border-signal/40"
+              >
+                <h3 className="font-semibold text-white">
+                  {post.emoji ? `${post.emoji} ` : ""}
+                  {post.title}
+                </h3>
+                <p className="mt-1 text-sm text-slate-400 line-clamp-2">{post.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="mt-10" aria-labelledby="subtopics">
         <h2 id="subtopics" className="text-xl font-semibold text-white">Explore by subtopic</h2>

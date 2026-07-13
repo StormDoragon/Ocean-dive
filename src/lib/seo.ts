@@ -127,6 +127,20 @@ export function blogArticleJsonLd(post: BlogPost) {
   };
 }
 
+export function faqPageJsonLd(faqs: Array<{ question: string; answer: string }>) {
+  return {
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
 export function breadcrumbJsonLd(
   items: Array<{ name: string; path: string }>,
 ) {

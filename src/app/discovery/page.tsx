@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { sections, site } from "@/lib/site";
 import { getAllBlogPosts } from "@/content/blog";
+import { getCategory } from "@/content/categories";
 import { canonicalUrl, itemListJsonLd, serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -87,13 +88,23 @@ export default function DiscoveryHubPage() {
                     {post.title}
                   </h3>
                   <p className="mt-1 text-sm text-slate-400">{post.description}</p>
-                  <div className="mt-2 text-xs text-slate-500">
-                    {new Date(post.datePublished).toLocaleDateString("en-US", {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                      timeZone: "UTC",
-                    })}
+                  <div className="mt-2 flex flex-wrap items-center gap-x-2 text-xs text-slate-500">
+                    <span>
+                      {new Date(post.datePublished).toLocaleDateString("en-US", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                        timeZone: "UTC",
+                      })}
+                    </span>
+                    {post.category ? (
+                      <>
+                        <span aria-hidden>·</span>
+                        <span className="text-slate-400">
+                          {getCategory(post.category)?.emoji} {getCategory(post.category)?.name}
+                        </span>
+                      </>
+                    ) : null}
                   </div>
                 </div>
               </Link>
