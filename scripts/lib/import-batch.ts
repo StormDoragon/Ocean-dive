@@ -1,26 +1,30 @@
 /**
- * Deterministic discovery-batch import core.
+ * Deterministic, transactional discovery-batch import core.
  *
  * Reads an externally prepared batch bundle:
  *
- *   imports/discovery-batches/<batch>/
+ *   <bundle>/
  *     discoveries.json     — array of Discovery objects (see the Discovery interface)
  *     image-rights.csv     — one row per discovery (rights manifest)
  *     images/<slug>.webp   — the local hero image for each entry
  *     README.md            — human notes about the batch
  *
- * and produces a plan that:
+ * and integrates it into the catalog:
  *   - validates every entry against the Discovery interface and catalog rules,
+ *   - decodes every image with sharp (format, dimensions, size, truncation),
  *   - rejects duplicate slugs, titles, scientific names, DOIs, primary-source
- *     URLs, and image hashes (within the batch and against the live catalog),
- *   - groups entries into the correct monthly TypeScript modules,
+ *     URLs, and image hashes (within the batch, against the live catalog, and
+ *     against previously committed audit manifests),
+ *   - groups entries into monthly TypeScript modules and registers new ones,
  *   - copies images to public/images/discoveries/<year>/<slug>.webp,
- *   - registers any new monthly module in src/content/catalog.ts.
+ *   - writes a permanent, normalized audit manifest to docs/discovery-image-rights/.
  *
- * Nothing is written unless `apply()` is called on a plan with zero errors, and
- * even then the catalog registration is written last so the catalog is never
- * left half-registered.  This module performs NO research and invents NO data;
- * it only integrates what the bundle supplies.
+ * The apply step is transactional: everything is generated in memory, staged in
+ * a temporary directory, verified, then moved into place. Any failure restores
+ * every modified file byte-for-byte, deletes every newly created file and image,
+ * removes directories the failed run created, and leaves catalog.ts and the
+ * discovery count unchanged. This module performs NO research and invents NO
+ * data; it only integrates what the bundle supplies.
  */
 import {
   readFileSync,
@@ -28,11 +32,19 @@ import {
   existsSync,
   readdirSync,
   statSync,
+  lstatSync,
   mkdirSync,
+  mkdtempSync,
   copyFileSync,
+  unlinkSync,
+  rmdirSync,
+  rmSync,
+  realpathSync,
 } from "node:fs";
 import { createHash } from "node:crypto";
-import { join, dirname, relative } from "node:path";
+import { fileURLToPath } from "node:url";
+import { join, dirname, relative, resolve, sep, basename } from "node:path";
+import sharp from "sharp";
 
 import { discoveries as existingCatalog } from "@/content/catalog";
 import { categories } from "@/content/categories";
@@ -41,10 +53,12 @@ import { monthLabel } from "@/lib/seo";
 import { validateCatalog, type ContentIssue } from "@/lib/validation/rules";
 import type { Discovery, DiscoveryImageType } from "@/content/types";
 
-export const ROOT = join(dirname(new URL(import.meta.url).pathname), "..", "..");
+export const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const CONTENT_DIR = join(ROOT, "src", "content");
 const CATALOG_FILE = join(CONTENT_DIR, "catalog.ts");
 const PUBLIC_DIR = join(ROOT, "public");
+const DISCOVERY_IMG_DIR = join(PUBLIC_DIR, "images", "discoveries");
+const MANIFEST_DIR = join(ROOT, "docs", "discovery-image-rights");
 
 const IMAGE_TYPES: DiscoveryImageType[] = [
   "photograph",
@@ -64,6 +78,11 @@ const MONTHS = [
   "july", "august", "september", "october", "november", "december",
 ];
 
+const MAX_IMAGE_BYTES = 700 * 1024;
+const MIN_WIDTH = 800;
+const MIN_HEIGHT = 500;
+const EXCEPTION_TOKEN = "scientific-detail-exception";
+
 export interface BatchIssue {
   level: "error" | "warn";
   code: string;
@@ -71,11 +90,31 @@ export interface BatchIssue {
   message: string;
 }
 
-export interface PlannedImage {
+export interface ImageMeta {
+  slug: string;
+  width: number;
+  height: number;
+  size: number;
+  hash: string;
+  format: string;
+  animated: boolean;
+}
+
+/** A single file write scheduled by the plan (module, catalog, or manifest). */
+export interface FileOp {
+  kind: "module-new" | "module-append" | "catalog" | "manifest-csv" | "manifest-json";
+  path: string;
+  contents: string;
+  existedBefore: boolean;
+  original: string | null;
+}
+
+/** A single image copy scheduled by the plan. */
+export interface ImageOp {
   slug: string;
   from: string;
   to: string;
-  hash: string;
+  existedBefore: boolean;
 }
 
 export interface PlannedFile {
@@ -85,17 +124,22 @@ export interface PlannedFile {
   monthName: string;
   year: number;
   isNew: boolean;
-  entries: Discovery[];
+  count: number;
 }
 
 export interface BatchPlan {
   bundleDir: string;
+  batchName: string;
   ok: boolean;
   entries: Discovery[];
   issues: BatchIssue[];
   files: PlannedFile[];
-  images: PlannedImage[];
+  fileOps: FileOp[];
+  imageOps: ImageOp[];
+  imageMeta: Map<string, ImageMeta>;
   manifestRowCount: number;
+  manifestCsvPath: string;
+  manifestJsonPath: string;
   stats: {
     entryCount: number;
     byYear: Record<string, number>;
@@ -103,6 +147,7 @@ export interface BatchPlan {
     byImageRelation: Record<string, number>;
     newFiles: number;
     appendedFiles: number;
+    imageBytes: number;
   };
 }
 
@@ -121,14 +166,12 @@ function isValidIsoDate(value: unknown): value is string {
   return dt.getUTCFullYear() === y && dt.getUTCMonth() + 1 === m && dt.getUTCDate() === d;
 }
 
-function sha256(path: string): string {
-  return createHash("sha256").update(readFileSync(path)).digest("hex");
+function sha256Buffer(buf: Buffer): string {
+  return createHash("sha256").update(buf).digest("hex");
 }
 
-function isWebp(path: string): boolean {
-  const fd = readFileSync(path);
-  if (fd.length < 12) return false;
-  return fd.toString("ascii", 0, 4) === "RIFF" && fd.toString("ascii", 8, 12) === "WEBP";
+function sha256File(path: string): string {
+  return sha256Buffer(readFileSync(path));
 }
 
 function extractDois(...urls: (string | undefined)[]): string[] {
@@ -146,11 +189,23 @@ function normUrl(u: string | undefined): string | undefined {
   return u.trim().toLowerCase().replace(/\/+$/, "");
 }
 
+/** Normalize a scientific name for dedup: case- and whitespace-insensitive. */
+function normSci(s: string): string {
+  return s.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
 function canonicalHero(year: number, slug: string): string {
   return `/images/discoveries/${year}/${slug}.webp`;
 }
 
-/** Every image file already committed under public/images (for hash collisions). */
+/** True when `child` is inside (or equal to) `base` — no traversal escape. */
+function isInside(base: string, child: string): boolean {
+  const b = resolve(base);
+  const c = resolve(child);
+  return c === b || c.startsWith(b + sep);
+}
+
+/** Every image file already committed under public/images (hash → repo-rel path). */
 function existingImageHashes(): Map<string, string> {
   const byHash = new Map<string, string>();
   const walk = (dir: string) => {
@@ -159,12 +214,56 @@ function existingImageHashes(): Map<string, string> {
       const full = join(dir, entry.name);
       if (entry.isDirectory()) walk(full);
       else if (/\.(webp|png|jpe?g|gif)$/i.test(entry.name)) {
-        byHash.set(sha256(full), relative(PUBLIC_DIR, full));
+        byHash.set(sha256File(full), relative(PUBLIC_DIR, full));
       }
     }
   };
   walk(join(PUBLIC_DIR, "images"));
   return byHash;
+}
+
+interface CommittedManifestIndex {
+  slugs: Map<string, string>;
+  paths: Map<string, string>;
+  hashes: Map<string, string>;
+  dois: Map<string, string>;
+  primary: Map<string, string>;
+}
+
+/** Read every committed audit manifest so an import cannot re-claim a record. */
+function committedManifestIndex(): CommittedManifestIndex {
+  const idx: CommittedManifestIndex = {
+    slugs: new Map(),
+    paths: new Map(),
+    hashes: new Map(),
+    dois: new Map(),
+    primary: new Map(),
+  };
+  if (!existsSync(MANIFEST_DIR)) return idx;
+  for (const entry of readdirSync(MANIFEST_DIR)) {
+    if (!entry.endsWith(".json")) continue;
+    const batch = entry.replace(/\.json$/, "");
+    let rows: Array<Record<string, unknown>>;
+    try {
+      rows = JSON.parse(readFileSync(join(MANIFEST_DIR, entry), "utf8")) as Array<Record<string, unknown>>;
+    } catch {
+      continue;
+    }
+    if (!Array.isArray(rows)) continue;
+    for (const r of rows) {
+      const slug = typeof r.slug === "string" ? r.slug : undefined;
+      if (slug && !idx.slugs.has(slug)) idx.slugs.set(slug, batch);
+      const p = typeof r.localImagePath === "string" ? r.localImagePath : undefined;
+      if (p && !idx.paths.has(p)) idx.paths.set(p, batch);
+      const h = typeof r.sha256 === "string" ? r.sha256.toLowerCase() : undefined;
+      if (h && !idx.hashes.has(h)) idx.hashes.set(h, batch);
+      const prim = normUrl(typeof r.primarySourceUrl === "string" ? r.primarySourceUrl : undefined);
+      if (prim && !idx.primary.has(prim)) idx.primary.set(prim, batch);
+      const dois = Array.isArray(r.dois) ? (r.dois as unknown[]) : [];
+      for (const d of dois) if (typeof d === "string" && !idx.dois.has(d.toLowerCase())) idx.dois.set(d.toLowerCase(), batch);
+    }
+  }
+  return idx;
 }
 
 /* ------------------------------------------------------------------ *
@@ -198,7 +297,12 @@ function parseCsv(text: string): string[][] {
   return rows.filter((r) => r.some((c) => c.trim() !== ""));
 }
 
-/** Resolve a manifest column index by matching keywords against headers. */
+function csvCell(value: unknown): string {
+  const s = value === undefined || value === null ? "" : String(value);
+  return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+}
+
+/** Resolve manifest column indexes by matching keywords against headers. */
 function resolveColumns(header: string[]): Record<string, number> {
   const norm = header.map((h) => slugify(h));
   const find = (...keys: string[]) =>
@@ -206,34 +310,74 @@ function resolveColumns(header: string[]): Record<string, number> {
   return {
     slug: find("slug"),
     localPath: find("local-image-path", "image-path", "local-path"),
-    hash: find("sha-256-hash", "sha256-hash", "sha-256", "sha256", "hash"),
+    hash: find("sha-256", "sha256", "hash"),
     imageType: find("image-type"),
     imageRelation: find("image-relation", "relation"),
     credit: find("creator-or-institution", "creator", "credit"),
     license: find("licence-or-reuse-status", "license-or-reuse-status", "license", "licence"),
     sourcePage: find("image-source-page", "source-page", "image-source-url"),
+    downloadDate: find("source-download-date", "download-date"),
+    width: find("width"),
+    height: find("height"),
+    fileSize: find("file-size", "size-bytes", "size"),
+    notes: find("notes"),
   };
 }
 
 /* ------------------------------------------------------------------ *
- * Plan builder.
+ * Image decoding (sharp).
  * ------------------------------------------------------------------ */
 
-export function buildPlan(bundleDir: string): BatchPlan {
+async function decodeImage(path: string): Promise<Omit<ImageMeta, "slug"> & { decodable: boolean; error?: string }> {
+  const buf = readFileSync(path);
+  const size = buf.length;
+  const hash = sha256Buffer(buf);
+  try {
+    const meta = await sharp(buf).metadata();
+    // Force a full pixel decode to catch truncated / malformed payloads.
+    await sharp(buf).toColorspace("srgb").raw().toBuffer();
+    return {
+      width: meta.width ?? 0,
+      height: meta.height ?? 0,
+      size,
+      hash,
+      format: meta.format ?? "unknown",
+      animated: (meta.pages ?? 1) > 1,
+      decodable: true,
+    };
+  } catch (e) {
+    return { width: 0, height: 0, size, hash, format: "unknown", animated: false, decodable: false, error: (e as Error).message };
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Plan builder (async — decodes images).
+ * ------------------------------------------------------------------ */
+
+export async function buildPlan(bundleDirInput: string): Promise<BatchPlan> {
   const issues: BatchIssue[] = [];
   const err = (code: string, message: string, slug?: string) =>
     issues.push({ level: "error", code, message, slug });
   const warn = (code: string, message: string, slug?: string) =>
     issues.push({ level: "warn", code, message, slug });
 
+  const batchName = slugify(basename(bundleDirInput.replace(/[/\\]+$/, ""))) || "batch";
+  const manifestCsvPath = join(MANIFEST_DIR, `${batchName}.csv`);
+  const manifestJsonPath = join(MANIFEST_DIR, `${batchName}.json`);
+
   const plan: BatchPlan = {
-    bundleDir,
+    bundleDir: bundleDirInput,
+    batchName,
     ok: false,
     entries: [],
     issues,
     files: [],
-    images: [],
+    fileOps: [],
+    imageOps: [],
+    imageMeta: new Map(),
     manifestRowCount: 0,
+    manifestCsvPath,
+    manifestJsonPath,
     stats: {
       entryCount: 0,
       byYear: {},
@@ -241,17 +385,32 @@ export function buildPlan(bundleDir: string): BatchPlan {
       byImageRelation: {},
       newFiles: 0,
       appendedFiles: 0,
+      imageBytes: 0,
     },
   };
+
+  // ---- Path safety: bundle must resolve inside the repository root ----
+  let bundleDir: string;
+  try {
+    bundleDir = realpathSync(resolve(bundleDirInput));
+  } catch {
+    err("missing-bundle", `Bundle directory "${bundleDirInput}" does not exist.`);
+    return plan;
+  }
+  plan.bundleDir = bundleDir;
+  if (!isInside(ROOT, bundleDir)) {
+    err("bundle-outside-root", `Bundle path resolves outside the repository root: ${bundleDir}`);
+    return plan;
+  }
+  if (!statSync(bundleDir).isDirectory()) {
+    err("missing-bundle", `Bundle path is not a directory: ${bundleDir}`);
+    return plan;
+  }
 
   const jsonPath = join(bundleDir, "discoveries.json");
   const csvPath = join(bundleDir, "image-rights.csv");
   const imagesDir = join(bundleDir, "images");
 
-  if (!existsSync(bundleDir) || !statSync(bundleDir).isDirectory()) {
-    err("missing-bundle", `Bundle directory "${bundleDir}" does not exist.`);
-    return plan;
-  }
   if (!existsSync(jsonPath)) err("missing-json", "discoveries.json is missing from the bundle.");
   if (!existsSync(csvPath)) err("missing-csv", "image-rights.csv is missing from the bundle.");
   if (!existsSync(imagesDir)) err("missing-images-dir", "images/ directory is missing from the bundle.");
@@ -283,15 +442,14 @@ export function buildPlan(bundleDir: string): BatchPlan {
   const existingSlugs = new Set(existingCatalog.map((d) => d.slug));
   const existingTitles = new Set(existingCatalog.map((d) => slugify(d.title)));
   const existingSci = new Set(
-    existingCatalog.filter((d) => d.scientificName).map((d) => d.scientificName!.trim().toLowerCase()),
+    existingCatalog.filter((d) => d.scientificName).map((d) => normSci(d.scientificName!)),
   );
   const existingPrimary = new Set(
     existingCatalog.map((d) => normUrl(d.primarySourceUrl)).filter(Boolean) as string[],
   );
-  const existingDois = new Set(
-    existingCatalog.flatMap((d) => extractDois(d.paperUrl, d.primarySourceUrl)),
-  );
+  const existingDois = new Set(existingCatalog.flatMap((d) => extractDois(d.paperUrl, d.primarySourceUrl)));
   const existingHashes = existingImageHashes();
+  const committed = committedManifestIndex();
 
   // Intra-batch indexes (first-seen wins; collisions reported).
   const seenSlug = new Map<string, string>();
@@ -302,16 +460,36 @@ export function buildPlan(bundleDir: string): BatchPlan {
   const seenHash = new Map<string, string>();
 
   const entries: Discovery[] = [];
-  const hashBySlug = new Map<string, string>();
+  const csvNotesBySlug = new Map<string, string>();
 
-  raw.forEach((item, index) => {
-    const d = item as Partial<Discovery>;
+  // First pass: read + parse the manifest (so per-entry validation can use it).
+  let manifestRows: string[][] = [];
+  let cols: Record<string, number> = {};
+  try {
+    manifestRows = parseCsv(readFileSync(csvPath, "utf8"));
+    if (manifestRows.length >= 1) cols = resolveColumns(manifestRows[0]);
+  } catch (e) {
+    err("manifest-parse", `Could not read image-rights.csv: ${(e as Error).message}`);
+  }
+  const manifestDataRows = manifestRows.slice(1);
+  const manifestBySlug = new Map<string, string[]>();
+  if (cols.slug !== undefined && cols.slug >= 0) {
+    for (const r of manifestDataRows) {
+      const s = (r[cols.slug] ?? "").trim();
+      if (s && !manifestBySlug.has(s)) manifestBySlug.set(s, r);
+    }
+  }
+  const cell = (r: string[] | undefined, i: number | undefined) =>
+    r && i !== undefined && i >= 0 ? (r[i] ?? "").trim() : "";
+
+  for (let index = 0; index < raw.length; index++) {
+    const d = raw[index] as Partial<Discovery>;
     const slug = typeof d.slug === "string" ? d.slug : `#${index}`;
     const at = (code: string, message: string) => err(code, message, slug);
 
     // ---- Required scalar fields & shapes -------------------------------
-    if (isBlank(d.slug)) return at("missing-slug", `Entry #${index} has no slug.`);
-    if (!SLUG_RE.test(d.slug!)) at("invalid-slug", `Slug "${d.slug}" is not lowercase kebab-case.`);
+    if (isBlank(d.slug)) { at("missing-slug", `Entry #${index} has no slug.`); continue; }
+    if (!SLUG_RE.test(d.slug!)) at("invalid-slug", `Slug "${d.slug}" is not lowercase kebab-case (blocks path traversal).`);
     if (isBlank(d.title)) at("missing-title", "Missing title.");
     if (isBlank(d.summary)) at("missing-summary", "Missing summary.");
     if (!d.story || isBlank(d.story.whyThere) || isBlank(d.story.howFound) || isBlank(d.story.whatMakesUnique)) {
@@ -393,25 +571,41 @@ export function buildPlan(bundleDir: string): BatchPlan {
       at("invalid-image-relation", `imageRelation "${d.imageRelation}" must be one of ${IMAGE_RELATIONS.join(", ")}.`);
     }
 
-    // ---- Bundle image: exists, is a real WebP, hashed ------------------
+    // ---- Bundle image: exists, no symlink escape, decodes, dimensions --
     const imgSrc = join(imagesDir, `${d.slug}.webp`);
-    let hash = "";
+    let meta: (Omit<ImageMeta, "slug"> & { decodable: boolean; error?: string }) | null = null;
     if (!existsSync(imgSrc)) {
       at("missing-image", `Bundle image images/${d.slug}.webp is missing.`);
-    } else if (!isWebp(imgSrc)) {
-      at("bad-image-format", `images/${d.slug}.webp is not a valid WebP file (RIFF/WEBP header missing).`);
+    } else if (!lstatSync(imgSrc).isFile() || !isInside(imagesDir, realpathSync(imgSrc))) {
+      at("image-symlink-escape", `images/${d.slug}.webp is a symlink or resolves outside the bundle images/ directory.`);
     } else {
-      hash = sha256(imgSrc);
-      hashBySlug.set(d.slug!, hash);
+      const mrow = manifestBySlug.get(d.slug!);
+      const notes = cell(mrow, cols.notes);
+      const hasException = notes.toLowerCase().includes(EXCEPTION_TOKEN);
+      meta = await decodeImage(imgSrc);
+      if (!meta.decodable) {
+        at("undecodable-image", `images/${d.slug}.webp could not be decoded (truncated or malformed): ${meta.error}`);
+      } else {
+        if (meta.format !== "webp") at("bad-image-format", `images/${d.slug}.webp decodes as "${meta.format}", not WebP.`);
+        if (meta.animated) at("animated-image", `images/${d.slug}.webp is an animated WebP, which is not supported.`);
+        if (meta.width < MIN_WIDTH) at("image-too-small", `images/${d.slug}.webp width ${meta.width}px is below the ${MIN_WIDTH}px minimum.`);
+        if (meta.height < MIN_HEIGHT) at("image-too-small", `images/${d.slug}.webp height ${meta.height}px is below the ${MIN_HEIGHT}px minimum.`);
+        if (meta.size > MAX_IMAGE_BYTES && !hasException) {
+          at("image-too-large", `images/${d.slug}.webp is ${meta.size} bytes (> ${MAX_IMAGE_BYTES}); add "${EXCEPTION_TOKEN}" to the manifest notes if the detail requires it.`);
+        }
+        plan.imageMeta.set(d.slug!, { slug: d.slug!, ...meta });
+      }
     }
 
-    // ---- Duplicate rejection: catalog + intra-batch --------------------
+    // ---- Duplicate rejection: catalog + intra-batch + committed manifests
     const titleKey = d.title ? slugify(d.title) : "";
-    const sciKey = d.scientificName ? d.scientificName.trim().toLowerCase() : "";
+    const sciKey = d.scientificName ? normSci(d.scientificName) : "";
     const primaryKey = normUrl(d.primarySourceUrl);
     const dois = extractDois(d.paperUrl, d.primarySourceUrl);
+    const hash = meta?.decodable ? meta.hash : "";
 
     if (existingSlugs.has(d.slug!)) at("duplicate-slug", `Slug "${d.slug}" already exists in the catalog.`);
+    if (committed.slugs.has(d.slug!)) at("committed-manifest-duplicate-slug", `Slug "${d.slug}" is already claimed by committed manifest "${committed.slugs.get(d.slug!)}".`);
     if (seenSlug.has(d.slug!)) at("duplicate-slug", `Slug "${d.slug}" is repeated within the batch.`);
     else seenSlug.set(d.slug!, d.slug!);
 
@@ -427,16 +621,20 @@ export function buildPlan(bundleDir: string): BatchPlan {
     }
     if (primaryKey) {
       if (existingPrimary.has(primaryKey)) at("duplicate-primary-source", `primarySourceUrl "${d.primarySourceUrl}" already exists in the catalog.`);
+      if (committed.primary.has(primaryKey)) at("committed-manifest-duplicate-primary-source", `primarySourceUrl already claimed by committed manifest "${committed.primary.get(primaryKey)}".`);
       if (seenPrimary.has(primaryKey)) at("duplicate-primary-source", `primarySourceUrl "${d.primarySourceUrl}" is repeated within the batch.`);
       else seenPrimary.set(primaryKey, d.slug!);
     }
     for (const doi of dois) {
       if (existingDois.has(doi)) at("duplicate-doi", `DOI "${doi}" already exists in the catalog.`);
+      if (committed.dois.has(doi)) at("committed-manifest-duplicate-doi", `DOI "${doi}" already claimed by committed manifest "${committed.dois.get(doi)}".`);
       if (seenDoi.has(doi)) at("duplicate-doi", `DOI "${doi}" is repeated within the batch (matches "${seenDoi.get(doi)}").`);
       else seenDoi.set(doi, d.slug!);
     }
     if (hash) {
       if (existingHashes.has(hash)) at("duplicate-image-hash", `Image is byte-identical to existing repository image ${existingHashes.get(hash)}.`);
+      if (committed.hashes.has(hash)) at("committed-manifest-duplicate-image-hash", `Image hash already claimed by committed manifest "${committed.hashes.get(hash)}".`);
+      if (committed.paths.has(hero)) at("committed-manifest-duplicate-path", `Image path "${hero}" already claimed by committed manifest "${committed.paths.get(hero)}".`);
       if (seenHash.has(hash)) at("duplicate-image-hash", `Image is byte-identical to batch image for "${seenHash.get(hash)}".`);
       else seenHash.set(hash, d.slug!);
     }
@@ -444,9 +642,9 @@ export function buildPlan(bundleDir: string): BatchPlan {
     // ---- Normalize the accepted entry (deterministic hero + gallery) ---
     const gallery = Array.isArray(d.gallery) ? d.gallery.slice() : [];
     if (!gallery.includes(hero)) gallery.unshift(hero);
-    const entry = { ...(d as Discovery), heroImage: hero, gallery, year };
-    entries.push(entry);
-  });
+    entries.push({ ...(d as Discovery), heroImage: hero, gallery, year });
+    if (d.slug) csvNotesBySlug.set(d.slug, cell(manifestBySlug.get(d.slug), cols.notes));
+  }
 
   plan.entries = entries;
 
@@ -460,46 +658,37 @@ export function buildPlan(bundleDir: string): BatchPlan {
   }
 
   // ---- Manifest cross-checks ------------------------------------------
-  try {
-    const rows = parseCsv(readFileSync(csvPath, "utf8"));
-    if (rows.length < 1) {
-      err("empty-manifest", "image-rights.csv has no header row.");
-    } else {
-      const cols = resolveColumns(rows[0]);
-      const dataRows = rows.slice(1);
-      plan.manifestRowCount = dataRows.length;
-      if (cols.slug < 0) err("manifest-columns", "image-rights.csv is missing a 'slug' column.");
-      if (cols.hash < 0) err("manifest-columns", "image-rights.csv is missing a SHA-256 'hash' column.");
-      if (dataRows.length !== entries.length) {
-        err("manifest-count", `image-rights.csv has ${dataRows.length} data rows but discoveries.json has ${entries.length} entries.`);
-      }
-      const rowSlugs = new Set<string>();
-      for (const r of dataRows) {
-        const rslug = cols.slug >= 0 ? (r[cols.slug] ?? "").trim() : "";
-        if (!rslug) { err("manifest-row", "A manifest row has no slug."); continue; }
-        rowSlugs.add(rslug);
-        const entry = entries.find((e) => e.slug === rslug);
-        if (!entry) { err("manifest-orphan", `Manifest row "${rslug}" has no matching discovery.`, rslug); continue; }
-        if (cols.hash >= 0) {
-          const rowHash = (r[cols.hash] ?? "").trim().toLowerCase();
-          const realHash = hashBySlug.get(rslug);
-          if (realHash && rowHash && rowHash !== realHash) {
-            err("manifest-hash", `Manifest SHA-256 for "${rslug}" does not match the actual image hash.`, rslug);
-          }
-        }
-        if (cols.localPath >= 0) {
-          const rowPath = (r[cols.localPath] ?? "").trim();
-          if (rowPath && rowPath !== entry.heroImage) {
-            err("manifest-path", `Manifest local path for "${rslug}" ("${rowPath}") does not match "${entry.heroImage}".`, rslug);
-          }
-        }
-      }
-      for (const e of entries) {
-        if (!rowSlugs.has(e.slug)) err("manifest-missing-row", `Discovery "${e.slug}" has no row in image-rights.csv.`, e.slug);
-      }
+  if (manifestRows.length < 1) {
+    err("empty-manifest", "image-rights.csv has no header row.");
+  } else {
+    plan.manifestRowCount = manifestDataRows.length;
+    if (cols.slug < 0) err("manifest-columns", "image-rights.csv is missing a 'slug' column.");
+    if (cols.hash < 0) err("manifest-columns", "image-rights.csv is missing a SHA-256 'hash' column.");
+    if (manifestDataRows.length !== entries.length) {
+      err("manifest-count", `image-rights.csv has ${manifestDataRows.length} data rows but discoveries.json has ${entries.length} entries.`);
     }
-  } catch (e) {
-    err("manifest-parse", `Could not read image-rights.csv: ${(e as Error).message}`);
+    const rowSlugs = new Set<string>();
+    for (const r of manifestDataRows) {
+      const rslug = cell(r, cols.slug);
+      if (!rslug) { err("manifest-row", "A manifest row has no slug."); continue; }
+      rowSlugs.add(rslug);
+      const entry = entries.find((e) => e.slug === rslug);
+      if (!entry) { err("manifest-orphan", `Manifest row "${rslug}" has no matching discovery.`, rslug); continue; }
+      const im = plan.imageMeta.get(rslug);
+      const rowHash = cell(r, cols.hash).toLowerCase();
+      if (im && rowHash && rowHash !== im.hash) err("manifest-hash", `Manifest SHA-256 for "${rslug}" does not match the actual image hash.`, rslug);
+      const rowPath = cell(r, cols.localPath);
+      if (rowPath && rowPath !== entry.heroImage) err("manifest-path", `Manifest local path for "${rslug}" ("${rowPath}") does not match "${entry.heroImage}".`, rslug);
+      const rowW = Number(cell(r, cols.width));
+      if (im && cols.width >= 0 && cell(r, cols.width) && rowW !== im.width) err("manifest-width", `Manifest width for "${rslug}" (${rowW}) does not match decoded width (${im.width}).`, rslug);
+      const rowH = Number(cell(r, cols.height));
+      if (im && cols.height >= 0 && cell(r, cols.height) && rowH !== im.height) err("manifest-height", `Manifest height for "${rslug}" (${rowH}) does not match decoded height (${im.height}).`, rslug);
+      const rowSize = Number(cell(r, cols.fileSize));
+      if (im && cols.fileSize >= 0 && cell(r, cols.fileSize) && rowSize !== im.size) err("manifest-size", `Manifest file size for "${rslug}" (${rowSize}) does not match actual size (${im.size}).`, rslug);
+    }
+    for (const e of entries) {
+      if (!rowSlugs.has(e.slug)) err("manifest-missing-row", `Discovery "${e.slug}" has no row in image-rights.csv.`, e.slug);
+    }
   }
 
   // ---- Full catalog rules on the merged set (blocks on new-entry errors) -
@@ -508,36 +697,71 @@ export function buildPlan(bundleDir: string): BatchPlan {
   const newSlugSet = new Set(entries.map((e) => e.slug));
   for (const ci of catalogIssues) {
     const scoped = ci.slug === undefined || newSlugSet.has(ci.slug);
-    if (!scoped) continue; // pre-existing catalog issue, not our concern here
+    if (!scoped) continue;
     if (ci.level === "error") err(`catalog:${ci.code}`, ci.message, ci.slug);
     else warn(`catalog:${ci.code}`, ci.message, ci.slug);
   }
 
-  // ---- Plan monthly files & image copies ------------------------------
-  const byFile = new Map<string, PlannedFile>();
+  // ---- Plan monthly modules -------------------------------------------
+  interface MonthGroup extends PlannedFile { entries: Discovery[] }
+  const byFile = new Map<string, MonthGroup>();
   for (const e of entries) {
     const year = e.year;
     const monthIdx = Number(e.dateDiscovered.slice(5, 7)) - 1;
     const monthName = MONTHS[monthIdx] ?? monthLabel(monthIdx + 1).toLowerCase();
     const fileBase = `discoveries-${monthName}-${year}`;
     const filePath = join(CONTENT_DIR, `${fileBase}.ts`);
-    let pf = byFile.get(fileBase);
-    if (!pf) {
-      pf = {
-        fileBase,
-        filePath,
-        exportName: `${monthName}${year}Discoveries`,
-        monthName,
-        year,
-        isNew: !existsSync(filePath),
-        entries: [],
-      };
-      byFile.set(fileBase, pf);
+    let g = byFile.get(fileBase);
+    if (!g) {
+      g = { fileBase, filePath, exportName: `${monthName}${year}Discoveries`, monthName, year, isNew: !existsSync(filePath), count: 0, entries: [] };
+      byFile.set(fileBase, g);
     }
-    pf.entries.push(e);
-    plan.images.push({ slug: e.slug, from: join(imagesDir, `${e.slug}.webp`), to: join(PUBLIC_DIR, "images", "discoveries", String(year), `${e.slug}.webp`), hash: hashBySlug.get(e.slug) ?? "" });
+    g.entries.push(e);
+    g.count += 1;
   }
-  plan.files = [...byFile.values()].sort((a, b) => a.fileBase.localeCompare(b.fileBase));
+  const groups = [...byFile.values()].sort((a, b) => a.fileBase.localeCompare(b.fileBase));
+  plan.files = groups.map(({ entries: _e, ...rest }) => rest);
+
+  // ---- Image operations (destinations must not already exist) ----------
+  for (const e of entries) {
+    const to = join(DISCOVERY_IMG_DIR, String(e.year), `${e.slug}.webp`);
+    if (!isInside(DISCOVERY_IMG_DIR, to)) { err("output-path-escape", `Computed image path escapes public/images/discoveries: ${to}`, e.slug); continue; }
+    const existedBefore = existsSync(to);
+    if (existedBefore) err("unexpected-existing-image", `Destination image already exists unexpectedly: ${relative(ROOT, to)}`, e.slug);
+    plan.imageOps.push({ slug: e.slug, from: join(imagesDir, `${e.slug}.webp`), to, existedBefore });
+  }
+
+  // ---- File operations (generated in memory now) -----------------------
+  const fileOps: FileOp[] = [];
+  for (const g of groups) {
+    if (!isInside(CONTENT_DIR, g.filePath)) { err("output-path-escape", `Module path escapes src/content: ${g.filePath}`); continue; }
+    if (g.isNew) {
+      if (existsSync(g.filePath)) err("unexpected-existing-module", `New module already exists unexpectedly: ${relative(ROOT, g.filePath)}`);
+      fileOps.push({ kind: "module-new", path: g.filePath, contents: newFileContents(g.monthName, g.year, g.exportName, g.entries), existedBefore: false, original: null });
+    } else {
+      const original = readFileSync(g.filePath, "utf8");
+      fileOps.push({ kind: "module-append", path: g.filePath, contents: appendToExisting(original, g.exportName, g.entries, g.filePath), existedBefore: true, original });
+    }
+  }
+  const catalogContents = registerInCatalog(groups);
+  if (catalogContents) {
+    const original = readFileSync(CATALOG_FILE, "utf8");
+    fileOps.push({ kind: "catalog", path: CATALOG_FILE, contents: catalogContents, existedBefore: true, original });
+  }
+
+  // ---- Permanent audit manifest (part of the transaction) --------------
+  if (entries.length > 0) {
+    const { csv, json } = buildPermanentManifest(entries, plan.imageMeta, manifestBySlug, cols, cell, csvNotesBySlug);
+    for (const [kind, p, contents] of [
+      ["manifest-csv", manifestCsvPath, csv],
+      ["manifest-json", manifestJsonPath, json],
+    ] as const) {
+      const existed = existsSync(p);
+      fileOps.push({ kind, path: p, contents, existedBefore: existed, original: existed ? readFileSync(p, "utf8") : null });
+    }
+  }
+
+  plan.fileOps = fileOps;
 
   // ---- Stats -----------------------------------------------------------
   for (const e of entries) {
@@ -547,11 +771,67 @@ export function buildPlan(bundleDir: string): BatchPlan {
     plan.stats.byImageRelation[rel] = (plan.stats.byImageRelation[rel] ?? 0) + 1;
   }
   plan.stats.entryCount = entries.length;
-  plan.stats.newFiles = plan.files.filter((f) => f.isNew).length;
-  plan.stats.appendedFiles = plan.files.filter((f) => !f.isNew).length;
+  plan.stats.newFiles = groups.filter((f) => f.isNew).length;
+  plan.stats.appendedFiles = groups.filter((f) => !f.isNew).length;
+  plan.stats.imageBytes = [...plan.imageMeta.values()].reduce((n, m) => n + m.size, 0);
 
   plan.ok = !issues.some((i) => i.level === "error");
   return plan;
+}
+
+/* ------------------------------------------------------------------ *
+ * Permanent audit manifest.
+ * ------------------------------------------------------------------ */
+
+const MANIFEST_HEADERS = [
+  "slug", "title", "year", "local image path", "image source page",
+  "creator or institution", "licence or reuse status", "image type",
+  "image relation", "source download date", "width", "height",
+  "file size in bytes", "sha-256", "contextual or illustration notes",
+];
+
+function buildPermanentManifest(
+  entries: Discovery[],
+  imageMeta: Map<string, ImageMeta>,
+  manifestBySlug: Map<string, string[]>,
+  cols: Record<string, number>,
+  cell: (r: string[] | undefined, i: number | undefined) => string,
+  notesBySlug: Map<string, string>,
+): { csv: string; json: string } {
+  const rows = entries.map((e) => {
+    const im = imageMeta.get(e.slug);
+    const mrow = manifestBySlug.get(e.slug);
+    return {
+      slug: e.slug,
+      title: e.title,
+      year: e.year,
+      localImagePath: e.heroImage,
+      imageSourcePage: e.imageSourceUrl ?? cell(mrow, cols.sourcePage),
+      creatorOrInstitution: e.imageCredit ?? cell(mrow, cols.credit),
+      licenceOrReuseStatus: e.imageLicense ?? cell(mrow, cols.license),
+      imageType: e.imageType ?? "",
+      imageRelation: e.imageRelation ?? "",
+      sourceDownloadDate: cell(mrow, cols.downloadDate),
+      width: im?.width ?? 0,
+      height: im?.height ?? 0,
+      fileSizeBytes: im?.size ?? 0,
+      sha256: im?.hash ?? "",
+      notes: notesBySlug.get(e.slug) ?? "",
+      // extra machine-dedup fields (JSON only)
+      dois: extractDois(e.paperUrl, e.primarySourceUrl),
+      primarySourceUrl: e.primarySourceUrl ?? "",
+    };
+  });
+
+  const csvLines = [MANIFEST_HEADERS.join(",")];
+  for (const r of rows) {
+    csvLines.push([
+      r.slug, r.title, r.year, r.localImagePath, r.imageSourcePage,
+      r.creatorOrInstitution, r.licenceOrReuseStatus, r.imageType, r.imageRelation,
+      r.sourceDownloadDate, r.width, r.height, r.fileSizeBytes, r.sha256, r.notes,
+    ].map(csvCell).join(","));
+  }
+  return { csv: csvLines.join("\n") + "\n", json: JSON.stringify(rows, null, 2) + "\n" };
 }
 
 /* ------------------------------------------------------------------ *
@@ -601,30 +881,28 @@ export function serializeEntry(d: Discovery, baseIndent = "  "): string {
   for (const key of FIELD_ORDER) {
     if (rec[key] !== undefined) ordered[key] = rec[key];
   }
-  // Preserve any extra keys not in FIELD_ORDER (forward-compatible).
   for (const key of Object.keys(rec)) {
     if (!(key in ordered) && rec[key] !== undefined) ordered[key] = rec[key];
   }
   return `${baseIndent}${serializeValue(ordered, baseIndent)}`;
 }
 
-function newFileContents(pf: PlannedFile): string {
-  const title = pf.monthName[0].toUpperCase() + pf.monthName.slice(1);
-  const body = pf.entries.map((e) => serializeEntry(e, "  ")).join(",\n");
+function newFileContents(monthName: string, year: number, exportName: string, entries: Discovery[]): string {
+  const title = monthName[0].toUpperCase() + monthName.slice(1);
+  const body = entries.map((e) => serializeEntry(e, "  ")).join(",\n");
   return `import type { Discovery } from "./types";
 
 /**
- * Scientific discoveries announced or published during ${title} ${pf.year}.
+ * Scientific discoveries announced or published during ${title} ${year}.
  * Imported via \`npm run import:discoveries\`. Run \`npm run validate\` before release.
  */
-export const ${pf.exportName}: Discovery[] = [
+export const ${exportName}: Discovery[] = [
 ${body},
 ];
 `;
 }
 
-function appendToExistingFile(filePath: string, exportName: string, entries: Discovery[]): string {
-  const text = readFileSync(filePath, "utf8");
+function appendToExisting(text: string, exportName: string, entries: Discovery[], filePath: string): string {
   if (!text.includes(`export const ${exportName}`)) {
     throw new Error(`${filePath} does not export ${exportName}; refusing to edit.`);
   }
@@ -643,7 +921,7 @@ function registerInCatalog(files: PlannedFile[]): string | null {
   }
   let changed = false;
   for (const f of files) {
-    if (catalog.includes(`./${f.fileBase}"`)) continue;
+    if (!f.isNew || catalog.includes(`./${f.fileBase}"`)) continue;
     catalog = catalog
       .replace(importAnchor, `import { ${f.exportName} } from "./${f.fileBase}";\n${importAnchor}`)
       .replace(spreadAnchor, `...${f.exportName},\n  ${spreadAnchor}`);
@@ -653,48 +931,141 @@ function registerInCatalog(files: PlannedFile[]): string | null {
 }
 
 /* ------------------------------------------------------------------ *
- * Apply (mutating). Only call on a plan with plan.ok === true.
+ * Transactional apply.
  * ------------------------------------------------------------------ */
+
+/** Test-only fault injection to prove rollback. */
+export interface ApplyFaults {
+  failBeforeImageIndex?: number;
+  failBeforeFileKind?: FileOp["kind"];
+  failBeforeCatalog?: boolean;
+}
+
+export interface RollbackReport {
+  restored: string[];
+  deletedFiles: string[];
+  deletedImages: string[];
+  removedDirs: string[];
+}
 
 export interface ApplyResult {
   imagesCopied: number;
   filesCreated: string[];
   filesAppended: string[];
   catalogUpdated: boolean;
+  manifestCsv: string;
+  manifestJson: string;
 }
 
-export function applyPlan(plan: BatchPlan): ApplyResult {
+export class ImportError extends Error {
+  rollback: RollbackReport;
+  constructor(message: string, rollback: RollbackReport) {
+    super(message);
+    this.name = "ImportError";
+    this.rollback = rollback;
+  }
+}
+
+/** mkdir -p, recording only the directories that this call newly creates. */
+function ensureDir(dir: string, createdDirs: string[]) {
+  const missing: string[] = [];
+  let cur = dir;
+  while (!existsSync(cur) && isInside(ROOT, cur)) {
+    missing.unshift(cur);
+    cur = dirname(cur);
+  }
+  if (missing.length) {
+    mkdirSync(dir, { recursive: true });
+    createdDirs.push(...missing);
+  }
+}
+
+export async function applyPlan(plan: BatchPlan, faults: ApplyFaults = {}): Promise<ApplyResult> {
   if (!plan.ok) throw new Error("Refusing to apply a plan that has errors.");
   if (plan.entries.length === 0) {
-    return { imagesCopied: 0, filesCreated: [], filesAppended: [], catalogUpdated: false };
+    return { imagesCopied: 0, filesCreated: [], filesAppended: [], catalogUpdated: false, manifestCsv: "", manifestJson: "" };
   }
 
-  // 1) Copy images first — stray copies are harmless if a later step fails.
-  for (const img of plan.images) {
-    mkdirSync(dirname(img.to), { recursive: true });
-    copyFileSync(img.from, img.to);
-  }
+  const stageDir = mkdtempSync(join(ROOT, ".import-stage-"));
+  const writtenFiles: FileOp[] = [];
+  const copiedImages: string[] = [];
+  const createdDirs: string[] = [];
 
-  // 2) Compute every file's new contents in memory before writing anything.
-  const newFiles = plan.files.filter((f) => f.isNew).map((f) => ({ path: f.filePath, contents: newFileContents(f) }));
-  const appendFiles = plan.files
-    .filter((f) => !f.isNew)
-    .map((f) => ({ path: f.filePath, contents: appendToExistingFile(f.filePath, f.exportName, f.entries) }));
-  const catalogContents = registerInCatalog(plan.files);
-
-  // 3) Write monthly files, then the catalog registration LAST.
-  const filesCreated: string[] = [];
-  const filesAppended: string[] = [];
-  for (const f of newFiles) { writeFileSync(f.path, f.contents); filesCreated.push(relative(ROOT, f.path)); }
-  for (const f of appendFiles) { writeFileSync(f.path, f.contents); filesAppended.push(relative(ROOT, f.path)); }
-  if (catalogContents) writeFileSync(CATALOG_FILE, catalogContents);
-
-  return {
-    imagesCopied: plan.images.length,
-    filesCreated,
-    filesAppended,
-    catalogUpdated: catalogContents !== null,
+  const rollback = (): RollbackReport => {
+    const report: RollbackReport = { restored: [], deletedFiles: [], deletedImages: [], removedDirs: [] };
+    for (let i = writtenFiles.length - 1; i >= 0; i--) {
+      const op = writtenFiles[i];
+      if (op.existedBefore && op.original !== null) { writeFileSync(op.path, op.original); report.restored.push(relative(ROOT, op.path)); }
+      else if (existsSync(op.path)) { unlinkSync(op.path); report.deletedFiles.push(relative(ROOT, op.path)); }
+    }
+    for (let i = copiedImages.length - 1; i >= 0; i--) {
+      if (existsSync(copiedImages[i])) { unlinkSync(copiedImages[i]); report.deletedImages.push(relative(ROOT, copiedImages[i])); }
+    }
+    for (let i = createdDirs.length - 1; i >= 0; i--) {
+      try {
+        if (existsSync(createdDirs[i]) && readdirSync(createdDirs[i]).length === 0) { rmdirSync(createdDirs[i]); report.removedDirs.push(relative(ROOT, createdDirs[i])); }
+      } catch { /* leave non-empty dirs */ }
+    }
+    return report;
   };
+
+  try {
+    // ---- Stage: copy images + write files into the temp dir, verify ----
+    const stagedImages = new Map<string, string>();
+    for (let i = 0; i < plan.imageOps.length; i++) {
+      const op = plan.imageOps[i];
+      const staged = join(stageDir, `img-${i}.webp`);
+      copyFileSync(op.from, staged);
+      const meta = await sharp(readFileSync(staged)).metadata();
+      if (meta.format !== "webp") throw new Error(`Staged image for "${op.slug}" is not WebP.`);
+      await sharp(readFileSync(staged)).raw().toBuffer(); // re-verify full decode
+      stagedImages.set(op.slug, staged);
+    }
+    const stagedFiles = new Map<string, string>();
+    for (let i = 0; i < plan.fileOps.length; i++) {
+      const op = plan.fileOps[i];
+      const staged = join(stageDir, `file-${i}`);
+      writeFileSync(staged, op.contents);
+      const back = readFileSync(staged, "utf8");
+      if (back !== op.contents || back.length === 0) throw new Error(`Staged file ${op.path} failed verification.`);
+      if ((op.kind === "module-new" || op.kind === "module-append") && !back.includes("export const")) {
+        throw new Error(`Staged module ${op.path} is missing its export.`);
+      }
+      stagedFiles.set(op.path, staged);
+    }
+
+    // ---- Move into place: images, then modules/manifests, catalog LAST -
+    for (let i = 0; i < plan.imageOps.length; i++) {
+      if (faults.failBeforeImageIndex === i) throw new Error(`Injected failure before image #${i}.`);
+      const op = plan.imageOps[i];
+      ensureDir(dirname(op.to), createdDirs);
+      copyFileSync(stagedImages.get(op.slug)!, op.to);
+      copiedImages.push(op.to);
+    }
+
+    const ordered = [...plan.fileOps].sort((a, b) => (a.kind === "catalog" ? 1 : 0) - (b.kind === "catalog" ? 1 : 0));
+    for (const op of ordered) {
+      if (op.kind === "catalog" && faults.failBeforeCatalog) throw new Error("Injected failure before catalog write.");
+      if (op.kind !== "catalog" && faults.failBeforeFileKind === op.kind) throw new Error(`Injected failure before writing ${op.kind}.`);
+      ensureDir(dirname(op.path), createdDirs);
+      writeFileSync(op.path, stagedFiles.get(op.path) ? readFileSync(stagedFiles.get(op.path)!) : op.contents);
+      writtenFiles.push(op);
+    }
+
+    return {
+      imagesCopied: plan.imageOps.length,
+      filesCreated: plan.fileOps.filter((o) => o.kind === "module-new").map((o) => relative(ROOT, o.path)),
+      filesAppended: plan.fileOps.filter((o) => o.kind === "module-append").map((o) => relative(ROOT, o.path)),
+      catalogUpdated: plan.fileOps.some((o) => o.kind === "catalog"),
+      manifestCsv: relative(ROOT, plan.manifestCsvPath),
+      manifestJson: relative(ROOT, plan.manifestJsonPath),
+    };
+  } catch (e) {
+    const report = rollback();
+    throw new ImportError((e as Error).message, report);
+  } finally {
+    rmSync(stageDir, { recursive: true, force: true });
+  }
 }
 
 /* ------------------------------------------------------------------ *
@@ -706,24 +1077,28 @@ export function renderReport(plan: BatchPlan): string {
   const errors = plan.issues.filter((i) => i.level === "error");
   const warnings = plan.issues.filter((i) => i.level === "warn");
 
-  lines.push(`\nDiscovery batch: ${relative(ROOT, plan.bundleDir)}`);
+  lines.push(`\nDiscovery batch: ${relative(ROOT, plan.bundleDir)}  (name: ${plan.batchName})`);
   lines.push(`  entries in bundle:   ${plan.stats.entryCount}`);
   lines.push(`  manifest data rows:  ${plan.manifestRowCount}`);
-  lines.push(`  images to copy:      ${plan.images.length}`);
-  lines.push(
-    `  monthly files:       ${plan.stats.newFiles} new, ${plan.stats.appendedFiles} appended`,
-  );
+  lines.push(`  images to copy:      ${plan.imageOps.length}  (${(plan.stats.imageBytes / 1024).toFixed(0)} KiB total)`);
+  lines.push(`  monthly modules:     ${plan.stats.newFiles} new, ${plan.stats.appendedFiles} appended`);
   if (plan.stats.entryCount) {
     lines.push(`  by year:             ${JSON.stringify(plan.stats.byYear)}`);
     lines.push(`  by category:         ${JSON.stringify(plan.stats.byCategory)}`);
     lines.push(`  by image relation:   ${JSON.stringify(plan.stats.byImageRelation)}`);
+    lines.push(`  audit manifest:      ${relative(ROOT, plan.manifestCsvPath)} (+ .json)`);
+  }
+
+  if (plan.imageMeta.size) {
+    lines.push("\n  images (decoded):");
+    for (const m of plan.imageMeta.values()) {
+      lines.push(`    ${m.slug}: ${m.width}×${m.height}px, ${(m.size / 1024).toFixed(0)} KiB, ${m.format}`);
+    }
   }
 
   if (plan.files.length) {
     lines.push("\n  target modules:");
-    for (const f of plan.files) {
-      lines.push(`    ${f.isNew ? "create" : "append"}  src/content/${f.fileBase}.ts  (+${f.entries.length})`);
-    }
+    for (const f of plan.files) lines.push(`    ${f.isNew ? "create" : "append"}  src/content/${f.fileBase}.ts  (+${f.count})`);
   }
 
   if (errors.length) {

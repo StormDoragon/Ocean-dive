@@ -8,16 +8,16 @@
  *
  * With --dry-run (or no bundle path) nothing is written: the plan and its
  * dry-run report are printed and the process exits non-zero if the batch has
- * any error.  Without --dry-run, the batch is applied ONLY when it is fully
- * valid; a batch with any error is rejected without touching the repository.
+ * any error.  Without --dry-run, the batch is applied transactionally ONLY when
+ * it is fully valid; any failure rolls the repository back byte-for-byte.
  *
  * This tool performs no research and invents no data — it only integrates the
  * records and images the bundle supplies.
  */
 import { resolve } from "node:path";
-import { buildPlan, applyPlan, renderReport, ROOT } from "./lib/import-batch";
+import { buildPlan, applyPlan, renderReport, ImportError, ROOT } from "./lib/import-batch";
 
-function main() {
+async function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes("--dry-run");
   const bundleArg = args.find((a) => !a.startsWith("--"));
@@ -27,8 +27,7 @@ function main() {
     process.exit(1);
   }
 
-  const bundleDir = resolve(ROOT, bundleArg);
-  const plan = buildPlan(bundleDir);
+  const plan = await buildPlan(resolve(ROOT, bundleArg));
   console.log(renderReport(plan));
 
   const errorCount = plan.issues.filter((i) => i.level === "error").length;
@@ -43,13 +42,27 @@ function main() {
     process.exit(1);
   }
 
-  const result = applyPlan(plan);
-  console.log("Applied:");
-  console.log(`  images copied:   ${result.imagesCopied}`);
-  console.log(`  files created:   ${result.filesCreated.join(", ") || "none"}`);
-  console.log(`  files appended:  ${result.filesAppended.join(", ") || "none"}`);
-  console.log(`  catalog updated: ${result.catalogUpdated ? "yes" : "no"}`);
-  console.log("\nNext: npm run validate && npm run build\n");
+  try {
+    const result = await applyPlan(plan);
+    console.log("Applied (transactional):");
+    console.log(`  images copied:   ${result.imagesCopied}`);
+    console.log(`  files created:   ${result.filesCreated.join(", ") || "none"}`);
+    console.log(`  files appended:  ${result.filesAppended.join(", ") || "none"}`);
+    console.log(`  catalog updated: ${result.catalogUpdated ? "yes" : "no"}`);
+    console.log(`  audit manifest:  ${result.manifestCsv}, ${result.manifestJson}`);
+    console.log("\nNext: npm run validate && npm run build\n");
+  } catch (e) {
+    if (e instanceof ImportError) {
+      console.error(`\n✗ Import failed and was rolled back: ${e.message}`);
+      console.error(`  restored:       ${e.rollback.restored.join(", ") || "none"}`);
+      console.error(`  deleted files:  ${e.rollback.deletedFiles.join(", ") || "none"}`);
+      console.error(`  deleted images: ${e.rollback.deletedImages.join(", ") || "none"}`);
+      console.error(`  removed dirs:   ${e.rollback.removedDirs.join(", ") || "none"}`);
+      console.error("  The repository is unchanged.\n");
+      process.exit(1);
+    }
+    throw e;
+  }
 }
 
-main();
+main().catch((e) => { console.error(e); process.exit(1); });

@@ -17,6 +17,7 @@
     "check:images": "tsx scripts/check-remote-images.mjs",
     "import:discoveries": "tsx scripts/import-discoveries.ts",
     "audit:discovery-batch": "tsx scripts/audit-discovery-batch.ts",
+    "test:discovery-import": "tsx scripts/test/discovery-import.test.ts",
     "new-month": "node scripts/new-month.mjs",
     "sync:notion": "node scripts/sync-notion.mjs"
   },
@@ -30,6 +31,7 @@
     "react-dom": "^19.0.0",
     "react-globe.gl": "^2.38.0",
     "react-leaflet": "^5.0.0",
+    "sharp": "^0.35.3",
     "three": "^0.185.0"
   },
   "devDependencies": {

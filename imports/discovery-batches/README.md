@@ -58,6 +58,11 @@ The hero image is supplied at `images/<slug>.webp` and copied to
 `public/images/discoveries/<year>/<slug>.webp`. The importer sets `heroImage`
 and prepends it to `gallery` automatically, so authors may omit `heroImage`.
 
+Each image is fully decoded with **sharp** (its filename/header alone is never
+trusted): it must be a non-animated WebP, at least **800×500 px**, and no larger
+than **700 KB** unless the manifest notes contain `scientific-detail-exception`.
+Decoded width, height, file size, and SHA-256 must match the manifest.
+
 ## `image-rights.csv`
 
 One header row plus one data row per discovery. Recommended columns (the parser
@@ -76,12 +81,25 @@ derived hero path.
 
 ## Duplicate rejection
 
-A bundle is rejected if any entry duplicates — within the batch **or** against
-the live catalog — a: slug, normalized title, scientific name, DOI, primary
-source URL, or **image hash** (byte-identical hero image).
+A bundle is rejected if any entry duplicates — within the batch, against the
+live catalog, **or against a previously committed audit manifest** in
+`docs/discovery-image-rights/` — a: slug, normalized title, scientific name,
+DOI, primary source URL, image path, or **image hash** (byte-identical hero
+image).
+
+## Permanent audit manifest
+
+On success the importer writes a normalized manifest to
+`docs/discovery-image-rights/<batch>.csv` and `<batch>.json` (committed), so the
+rights provenance of every image is preserved independently of this transient
+input bundle.
 
 ## Safety
 
-Nothing is written unless the batch has zero errors, and the catalog
-registration in `src/content/catalog.ts` is written last, so the catalog is
-never left half-registered.
+The apply step is transactional: output is staged and verified, then moved into
+place with `catalog.ts` last. Any failure restores every modified file
+byte-for-byte, deletes newly created files/images, removes directories the run
+created, and leaves the catalog and discovery count unchanged. Proven by
+`npm run test:discovery-import` (tree-hash identical before/after simulated
+failures). Bundle paths that resolve outside the repository root, and hero-image
+symlinks that escape the bundle, are rejected.
