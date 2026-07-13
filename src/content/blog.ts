@@ -25,6 +25,10 @@ export type BlogImage = {
   license?: string;
   /** Optional caption shown beneath the image. */
   caption?: string;
+  /** CSS aspect-ratio for the frame (e.g. "16 / 9", "3 / 2"). Defaults to 16/9. */
+  aspect?: string;
+  /** CSS object-position for the crop (e.g. "center 30%", "top"). */
+  objectPosition?: string;
   /**
    * True when this is placeholder art rather than a real photograph, so it is
    * never presented as a depiction of the real subject.
@@ -115,12 +119,15 @@ export const blogPosts: BlogPost[] = [
     category: "space",
     tags: ["SETI", "Project Phoenix", "Parkes Observatory", "radio astronomy"],
     heroImage: {
-      // TODO: replace with the reader-supplied licensed photograph of the
-      // Parkes radio telescope. Placeholder art is shown honestly until then.
-      src: "/images/categories/space.svg",
-      alt: "Illustration representing the search for extraterrestrial radio signals. A verified photograph of the Parkes telescope is being sourced.",
-      caption: "Placeholder illustration — a licensed photograph of the Parkes radio telescope will replace this.",
-      placeholder: true,
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/CSIRO_ScienceImage_4350_CSIROs_Parkes_Radio_Telescope_with_moon_in_the_background.jpg/1280px-CSIRO_ScienceImage_4350_CSIROs_Parkes_Radio_Telescope_with_moon_in_the_background.jpg",
+      alt: "The 64-metre CSIRO Parkes radio telescope silhouetted at dusk with the Moon rising behind the dish.",
+      credit: "CSIRO",
+      license: "CC BY 3.0",
+      sourceUrl:
+        "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_4350_CSIROs_Parkes_Radio_Telescope_with_moon_in_the_background.jpg",
+      // Source is portrait (2129×2657); bias the crop toward the top to keep the Moon.
+      aspect: "3 / 2",
+      objectPosition: "center 30%",
     },
     keyFacts: [
       { label: "Project", value: "Project Phoenix (SETI Institute)" },
@@ -147,11 +154,12 @@ export const blogPosts: BlogPost[] = [
           "The CSIRO Parkes radio telescope, a 64-metre dish that opened in 1961 and famously relayed television from the Apollo 11 Moon landing, was the largest telescope in the Southern Hemisphere and a critical hub for studying distant solar systems. From February 1995, Project Phoenix used Parkes as its primary ear on the cosmos, with the smaller Mopra antenna nearby acting as a second dish to help tell a genuine cosmic signal apart from local interference.",
         ],
         image: {
-          // TODO: replace with a reader-supplied licensed photograph.
-          src: "/images/categories/space.svg",
-          alt: "Illustration of a large radio dish scanning the night sky. A verified photograph of the Parkes telescope is being sourced.",
-          caption: "Placeholder illustration — a photograph of the Parkes dish will go here.",
-          placeholder: true,
+          src: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Parkes.arp.750pix.jpg",
+          alt: "Daytime view of the white 64-metre Parkes radio telescope dish tilted toward the sky.",
+          credit: "Adrian Pingstone",
+          license: "Public domain",
+          sourceUrl: "https://commons.wikimedia.org/wiki/File:Parkes.arp.750pix.jpg",
+          caption: "The Parkes 64-metre dish, opened in 1961 and the largest radio telescope in the Southern Hemisphere.",
         },
       },
       {
@@ -160,13 +168,6 @@ export const blogPosts: BlogPost[] = [
           "Project Phoenix was a targeted search, not a survey of the whole sky. Astronomers drew up a list of roughly 800 nearby stars that resembled our Sun — stars old enough and stable enough to give life a chance — most of them within about 200 light-years of Earth.",
           "For each star, the telescope scanned a wide band of radio frequencies, splitting it into billions of narrow channels and searching for the tell-tale sign of technology: a signal squeezed into a single, unnaturally narrow frequency that nature does not produce. When the system flagged a promising candidate, an automated protocol immediately re-checked it and compared it against the second telescope. If a signal was really coming from the star and not from a passing satellite or a microwave oven on Earth, it would move across the sky with the star. Almost everything the search flagged turned out to be human-made interference.",
         ],
-        image: {
-          // TODO: replace with a reader-supplied licensed photograph.
-          src: "/images/categories/space.svg",
-          alt: "Illustration of a radio telescope control room analysing incoming signals. A verified photograph is being sourced.",
-          caption: "Placeholder illustration — a second related photograph will go here.",
-          placeholder: true,
-        },
       },
       {
         heading: "What it found — and why silence still matters",
@@ -174,6 +175,14 @@ export const blogPosts: BlogPost[] = [
           "Across its Parkes campaign in 1995, and later observations from telescopes in the United States and at Arecibo in Puerto Rico, Project Phoenix examined its full list of target stars through 2004. It never detected a confirmed signal from another civilization.",
           "That is not the failure it might sound like. A search of a few hundred stars, in one slice of the radio spectrum, over a few years, is a single cup dipped into a cosmic ocean. Project Phoenix proved that a rigorous, sensitive, privately funded search was possible, and it sharpened the tools and the discipline that modern efforts rely on. Its direct descendants — the Allen Telescope Array, purpose-built for SETI, and the Breakthrough Listen initiative, which has itself observed from Parkes — carry the work forward across far more stars and far wider frequencies.",
         ],
+        image: {
+          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Allen_Telescope_Array_-_Flickr_-_brewbooks.jpg/1280px-Allen_Telescope_Array_-_Flickr_-_brewbooks.jpg",
+          alt: "A row of small white dish antennas of the Allen Telescope Array under a blue sky at Hat Creek, California.",
+          credit: "brewbooks (Flickr)",
+          license: "CC BY-SA 2.0",
+          sourceUrl: "https://commons.wikimedia.org/wiki/File:Allen_Telescope_Array_-_Flickr_-_brewbooks.jpg",
+          caption: "The Allen Telescope Array in California — purpose-built for SETI and a direct descendant of Project Phoenix.",
+        },
       },
     ],
     faqs: [

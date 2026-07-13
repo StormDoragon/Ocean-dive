@@ -214,7 +214,13 @@ function Figure({
   const hasMeta = Boolean(image.caption || image.credit || image.license || image.sourceUrl);
   return (
     <figure className={className}>
-      <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-abyss-900/40">
+      <div
+        className="relative overflow-hidden rounded-2xl border border-white/10 bg-abyss-900/40"
+        style={{
+          aspectRatio: image.aspect ?? "16 / 9",
+          ...(priority ? { maxHeight: "70vh" } : {}),
+        }}
+      >
         <Image
           src={image.src}
           alt={image.alt}
@@ -222,6 +228,7 @@ function Figure({
           priority={priority}
           sizes="(max-width: 768px) 100vw, 768px"
           className={image.placeholder ? "object-contain p-8 opacity-80" : "object-cover"}
+          style={image.objectPosition ? { objectPosition: image.objectPosition } : undefined}
         />
       </div>
       {hasMeta ? (
