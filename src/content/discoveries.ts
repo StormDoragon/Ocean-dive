@@ -30,7 +30,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Undescribed incirrate octopod",
     classification: "Animalia · Mollusca · Cephalopoda · Octopoda",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/PMNM_-_Casper_-_New_Octopod_Species_%2830550423053%29.jpg/1280px-PMNM_-_Casper_-_New_Octopod_Species_%2830550423053%29.jpg",
+    imageAlt: "The ghostly Casper octopod photographed by NOAA near Necker Island in Papahānaumokuākea Marine National Monument.",
+    imageCredit: "NOAA Office of Ocean Exploration and Research / National Marine Sanctuaries",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:PMNM_-_Casper_-_New_Octopod_Species_(30550423053).jpg",
+    imageLicense: "Public domain (NOAA)",
+    imageType: "photograph",
     summary:
       "A ghostly, pigmentless octopus filmed at 4,290 m off Hawaii — likely a previously unknown genus living deeper than any known finned octopod.",
     story: {
@@ -41,7 +46,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It lacks the pigment cells (chromatophores) of shallower octopods, giving it a translucent, ghost-like look that inspired the nickname \"Casper.\"",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/PMNM_-_Casper_-_New_Octopod_Species_%2830550423053%29.jpg/1280px-PMNM_-_Casper_-_New_Octopod_Species_%2830550423053%29.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://oceanexplorer.noaa.gov/okeanos/explorations/ex1603/welcome.html",
     videoUrls: [],
     relatedSlugs: ["lost-city-hydrothermal-field", "scaly-foot-gastropod"],
@@ -64,7 +69,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Geology · Serpentinite-hosted vent system",
     conservationStatus: "Proposed marine protected area",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Formation_at_Lost_City_Field.jpg/960px-Formation_at_Lost_City_Field.jpg",
+    imageAlt: "A carbonate formation at the Lost City hydrothermal field photographed during an Okeanos Explorer expedition.",
+    imageCredit: "NOAA",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Formation_at_Lost_City_Field.jpg",
+    imageLicense: "Public domain (NOAA)",
+    imageType: "photograph",
     summary:
       "A field of towering white carbonate chimneys — one over 60 m tall — driven by seawater reacting with mantle rock rather than volcanic heat.",
     story: {
@@ -75,7 +85,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Its alkaline, methane-rich chemistry is a leading model for how life could begin on Earth — and on icy ocean worlds like Enceladus.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Formation_at_Lost_City_Field.jpg/960px-Formation_at_Lost_City_Field.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.nsf.gov/news/news_summ.jsp?cntn_id=104292",
     videoUrls: [],
     relatedSlugs: ["scaly-foot-gastropod", "casper-ghost-octopus"],
@@ -98,7 +108,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Chrysomallon squamiferum",
     classification: "Animalia · Mollusca · Gastropoda · Neomphalina",
     conservationStatus: "Endangered (IUCN)",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Chrysomallon_squamiferum_9.png/960px-Chrysomallon_squamiferum_9.png",
+    imageAlt: "An adult scaly-foot gastropod, Chrysomallon squamiferum, from the Longqi hydrothermal field.",
+    imageCredit: "Chong Chen, Katsuyuki Uematsu, Katrin Linse and Julia D. Sigwart",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Chrysomallon_squamiferum_9.png",
+    imageLicense: "CC BY 4.0",
+    imageType: "photograph",
     summary:
       "A deep-sea snail that armors its foot with iron-sulfide scales — the only animal known to build part of its skeleton from iron.",
     story: {
@@ -109,7 +124,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It incorporates iron sulfides into its shell and foot scales, and was the first species listed as endangered because of the threat of deep-sea mining.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Chrysomallon_squamiferum_9.png/960px-Chrysomallon_squamiferum_9.png", "/images/textures/waves.svg"],
     paperUrl: "https://www.iucnredlist.org/species/103636217/103636261",
     videoUrls: [],
     relatedSlugs: ["lost-city-hydrothermal-field", "casper-ghost-octopus"],
@@ -676,7 +691,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Geology · Detached coral reef",
     conservationStatus: "Within Great Barrier Reef Marine Park",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Envisat_image_of_the_Great_Barrier_Reef_off_Australia%27s_Queensland_coast_ESA233136.jpg/960px-Envisat_image_of_the_Great_Barrier_Reef_off_Australia%27s_Queensland_coast_ESA233136.jpg",
+    imageAlt: "Satellite image of the northern Great Barrier Reef and Cape York coastline in Queensland, Australia.",
+    imageCredit: "European Space Agency / Envisat MERIS",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Envisat_image_of_the_Great_Barrier_Reef_off_Australia%27s_Queensland_coast_ESA233136.jpg",
+    imageLicense: "CC BY-SA 3.0 IGO",
+    imageType: "data visualization",
     summary:
       "The first detached reef found in over a century — taller than the Empire State Building at ~500 m, with its peak just 40 m below the surface.",
     story: {
@@ -687,7 +707,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It is the first such detached reef discovered since the 1800s and stands taller than most of the world's skyscrapers.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Envisat_image_of_the_Great_Barrier_Reef_off_Australia%27s_Queensland_coast_ESA233136.jpg/960px-Envisat_image_of_the_Great_Barrier_Reef_off_Australia%27s_Queensland_coast_ESA233136.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://schmidtocean.org/cruise-log-post/exploring-the-depths-off-cape-york/",
     videoUrls: [],
     relatedSlugs: ["casper-ghost-octopus", "scaly-foot-gastropod"],
@@ -710,7 +730,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Architeuthis dux",
     classification: "Animalia · Mollusca · Cephalopoda · Oegopsida",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Giant_squid_Ranheim2.jpg/960px-Giant_squid_Ranheim2.jpg",
+    imageAlt: "A giant squid specimen being measured by researchers at Ranheim, Norway.",
+    imageCredit: "NTNU Museum of Natural History and Archaeology",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Giant_squid_Ranheim2.jpg",
+    imageLicense: "CC BY 2.0",
+    imageType: "photograph",
     summary:
       "The first footage of a live giant squid in its natural deep-sea habitat, ending centuries of the animal being known mostly from carcasses.",
     story: {
@@ -721,7 +746,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It was the first time the near-mythical animal had ever been filmed alive in the deep, not washed up or netted.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Giant_squid_Ranheim2.jpg/960px-Giant_squid_Ranheim2.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.kahaku.go.jp/english/",
     videoUrls: [],
     relatedSlugs: ["macropinna-barreleye", "casper-ghost-octopus"],
@@ -744,7 +769,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Macropinna microstoma",
     classification: "Animalia · Chordata · Actinopterygii · Argentiniformes",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Barreleye-fish_GoK.jpg/960px-Barreleye-fish_GoK.jpg",
+    imageAlt: "A barreleye fish collected during NOAA's Gulf of Alaska seamount biodiversity expedition.",
+    imageCredit: "NOAA Ocean Exploration",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Barreleye-fish_GoK.jpg",
+    imageLicense: "Public domain (NOAA)",
+    imageType: "photograph",
     summary:
       "The first images of a living barreleye — a fish whose transparent, fluid-filled head lets its tubular eyes rotate to peer up through its own skull.",
     story: {
@@ -755,7 +785,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Its see-through dome and upward-swivelling green eyes let it spot prey silhouetted against the faint light above.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Barreleye-fish_GoK.jpg/960px-Barreleye-fish_GoK.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.mbari.org/news/researchers-solve-mystery-of-deep-sea-fish-with-tubular-eyes-and-transparent-head/",
     videoUrls: [],
     relatedSlugs: ["giant-squid-filmed", "lost-city-hydrothermal-field"],
@@ -778,7 +808,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Kiwa hirsuta",
     classification: "Animalia · Arthropoda · Malacostraca · Decapoda",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Galath%C3%A9e_y%C3%A9ti%2C_un_habitant_des_profondeurs_abyssales_%28Ifremer_00569-68091_-_25272%29.jpg/960px-Galath%C3%A9e_y%C3%A9ti%2C_un_habitant_des_profondeurs_abyssales_%28Ifremer_00569-68091_-_25272%29.jpg",
+    imageAlt: "The hairy white Yeti crab, Kiwa hirsuta, photographed at a deep-sea hydrothermal vent.",
+    imageCredit: "Alexis Fifis / IFREMER",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Galathée_yéti,_un_habitant_des_profondeurs_abyssales_(Ifremer_00569-68091_-_25272).jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "photograph",
     summary:
       "A blind, silky-clawed crab from hydrothermal vents so distinctive it required an entirely new family — nicknamed the 'yeti crab' for its hairy arms.",
     story: {
@@ -789,7 +824,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The bristles host bacteria the crab may farm for food, and the animal was placed in a brand-new genus and family, Kiwaidae.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Galath%C3%A9e_y%C3%A9ti%2C_un_habitant_des_profondeurs_abyssales_%28Ifremer_00569-68091_-_25272%29.jpg/960px-Galath%C3%A9e_y%C3%A9ti%2C_un_habitant_des_profondeurs_abyssales_%28Ifremer_00569-68091_-_25272%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.mbari.org/",
     videoUrls: [],
     relatedSlugs: ["scaly-foot-gastropod", "lost-city-hydrothermal-field"],
@@ -812,7 +847,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Osedax",
     classification: "Animalia · Annelida · Polychaeta · Siboglinidae",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Osedax_roseus.jpg/960px-Osedax_roseus.jpg",
+    imageAlt: "Osedax roseus bone-eating worms growing from a whale bone.",
+    imageCredit: "Robert C. Vrijenhoek, Shannon B. Johnson and Greg W. Rouse",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Osedax_roseus.jpg",
+    imageLicense: "CC BY 2.0",
+    imageType: "photograph",
     summary:
       "Rootless worms that bore into whale bones on the seafloor, dissolving them with acid and feeding through symbiotic bacteria — a new genus found on a sunken whale.",
     story: {
@@ -823,7 +863,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "They digest bone using root-like tissues and bacteria, earning the name Osedax — Latin for 'bone-devourer.'",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Osedax_roseus.jpg/960px-Osedax_roseus.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.science.org/doi/10.1126/science.1098650",
     videoUrls: [],
     relatedSlugs: ["kiwa-yeti-crab", "casper-ghost-octopus"],
@@ -846,7 +886,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Grimpoteuthis sp. (Dumbo octopus)",
     classification: "Animalia · Mollusca · Cephalopoda · Octopoda",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Dumbo_Octopus_%2849203817176%29.jpg/960px-Dumbo_Octopus_%2849203817176%29.jpg",
+    imageAlt: "A dumbo octopus observed during a NOAA deep-sea exploration dive.",
+    imageCredit: "NOAA Office of Ocean Exploration and Research",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Dumbo_Octopus_(49203817176).jpg",
+    imageLicense: "CC BY-SA 2.0",
+    imageType: "photograph",
     summary:
       "A Dumbo octopus filmed at 6,957 m in the Java Trench — nearly 2 km deeper than any confirmed octopus before, pushing the group into the hadal zone.",
     story: {
@@ -857,7 +902,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The sighting shattered the previous octopus depth record and showed octopuses can survive across roughly 99% of the seafloor.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Dumbo_Octopus_%2849203817176%29.jpg/960px-Dumbo_Octopus_%2849203817176%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://royalsocietypublishing.org/doi/10.1098/rsos.201161",
     videoUrls: [],
     relatedSlugs: ["mariana-snailfish", "casper-ghost-octopus"],
@@ -880,7 +925,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Pseudoliparis swirei",
     classification: "Animalia · Chordata · Actinopterygii · Scorpaeniformes",
     conservationStatus: "Not evaluated",
-    heroImage: "/images/categories/ocean.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Pseudoliparis_swirei_%2810.11646-zootaxa.4358.1.7%29_Figure_8.jpg/960px-Pseudoliparis_swirei_%2810.11646-zootaxa.4358.1.7%29_Figure_8.jpg",
+    imageAlt: "A freshly caught Pseudoliparis swirei Mariana snailfish specimen documented in the species description.",
+    imageCredit: "Gerringer, Linley, Jamieson, Goetze and Drazen",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Pseudoliparis_swirei_(10.11646-zootaxa.4358.1.7)_Figure_8.jpg",
+    imageLicense: "CC BY 3.0",
+    imageType: "photograph",
     summary:
       "A small, translucent snailfish that thrives near 8,000 m in the Mariana Trench — the deepest-living fish ever described.",
     story: {
@@ -891,7 +941,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Specialised proteins keep its cells stable under crushing pressure, and it sits at the top of the trench food chain.",
     },
-    gallery: ["/images/categories/ocean.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Pseudoliparis_swirei_%2810.11646-zootaxa.4358.1.7%29_Figure_8.jpg/960px-Pseudoliparis_swirei_%2810.11646-zootaxa.4358.1.7%29_Figure_8.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.mapress.com/zt/article/view/zootaxa.4358.1.7",
     videoUrls: [],
     relatedSlugs: ["dumbo-octopus-deep", "casper-ghost-octopus"],
