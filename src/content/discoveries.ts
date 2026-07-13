@@ -1051,7 +1051,7 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "WASP-127b",
     classification: "Astronomy · Hot-Jupiter exoplanet",
     conservationStatus: undefined,
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg/1600px-Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/6/63/Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg",
     imageAlt: "Artist's impression of the giant exoplanet WASP-127b, whose equator is swept by supersonic jet-stream winds.",
     imageCredit: "ESO/M. Kornmesser",
     imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg",
@@ -1067,7 +1067,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The result exposed a supersonic equatorial jet stream wrapped around the planet, giving scientists a rare direct measurement of weather on a world beyond the Solar System.",
     },
-    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg/1600px-Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/6/63/Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.eso.org/public/news/eso2502/",
     primarySourceUrl: "https://www.eso.org/public/news/eso2502/",
     supportingSources: [
@@ -1105,7 +1105,7 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "WASP-121b (Tylos)",
     classification: "Astronomy · Ultra-hot-Jupiter exoplanet",
     conservationStatus: undefined,
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg/1600px-Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/e/ee/Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg",
     imageAlt: "Artist's concept of a hot-Jupiter exoplanet, representative of the ultra-hot world Tylos (WASP-121b) whose atmosphere was mapped in 3D.",
     imageCredit: "NASA, ESA, CSA, R. Crawford (STScI)",
     imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg",
@@ -1121,7 +1121,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The observations separated deep, middle, and upper atmospheric flows, showing a high-altitude equatorial jet and a lower circulation pattern unlike weather seen on any Solar System planet.",
     },
-    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg/1600px-Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/e/ee/Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://doi.org/10.1038/s41586-025-08664-1",
     primarySourceUrl: "https://www.eso.org/public/news/eso2504/",
     supportingSources: [
@@ -1159,7 +1159,7 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Saturn's irregular satellite population",
     classification: "Astronomy · Planetary satellites",
     conservationStatus: undefined,
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg/1600px-Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/4/47/Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg",
     imageAlt: "A natural-colour view of Saturn and its rings captured by the Cassini spacecraft.",
     imageCredit: "NASA / JPL / Space Science Institute",
     imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg",
@@ -1175,7 +1175,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The discovery more than doubled the number of newly recognized Saturnian moons in one announcement and revealed clusters of objects that may be fragments of ancient collisions.",
     },
-    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg/1600px-Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/4/47/Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://news.ubc.ca/2025/03/saturn-128-new-moons/",
     primarySourceUrl: "https://news.ubc.ca/2025/03/saturn-128-new-moons/",
     supportingSources: [
@@ -1275,7 +1275,7 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Gold nuclei produced from lead",
     classification: "Physics · Nuclear transmutation",
     conservationStatus: undefined,
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/ALICE_experiment_at_CERN.jpg/1600px-ALICE_experiment_at_CERN.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/e/e0/ALICE_experiment_at_CERN.jpg",
     imageAlt: "The ALICE detector at CERN, which measured lead nuclei transmuting into gold during near-miss collisions at the LHC.",
     imageCredit: "CERN",
     imageSourceUrl: "https://commons.wikimedia.org/wiki/File:ALICE_experiment_at_CERN.jpg",
@@ -1291,7 +1291,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It is modern nuclear transmutation in a new regime: the medieval dream of alchemy appeared for an instant, while also giving physicists a precise test of electromagnetic processes around heavy ions.",
     },
-    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/ALICE_experiment_at_CERN.jpg/1600px-ALICE_experiment_at_CERN.jpg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/e/e0/ALICE_experiment_at_CERN.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://alice-collaboration.web.cern.ch/2025-alice-lead-to-gold",
     primarySourceUrl: "https://alice-collaboration.web.cern.ch/2025-alice-lead-to-gold",
     supportingSources: [
@@ -1329,7 +1329,7 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Solar south pole",
     classification: "Space science · Solar physics",
     conservationStatus: undefined,
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg/2048px-Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/7/73/Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg",
     imageAlt: "A high-resolution view of the Sun captured by ESA's Solar Orbiter, the mission that returned the first clear views of the solar poles.",
     imageCredit: "ESA & NASA / Solar Orbiter / EUI Team",
     imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg",
@@ -1345,7 +1345,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The new angle opens a missing perspective on the Sun's magnetic field and its roughly 11-year cycle, which controls space weather reaching Earth.",
     },
-    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg/2048px-Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/7/73/Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles",
     primarySourceUrl: "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles",
     supportingSources: [
@@ -1383,7 +1383,7 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "HOPS-315",
     classification: "Astronomy · Protostar and protoplanetary disc",
     conservationStatus: undefined,
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg/1600px-Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/1/12/Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg",
     imageAlt: "Artist's impression of a young star surrounded by a planet-forming disc, representative of the earliest planet formation seen around HOPS-315.",
     imageCredit: "NASA, ESA, CSA / Ralf Crawford (STScI)",
     imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg",
@@ -1399,7 +1399,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The observations connect a chemical transition in a distant disc to the first stage of terrestrial planet formation, before larger rocks and worlds have assembled.",
     },
-    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg/1600px-Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/1/12/Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.eso.org/public/news/eso2512/",
     primarySourceUrl: "https://www.eso.org/public/news/eso2512/",
     supportingSources: [
@@ -1491,7 +1491,7 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "GRB 250702B",
     classification: "Astronomy · Gamma-ray burst",
     conservationStatus: undefined,
-    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg/1600px-Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/5/55/Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg",
     imageAlt: "Artist's impression of a gamma-ray burst, an intense flash of high-energy radiation from a distant cosmic explosion.",
     imageCredit: "ESO / A. Roquette",
     imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg",
@@ -1507,7 +1507,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Its long, repeating behavior does not fit the usual pattern of a single short-lived burst, leaving the physical engine under active investigation.",
     },
-    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg/1600px-Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/5/55/Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.eso.org/public/news/eso2514/",
     primarySourceUrl: "https://www.eso.org/public/news/eso2514/",
     supportingSources: [
