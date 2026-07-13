@@ -18,7 +18,12 @@ export const march2026Discoveries: Discovery[] = [
     scientificName: "GJ 887 d",
     classification: "Astronomy · Habitable-zone super-Earth",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Artist%27s_impression_of_the_planet_orbiting_Proxima_Centauri.jpg",
+    imageAlt: "Artist's impression of a rocky planet in the habitable zone of a nearby red dwarf, representative of the super-Earth GJ 887 d.",
+    imageCredit: "ESO/M. Kornmesser",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Artist%27s_impression_of_the_planet_orbiting_Proxima_Centauri.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "artist impression",
     summary:
       "A 50.77-day super-Earth confirmed in the habitable zone of GJ 887, only about 10.7 light-years away and second only to Proxima b in proximity among known temperate planets.",
     story: {
@@ -29,7 +34,7 @@ export const march2026Discoveries: Discovery[] = [
       whatMakesUnique:
         "Its nearness and temperate orbit make it one of the strongest future targets for direct imaging and atmospheric follow-up, although its actual surface conditions remain unknown.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/a/ae/Artist%27s_impression_of_the_planet_orbiting_Proxima_Centauri.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://arxiv.org/abs/2602.08929",
     videoUrls: [],
     relatedSlugs: ["trappist-1-system", "lhs-1903-inside-out-system"],

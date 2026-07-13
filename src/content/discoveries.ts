@@ -302,7 +302,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Dreadnoughtus schrani",
     classification: "Animalia · Dinosauria · Sauropoda · Titanosauria",
     conservationStatus: "Extinct (~76 Ma)",
-    heroImage: "/images/categories/dinosaurs-fossils.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/0/03/Dreadnoughtus_Published_Reconstruction.jpg",
+    imageAlt: "A skeletal reconstruction of the giant titanosaur Dreadnoughtus schrani, with recovered bones shown against a body silhouette.",
+    imageCredit: "Lacovara et al. (Scientific Reports)",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Dreadnoughtus_Published_Reconstruction.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "reconstruction",
     summary:
       "One of the most complete giant dinosaurs ever found — a 26 m sauropod whose skeleton let scientists reliably estimate its ~59-tonne mass.",
     story: {
@@ -313,7 +318,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Its completeness made it one of the best mass estimates for any supermassive dinosaur, giving a rare accurate look at a true giant.",
     },
-    gallery: ["/images/categories/dinosaurs-fossils.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/0/03/Dreadnoughtus_Published_Reconstruction.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.nature.com/articles/srep06196",
     videoUrls: [],
     relatedSlugs: ["spinosaurus-swimming-tail"],
@@ -531,7 +536,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Earth science · Submarine volcanic eruption",
     conservationStatus: undefined,
-    heroImage: "/images/categories/earth-science.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Tonga_Volcano_Plume_Reached_the_Mesosphere_%28GOES-17%29_15_January_2022.jpg",
+    imageAlt: "A GOES-17 satellite view of the towering eruption plume of Hunga Tonga-Hunga Ha'apai reaching into the mesosphere on 15 January 2022.",
+    imageCredit: "NOAA / NASA / CIRA",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Tonga_Volcano_Plume_Reached_the_Mesosphere_%28GOES-17%29_15_January_2022.jpg",
+    imageLicense: "Public domain",
+    imageType: "data visualization",
     summary:
       "An undersea volcano produced the tallest eruption plume ever recorded — reaching the mesosphere — and a pressure wave that circled the globe.",
     story: {
@@ -542,7 +552,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Its plume punched ~57 km high and injected enough water vapor into the stratosphere to subtly affect global climate.",
     },
-    gallery: ["/images/categories/earth-science.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/1/1b/Tonga_Volcano_Plume_Reached_the_Mesosphere_%28GOES-17%29_15_January_2022.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.science.org/doi/10.1126/science.abo7063",
     videoUrls: [],
     relatedSlugs: ["lake-vostok-reached"],
@@ -682,7 +692,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: undefined,
     classification: "Technology · AI for structural biology",
     conservationStatus: undefined,
-    heroImage: "/images/categories/technology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/6/60/Myoglobin.png",
+    imageAlt: "A ribbon diagram of the folded three-dimensional structure of a protein, representative of the structures AlphaFold predicts.",
+    imageCredit: "AzaToth",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Myoglobin.png",
+    imageLicense: "Public domain",
+    imageType: "diagram",
     summary:
       "A neural network predicted protein 3D structures from sequence with near-experimental accuracy — cracking a 50-year grand challenge in biology.",
     story: {
@@ -693,7 +708,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It turned a problem that took years per protein into minutes, and earned a share of the 2024 Nobel Prize in Chemistry.",
     },
-    gallery: ["/images/categories/technology.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/6/60/Myoglobin.png", "/images/textures/grid.svg"],
     paperUrl: "https://www.nature.com/articles/s41586-021-03819-2",
     videoUrls: [],
     relatedSlugs: ["sycamore-quantum-supremacy"],
@@ -1034,7 +1049,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "WASP-127b",
     classification: "Astronomy · Hot-Jupiter exoplanet",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg/1600px-Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg",
+    imageAlt: "Artist's impression of the giant exoplanet WASP-127b, whose equator is swept by supersonic jet-stream winds.",
+    imageCredit: "ESO/M. Kornmesser",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "artist impression",
     summary:
       "Astronomers measured equatorial winds on the exoplanet WASP-127b moving at up to 33,000 km/h — the fastest planetary jet stream of its kind measured at the time.",
     story: {
@@ -1045,7 +1065,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The result exposed a supersonic equatorial jet stream wrapped around the planet, giving scientists a rare direct measurement of weather on a world beyond the Solar System.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg/1600px-Artist%E2%80%99s_impression_of_supersonic_winds_on_WASP-127b_%28eso2502a%29.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.eso.org/public/news/eso2502/",
     primarySourceUrl: "https://www.eso.org/public/news/eso2502/",
     supportingSources: [
@@ -1083,7 +1103,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "WASP-121b (Tylos)",
     classification: "Astronomy · Ultra-hot-Jupiter exoplanet",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg/1600px-Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg",
+    imageAlt: "Artist's concept of a hot-Jupiter exoplanet, representative of the ultra-hot world Tylos (WASP-121b) whose atmosphere was mapped in 3D.",
+    imageCredit: "NASA, ESA, CSA, R. Crawford (STScI)",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg",
+    imageLicense: "Public domain",
+    imageType: "artist impression",
     summary:
       "For the first time, astronomers mapped several layers of an exoplanet's atmosphere in three dimensions, revealing separate winds carrying iron, sodium, hydrogen, and titanium.",
     story: {
@@ -1094,7 +1119,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The observations separated deep, middle, and upper atmospheric flows, showing a high-altitude equatorial jet and a lower circulation pattern unlike weather seen on any Solar System planet.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg/1600px-Exoplanet_WASP-17_b_%28Artist%27s_Concept%29_%282023-140%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://doi.org/10.1038/s41586-025-08664-1",
     primarySourceUrl: "https://www.eso.org/public/news/eso2504/",
     supportingSources: [
@@ -1132,7 +1157,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Saturn's irregular satellite population",
     classification: "Astronomy · Planetary satellites",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg/1600px-Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg",
+    imageAlt: "A natural-colour view of Saturn and its rings captured by the Cassini spacecraft.",
+    imageCredit: "NASA / JPL / Space Science Institute",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg",
+    imageLicense: "Public domain",
+    imageType: "photograph",
     summary:
       "An international team found and confirmed 128 previously unrecognized small moons of Saturn, raising the planet's official total to 274 at the time of announcement.",
     story: {
@@ -1143,7 +1173,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The discovery more than doubled the number of newly recognized Saturnian moons in one announcement and revealed clusters of objects that may be fragments of ancient collisions.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg/1600px-Saturn_from_Cassini_Orbiter_%282007-01-19%29.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://news.ubc.ca/2025/03/saturn-128-new-moons/",
     primarySourceUrl: "https://news.ubc.ca/2025/03/saturn-128-new-moons/",
     supportingSources: [
@@ -1181,7 +1211,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Eos molecular cloud",
     classification: "Astronomy · Molecular hydrogen cloud",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/7/74/Local_Interstellar_Clouds_with_motion_arrows.jpg",
+    imageAlt: "A map of the local interstellar clouds of gas surrounding the Sun, representative of nearby molecular-cloud material.",
+    imageCredit: "NASA / Adler / U. Chicago / Wesleyan",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Local_Interstellar_Clouds_with_motion_arrows.jpg",
+    imageLicense: "Public domain",
+    imageType: "data visualization",
     summary:
       "Astronomers discovered Eos, a vast molecular cloud only about 300 light-years away, by detecting ultraviolet fluorescence from molecular hydrogen — a first for this class of cloud.",
     story: {
@@ -1192,7 +1227,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Eos shows that nearby star-forming material can remain hidden in plain sight and provides a new way to study how molecular clouds form and disperse.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/7/74/Local_Interstellar_Clouds_with_motion_arrows.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://doi.org/10.1038/s41550-025-02541-7",
     primarySourceUrl: "https://mcdonaldobservatory.org/2025/04/vast-molecular-cloud-discovered-near-our-solar-system/",
     supportingSources: [
@@ -1238,7 +1273,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Gold nuclei produced from lead",
     classification: "Physics · Nuclear transmutation",
     conservationStatus: undefined,
-    heroImage: "/images/categories/physics.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/ALICE_experiment_at_CERN.jpg/1600px-ALICE_experiment_at_CERN.jpg",
+    imageAlt: "The ALICE detector at CERN, which measured lead nuclei transmuting into gold during near-miss collisions at the LHC.",
+    imageCredit: "CERN",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:ALICE_experiment_at_CERN.jpg",
+    imageLicense: "CC BY-SA 4.0",
+    imageType: "photograph",
     summary:
       "The ALICE experiment measured lead nuclei turning into gold during near-miss collisions at the Large Hadron Collider — in fleeting, subatomic quantities rather than usable metal.",
     story: {
@@ -1249,7 +1289,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "It is modern nuclear transmutation in a new regime: the medieval dream of alchemy appeared for an instant, while also giving physicists a precise test of electromagnetic processes around heavy ions.",
     },
-    gallery: ["/images/categories/physics.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/ALICE_experiment_at_CERN.jpg/1600px-ALICE_experiment_at_CERN.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://alice-collaboration.web.cern.ch/2025-alice-lead-to-gold",
     primarySourceUrl: "https://alice-collaboration.web.cern.ch/2025-alice-lead-to-gold",
     supportingSources: [
@@ -1287,7 +1327,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Solar south pole",
     classification: "Space science · Solar physics",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg/2048px-Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg",
+    imageAlt: "A high-resolution view of the Sun captured by ESA's Solar Orbiter, the mission that returned the first clear views of the solar poles.",
+    imageCredit: "ESA & NASA / Solar Orbiter / EUI Team",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg",
+    imageLicense: "CC BY-SA 3.0 IGO",
+    imageType: "telescope image",
     summary:
       "ESA's Solar Orbiter returned humanity's first clear views of the Sun's south pole, revealing a tangled mixture of magnetic polarities during solar maximum.",
     story: {
@@ -1298,7 +1343,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The new angle opens a missing perspective on the Sun's magnetic field and its roughly 11-year cycle, which controls space weather reaching Earth.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg/2048px-Solar_Orbiter%E2%80%99s_widest_high-res_view_of_the_Sun_ESA508430.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles",
     primarySourceUrl: "https://www.esa.int/Science_Exploration/Space_Science/Solar_Orbiter/Solar_Orbiter_gets_world-first_views_of_the_Sun_s_poles",
     supportingSources: [
@@ -1336,7 +1381,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "HOPS-315",
     classification: "Astronomy · Protostar and protoplanetary disc",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg/1600px-Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg",
+    imageAlt: "Artist's impression of a young star surrounded by a planet-forming disc, representative of the earliest planet formation seen around HOPS-315.",
+    imageCredit: "NASA, ESA, CSA / Ralf Crawford (STScI)",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "artist impression",
     summary:
       "Astronomers observed the first specks of planet-forming minerals beginning to solidify around a young star, catching a process analogous to the birth of our Solar System.",
     story: {
@@ -1347,7 +1397,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The observations connect a chemical transition in a distant disc to the first stage of terrestrial planet formation, before larger rocks and worlds have assembled.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg/1600px-Artist%E2%80%99s_impression_of_protoplanetary_disc_%28weic2416a%29.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.eso.org/public/news/eso2512/",
     primarySourceUrl: "https://www.eso.org/public/news/eso2512/",
     supportingSources: [
@@ -1385,7 +1435,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "S/2025 U1",
     classification: "Astronomy · Uranian inner satellite",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Uranus_-_Voyager_2.jpg",
+    imageAlt: "The pale blue-green disc of Uranus as imaged by NASA's Voyager 2 spacecraft.",
+    imageCredit: "NASA / JPL-Caltech",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Uranus_-_Voyager_2.jpg",
+    imageLicense: "Public domain",
+    imageType: "telescope image",
     summary:
       "The James Webb Space Telescope found a previously unknown inner moon of Uranus, provisionally designated S/2025 U1 and estimated at roughly 10 km across.",
     story: {
@@ -1396,7 +1451,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The discovery raised Uranus's known moon count to 29 and showed that even a planet visited by Voyager 2 still hides small worlds from earlier surveys.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/2/2c/Uranus_-_Voyager_2.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://science.nasa.gov/blogs/webb/2025/08/19/new-moon-discovered-orbiting-uranus-using-nasas-webb-telescope/",
     primarySourceUrl: "https://science.nasa.gov/blogs/webb/2025/08/19/new-moon-discovered-orbiting-uranus-using-nasas-webb-telescope/",
     supportingSources: [
@@ -1434,7 +1489,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "GRB 250702B",
     classification: "Astronomy · Gamma-ray burst",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg/1600px-Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg",
+    imageAlt: "Artist's impression of a gamma-ray burst, an intense flash of high-energy radiation from a distant cosmic explosion.",
+    imageCredit: "ESO / A. Roquette",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg",
+    imageLicense: "CC BY 4.0",
+    imageType: "artist impression",
     summary:
       "GRB 250702B produced repeated gamma-ray flashes across a day, an unusually long and unlike-anything-seen-before explosion traced to a source outside the Milky Way.",
     story: {
@@ -1445,7 +1505,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "Its long, repeating behavior does not fit the usual pattern of a single short-lived burst, leaving the physical engine under active investigation.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg/1600px-Artist%E2%80%99s_impression_of_a_gamma-ray_burst.jpg", "/images/textures/grid.svg"],
     paperUrl: "https://www.eso.org/public/news/eso2514/",
     primarySourceUrl: "https://www.eso.org/public/news/eso2514/",
     supportingSources: [
@@ -1483,7 +1543,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Cha 1107-7626",
     classification: "Astronomy · Free-floating planetary-mass object",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/9/95/Rogueplanet.jpg",
+    imageAlt: "Artist's impression of a free-floating, planetary-mass object drifting through space without a host star.",
+    imageCredit: "NASA / JPL-Caltech",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Rogueplanet.jpg",
+    imageLicense: "Public domain",
+    imageType: "artist impression",
     summary:
       "Astronomers observed the free-floating planetary-mass object Cha 1107-7626 accreting gas and dust at about six billion tonnes per second — the fastest growth rate recorded for a rogue planet.",
     story: {
@@ -1494,7 +1559,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The burst blurred the line between planetary and stellar formation: magnetic activity and water vapor appeared in a process previously associated mainly with young stars.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/9/95/Rogueplanet.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://www.eso.org/public/news/eso2516/",
     primarySourceUrl: "https://www.eso.org/public/news/eso2516/",
     supportingSources: [
@@ -1581,7 +1646,12 @@ const discoveriesData: RawDiscovery[] = [
     scientificName: "Influenza A virus",
     classification: "Biology · Virology · Host–pathogen interaction",
     conservationStatus: undefined,
-    heroImage: "/images/categories/biology.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/a/a4/EM_of_influenza_virus.jpg",
+    imageAlt: "A transmission electron micrograph of influenza virus particles.",
+    imageCredit: "CDC / F. A. Murphy",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:EM_of_influenza_virus.jpg",
+    imageLicense: "Public domain",
+    imageType: "microscopy image",
     summary:
       "A new combined microscopy method let scientists watch influenza viruses invade living cells in real time, revealing that cells actively help capture the virus.",
     story: {
@@ -1592,7 +1662,7 @@ const discoveriesData: RawDiscovery[] = [
       whatMakesUnique:
         "The live view showed cells reaching out and reshaping their surface to grab incoming viruses, a detail that could guide more targeted antiviral research.",
     },
-    gallery: ["/images/categories/biology.svg", "/images/textures/waves.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/a/a4/EM_of_influenza_virus.jpg", "/images/textures/waves.svg"],
     paperUrl: "https://ethz.ch/en/news-and-events/eth-news/news/2025/12/how-influenza-viruses-enter-our-cells.html",
     primarySourceUrl: "https://ethz.ch/en/news-and-events/eth-news/news/2025/12/how-influenza-viruses-enter-our-cells.html",
     supportingSources: [

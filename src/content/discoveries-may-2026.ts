@@ -101,7 +101,12 @@ export const may2026Discoveries: Discovery[] = [
     scientificName: "Asteroid 2024 YR4",
     classification: "Astronomy · Apollo-class near-Earth asteroid",
     conservationStatus: undefined,
-    heroImage: "/images/categories/space.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/b/be/Illustration_of_Asteroid_%28Artist%E2%80%99s_Impression%29_%28weic2304a%29.jpeg",
+    imageAlt: "Artist's impression of a small rocky asteroid in space, representative of near-Earth asteroid 2024 YR4 observed by JWST.",
+    imageCredit: "NASA, ESA, CSA / L. Hustak (STScI)",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Illustration_of_Asteroid_%28Artist%E2%80%99s_Impression%29_%28weic2304a%29.jpeg",
+    imageLicense: "CC BY 4.0",
+    imageType: "artist impression",
     summary:
       "Faint James Webb Space Telescope observations extended asteroid 2024 YR4’s measured orbit and ruled out its previously possible collision with the Moon in December 2032.",
     story: {
@@ -112,7 +117,7 @@ export const may2026Discoveries: Discovery[] = [
       whatMakesUnique:
         "The work produced one of the faintest detections of a near-Earth object and demonstrated how space telescopes can settle impact risks years before an asteroid becomes observable again from Earth.",
     },
-    gallery: ["/images/categories/space.svg", "/images/textures/grid.svg"],
+    gallery: ["https://upload.wikimedia.org/wikipedia/commons/b/be/Illustration_of_Asteroid_%28Artist%E2%80%99s_Impression%29_%28weic2304a%29.jpeg", "/images/textures/grid.svg"],
     paperUrl: "https://arxiv.org/abs/2605.20498",
     videoUrls: [],
     relatedSlugs: ["trappist-1-system", "m87-black-hole-image"],

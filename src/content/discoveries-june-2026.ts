@@ -117,7 +117,12 @@ export const june2026Discoveries: Discovery[] = [
     scientificName: "Praearcturus gigas",
     classification: "Animalia · Arthropoda · Arachnida · Scorpiones",
     conservationStatus: "Extinct (~415 Ma)",
-    heroImage: "/images/categories/dinosaurs-fossils.svg",
+    heroImage: "https://upload.wikimedia.org/wikipedia/commons/d/d0/20210102_Erettopterus_bilobus.png",
+    imageAlt: "A life reconstruction of a large sea scorpion (eurypterid), representative of the giant arthropod lineage Praearcturus belonged to.",
+    imageCredit: "Junnn11",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:20210102_Erettopterus_bilobus.png",
+    imageLicense: "CC BY-SA 4.0",
+    imageType: "reconstruction",
     summary:
       "Modern reanalysis supports identifying fragmentary British fossils as a roughly one-metre scorpion, potentially the largest scorpion yet recognized.",
     story: {
