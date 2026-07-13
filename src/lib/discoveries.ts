@@ -40,11 +40,27 @@ export function getAvailableMonths(): Array<{ year: number; month: number }> {
     .sort((a, b) => b.year - a.year || b.month - a.month);
 }
 
-/** Resolve a discovery's related entries (deduped, valid only). */
-export function getRelated(discovery: Discovery): Discovery[] {
-  return discovery.relatedSlugs
+/**
+ * Resolve a discovery's related entries (deduped, valid only).
+ *
+ * Relations are treated as bidirectional: the entry's own `relatedSlugs` come
+ * first (editorial intent), then any other discovery that links *to* this one.
+ * Newer entries almost always point back at established anchors without those
+ * anchors listing them, so without this an anchor page would never surface —
+ * and never pass link equity to — the entries that cite it. Capped so a popular
+ * anchor's section stays readable.
+ */
+export function getRelated(discovery: Discovery, limit = 6): Discovery[] {
+  const outbound = discovery.relatedSlugs
     .map((slug) => getBySlug(slug))
     .filter((d): d is Discovery => Boolean(d));
+
+  const seen = new Set([discovery.slug, ...outbound.map((d) => d.slug)]);
+  const inbound = getAll().filter(
+    (d) => !seen.has(d.slug) && d.relatedSlugs.includes(discovery.slug),
+  );
+
+  return [...outbound, ...inbound].slice(0, limit);
 }
 
 /** Newest N discoveries by date. */
