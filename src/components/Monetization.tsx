@@ -1,10 +1,15 @@
 /**
- * Monetization placeholders. These are intentionally inert in v1 — no ad
- * networks or affiliate programs are wired up. They mark where revenue
- * surfaces would live and keep the layout honest about the business model.
+ * Monetization placeholders. Inert by default — no ad networks or affiliate
+ * programs are wired up. They render nothing unless
+ * NEXT_PUBLIC_ENABLE_MONETIZATION="true", so the public site never shows
+ * inactive "ad slot" / "sample affiliate" surfaces until they are real.
  */
 
+const monetizationEnabled =
+  process.env.NEXT_PUBLIC_ENABLE_MONETIZATION === "true";
+
 export function AdSlot({ label = "Advertisement" }: { label?: string }) {
+  if (!monetizationEnabled) return null;
   return (
     <div className="card grid min-h-[90px] place-items-center border-dashed p-4 text-center">
       <div className="text-xs uppercase tracking-widest text-slate-500">
@@ -24,6 +29,7 @@ export function AffiliateCallout({
   heading?: string;
   items: string[];
 }) {
+  if (!monetizationEnabled) return null;
   return (
     <aside className="card p-5">
       <div className="flex items-center justify-between">

@@ -57,6 +57,7 @@ export const march2026Discoveries: Discovery[] = [
       "CERN artist impression of the newly discovered doubly charmed baryon, showing two charm quarks and one down quark.",
     imageCredit: "CERN",
     imageSourceUrl: "https://home.cern/lhcb-collaboration-discovers-new-proton-particle/",
+    imageRelation: "illustration",
     imageLicense: "CERN media image; verify reuse terms",
     imageType: "artist impression",
     summary:

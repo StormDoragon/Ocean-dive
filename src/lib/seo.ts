@@ -49,9 +49,13 @@ export function discoveryArticleJsonLd(discovery: Discovery) {
   const canonical = discoveryCanonicalUrl(discovery);
   const primarySource = discovery.primarySourceUrl ?? discovery.paperUrl;
   const citations = [
-    primarySource,
-    ...(discovery.supportingSources?.map((source) => source.url) ?? []),
-  ].filter((url): url is string => Boolean(url));
+    ...new Set(
+      [
+        primarySource,
+        ...(discovery.supportingSources?.map((source) => source.url) ?? []),
+      ].filter((url): url is string => Boolean(url)),
+    ),
+  ];
 
   return {
     "@type": "Article",

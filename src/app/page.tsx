@@ -35,8 +35,8 @@ export default function HomePage() {
       <section className="relative overflow-hidden rounded-2xl border border-white/10 bg-abyss-900/60 p-8 sm:p-12">
         <p className="pill">A living encyclopedia of discovery</p>
         <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-5xl">
-          Explore every discovery humanity has ever made
-          <span className="text-signal"> — and the ones still waiting.</span>
+          A growing, source-linked directory of scientific discovery
+          <span className="text-signal"> — and the finds still waiting.</span>
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-slate-300">
           {site.name} organizes scientific discovery into a searchable, mappable

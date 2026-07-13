@@ -50,17 +50,26 @@ export function getDiscoverySources(discovery: Discovery): PublicSource[] {
         } satisfies PublicSource;
       })()
     : null;
-  const supporting = (discovery.supportingSources ?? []).map((source) => {
-    const inferred = inferSource(source.url);
-    return {
-      title: source.title,
-      url: source.url,
-      publisher: source.publisher,
-      tier: source.tier ?? inferred.tier,
-      sourceType: source.sourceType ?? inferred.sourceType,
-      accessedAt: source.accessedAt,
-    } satisfies PublicSource;
-  });
+  // Drop supporting sources that repeat the primary URL, and dedupe supporting
+  // sources by URL, so the same link is never listed twice.
+  const seen = new Set<string>(primary ? [primary.url] : []);
+  const supporting = (discovery.supportingSources ?? [])
+    .filter((source) => {
+      if (seen.has(source.url)) return false;
+      seen.add(source.url);
+      return true;
+    })
+    .map((source) => {
+      const inferred = inferSource(source.url);
+      return {
+        title: source.title,
+        url: source.url,
+        publisher: source.publisher,
+        tier: source.tier ?? inferred.tier,
+        sourceType: source.sourceType ?? inferred.sourceType,
+        accessedAt: source.accessedAt,
+      } satisfies PublicSource;
+    });
   return primary ? [primary, ...supporting] : supporting;
 }
 

@@ -155,6 +155,11 @@ export function validateCatalog(options: ValidateOptions = {}): ContentIssue[] {
     if (isBlank(d.primarySourceUrl) && isBlank(d.paperUrl)) {
       at("missing-source", "No primarySourceUrl or paperUrl; the entry has no traceable source.");
     }
+    // A supporting source that repeats the primary URL is a redundant citation.
+    const primaryUrl = d.primarySourceUrl ?? d.paperUrl;
+    if (primaryUrl && (d.supportingSources ?? []).some((s) => s.url === primaryUrl)) {
+      at("duplicate-source", `A supportingSources entry repeats the primary source URL (${primaryUrl}).`, "warn");
+    }
 
     // Related relations (WS3) — no self-links, no dangling targets.
     for (const related of d.relatedSlugs) {

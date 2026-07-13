@@ -61,7 +61,7 @@ export default function OpengraphImage() {
             maxWidth: "900px",
           }}
         >
-          Explore every discovery humanity has made.
+          A searchable directory of scientific discovery.
         </div>
         <div
           style={{

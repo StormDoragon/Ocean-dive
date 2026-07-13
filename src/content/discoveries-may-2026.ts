@@ -24,6 +24,7 @@ export const may2026Discoveries: Discovery[] = [
     imageAlt: "A related deep-sea cirrate octopus photographed by NOAA; used as a contextual image because a reusable species-specific photograph of Microeledone galapagensis is not yet available.",
     imageCredit: "Ed Bowlby / NOAA Photo Library",
     imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Opisthoteuthis_californiana.jpg",
+    imageRelation: "contextual",
     imageLicense: "Public domain (NOAA)",
     imageType: "photograph",
     summary:

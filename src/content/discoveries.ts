@@ -695,6 +695,7 @@ const discoveriesData: RawDiscovery[] = [
     imageAlt: "Satellite image of the northern Great Barrier Reef and Cape York coastline in Queensland, Australia.",
     imageCredit: "European Space Agency / Envisat MERIS",
     imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Envisat_image_of_the_Great_Barrier_Reef_off_Australia%27s_Queensland_coast_ESA233136.jpg",
+    imageRelation: "contextual",
     imageLicense: "CC BY-SA 3.0 IGO",
     imageType: "data visualization",
     summary:
@@ -734,6 +735,7 @@ const discoveriesData: RawDiscovery[] = [
     imageAlt: "A giant squid specimen being measured by researchers at Ranheim, Norway.",
     imageCredit: "NTNU Museum of Natural History and Archaeology",
     imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Giant_squid_Ranheim2.jpg",
+    imageRelation: "contextual",
     imageLicense: "CC BY 2.0",
     imageType: "photograph",
     summary:

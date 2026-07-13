@@ -120,6 +120,11 @@ export default async function DiscoveryPage({
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-abyss-950/80 to-transparent" />
+          {image.relationLabel ? (
+            <span className="absolute left-3 top-3 rounded-full bg-abyss-950/85 px-2.5 py-1 text-xs font-medium text-slate-200 ring-1 ring-white/15 backdrop-blur">
+              {image.relationLabel}
+            </span>
+          ) : null}
         </div>
         {image.credit ? (
           <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-500">
@@ -187,7 +192,7 @@ export default async function DiscoveryPage({
               <p className="mt-1 text-xs text-slate-500">Placeholder imagery for this prototype.</p>
             ) : null}
             <div className="mt-4">
-              <Gallery images={discovery.gallery} title={discovery.title} />
+              <Gallery images={discovery.gallery} title={discovery.title} describedAlt={image.alt} />
             </div>
           </section>
 
@@ -217,18 +222,20 @@ export default async function DiscoveryPage({
             </section>
           ) : null}
 
-          {/* Community discussion (coming soon) */}
-          <section className="card border-dashed p-6 text-center">
-            <h2 className="text-lg font-semibold text-white">Community discussion</h2>
-            <p className="mt-2 text-sm text-slate-400">
-              Comments and shared notes are coming soon. In the meantime, use the
-              ☆ Save button to add this discovery to{" "}
-              <Link href="/saved" className="link-glow">
-                your collection
-              </Link>
-              .
-            </p>
-          </section>
+          {/* Community discussion — hidden until real (opt in with the flag). */}
+          {process.env.NEXT_PUBLIC_ENABLE_COMMENTS === "true" ? (
+            <section className="card border-dashed p-6 text-center">
+              <h2 className="text-lg font-semibold text-white">Community discussion</h2>
+              <p className="mt-2 text-sm text-slate-400">
+                Comments and shared notes are coming soon. In the meantime, use the
+                ☆ Save button to add this discovery to{" "}
+                <Link href="/saved" className="link-glow">
+                  your collection
+                </Link>
+                .
+              </p>
+            </section>
+          ) : null}
         </div>
 
         {/* Sidebar */}

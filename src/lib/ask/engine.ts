@@ -238,10 +238,10 @@ function describe(p: ParsedQuery): string {
   const filterText = parts.length > 0 ? parts.join(", ") : "all discoveries";
 
   if (p.intent === "rank") {
-    return `Ranking ${p.rankBy === "organization" ? "organizations" : "countries"} by number of discoveries (${filterText}).`;
+    return `Ranking ${p.rankBy === "organization" ? "organizations" : "countries"} by number of discoveries in this catalog (${filterText}).`;
   }
   if (p.intent === "count") {
-    return `Counting discoveries: ${filterText}.`;
+    return `Counting discoveries in this catalog: ${filterText}.`;
   }
   if (realKw.length > 0 && parts.length === 0) {
     return `Searching for "${realKw.join(" ")}".`;
@@ -271,8 +271,8 @@ export function runLocalQuery(query: string, now: Date = new Date()): AskResult 
       interpretation: describe(p),
       answer:
         rows.length === 0
-          ? "No discoveries matched, so there is nothing to rank."
-          : `${top.label} leads with ${top.count} ${top.count === 1 ? "discovery" : "discoveries"}${rows.length > 1 ? `, ahead of ${rows.length - 1} other${rows.length - 1 === 1 ? "" : "s"}.` : "."}`,
+          ? "No discoveries in this catalog matched, so there is nothing to rank."
+          : `In this catalog, ${top.label} leads with ${top.count} ${top.count === 1 ? "discovery" : "discoveries"}${rows.length > 1 ? `, ahead of ${rows.length - 1} other${rows.length - 1 === 1 ? "" : "s"}.` : "."}`,
       results: matched,
       aggregation: {
         title:

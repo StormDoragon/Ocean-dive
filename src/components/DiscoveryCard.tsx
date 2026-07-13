@@ -2,9 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Discovery } from "@/content/types";
 import { getCategory } from "@/content/categories";
+import { imagePresentation } from "@/lib/images";
 
 export function DiscoveryCard({ discovery }: { discovery: Discovery }) {
   const category = getCategory(discovery.categorySlug);
+  const image = imagePresentation(discovery);
 
   return (
     <Link
@@ -13,12 +15,17 @@ export function DiscoveryCard({ discovery }: { discovery: Discovery }) {
     >
       <div className="relative aspect-[16/9] overflow-hidden">
         <Image
-          src={discovery.heroImage}
-          alt={discovery.title}
+          src={image.src}
+          alt={image.alt}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
+        {image.relation !== "exact" ? (
+          <span className="absolute bottom-2 left-2 rounded bg-abyss-950/85 px-1.5 py-0.5 text-[10px] font-medium text-slate-300 ring-1 ring-white/10">
+            {image.relation === "contextual" ? "Representative" : "Illustration"}
+          </span>
+        ) : null}
         <span
           className="absolute left-3 top-3 rounded-full px-2.5 py-1 text-xs font-medium text-white shadow"
           style={{ backgroundColor: (category?.color ?? "#38e1ff") + "cc" }}

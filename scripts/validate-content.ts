@@ -81,6 +81,43 @@ function dataRoutes(): Set<string> {
  * Filesystem checks.
  * ------------------------------------------------------------------ */
 
+/**
+ * Verify a local image file's leading bytes match its extension, catching
+ * truncated/corrupt files that "exists" checks miss. Returns an error message,
+ * or null when the bytes look right.
+ */
+function magicByteMismatch(absPath: string, src: string): string | null {
+  const ext = (src.split(".").pop() ?? "").toLowerCase();
+  let buf: Buffer;
+  try {
+    buf = readFileSync(absPath);
+  } catch {
+    return `Image "${src}" could not be read.`;
+  }
+  if (buf.length === 0) return `Image "${src}" is empty (0 bytes).`;
+  const startsWith = (...bytes: number[]) => bytes.every((b, i) => buf[i] === b);
+  const ascii = (offset: number, text: string) =>
+    buf.toString("latin1", offset, offset + text.length) === text;
+
+  switch (ext) {
+    case "png":
+      return startsWith(0x89, 0x50, 0x4e, 0x47) ? null : `Image "${src}" is not valid PNG data.`;
+    case "jpg":
+    case "jpeg":
+      return startsWith(0xff, 0xd8, 0xff) ? null : `Image "${src}" is not valid JPEG data.`;
+    case "gif":
+      return ascii(0, "GIF8") ? null : `Image "${src}" is not valid GIF data.`;
+    case "webp":
+      return ascii(0, "RIFF") && ascii(8, "WEBP") ? null : `Image "${src}" is not valid WebP data.`;
+    case "svg": {
+      const head = buf.toString("utf8", 0, 256).replace(/^﻿/, "").trimStart();
+      return head.startsWith("<") ? null : `Image "${src}" does not look like SVG/XML markup.`;
+    }
+    default:
+      return null; // unknown extension — nothing to assert
+  }
+}
+
 function imageFileIssues(): ContentIssue[] {
   const issues: ContentIssue[] = [];
   for (const d of discoveries) {
@@ -89,13 +126,19 @@ function imageFileIssues(): ContentIssue[] {
     );
     for (const src of local) {
       const rel = src.replace(/^\//, "");
-      if (!existsSync(join(PUBLIC_DIR, rel))) {
+      const abs = join(PUBLIC_DIR, rel);
+      if (!existsSync(abs)) {
         issues.push({
           level: "error",
           code: "missing-image-file",
           slug: d.slug,
           message: `Image "${src}" is not present in public/.`,
         });
+        continue;
+      }
+      const corrupt = magicByteMismatch(abs, src);
+      if (corrupt) {
+        issues.push({ level: "error", code: "corrupt-image-file", slug: d.slug, message: corrupt });
       }
     }
   }

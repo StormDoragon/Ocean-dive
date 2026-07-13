@@ -65,25 +65,35 @@ export async function answerWithClaude(query: string): Promise<AskResult> {
     "matching discoveries, most relevant first (empty if none match). Never invent " +
     "slugs that are not in the catalog.";
 
-  const res = await fetch(ANTHROPIC_API_URL, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: process.env.ANTHROPIC_MODEL || DEFAULT_MODEL,
-      max_tokens: 1024,
-      system,
-      messages: [
-        {
-          role: "user",
-          content: `Catalog:\n${JSON.stringify(catalogForPrompt())}\n\nQuestion: ${query}`,
-        },
-      ],
-    }),
-  });
+  // Abort a slow upstream so the request can't hang; the caller falls back to
+  // the local engine on the resulting error.
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15_000);
+  let res: Response;
+  try {
+    res = await fetch(ANTHROPIC_API_URL, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+      },
+      body: JSON.stringify({
+        model: process.env.ANTHROPIC_MODEL || DEFAULT_MODEL,
+        max_tokens: 1024,
+        system,
+        messages: [
+          {
+            role: "user",
+            content: `Catalog:\n${JSON.stringify(catalogForPrompt())}\n\nQuestion: ${query}`,
+          },
+        ],
+      }),
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(timeout);
+  }
 
   if (!res.ok) {
     throw new Error(`Anthropic API error: ${res.status} ${await res.text()}`);
@@ -93,10 +103,19 @@ export async function answerWithClaude(query: string): Promise<AskResult> {
     content?: { type: string; text?: string }[];
   };
   const text = data.content?.find((c) => c.type === "text")?.text ?? "";
-  const json = text.slice(text.indexOf("{"), text.lastIndexOf("}") + 1);
-  const parsed = JSON.parse(json) as ClaudeAnswerShape;
+  const start = text.indexOf("{");
+  const end = text.lastIndexOf("}");
+  if (start === -1 || end === -1) {
+    throw new Error("Claude response did not contain a JSON object.");
+  }
+  const parsed = JSON.parse(text.slice(start, end + 1)) as ClaudeAnswerShape;
 
-  const results = (parsed.slugs ?? [])
+  // Validate the model output shape before trusting it: slugs must be strings,
+  // and each must resolve to a real catalog entry.
+  const slugs = Array.isArray(parsed.slugs)
+    ? parsed.slugs.filter((s): s is string => typeof s === "string")
+    : [];
+  const results = slugs
     .map((slug) => getBySlug(slug))
     .filter((d): d is NonNullable<typeof d> => Boolean(d));
 

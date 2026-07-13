@@ -93,6 +93,15 @@ export interface Discovery {
   imageLicense?: string;
   /** Clarifies whether the visual is a photo, scientific image, or illustration. */
   imageType?: DiscoveryImageType;
+  /**
+   * How the hero image relates to the discovery itself:
+   *  - "exact": a verified image of the actual subject/event
+   *  - "contextual": a representative image (e.g. a close relative or the site)
+   *  - "illustration": generic art / placeholder, not a depiction of the subject
+   * Placeholders resolve to "illustration" automatically; set this explicitly
+   * for any real photo that is representative rather than exact.
+   */
+  imageRelation?: "exact" | "contextual" | "illustration";
   summary: string;
   story: DiscoveryStory;
   gallery: string[];

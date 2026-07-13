@@ -26,6 +26,8 @@ export function imageTypeLabel(type: DiscoveryImageType): string {
   return IMAGE_TYPE_LABELS[type];
 }
 
+export type ImageRelation = "exact" | "contextual" | "illustration";
+
 export interface ImagePresentation {
   src: string;
   /** Always non-empty, accessible alt text. */
@@ -33,10 +35,19 @@ export interface ImagePresentation {
   /** Human label for the kind of visual — always set, never misleading. */
   visualType: string;
   isPlaceholder: boolean;
+  /** How the image relates to the discovery: exact photo, representative, or art. */
+  relation: ImageRelation;
+  /** Short visible badge text when the image is not an exact depiction (else undefined). */
+  relationLabel?: string;
   credit?: string;
   sourceUrl?: string;
   license?: string;
 }
+
+const RELATION_LABELS: Record<Exclude<ImageRelation, "exact">, string> = {
+  contextual: "Representative image — not the actual subject",
+  illustration: "Illustration — not a photo of the discovery",
+};
 
 /**
  * Resolve the alt text, visual-type label, and rights fields for a discovery's
@@ -56,11 +67,19 @@ export function imagePresentation(discovery: Discovery): ImagePresentation {
       ? "Illustration (placeholder — not a photo of the discovery)"
       : "Image";
 
+  // Explicit relation wins; a placeholder is always an illustration; otherwise
+  // a real hero image is treated as an exact depiction unless told otherwise.
+  const relation: ImageRelation =
+    discovery.imageRelation ?? (placeholder ? "illustration" : "exact");
+  const relationLabel = relation === "exact" ? undefined : RELATION_LABELS[relation];
+
   return {
     src: discovery.heroImage,
     alt,
     visualType,
     isPlaceholder: placeholder,
+    relation,
+    relationLabel,
     credit: discovery.imageCredit,
     sourceUrl: discovery.imageSourceUrl,
     license: discovery.imageLicense,

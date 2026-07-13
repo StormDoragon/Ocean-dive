@@ -28,6 +28,7 @@ export const june2026Discoveries: Discovery[] = [
     imageAlt: "A close walking-shark relative, the epaulette shark Hemiscyllium ocellatum, photographed on Australia's Great Barrier Reef; used as a contextual image for Dudgeon's walking shark.",
     imageCredit: "Richard Ling",
     imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Hemiscyllium_ocellatum.jpg",
+    imageRelation: "contextual",
     imageLicense: "CC BY-SA 2.0",
     imageType: "photograph",
     summary:
@@ -75,6 +76,7 @@ export const june2026Discoveries: Discovery[] = [
     imageAlt: "A physonect siphonophore photographed in open midwater by NOAA, used as a contextual image for the Brazil midwater biodiversity expedition.",
     imageCredit: "NOAA Office of Ocean Exploration and Research",
     imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Physonect_siphonophore_Puerto_Rico_April_2015.png",
+    imageRelation: "contextual",
     imageLicense: "Public domain (NOAA)",
     imageType: "photograph",
     summary:

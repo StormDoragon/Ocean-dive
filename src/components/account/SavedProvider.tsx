@@ -67,16 +67,25 @@ export function SavedProvider({ children }: { children: React.ReactNode }) {
       if (usingSupabase && supabase && user) {
         // On first load for this user, migrate any guest (localStorage) saves.
         if (migratedFor.current !== user.id) {
-          migratedFor.current = user.id;
           const guest = readLocal();
           if (guest.length > 0) {
-            await supabase
+            const { error } = await supabase
               .from("saved_discoveries")
               .upsert(
                 guest.map((slug) => ({ user_id: user.id, discovery_slug: slug })),
                 { onConflict: "user_id,discovery_slug" },
               );
-            writeLocal([]);
+            // Only clear the guest saves once the write actually succeeded, and
+            // only mark this user migrated then — otherwise a failed/again-retryable
+            // migration would silently drop the guest collection.
+            if (error) {
+              console.error("Guest-save migration failed; keeping local saves.", error);
+            } else {
+              writeLocal([]);
+              migratedFor.current = user.id;
+            }
+          } else {
+            migratedFor.current = user.id;
           }
         }
         const { data } = await supabase
@@ -112,17 +121,23 @@ export function SavedProvider({ children }: { children: React.ReactNode }) {
 
       const supabase = getSupabaseClient();
       if (usingSupabase && supabase && user) {
-        if (adding) {
-          void supabase
-            .from("saved_discoveries")
-            .insert({ user_id: user.id, discovery_slug: slug });
-        } else {
-          void supabase
-            .from("saved_discoveries")
-            .delete()
-            .eq("user_id", user.id)
-            .eq("discovery_slug", slug);
-        }
+        const op = adding
+          ? supabase
+              .from("saved_discoveries")
+              .insert({ user_id: user.id, discovery_slug: slug })
+          : supabase
+              .from("saved_discoveries")
+              .delete()
+              .eq("user_id", user.id)
+              .eq("discovery_slug", slug);
+        // If the remote write fails, fall back to persisting locally so the
+        // change is not silently lost, and surface the error.
+        void op.then(({ error }) => {
+          if (error) {
+            console.error("Save sync failed; persisting locally as a fallback.", error);
+            writeLocal([...savedRef.current]);
+          }
+        });
       } else {
         writeLocal([...next]);
       }

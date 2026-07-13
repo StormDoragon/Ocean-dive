@@ -1,10 +1,26 @@
+const FALLBACK_URL = "https://beyond-signal.example.com";
+
+// Loudly warn if we're building for production without a real canonical URL,
+// so sitemap.xml / robots.txt / canonical + OG tags don't silently ship
+// pointing at the example.com placeholder. Set NEXT_PUBLIC_SITE_URL in the
+// deploy environment (e.g. Vercel) to the real domain.
+if (
+  process.env.NODE_ENV === "production" &&
+  !process.env.NEXT_PUBLIC_SITE_URL
+) {
+  console.warn(
+    "[beyond-signal] NEXT_PUBLIC_SITE_URL is not set — canonical URLs, the " +
+      `sitemap, and robots.txt will use the placeholder ${FALLBACK_URL}.`,
+  );
+}
+
 export const site = {
   name: "Beyond Signal",
-  tagline: "Explore every discovery humanity has ever made.",
+  tagline: "A growing, source-linked directory of scientific discovery.",
   description:
     "Beyond Signal is a searchable directory of scientific discovery — from deep-sea species to exoplanets, fossils, and breakthroughs in physics. Browse, search, and map the milestones of human knowledge.",
   // Used for canonical/OpenGraph URLs. Override with NEXT_PUBLIC_SITE_URL.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://beyond-signal.example.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? FALLBACK_URL,
   editorialTeam: "Beyond Signal Editorial Team",
 } as const;
 

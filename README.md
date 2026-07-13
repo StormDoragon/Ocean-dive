@@ -1,6 +1,6 @@
 # Beyond Signal
 
-> Explore every discovery humanity has ever made — and the ones still waiting to be found.
+> A growing, source-linked directory of scientific discovery — from deep-sea species to exoplanets, and the finds still waiting to be made.
 
 **Beyond Signal** is a searchable directory of scientific discovery — "IMDb for
 science." Instead of a stream of articles, it organizes knowledge into a

@@ -27,3 +27,5 @@ jobs:
         run: npm run validate
       - name: Build
         run: npm run build
+      - name: Check remote images resolve
+        run: npm run check:images
