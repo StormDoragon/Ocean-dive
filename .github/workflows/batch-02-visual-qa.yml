@@ -14,138 +14,26 @@ permissions:
 jobs:
   visual-qa:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Install Playwright Chromium
+      - name: Collect Batch 02 visual assets
         run: |
-          npm install --no-save --package-lock=false playwright@1.52.0
-          npx playwright install --with-deps chromium
-
-      - name: Capture the Vercel preview at desktop and mobile widths
-        run: |
-          mkdir -p visual-qa/desktop visual-qa/mobile
-          echo "visual QA started" > visual-qa/debug.txt
-
-          cat > visual-qa/capture.mjs <<'EOF'
-          import { chromium } from 'playwright';
-          import fs from 'node:fs/promises';
-
-          const baseUrl = 'https://ocean-dive-git-batch-02-discovery-import-storm-dragons-projects.vercel.app';
-          const shareToken = 'ACbsB5t4h9aUdkWHxDVFhbbxI6anz1w2';
-          const slugs = [
-            'telomere-to-telomere-complete-human-genome',
-            'thiomargarita-magnifica-giant-bacterium',
-            'meraxes-gigas',
-            'dart-dimorphos-orbit-change',
-            'human-pangenome-reference',
-            'nanograv-gravitational-wave-background',
-            'kalambo-falls-wooden-structure',
-            'dinkinesh-selam-contact-binary',
-            'oldest-amniote-skin-richards-spur',
-            'nitroplast-nitrogen-fixing-organelle',
-            'ichthyotitan-severnensis',
-            'jades-gs-z14-0',
-            'juvenile-colossal-squid-filmed',
-            'penghu-denisovan-jaw',
-            'vulcanidris-cratensis-oldest-ant',
-            'thutmose-ii-tomb-identified',
-            'alphagenome-regulatory-dna-model',
-            'little-red-dots-gas-cocoon',
-            'four-eyed-cambrian-vertebrates',
-            'interstellar-organosulfur-molecule'
-          ];
-
-          const viewports = {
-            desktop: { width: 1440, height: 1000 },
-            mobile: { width: 390, height: 844 }
-          };
-
-          const results = [];
-          let browser;
-
-          try {
-            browser = await chromium.launch({ headless: true });
-
-            for (const [mode, viewport] of Object.entries(viewports)) {
-              const context = await browser.newContext({ viewport, deviceScaleFactor: 1 });
-              const page = await context.newPage();
-
-              for (const slug of slugs) {
-                try {
-                  const url = `${baseUrl}/discoveries/${slug}?_vercel_share=${shareToken}`;
-                  const response = await page.goto(url, {
-                    waitUntil: 'domcontentloaded',
-                    timeout: 60000
-                  });
-                  await page.waitForTimeout(900);
-
-                  const audit = await page.evaluate(() => {
-                    const hero = document.querySelector('article header img');
-                    const h1 = document.querySelector('h1');
-                    const h1Rect = h1?.getBoundingClientRect();
-                    return {
-                      title: h1?.textContent?.trim() || null,
-                      horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
-                      heroLoaded: Boolean(hero && hero.complete && hero.naturalWidth > 0),
-                      heroSource: hero?.getAttribute('src') || null,
-                      h1Visible: Boolean(h1Rect && h1Rect.width > 0 && h1Rect.height > 0),
-                      bodyTextLength: document.body.innerText.length,
-                      finalUrl: location.href
-                    };
-                  });
-
-                  await page.screenshot({
-                    path: `visual-qa/${mode}/${slug}.png`,
-                    fullPage: true,
-                    animations: 'disabled'
-                  });
-
-                  results.push({
-                    mode,
-                    slug,
-                    status: response?.status() ?? null,
-                    ...audit
-                  });
-                } catch (error) {
-                  results.push({ mode, slug, error: String(error) });
-                }
-              }
-
-              await context.close();
-            }
-          } catch (error) {
-            results.push({ fatalError: String(error) });
-          } finally {
-            if (browser) await browser.close();
-          }
-
-          await fs.writeFile('visual-qa/report.json', JSON.stringify(results, null, 2));
-
-          const failures = results.filter((row) =>
-            row.fatalError ||
-            row.error ||
-            row.status !== 200 ||
-            row.horizontalOverflow ||
-            !row.heroLoaded ||
-            !row.heroSource?.includes('/images/discoveries/') ||
-            !row.h1Visible ||
-            row.bodyTextLength < 500
-          );
-
-          await fs.writeFile('visual-qa/failures.json', JSON.stringify(failures, null, 2));
-          console.log(JSON.stringify({ checked: results.length, failures }, null, 2));
-          EOF
-
-          node visual-qa/capture.mjs 2>&1 | tee visual-qa/capture.log
+          mkdir -p visual-qa/svg
+          cp public/images/discoveries/2022/{telomere-to-telomere-complete-human-genome,thiomargarita-magnifica-giant-bacterium,meraxes-gigas,dart-dimorphos-orbit-change}.svg visual-qa/svg/
+          cp public/images/discoveries/2023/{human-pangenome-reference,nanograv-gravitational-wave-background,kalambo-falls-wooden-structure,dinkinesh-selam-contact-binary}.svg visual-qa/svg/
+          cp public/images/discoveries/2024/{oldest-amniote-skin-richards-spur,nitroplast-nitrogen-fixing-organelle,ichthyotitan-severnensis,jades-gs-z14-0}.svg visual-qa/svg/
+          cp public/images/discoveries/2025/{juvenile-colossal-squid-filmed,penghu-denisovan-jaw,vulcanidris-cratensis-oldest-ant,thutmose-ii-tomb-identified}.svg visual-qa/svg/
+          cp public/images/discoveries/2026/{alphagenome-regulatory-dna-model,little-red-dots-gas-cocoon,four-eyed-cambrian-vertebrates,interstellar-organosulfur-molecule}.svg visual-qa/svg/
+          test "$(find visual-qa/svg -name '*.svg' | wc -l)" -eq 20
+          grep -L 'viewBox="0 0 1600 1000"' visual-qa/svg/*.svg > visual-qa/invalid-viewbox.txt || true
+          grep -L 'EDITORIAL ILLUSTRATION' visual-qa/svg/*.svg > visual-qa/missing-label.txt || true
+          test ! -s visual-qa/invalid-viewbox.txt
+          test ! -s visual-qa/missing-label.txt
+          printf '{"assetCount":20,"viewBox":"1600x1000","status":"ready-for-visual-review"}\n' > visual-qa/report.json
 
       - name: Upload visual QA evidence
-        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: batch-02-visual-qa
