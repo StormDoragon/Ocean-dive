@@ -32,7 +32,7 @@ jobs:
           mkdir -p visual-qa/desktop visual-qa/mobile
           echo "visual QA started" > visual-qa/debug.txt
 
-          cat > /tmp/batch-02-visual-qa.mjs <<'EOF'
+          cat > visual-qa/capture.mjs <<'EOF'
           import { chromium } from 'playwright';
           import fs from 'node:fs/promises';
 
@@ -142,7 +142,7 @@ jobs:
           console.log(JSON.stringify({ checked: results.length, failures }, null, 2));
           EOF
 
-          node /tmp/batch-02-visual-qa.mjs 2>&1 | tee visual-qa/capture.log
+          node visual-qa/capture.mjs 2>&1 | tee visual-qa/capture.log
 
       - name: Upload visual QA evidence
         if: always()
