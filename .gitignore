@@ -30,3 +30,7 @@ next-env.d.ts
 # editor
 .vscode/
 .idea/
+
+# discovery import pipeline (transient staging + test scratch, always in-repo)
+.import-stage-*
+.import-tests/
