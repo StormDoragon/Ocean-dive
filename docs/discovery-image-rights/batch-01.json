@@ -386,7 +386,9 @@
     "fileSizeBytes": 41388,
     "sha256": "3eaabc3778c8c5005439012372d471443dddfa07c9326cd540511b803775152c",
     "notes": "Original code-generated, discovery-specific editorial graphic based on the cited sources; no third-party visual assets. It must be labelled as an illustration, not a photograph.",
-    "dois": [],
-    "primarySourceUrl": "https://www.axios.com/local/huntsville/2026/07/09/huntsville-researchers-discover-demon-cavefish-redstone-arsenal"
+    "dois": [
+      "10.1038/s41598-026-54315-4"
+    ],
+    "primarySourceUrl": "https://www.nature.com/articles/s41598-026-54315-4"
   }
 ]

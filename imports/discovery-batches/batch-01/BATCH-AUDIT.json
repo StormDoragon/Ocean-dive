@@ -22,8 +22,8 @@
     "technology": 1
   },
   "byReviewStatus": {
-    "preliminary": 2,
-    "source-verified": 18
+    "preliminary": 1,
+    "source-verified": 19
   },
   "byImageType": {
     "artist impression": 4,
@@ -52,7 +52,7 @@
     "all_images_under_700kb": true,
     "all_images_1600x1000": true,
     "no_editor_reviewed": true,
-    "two_preliminary": true
+    "one_preliminary": true
   },
   "slugs": [
     "endurance-shipwreck-found",

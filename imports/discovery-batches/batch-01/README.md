@@ -27,13 +27,17 @@ Maximum file size: below 700 KB
 
 ## Editorial status
 
-- 18 entries: `source-verified`
-- 2 entries: `preliminary`
+- 19 entries: `source-verified`
+- 1 entry: `preliminary`
   - `twa-7-b-direct-imaging`, because the imaged source remains a planet candidate
-  - `demogorgon-cavefish`, because Batch 01 records the current direct reporting
-    and does not invent a paper URL that was not independently resolved
 
 No entry is marked `editor-reviewed`.
+
+`demogorgon-cavefish` is now `source-verified`: the peer-reviewed description was
+published on 2026-07-06 in *Scientific Reports*
+(https://www.nature.com/articles/s41598-026-54315-4,
+DOI 10.1038/s41598-026-54315-4), with the earlier Axios report retained as a
+supporting source.
 
 ## Integration commands
 
