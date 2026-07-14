@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - batch-02/discovery-import
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: read
