@@ -1,3 +1,4 @@
+import { discoveryDeepDivePosts } from "./blog-discovery-deep-dives";
 import type { CategorySlug } from "./types";
 
 /**
@@ -60,8 +61,10 @@ export type BlogPost = {
   emoji?: string;
   /** The site category this guide is filed under (e.g. "space"). */
   category?: CategorySlug;
+  /** Optional catalog discovery that this article expands. */
+  discoverySlug?: string;
   tags?: string[];
-  /** Real photograph shown at the top of the post. */
+  /** Real photograph or clearly labelled editorial illustration shown at the top. */
   heroImage?: BlogImage;
   /** Scannable at-a-glance facts, rendered as a key-facts box. */
   keyFacts?: { label: string; value: string }[];
@@ -73,7 +76,7 @@ export type BlogPost = {
   sources?: { label: string; url: string }[];
 };
 
-export const blogPosts: BlogPost[] = [
+const originalBlogPosts: BlogPost[] = [
   {
     order: 1,
     slug: "welcome-to-the-discovery-hub",
@@ -215,7 +218,14 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
+export const blogPosts: BlogPost[] = [...originalBlogPosts, ...discoveryDeepDivePosts];
+
 const bySlug = new Map(blogPosts.map((post) => [post.slug, post]));
+const byDiscoverySlug = new Map(
+  blogPosts
+    .filter((post): post is BlogPost & { discoverySlug: string } => Boolean(post.discoverySlug))
+    .map((post) => [post.discoverySlug, post]),
+);
 
 /** All posts sorted by their numeric order (ascending). */
 export function getAllBlogPosts(): BlogPost[] {
@@ -224,6 +234,10 @@ export function getAllBlogPosts(): BlogPost[] {
 
 export function getBlogPost(slug: string): BlogPost | undefined {
   return bySlug.get(slug);
+}
+
+export function getBlogPostByDiscoverySlug(discoverySlug: string): BlogPost | undefined {
+  return byDiscoverySlug.get(discoverySlug);
 }
 
 /** Posts filed under a given category, in numeric order. */
