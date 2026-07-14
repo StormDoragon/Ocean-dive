@@ -1,0 +1,79 @@
+{
+  "batch": "batch-01",
+  "preparedAt": "2026-07-13",
+  "entryCount": 20,
+  "imageCount": 20,
+  "imageBytes": 877074,
+  "byYear": {
+    "2022": 4,
+    "2023": 4,
+    "2024": 4,
+    "2025": 4,
+    "2026": 4
+  },
+  "byCategory": {
+    "archaeology": 1,
+    "biology": 4,
+    "dinosaurs-fossils": 5,
+    "earth-science": 2,
+    "ocean": 2,
+    "physics": 1,
+    "space": 4,
+    "technology": 1
+  },
+  "byReviewStatus": {
+    "preliminary": 1,
+    "source-verified": 19
+  },
+  "byImageType": {
+    "artist impression": 4,
+    "data visualization": 1,
+    "diagram": 6,
+    "reconstruction": 9
+  },
+  "allImagesRelation": "illustration",
+  "checks": {
+    "exactly_20_entries": true,
+    "four_per_year": true,
+    "unique_slugs": true,
+    "unique_normalized_titles": true,
+    "unique_scientific_names": true,
+    "unique_primary_urls": true,
+    "unique_paper_urls": true,
+    "valid_categories_subtopics": true,
+    "dates_match_year": true,
+    "within_cutoff": true,
+    "https_sources": true,
+    "valid_coordinates": true,
+    "related_slugs_resolve": true,
+    "manifest_has_20_rows": true,
+    "one_image_per_entry": true,
+    "unique_image_hashes": true,
+    "all_images_under_700kb": true,
+    "all_images_1600x1000": true,
+    "no_editor_reviewed": true,
+    "one_preliminary": true
+  },
+  "slugs": [
+    "endurance-shipwreck-found",
+    "qikiqtania-wakei",
+    "greenland-two-million-year-dna",
+    "national-ignition-facility-fusion-ignition",
+    "quaoar-ring-outside-roche-limit",
+    "enceladus-ocean-phosphates",
+    "perucetus-colossus",
+    "alaska-golden-orb-discovery",
+    "vasuki-indicus-giant-snake",
+    "earth-inner-core-backtracking",
+    "valeriana-maya-city-lidar",
+    "willow-below-threshold-quantum-error-correction",
+    "bennu-life-building-blocks",
+    "beyond-epica-oldest-ice-core",
+    "mosura-fentoni",
+    "twa-7-b-direct-imaging",
+    "prototaxites-extinct-eukaryotic-lineage",
+    "woolly-rhino-genome-wolf-stomach",
+    "homo-habilis-knm-er-64061",
+    "demogorgon-cavefish"
+  ]
+}

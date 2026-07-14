@@ -1,23 +1,66 @@
-# batch-01
+# Beyond Signal Discovery Batch 01
 
-Placeholder for the first supplied discovery batch bundle. Drop the externally
-prepared, verified payload here:
+## Scope
 
-```
-imports/discovery-batches/batch-01/
-  discoveries.json     # array of Discovery objects
-  image-rights.csv     # one row per discovery
-  images/<slug>.webp   # one hero image per entry
-```
+- Exactly 20 discoveries
+- Four entries from each year: 2022, 2023, 2024, 2025, and 2026
+- Cutoff: 2026-07-13
+- Prepared for the transactional importer merged in Ocean-dive PR #24
+- No existing catalog entry is intentionally replaced
 
-Then audit and import:
+## Image policy
+
+Every hero asset in `images/` is an original, discovery-specific editorial
+scientific graphic generated for Beyond Signal. No third-party photographs,
+logos, screenshots, or copyrighted source images were copied into the bundle.
+
+All 20 visuals must be displayed honestly as `imageRelation: "illustration"`.
+They are explanatory diagrams, reconstructions, data-style visualizations, or
+artist impressions grounded in the cited sources. They are not photographs of
+the discoveries.
+
+Credit: Beyond Signal Editorial Graphics  
+Licence: CC BY 4.0  
+Dimensions: 1600 × 1000 pixels  
+Format: static WebP  
+Maximum file size: below 700 KB
+
+## Editorial status
+
+- 19 entries: `source-verified`
+- 1 entry: `preliminary`
+  - `twa-7-b-direct-imaging`, because the imaged source remains a planet candidate
+
+No entry is marked `editor-reviewed`.
+
+`demogorgon-cavefish` is now `source-verified`: the peer-reviewed description was
+published on 2026-07-06 in *Scientific Reports*
+(https://www.nature.com/articles/s41598-026-54315-4,
+DOI 10.1038/s41598-026-54315-4), with the earlier Axios report retained as a
+supporting source.
+
+## Integration commands
 
 ```bash
 npm run audit:discovery-batch -- imports/discovery-batches/batch-01
 npm run import:discoveries -- imports/discovery-batches/batch-01 --dry-run
 npm run import:discoveries -- imports/discovery-batches/batch-01
+npm run test:discovery-import
+npm run validate
+npm run validate:strict
+npm run lint
+npm run build
 ```
 
-See `../README.md` for the full bundle contract and validation rules. The
-payload files are git-ignored; only this README and `images/.gitkeep` are
-tracked.
+The existing repository has pre-existing strict-validation warnings. Compare
+base and head and require this batch to introduce zero new warnings.
+
+## Required review before merge
+
+- Open all 20 generated discovery pages
+- Verify hero and gallery rendering
+- Verify image captions identify the assets as illustrations
+- Verify every external citation
+- Check archives, category pages, tags, organizations, locations, search, map,
+  related cards, sitemap, and mobile layout
+- Open a draft PR and stop before merge

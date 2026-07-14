@@ -25,6 +25,43 @@ const CONTENT_DIR = join(ROOT, "src", "content");
 const IMG_DIR = join(ROOT, "public", "images", "discoveries");
 const MANIFEST_DIR = join(ROOT, "docs", "discovery-image-rights");
 
+/* Month names match the importer's module naming (discoveries-<month>-<year>.ts). */
+const MONTHS = [
+  "january", "february", "march", "april", "may", "june",
+  "july", "august", "september", "october", "november", "december",
+];
+
+/** Months (keyed "<year>-<monthName>") that already have a committed monthly module. */
+function takenModuleMonths(): Set<string> {
+  const taken = new Set<string>();
+  for (const name of readdirSync(CONTENT_DIR)) {
+    const m = /^discoveries-([a-z]+)-(\d{4})\.ts$/.exec(name);
+    if (m && MONTHS.includes(m[1])) taken.add(`${m[2]}-${m[1]}`);
+  }
+  return taken;
+}
+
+/**
+ * Dynamically pick a valid (year, month) that currently has NO monthly discovery
+ * module, so module-creation tests never depend on which months the catalog
+ * happens to contain today. A far-future range is used deliberately: real
+ * discovery batches are grounded in already-published research, so no genuine
+ * batch will ever create these modules, and the choice can never collide with a
+ * historical month a future batch might legitimately add.
+ */
+function unusedMonthYear(): { year: number; monthIdx: number; monthName: string; mm: string } {
+  const taken = takenModuleMonths();
+  for (let year = 3000; year < 3100; year++) {
+    for (let monthIdx = 0; monthIdx < 12; monthIdx++) {
+      const monthName = MONTHS[monthIdx];
+      if (!taken.has(`${year}-${monthName}`)) {
+        return { year, monthIdx, monthName, mm: String(monthIdx + 1).padStart(2, "0") };
+      }
+    }
+  }
+  throw new Error("no unused month found in the far-future range");
+}
+
 /* ------------------------------------------------------------------ *
  * Tiny test harness.
  * ------------------------------------------------------------------ */
@@ -152,10 +189,10 @@ function csvFor(entries: Array<{ slug: string; title: string; year: number; imag
   return lines.join("\n") + "\n";
 }
 /** A ready-made valid single-entry bundle. */
-async function validBundle(slug = "zz-fixture-alpha") {
+async function validBundle(slug = "zz-fixture-alpha", over: Record<string, unknown> = {}, tint = 40) {
   const dir = freshBundle();
-  const m = await writeWebp(dir, slug);
-  const e = E(slug);
+  const m = await writeWebp(dir, slug, 1600, 1000, tint);
+  const e = E(slug, over);
   writeFileSync(join(dir, "discoveries.json"), JSON.stringify([e]));
   writeFileSync(join(dir, "image-rights.csv"), csvFor([e], { [slug]: m }));
   return { dir, slug, meta: m, entry: e };
@@ -177,19 +214,42 @@ async function run() {
     assert(im.width === 1600 && im.height === 1000, "reports decoded dimensions");
   });
 
-  await test("valid apply writes files + manifest (harness reverts afterwards)", async () => {
-    const { dir, slug } = await validBundle("zz-fixture-apply");
+  await test("valid apply creates + registers a brand-new monthly module (harness reverts afterwards)", async () => {
+    const my = unusedMonthYear();
+    const { dir, slug } = await validBundle("zz-fixture-apply", { year: my.year, dateDiscovered: `${my.year}-${my.mm}-15` });
     const plan = await buildPlan(dir);
-    assert(plan.ok, "plan ok");
+    assert(plan.ok, `plan ok; errors ${plan.issues.filter((i) => i.level === "error").map((i) => i.code)}`);
     const res = await applyPlan(plan);
     assert(res.imagesCopied === 1, "one image copied");
-    assert(existsSync(join(IMG_DIR, "2022", `${slug}.webp`)), "hero image on disk");
+    assert(existsSync(join(IMG_DIR, String(my.year), `${slug}.webp`)), "hero image on disk");
     assert(existsSync(join(MANIFEST_DIR, plan.batchName + ".csv")), "manifest csv on disk");
     const mj = JSON.parse(readFileSync(join(MANIFEST_DIR, plan.batchName + ".json"), "utf8"));
     assert(Array.isArray(mj) && mj.length === 1 && mj[0].slug === slug, "manifest json has the row");
     assert(mj[0].sha256 && mj[0].width === 1600, "manifest records hash + dims");
+    const moduleRel = `discoveries-${my.monthName}-${my.year}.ts`;
+    assert(res.filesCreated.some((f) => f.endsWith(moduleRel)), "new monthly module created");
     assert(res.catalogUpdated, "new module registered in catalog");
     // The harness snapshots before and restores after, proving reversibility.
+  });
+
+  await test("apply appends to an existing monthly module without re-registering it", async () => {
+    const my = unusedMonthYear();
+    const moduleRel = `discoveries-${my.monthName}-${my.year}.ts`;
+    // First import establishes the monthly module and its catalog registration.
+    const base = await validBundle("zz-fixture-base", { year: my.year, dateDiscovered: `${my.year}-${my.mm}-10` }, 41);
+    const planBase = await buildPlan(base.dir);
+    assert(planBase.ok, `base plan ok; errors ${planBase.issues.filter((i) => i.level === "error").map((i) => i.code)}`);
+    const resBase = await applyPlan(planBase);
+    assert(resBase.catalogUpdated, "first import registers the new module");
+    assert(existsSync(join(CONTENT_DIR, moduleRel)), "monthly module now exists on disk");
+    // A second, distinct entry in the SAME month must append — not create or re-register.
+    const add = await validBundle("zz-fixture-add", { year: my.year, dateDiscovered: `${my.year}-${my.mm}-20` }, 42);
+    const planAdd = await buildPlan(add.dir);
+    assert(planAdd.ok, `append plan ok; errors ${planAdd.issues.filter((i) => i.level === "error").map((i) => i.code)}`);
+    const resAdd = await applyPlan(planAdd);
+    assert(resAdd.filesCreated.length === 0, "no new module created on append");
+    assert(resAdd.filesAppended.some((f) => f.endsWith(moduleRel)), "appended to the existing module");
+    assert(!resAdd.catalogUpdated, "append does not re-register the module in catalog");
   });
 
   await test("empty batch is a no-op success", async () => {
@@ -400,11 +460,14 @@ async function run() {
   for (const scenario of ["failBeforeImageIndex", "failBeforeFileKind", "failBeforeCatalog"] as const) {
     await test(`rollback: ${scenario}`, async () => {
       // A two-entry bundle whose entries land in a NEW module (so catalog.ts changes too).
+      // The month is chosen dynamically so the test never depends on the catalog's
+      // current months and never collides with a month a real batch might add.
+      const my = unusedMonthYear();
       const dir = freshBundle();
       const a = await writeWebp(dir, "zz-rb-a", 1600, 1000, 21);
       const b = await writeWebp(dir, "zz-rb-b", 1600, 1000, 22);
-      const e1 = E("zz-rb-a", { dateDiscovered: "2019-07-01", year: 2019, relatedSlugs: ["zz-rb-b"] });
-      const e2 = E("zz-rb-b", { dateDiscovered: "2019-07-02", year: 2019, relatedSlugs: ["zz-rb-a"] });
+      const e1 = E("zz-rb-a", { dateDiscovered: `${my.year}-${my.mm}-01`, year: my.year, relatedSlugs: ["zz-rb-b"] });
+      const e2 = E("zz-rb-b", { dateDiscovered: `${my.year}-${my.mm}-02`, year: my.year, relatedSlugs: ["zz-rb-a"] });
       writeFileSync(join(dir, "discoveries.json"), JSON.stringify([e1, e2]));
       writeFileSync(join(dir, "image-rights.csv"), csvFor([e1, e2], { "zz-rb-a": a, "zz-rb-b": b }));
       const plan = await buildPlan(dir);
@@ -420,8 +483,8 @@ async function run() {
       assert(threw, "expected ImportError from injected fault");
       const treeAfter = treeHash(snapshot());
       assert(treeBefore === treeAfter, `tree hash changed after rollback (${treeBefore.slice(0, 8)} → ${treeAfter.slice(0, 8)})`);
-      assert(!existsSync(join(IMG_DIR, "2019")), "no leftover image dir");
-      assert(!existsSync(join(CONTENT_DIR, "discoveries-july-2019.ts")), "no leftover module");
+      assert(!existsSync(join(IMG_DIR, String(my.year))), "no leftover image dir");
+      assert(!existsSync(join(CONTENT_DIR, `discoveries-${my.monthName}-${my.year}.ts`)), "no leftover module");
     });
   }
 
