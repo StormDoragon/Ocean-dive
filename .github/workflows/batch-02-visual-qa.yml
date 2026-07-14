@@ -1,0 +1,154 @@
+name: Batch 02 Visual QA
+
+on:
+  push:
+    branches:
+      - batch-02/discovery-import
+
+permissions:
+  contents: read
+
+jobs:
+  visual-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install app dependencies
+        run: npm ci
+
+      - name: Build production app
+        run: npm run build
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save --package-lock=false playwright@1.52.0
+          npx playwright install --with-deps chromium
+
+      - name: Start production server
+        run: |
+          npm run start -- --hostname 127.0.0.1 --port 3000 > /tmp/beyond-signal.log 2>&1 &
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:3000/discoveries >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/beyond-signal.log
+          exit 1
+
+      - name: Capture all Batch 02 pages at desktop and mobile widths
+        run: |
+          cat > /tmp/batch-02-visual-qa.mjs <<'EOF'
+          import { chromium } from 'playwright';
+          import fs from 'node:fs/promises';
+
+          const slugs = [
+            'telomere-to-telomere-complete-human-genome',
+            'thiomargarita-magnifica-giant-bacterium',
+            'meraxes-gigas',
+            'dart-dimorphos-orbit-change',
+            'human-pangenome-reference',
+            'nanograv-gravitational-wave-background',
+            'kalambo-falls-wooden-structure',
+            'dinkinesh-selam-contact-binary',
+            'oldest-amniote-skin-richards-spur',
+            'nitroplast-nitrogen-fixing-organelle',
+            'ichthyotitan-severnensis',
+            'jades-gs-z14-0',
+            'juvenile-colossal-squid-filmed',
+            'penghu-denisovan-jaw',
+            'vulcanidris-cratensis-oldest-ant',
+            'thutmose-ii-tomb-identified',
+            'alphagenome-regulatory-dna-model',
+            'little-red-dots-gas-cocoon',
+            'four-eyed-cambrian-vertebrates',
+            'interstellar-organosulfur-molecule'
+          ];
+
+          const viewports = {
+            desktop: { width: 1440, height: 1000 },
+            mobile: { width: 390, height: 844 }
+          };
+
+          await fs.mkdir('visual-qa/desktop', { recursive: true });
+          await fs.mkdir('visual-qa/mobile', { recursive: true });
+
+          const browser = await chromium.launch({ headless: true });
+          const results = [];
+
+          for (const [mode, viewport] of Object.entries(viewports)) {
+            const context = await browser.newContext({ viewport, deviceScaleFactor: 1 });
+            const page = await context.newPage();
+
+            for (const slug of slugs) {
+              const url = `http://127.0.0.1:3000/discoveries/${slug}`;
+              const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+              await page.waitForTimeout(700);
+
+              const audit = await page.evaluate(() => {
+                const images = Array.from(document.images);
+                const brokenImages = images
+                  .filter((image) => !image.complete || image.naturalWidth === 0)
+                  .map((image) => image.getAttribute('src') || image.getAttribute('alt') || 'unknown');
+                const hero = document.querySelector('article header img');
+                const h1 = document.querySelector('h1');
+                const h1Rect = h1?.getBoundingClientRect();
+                return {
+                  title: h1?.textContent?.trim() || null,
+                  brokenImages,
+                  horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
+                  heroLoaded: Boolean(hero && hero.complete && hero.naturalWidth > 0),
+                  h1Visible: Boolean(h1Rect && h1Rect.width > 0 && h1Rect.height > 0),
+                  bodyTextLength: document.body.innerText.length
+                };
+              });
+
+              await page.screenshot({
+                path: `visual-qa/${mode}/${slug}.png`,
+                fullPage: true,
+                animations: 'disabled'
+              });
+
+              results.push({
+                mode,
+                slug,
+                status: response?.status() ?? null,
+                ...audit
+              });
+            }
+
+            await context.close();
+          }
+
+          await browser.close();
+          await fs.writeFile('visual-qa/report.json', JSON.stringify(results, null, 2));
+
+          const failures = results.filter((row) =>
+            row.status !== 200 ||
+            row.brokenImages.length > 0 ||
+            row.horizontalOverflow ||
+            !row.heroLoaded ||
+            !row.h1Visible ||
+            row.bodyTextLength < 500
+          );
+
+          console.log(JSON.stringify({ checked: results.length, failures }, null, 2));
+          if (failures.length > 0) process.exit(1);
+          EOF
+          node /tmp/batch-02-visual-qa.mjs
+
+      - name: Upload visual QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch-02-visual-qa
+          path: visual-qa
+          if-no-files-found: error
+          retention-days: 3
