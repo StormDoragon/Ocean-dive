@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="t d">
+<title id="t">A Colossal Squid Filmed Alive in Its Natural Habitat</title><desc id="d">Original Beyond Signal editorial scientific illustration.</desc><defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#031d2a"/><stop offset="1" stop-color="#075b78"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#44d4f2" stop-opacity=".42"/><stop offset="1" stop-color="#44d4f2" stop-opacity="0"/></radialGradient>
+ <linearGradient id="shine" x1="0" x2="1"><stop stop-color="#caf8ff"/><stop offset="1" stop-color="#44d4f2"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#caf8ff" stroke-opacity=".055" stroke-width="2"/></pattern>
+ </defs>
+<rect width="1600" height="1000" fill="url(#bg)"/><rect width="1600" height="1000" fill="url(#grid)"/>
+<circle cx="1120" cy="450" r="520" fill="url(#halo)"/>
+<g opacity=".26" fill="#caf8ff"><circle cx="110" cy="170" r="3"/><circle cx="260" cy="90" r="5"/><circle cx="1460" cy="140" r="4"/><circle cx="1370" cy="810" r="5"/><circle cx="190" cy="830" r="4"/><circle cx="610" cy="150" r="3"/></g>
+<g>
+<g transform="translate(820 380)" fill="url(#shine)" filter="url(#glow)"><ellipse cx="0" cy="-65" rx="190" ry="260" opacity=".82"/><path d="M-165 110C-280 280-340 390-450 520M-95 155C-150 350-210 480-260 580M-25 170C-40 350-25 500-80 610M55 165C130 355 105 520 170 615M120 140C260 300 290 455 390 555M170 95C330 210 420 350 500 470" fill="none" stroke="#caf8ff" stroke-width="28" stroke-linecap="round"/><path d="M-170-110l-190-150 220 55M170-110l190-150-220 55" fill="none" stroke="#44d4f2" stroke-width="35" stroke-linecap="round"/><circle cx="-70" cy="-80" r="28" fill="#031d2a"/><circle cx="70" cy="-80" r="28" fill="#031d2a"/></g><g opacity=".5" fill="#caf8ff"><circle cx="170" cy="230" r="8"/><circle cx="245" cy="430" r="12"/><circle cx="1390" cy="260" r="9"/><circle cx="1280" cy="730" r="14"/><circle cx="380" cy="750" r="10"/></g><path d="M90 780H1510" stroke="#44d4f2" stroke-width="8" opacity=".35"/></g>
+<g font-family="Arial,Helvetica,sans-serif"><rect x="72" y="66" width="310" height="54" rx="27" fill="#44d4f2" fill-opacity=".17" stroke="#44d4f2" stroke-opacity=".45"/><text x="101" y="102" fill="#caf8ff" font-size="23" font-weight="700" letter-spacing="3">DEEP OCEAN / FIRST FOOTAGE</text><text x="74" y="902" fill="#caf8ff" fill-opacity=".82" font-size="24" font-weight="700" letter-spacing="4">DISCOVERY 2025</text><text x="74" y="950" fill="white" fill-opacity=".54" font-size="18" letter-spacing="2">BEYOND SIGNAL · EDITORIAL ILLUSTRATION · CC BY 4.0</text></g>
+</svg>

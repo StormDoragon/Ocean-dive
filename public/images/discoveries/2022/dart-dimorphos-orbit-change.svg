@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="t d">
+<title id="t">DART Successfully Changes an Asteroid&#x27;s Orbit</title><desc id="d">Original Beyond Signal editorial scientific illustration.</desc><defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070a24"/><stop offset="1" stop-color="#232968"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#9c9fff" stop-opacity=".42"/><stop offset="1" stop-color="#9c9fff" stop-opacity="0"/></radialGradient>
+ <linearGradient id="shine" x1="0" x2="1"><stop stop-color="#f2ecff"/><stop offset="1" stop-color="#9c9fff"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#f2ecff" stroke-opacity=".055" stroke-width="2"/></pattern>
+ </defs>
+<rect width="1600" height="1000" fill="url(#bg)"/><rect width="1600" height="1000" fill="url(#grid)"/>
+<circle cx="1120" cy="450" r="520" fill="url(#halo)"/>
+<g opacity=".26" fill="#f2ecff"><circle cx="110" cy="170" r="3"/><circle cx="260" cy="90" r="5"/><circle cx="1460" cy="140" r="4"/><circle cx="1370" cy="810" r="5"/><circle cx="190" cy="830" r="4"/><circle cx="610" cy="150" r="3"/></g>
+<g>
+<g transform="translate(790 170)"><ellipse cx="430" cy="360" rx="250" ry="220" fill="#2a2f6e" stroke="#9c9fff" stroke-width="16"/><g fill="#141844" opacity=".75"><circle cx="340" cy="280" r="48"/><circle cx="510" cy="240" r="31"/><circle cx="525" cy="430" r="55"/><circle cx="355" cy="470" r="28"/></g><path d="M-580 520Q-70 190 280 335" fill="none" stroke="#f2ecff" stroke-width="17" stroke-dasharray="28 22"/><g transform="translate(120 310) rotate(-18)"><rect x="-70" y="-36" width="140" height="72" rx="12" fill="#f2ecff"/><rect x="-215" y="-18" width="135" height="36" fill="#9c9fff"/><rect x="80" y="-18" width="135" height="36" fill="#9c9fff"/><path d="M0-36V-95" stroke="#f2ecff" stroke-width="11"/><circle cy="-105" r="18" fill="#9c9fff"/></g><g transform="translate(245 332)" stroke="#f2ecff" stroke-width="10" stroke-linecap="round"><path d="M0 0l-120-70M0 0l-135 0M0 0l-105 90M0 0l-30-140M0 0l20 130"/></g></g><path d="M850 805C1110 950 1450 800 1465 520" fill="none" stroke="#9c9fff" stroke-width="10" stroke-dasharray="18 25" opacity=".6"/></g>
+<g font-family="Arial,Helvetica,sans-serif"><rect x="72" y="66" width="310" height="54" rx="27" fill="#9c9fff" fill-opacity=".17" stroke="#9c9fff" stroke-opacity=".45"/><text x="101" y="102" fill="#f2ecff" font-size="23" font-weight="700" letter-spacing="3">PLANETARY DEFENSE / IMPACT</text><text x="74" y="902" fill="#f2ecff" fill-opacity=".82" font-size="24" font-weight="700" letter-spacing="4">DISCOVERY 2022</text><text x="74" y="950" fill="white" fill-opacity=".54" font-size="18" letter-spacing="2">BEYOND SIGNAL · EDITORIAL ILLUSTRATION · CC BY 4.0</text></g>
+</svg>

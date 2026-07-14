@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="t d">
+<title id="t">Thiomargarita Magnifica, the Giant Bacterium</title><desc id="d">Original Beyond Signal editorial scientific illustration.</desc><defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#041f1a"/><stop offset="1" stop-color="#0f5d50"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#57e6c1" stop-opacity=".42"/><stop offset="1" stop-color="#57e6c1" stop-opacity="0"/></radialGradient>
+ <linearGradient id="shine" x1="0" x2="1"><stop stop-color="#b7fff0"/><stop offset="1" stop-color="#57e6c1"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#b7fff0" stroke-opacity=".055" stroke-width="2"/></pattern>
+ </defs>
+<rect width="1600" height="1000" fill="url(#bg)"/><rect width="1600" height="1000" fill="url(#grid)"/>
+<circle cx="1120" cy="450" r="520" fill="url(#halo)"/>
+<g opacity=".26" fill="#b7fff0"><circle cx="110" cy="170" r="3"/><circle cx="260" cy="90" r="5"/><circle cx="1460" cy="140" r="4"/><circle cx="1370" cy="810" r="5"/><circle cx="190" cy="830" r="4"/><circle cx="610" cy="150" r="3"/></g>
+<g>
+<g transform="translate(320 215) rotate(-8 520 270)"><rect x="0" y="0" width="1040" height="390" rx="195" fill="#062f29" stroke="#57e6c1" stroke-width="20" filter="url(#glow)"/><ellipse cx="520" cy="195" rx="330" ry="145" fill="#0d5045" opacity=".8"/><g fill="#b7fff0" opacity=".9"><circle cx="210" cy="120" r="34"/><circle cx="330" cy="255" r="23"/><circle cx="470" cy="115" r="27"/><circle cx="610" cy="250" r="38"/><circle cx="760" cy="125" r="25"/><circle cx="865" cy="255" r="31"/></g><g fill="none" stroke="#57e6c1" stroke-width="7" opacity=".7"><path d="M170 190C300 80 430 300 560 170S800 90 920 200"/><path d="M210 260C350 120 530 320 700 190S870 170 930 120"/></g></g><path d="M245 700H780" stroke="#b7fff0" stroke-width="12"/><path d="M245 682V718M780 682V718" stroke="#b7fff0" stroke-width="10"/><text x="330" y="755" fill="#b7fff0" font-family="Arial" font-size="28">single cell visible to the eye</text></g>
+<g font-family="Arial,Helvetica,sans-serif"><rect x="72" y="66" width="310" height="54" rx="27" fill="#57e6c1" fill-opacity=".17" stroke="#57e6c1" stroke-opacity=".45"/><text x="101" y="102" fill="#b7fff0" font-size="23" font-weight="700" letter-spacing="3">MICROBIOLOGY / GIANT CELL</text><text x="74" y="902" fill="#b7fff0" fill-opacity=".82" font-size="24" font-weight="700" letter-spacing="4">DISCOVERY 2022</text><text x="74" y="950" fill="white" fill-opacity=".54" font-size="18" letter-spacing="2">BEYOND SIGNAL · EDITORIAL ILLUSTRATION · CC BY 4.0</text></g>
+</svg>

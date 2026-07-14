@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="t d">
+<title id="t">Dense Gas Cocoons Explain Many Little Red Dots</title><desc id="d">Original Beyond Signal editorial scientific illustration.</desc><defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070a24"/><stop offset="1" stop-color="#232968"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#9c9fff" stop-opacity=".42"/><stop offset="1" stop-color="#9c9fff" stop-opacity="0"/></radialGradient>
+ <linearGradient id="shine" x1="0" x2="1"><stop stop-color="#f2ecff"/><stop offset="1" stop-color="#9c9fff"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#f2ecff" stroke-opacity=".055" stroke-width="2"/></pattern>
+ </defs>
+<rect width="1600" height="1000" fill="url(#bg)"/><rect width="1600" height="1000" fill="url(#grid)"/>
+<circle cx="1120" cy="450" r="520" fill="url(#halo)"/>
+<g opacity=".26" fill="#f2ecff"><circle cx="110" cy="170" r="3"/><circle cx="260" cy="90" r="5"/><circle cx="1460" cy="140" r="4"/><circle cx="1370" cy="810" r="5"/><circle cx="190" cy="830" r="4"/><circle cx="610" cy="150" r="3"/></g>
+<g>
+<g transform="translate(1020 475)" filter="url(#glow)"><circle r="290" fill="#241650" stroke="#9c9fff" stroke-width="18"/><circle r="185" fill="#6f1f5f" opacity=".72"/><circle r="72" fill="#070a24" stroke="#f2ecff" stroke-width="10"/><g fill="#ff6ca8"><circle cx="-90" cy="-130" r="16"/><circle cx="120" cy="-105" r="12"/><circle cx="150" cy="80" r="18"/><circle cx="-135" cy="95" r="13"/></g><g fill="none" stroke="#ff8cc0" stroke-width="12" opacity=".65"><path d="M-240 0C-120-180 120-180 240 0S120 180-240 0"/><path d="M0-250C170-120 170 120 0 250S-170 120 0-250"/></g></g><g transform="translate(180 280)" fill="#ff8cc0"><circle cx="0" cy="0" r="18"/><circle cx="95" cy="160" r="12"/><circle cx="230" cy="45" r="15"/><circle cx="320" cy="230" r="10"/><circle cx="410" cy="90" r="17"/></g><path d="M180 600C330 500 480 710 650 590" fill="none" stroke="#f2ecff" stroke-width="10" opacity=".6"/></g>
+<g font-family="Arial,Helvetica,sans-serif"><rect x="72" y="66" width="310" height="54" rx="27" fill="#9c9fff" fill-opacity=".17" stroke="#9c9fff" stroke-opacity=".45"/><text x="101" y="102" fill="#f2ecff" font-size="23" font-weight="700" letter-spacing="3">EARLY UNIVERSE / BLACK HOLES</text><text x="74" y="902" fill="#f2ecff" fill-opacity=".82" font-size="24" font-weight="700" letter-spacing="4">DISCOVERY 2026</text><text x="74" y="950" fill="white" fill-opacity=".54" font-size="18" letter-spacing="2">BEYOND SIGNAL · EDITORIAL ILLUSTRATION · CC BY 4.0</text></g>
+</svg>

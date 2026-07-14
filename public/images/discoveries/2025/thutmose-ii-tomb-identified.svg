@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="t d">
+<title id="t">The Tomb of Pharaoh Thutmose II Identified</title><desc id="d">Original Beyond Signal editorial scientific illustration.</desc><defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2b0717"/><stop offset="1" stop-color="#7b183e"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#ec72aa" stop-opacity=".42"/><stop offset="1" stop-color="#ec72aa" stop-opacity="0"/></radialGradient>
+ <linearGradient id="shine" x1="0" x2="1"><stop stop-color="#ffd0e4"/><stop offset="1" stop-color="#ec72aa"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#ffd0e4" stroke-opacity=".055" stroke-width="2"/></pattern>
+ </defs>
+<rect width="1600" height="1000" fill="url(#bg)"/><rect width="1600" height="1000" fill="url(#grid)"/>
+<circle cx="1120" cy="450" r="520" fill="url(#halo)"/>
+<g opacity=".26" fill="#ffd0e4"><circle cx="110" cy="170" r="3"/><circle cx="260" cy="90" r="5"/><circle cx="1460" cy="140" r="4"/><circle cx="1370" cy="810" r="5"/><circle cx="190" cy="830" r="4"/><circle cx="610" cy="150" r="3"/></g>
+<g>
+<g transform="translate(300 150)" filter="url(#glow)"><path d="M100 640V190L500 10l400 180v450z" fill="#6c1637" stroke="#ffd0e4" stroke-width="18"/><path d="M280 640V300h440v340" fill="#2b0717" stroke="#ec72aa" stroke-width="15"/><path d="M390 640V390h220v250" fill="#7b183e" stroke="#ffd0e4" stroke-width="12"/><g fill="none" stroke="#ec72aa" stroke-width="8" opacity=".75"><path d="M165 260h270M570 260h265M165 350h115M720 350h115"/><path d="M500 95v95M450 145h100"/></g><g fill="#ffd0e4" opacity=".8"><circle cx="220" cy="480" r="22"/><circle cx="785" cy="480" r="22"/></g></g><g transform="translate(1115 250)"><ellipse cx="0" cy="250" rx="200" ry="260" fill="#4b0e29" stroke="#ec72aa" stroke-width="15"/><path d="M0 40l45 100-45 60-45-60z" fill="#ffd0e4"/><path d="M-80 220h160v250H-80z" fill="#7b183e" stroke="#ffd0e4" stroke-width="10"/><path d="M-45 280h90M-45 340h90M-45 400h90" stroke="#ffd0e4" stroke-width="8"/></g></g>
+<g font-family="Arial,Helvetica,sans-serif"><rect x="72" y="66" width="310" height="54" rx="27" fill="#ec72aa" fill-opacity=".17" stroke="#ec72aa" stroke-opacity=".45"/><text x="101" y="102" fill="#ffd0e4" font-size="23" font-weight="700" letter-spacing="3">ARCHAEOLOGY / ROYAL TOMB</text><text x="74" y="902" fill="#ffd0e4" fill-opacity=".82" font-size="24" font-weight="700" letter-spacing="4">DISCOVERY 2025</text><text x="74" y="950" fill="white" fill-opacity=".54" font-size="18" letter-spacing="2">BEYOND SIGNAL · EDITORIAL ILLUSTRATION · CC BY 4.0</text></g>
+</svg>
