@@ -1,0 +1,51 @@
+{
+  "batch": "batch-02",
+  "generatedAt": "2026-07-14",
+  "status": "prepared",
+  "discoveryCount": 20,
+  "byYear": {
+    "2022": 4,
+    "2023": 4,
+    "2024": 4,
+    "2025": 4,
+    "2026": 4
+  },
+  "byReviewStatus": {
+    "source-verified": 18,
+    "preliminary": 2,
+    "editor-reviewed": 0
+  },
+  "imageCount": 20,
+  "imageFormat": "SVG",
+  "imageRelation": "illustration",
+  "sourceAccessedAt": "2026-07-14",
+  "slugs": [
+    "telomere-to-telomere-complete-human-genome",
+    "thiomargarita-magnifica-giant-bacterium",
+    "meraxes-gigas",
+    "dart-dimorphos-orbit-change",
+    "human-pangenome-reference",
+    "nanograv-gravitational-wave-background",
+    "kalambo-falls-wooden-structure",
+    "dinkinesh-selam-contact-binary",
+    "oldest-amniote-skin-richards-spur",
+    "nitroplast-nitrogen-fixing-organelle",
+    "ichthyotitan-severnensis",
+    "jades-gs-z14-0",
+    "juvenile-colossal-squid-filmed",
+    "penghu-denisovan-jaw",
+    "vulcanidris-cratensis-oldest-ant",
+    "thutmose-ii-tomb-identified",
+    "alphagenome-regulatory-dna-model",
+    "little-red-dots-gas-cocoon",
+    "four-eyed-cambrian-vertebrates",
+    "interstellar-organosulfur-molecule"
+  ],
+  "checks": {
+    "duplicateSlugsWithinBatch": false,
+    "missingPrimaryOrPaperSource": [],
+    "missingRelatedSlugs": [],
+    "missingTags": [],
+    "missingImages": []
+  }
+}
