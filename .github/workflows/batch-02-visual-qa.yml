@@ -34,20 +34,23 @@ jobs:
           npm install --no-save --package-lock=false playwright@1.52.0
           npx playwright install --with-deps chromium
 
-      - name: Start production server
+      - name: Start app and capture all Batch 02 pages
         run: |
-          npm run start -- --hostname 127.0.0.1 --port 3000 > /tmp/beyond-signal.log 2>&1 &
-          for i in {1..60}; do
+          nohup npm run start -- -H 127.0.0.1 -p 3000 > /tmp/beyond-signal.log 2>&1 &
+          SERVER_PID=$!
+          READY=0
+          for i in {1..90}; do
             if curl -fsS http://127.0.0.1:3000/discoveries >/dev/null; then
-              exit 0
+              READY=1
+              break
             fi
             sleep 1
           done
-          cat /tmp/beyond-signal.log
-          exit 1
+          if [ "$READY" != "1" ]; then
+            cat /tmp/beyond-signal.log
+            exit 1
+          fi
 
-      - name: Capture all Batch 02 pages at desktop and mobile widths
-        run: |
           cat > /tmp/batch-02-visual-qa.mjs <<'EOF'
           import { chromium } from 'playwright';
           import fs from 'node:fs/promises';
@@ -145,7 +148,9 @@ jobs:
           console.log(JSON.stringify({ checked: results.length, failures }, null, 2));
           if (failures.length > 0) process.exit(1);
           EOF
+
           node /tmp/batch-02-visual-qa.mjs
+          kill "$SERVER_PID" || true
 
       - name: Upload visual QA evidence
         if: always()
