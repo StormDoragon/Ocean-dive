@@ -30,6 +30,8 @@ jobs:
       - name: Capture the Vercel preview at desktop and mobile widths
         run: |
           mkdir -p visual-qa/desktop visual-qa/mobile
+          echo "visual QA started" > visual-qa/debug.txt
+
           cat > /tmp/batch-02-visual-qa.mjs <<'EOF'
           import { chromium } from 'playwright';
           import fs from 'node:fs/promises';
@@ -64,64 +66,69 @@ jobs:
             mobile: { width: 390, height: 844 }
           };
 
-          const browser = await chromium.launch({ headless: true });
           const results = [];
+          let browser;
 
-          for (const [mode, viewport] of Object.entries(viewports)) {
-            const context = await browser.newContext({ viewport, deviceScaleFactor: 1 });
-            const page = await context.newPage();
+          try {
+            browser = await chromium.launch({ headless: true });
 
-            await page.goto(`${baseUrl}/?_vercel_share=${shareToken}`, {
-              waitUntil: 'domcontentloaded',
-              timeout: 60000
-            });
+            for (const [mode, viewport] of Object.entries(viewports)) {
+              const context = await browser.newContext({ viewport, deviceScaleFactor: 1 });
+              const page = await context.newPage();
 
-            for (const slug of slugs) {
-              try {
-                const response = await page.goto(`${baseUrl}/discoveries/${slug}`, {
-                  waitUntil: 'domcontentloaded',
-                  timeout: 60000
-                });
-                await page.waitForTimeout(900);
+              for (const slug of slugs) {
+                try {
+                  const url = `${baseUrl}/discoveries/${slug}?_vercel_share=${shareToken}`;
+                  const response = await page.goto(url, {
+                    waitUntil: 'domcontentloaded',
+                    timeout: 60000
+                  });
+                  await page.waitForTimeout(900);
 
-                const audit = await page.evaluate(() => {
-                  const hero = document.querySelector('article header img');
-                  const h1 = document.querySelector('h1');
-                  const h1Rect = h1?.getBoundingClientRect();
-                  return {
-                    title: h1?.textContent?.trim() || null,
-                    horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
-                    heroLoaded: Boolean(hero && hero.complete && hero.naturalWidth > 0),
-                    heroSource: hero?.getAttribute('src') || null,
-                    h1Visible: Boolean(h1Rect && h1Rect.width > 0 && h1Rect.height > 0),
-                    bodyTextLength: document.body.innerText.length
-                  };
-                });
+                  const audit = await page.evaluate(() => {
+                    const hero = document.querySelector('article header img');
+                    const h1 = document.querySelector('h1');
+                    const h1Rect = h1?.getBoundingClientRect();
+                    return {
+                      title: h1?.textContent?.trim() || null,
+                      horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
+                      heroLoaded: Boolean(hero && hero.complete && hero.naturalWidth > 0),
+                      heroSource: hero?.getAttribute('src') || null,
+                      h1Visible: Boolean(h1Rect && h1Rect.width > 0 && h1Rect.height > 0),
+                      bodyTextLength: document.body.innerText.length,
+                      finalUrl: location.href
+                    };
+                  });
 
-                await page.screenshot({
-                  path: `visual-qa/${mode}/${slug}.png`,
-                  fullPage: true,
-                  animations: 'disabled'
-                });
+                  await page.screenshot({
+                    path: `visual-qa/${mode}/${slug}.png`,
+                    fullPage: true,
+                    animations: 'disabled'
+                  });
 
-                results.push({
-                  mode,
-                  slug,
-                  status: response?.status() ?? null,
-                  ...audit
-                });
-              } catch (error) {
-                results.push({ mode, slug, error: String(error) });
+                  results.push({
+                    mode,
+                    slug,
+                    status: response?.status() ?? null,
+                    ...audit
+                  });
+                } catch (error) {
+                  results.push({ mode, slug, error: String(error) });
+                }
               }
-            }
 
-            await context.close();
+              await context.close();
+            }
+          } catch (error) {
+            results.push({ fatalError: String(error) });
+          } finally {
+            if (browser) await browser.close();
           }
 
-          await browser.close();
           await fs.writeFile('visual-qa/report.json', JSON.stringify(results, null, 2));
 
           const failures = results.filter((row) =>
+            row.fatalError ||
             row.error ||
             row.status !== 200 ||
             row.horizontalOverflow ||
@@ -135,7 +142,7 @@ jobs:
           console.log(JSON.stringify({ checked: results.length, failures }, null, 2));
           EOF
 
-          node /tmp/batch-02-visual-qa.mjs
+          node /tmp/batch-02-visual-qa.mjs 2>&1 | tee visual-qa/capture.log
 
       - name: Upload visual QA evidence
         if: always()
