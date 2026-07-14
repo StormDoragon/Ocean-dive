@@ -14,51 +14,28 @@ permissions:
 jobs:
   visual-qa:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-
-      - name: Install app dependencies
-        run: npm ci
-
-      - name: Build production app
-        run: npm run build
 
       - name: Install Playwright Chromium
         run: |
           npm install --no-save --package-lock=false playwright@1.52.0
           npx playwright install --with-deps chromium
 
-      - name: Start app and capture all Batch 02 pages
+      - name: Capture the Vercel preview at desktop and mobile widths
         run: |
           mkdir -p visual-qa/desktop visual-qa/mobile
-          touch /tmp/beyond-signal.log
-          trap 'cp /tmp/beyond-signal.log visual-qa/server.log || true' EXIT
-
-          nohup npx next start -p 3000 > /tmp/beyond-signal.log 2>&1 &
-          SERVER_PID=$!
-          READY=0
-          for i in {1..90}; do
-            if curl -fsS http://127.0.0.1:3000/discoveries >/dev/null; then
-              READY=1
-              break
-            fi
-            sleep 1
-          done
-          if [ "$READY" != "1" ]; then
-            cat /tmp/beyond-signal.log
-            exit 1
-          fi
-
           cat > /tmp/batch-02-visual-qa.mjs <<'EOF'
           import { chromium } from 'playwright';
           import fs from 'node:fs/promises';
 
+          const baseUrl = 'https://ocean-dive-git-batch-02-discovery-import-storm-dragons-projects.vercel.app';
+          const shareToken = 'ACbsB5t4h9aUdkWHxDVFhbbxI6anz1w2';
           const slugs = [
             'telomere-to-telomere-complete-human-genome',
             'thiomargarita-magnifica-giant-bacterium',
@@ -94,37 +71,48 @@ jobs:
             const context = await browser.newContext({ viewport, deviceScaleFactor: 1 });
             const page = await context.newPage();
 
+            await page.goto(`${baseUrl}/?_vercel_share=${shareToken}`, {
+              waitUntil: 'domcontentloaded',
+              timeout: 60000
+            });
+
             for (const slug of slugs) {
-              const url = `http://127.0.0.1:3000/discoveries/${slug}`;
-              const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
-              await page.waitForTimeout(700);
+              try {
+                const response = await page.goto(`${baseUrl}/discoveries/${slug}`, {
+                  waitUntil: 'domcontentloaded',
+                  timeout: 60000
+                });
+                await page.waitForTimeout(900);
 
-              const audit = await page.evaluate(() => {
-                const hero = document.querySelector('article header img');
-                const h1 = document.querySelector('h1');
-                const h1Rect = h1?.getBoundingClientRect();
-                return {
-                  title: h1?.textContent?.trim() || null,
-                  horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
-                  heroLoaded: Boolean(hero && hero.complete && hero.naturalWidth > 0),
-                  heroSource: hero?.getAttribute('src') || null,
-                  h1Visible: Boolean(h1Rect && h1Rect.width > 0 && h1Rect.height > 0),
-                  bodyTextLength: document.body.innerText.length
-                };
-              });
+                const audit = await page.evaluate(() => {
+                  const hero = document.querySelector('article header img');
+                  const h1 = document.querySelector('h1');
+                  const h1Rect = h1?.getBoundingClientRect();
+                  return {
+                    title: h1?.textContent?.trim() || null,
+                    horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
+                    heroLoaded: Boolean(hero && hero.complete && hero.naturalWidth > 0),
+                    heroSource: hero?.getAttribute('src') || null,
+                    h1Visible: Boolean(h1Rect && h1Rect.width > 0 && h1Rect.height > 0),
+                    bodyTextLength: document.body.innerText.length
+                  };
+                });
 
-              await page.screenshot({
-                path: `visual-qa/${mode}/${slug}.png`,
-                fullPage: true,
-                animations: 'disabled'
-              });
+                await page.screenshot({
+                  path: `visual-qa/${mode}/${slug}.png`,
+                  fullPage: true,
+                  animations: 'disabled'
+                });
 
-              results.push({
-                mode,
-                slug,
-                status: response?.status() ?? null,
-                ...audit
-              });
+                results.push({
+                  mode,
+                  slug,
+                  status: response?.status() ?? null,
+                  ...audit
+                });
+              } catch (error) {
+                results.push({ mode, slug, error: String(error) });
+              }
             }
 
             await context.close();
@@ -134,6 +122,7 @@ jobs:
           await fs.writeFile('visual-qa/report.json', JSON.stringify(results, null, 2));
 
           const failures = results.filter((row) =>
+            row.error ||
             row.status !== 200 ||
             row.horizontalOverflow ||
             !row.heroLoaded ||
@@ -147,7 +136,6 @@ jobs:
           EOF
 
           node /tmp/batch-02-visual-qa.mjs
-          kill "$SERVER_PID" || true
 
       - name: Upload visual QA evidence
         if: always()
