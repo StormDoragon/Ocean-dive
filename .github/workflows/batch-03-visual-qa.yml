@@ -24,34 +24,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build exact PR head
-        run: npm run build
 
       - name: Install Playwright Chromium
         run: |
           npm install --no-save --package-lock=false playwright@1.52.0
           npx playwright install --with-deps chromium
 
-      - name: Start production preview
-        run: |
-          nohup npm run start -- --hostname 127.0.0.1 --port 3000 > /tmp/batch-03-preview.log 2>&1 &
-          for attempt in $(seq 1 60); do
-            if curl --fail --silent http://127.0.0.1:3000/ > /dev/null; then
-              exit 0
-            fi
-            sleep 2
-          done
-          cat /tmp/batch-03-preview.log
-          exit 1
-
       - name: Audit Batch 03 preview at desktop and mobile widths
         env:
-          BATCH03_PREVIEW: http://127.0.0.1:3000
+          BATCH03_PREVIEW: https://ocean-dive-git-batch-03-discovery-import-storm-dragons-projects.vercel.app
+          VERCEL_SHARE_TOKEN: RuIpNrLaiSCIWSW3bhAC3HuFwasFuL83
         run: |
           set -o pipefail
           mkdir -p visual-qa/desktop visual-qa/mobile visual-qa/surfaces
@@ -63,6 +45,7 @@ jobs:
           import sharp from "sharp";
 
           const baseUrl = process.env.BATCH03_PREVIEW;
+          const shareToken = process.env.VERCEL_SHARE_TOKEN;
 
           const discoveries = [
             ["airborne-edna-vertebrate-biodiversity", "Airborne eDNA Reveals Terrestrial Vertebrates"],
@@ -121,8 +104,25 @@ jobs:
           const results = [];
           const failures = [];
 
-          function previewUrl(route) {
-            return new URL(route, baseUrl).toString();
+          function previewUrl(route, authorize = false) {
+            const url = new URL(route, baseUrl);
+            if (authorize) url.searchParams.set("_vercel_share", shareToken);
+            return url.toString();
+          }
+
+          async function authorizePreview(page) {
+            const response = await page.goto(previewUrl("/", true), {
+              waitUntil: "domcontentloaded",
+              timeout: 60000,
+            });
+            await page.waitForTimeout(1500);
+            const previewText = await page.locator("body").innerText().catch(() => "");
+            const authenticationPage = /Authentication Required|Log in to Vercel/i.test(
+              `${await page.title()}\n${previewText}`,
+            );
+            if (response?.status() !== 200 || authenticationPage || previewText.length < 300) {
+              throw new Error(`Vercel preview authorization failed: status=${response?.status()} title=${await page.title()}`);
+            }
           }
 
           async function openWithRetry(page, route) {
@@ -134,12 +134,12 @@ jobs:
                   timeout: 60000,
                 });
                 last = response;
+                await page.waitForTimeout(500);
                 const previewText = await page.locator("body").innerText().catch(() => "");
                 const authenticationPage = /Authentication Required|Log in to Vercel/i.test(
                   `${await page.title()}\n${previewText}`,
                 );
                 if (response?.status() === 200 && !authenticationPage) {
-                  await page.waitForTimeout(500);
                   await page.locator("img").evaluateAll((images) =>
                     Promise.all(images.map((image) => image.complete ? true : new Promise((resolve) => {
                       image.addEventListener("load", () => resolve(true), { once: true });
@@ -345,6 +345,7 @@ jobs:
             for (const [mode, viewport] of Object.entries(viewports)) {
               const context = await browser.newContext({ viewport, deviceScaleFactor: 1, ignoreHTTPSErrors: true });
               const page = await context.newPage();
+              await authorizePreview(page);
 
               for (const [slug, title] of discoveries) {
                 await auditDiscovery(page, mode, slug, title);
