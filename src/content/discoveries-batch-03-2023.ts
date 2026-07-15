@@ -243,6 +243,6 @@ export const batch032023Discoveries: Discovery[] = [
     ],
     videoUrls: [],
     relatedSlugs: ["higgs-boson", "lead-to-gold-alice"],
-    tags: ["antihydrogen", "antimatter", "gravity", "ALPHA-g", "CERN"],
+    tags: ["antihydrogen", "antimatter", "gravity", "ALPHA-g", "cern"],
   },
 ];

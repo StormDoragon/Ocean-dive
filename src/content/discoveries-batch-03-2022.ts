@@ -62,7 +62,7 @@ export const batch032022Discoveries: Discovery[] = [
     ],
     videoUrls: [],
     relatedSlugs: ["greenland-two-million-year-dna", "human-pangenome-reference"],
-    tags: ["environmental DNA", "air sampling", "biodiversity", "metabarcoding", "wildlife monitoring"],
+    tags: ["environmental dna", "air sampling", "biodiversity", "metabarcoding", "wildlife monitoring"],
   },
   {
     slug: "first-pig-heart-human-xenotransplant",
