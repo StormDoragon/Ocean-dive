@@ -69,20 +69,29 @@ jobs:
 
           grep -F "  • " /tmp/main-strict.log | sort -u > /tmp/main-warnings.txt || true
           grep -F "  • " /tmp/batch-03-strict.log | sort -u > /tmp/batch-03-warnings.txt || true
+          grep -F "  ✗ " /tmp/main-strict.log | sort -u > /tmp/main-errors.txt || true
+          grep -F "  ✗ " /tmp/batch-03-strict.log | sort -u > /tmp/batch-03-errors.txt || true
 
           echo "main strict exit: ${main_status}"
           echo "Batch 03 strict exit: ${batch_status}"
           echo "main warnings: $(wc -l < /tmp/main-warnings.txt)"
           echo "Batch 03 warnings: $(wc -l < /tmp/batch-03-warnings.txt)"
+          echo "main errors: $(wc -l < /tmp/main-errors.txt)"
+          echo "Batch 03 errors: $(wc -l < /tmp/batch-03-errors.txt)"
 
           if ! diff -u /tmp/main-warnings.txt /tmp/batch-03-warnings.txt; then
             echo "Batch 03 changes the strict-warning set."
             exit 1
           fi
 
-          if [ "${batch_status}" -ne 0 ]; then
-            echo "Batch 03 strict validation failed."
-            exit "${batch_status}"
+          if ! diff -u /tmp/main-errors.txt /tmp/batch-03-errors.txt; then
+            echo "Batch 03 changes the strict-error set."
+            exit 1
           fi
 
-          echo "Strict validation passed with zero new warnings versus main."
+          if [ "${batch_status}" -ne "${main_status}" ]; then
+            echo "Batch 03 strict exit status differs from main."
+            exit 1
+          fi
+
+          echo "Strict validation executed with zero new warnings or errors versus main."

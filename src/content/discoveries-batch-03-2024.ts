@@ -62,7 +62,7 @@ export const batch032024Discoveries: Discovery[] = [
     ],
     videoUrls: [],
     relatedSlugs: ["trappist-1-system", "gj-887-d-habitable-zone-super-earth"],
-    tags: ["Gliese 12 b", "exoplanet", "TESS", "CHEOPS", "Earth-sized planet"],
+    tags: ["Gliese 12 b", "exoplanet", "TESS", "cheops", "Earth-sized planet"],
   },
   {
     slug: "sulawesi-narrative-cave-art-51200-years",
@@ -187,7 +187,7 @@ export const batch032024Discoveries: Discovery[] = [
     ],
     videoUrls: [],
     relatedSlugs: ["greenland-two-million-year-dna", "woolly-rhino-genome-wolf-stomach"],
-    tags: ["woolly mammoth", "ancient DNA", "PaleoHi-C", "chromosomes", "paleogenomics"],
+    tags: ["woolly mammoth", "ancient dna", "PaleoHi-C", "chromosomes", "paleogenomics"],
   },
   {
     slug: "dark-oxygen-abyssal-seafloor",
