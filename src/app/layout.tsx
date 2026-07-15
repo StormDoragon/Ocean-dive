@@ -6,6 +6,7 @@ import { Providers } from "@/components/account/Providers";
 import { site } from "@/lib/site";
 import { editorialTeam } from "@/content/editorial";
 import { canonicalUrl, serializeJsonLd, siteUrl } from "@/lib/seo";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -79,6 +80,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <SiteFooter />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
