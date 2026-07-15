@@ -46,14 +46,17 @@ jobs:
           sed -i 's/Promise<{ year: string; month: string }>/Promise<{ slug: string; month: string }>/g' 'src/app/discoveries/[slug]/[month]/page.tsx'
           sed -i 's/{ year: yearParam, month: monthParam }/{ slug: yearParam, month: monthParam }/g' 'src/app/discoveries/[slug]/[month]/page.tsx'
 
+      - name: Build local production preview
+        run: npm run build
+
       - name: Install Playwright Chromium
         run: |
           npm install --no-save --package-lock=false playwright@1.52.0
           npx playwright install --with-deps chromium
 
-      - name: Start local PR preview
+      - name: Start local production preview
         run: |
-          nohup npm run dev -- --hostname 127.0.0.1 --port 3000 > /tmp/batch-03-preview.log 2>&1 &
+          nohup npm run start -- --hostname 127.0.0.1 --port 3000 > /tmp/batch-03-preview.log 2>&1 &
           for attempt in $(seq 1 60); do
             if curl --fail --silent http://127.0.0.1:3000/ > /dev/null; then
               exit 0
