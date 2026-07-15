@@ -16,7 +16,7 @@ permissions:
 jobs:
   visual-qa:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
 
     steps:
       - uses: actions/checkout@v4
@@ -24,16 +24,34 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build exact PR head
+        run: npm run build
 
       - name: Install Playwright Chromium
         run: |
           npm install --no-save --package-lock=false playwright@1.52.0
           npx playwright install --with-deps chromium
 
+      - name: Start production preview
+        run: |
+          nohup npm run start -- --hostname 127.0.0.1 --port 3000 > /tmp/batch-03-preview.log 2>&1 &
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent http://127.0.0.1:3000/ > /dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+          cat /tmp/batch-03-preview.log
+          exit 1
+
       - name: Audit Batch 03 preview at desktop and mobile widths
         env:
-          BATCH03_PREVIEW: https://ocean-dive-git-batch-03-discovery-import-storm-dragons-projects.vercel.app
-          VERCEL_SHARE_TOKEN: z287ofWh510eWjnCDVhT9wStVZumouGq
+          BATCH03_PREVIEW: http://127.0.0.1:3000
         run: |
           set -o pipefail
           mkdir -p visual-qa/desktop visual-qa/mobile visual-qa/surfaces
@@ -45,7 +63,6 @@ jobs:
           import sharp from "sharp";
 
           const baseUrl = process.env.BATCH03_PREVIEW;
-          const shareToken = process.env.VERCEL_SHARE_TOKEN;
 
           const discoveries = [
             ["airborne-edna-vertebrate-biodiversity", "Airborne eDNA Reveals Terrestrial Vertebrates"],
@@ -105,14 +122,12 @@ jobs:
           const failures = [];
 
           function previewUrl(route) {
-            const url = new URL(route, baseUrl);
-            url.searchParams.set("_vercel_share", shareToken);
-            return url.toString();
+            return new URL(route, baseUrl).toString();
           }
 
           async function openWithRetry(page, route) {
             let last;
-            for (let attempt = 1; attempt <= 50; attempt += 1) {
+            for (let attempt = 1; attempt <= 10; attempt += 1) {
               try {
                 const response = await page.goto(previewUrl(route), {
                   waitUntil: "domcontentloaded",
@@ -136,7 +151,7 @@ jobs:
               } catch (error) {
                 last = error;
               }
-              await page.waitForTimeout(10000);
+              await page.waitForTimeout(1000);
             }
             throw new Error(`Preview never became ready for ${route}: ${String(last)}`);
           }
@@ -281,15 +296,21 @@ jobs:
           }
 
           async function auditSearch(page, mode) {
-            await openWithRetry(page, "/discoveries");
-            const input = page.locator('input[type="search"]');
-            await input.fill("Yunxian");
-            await page.waitForTimeout(700);
-            const resultVisible = await page.locator('a[href="/discoveries/yunxian-oldest-in-situ-homo-erectus-crania"]').isVisible();
-            const summary = await page.locator("text=matching “Yunxian”").first().textContent().catch(() => null);
-            if (!resultVisible || !summary) addFailure(`${mode}:search`, { resultVisible, summary });
-            await screenshot(page, `visual-qa/surfaces/${mode}-search-yunxian.jpg`);
-            results.push({ type: "search", mode, resultVisible, summary });
+            try {
+              await openWithRetry(page, "/discoveries");
+              const input = page.locator('input[type="search"]');
+              await input.fill("Yunxian");
+              await page.waitForTimeout(700);
+              const resultVisible = await page.locator('a[href="/discoveries/yunxian-oldest-in-situ-homo-erectus-crania"]').isVisible();
+              const summary = await page.locator("text=matching “Yunxian”").first().textContent().catch(() => null);
+              if (!resultVisible || !summary) addFailure(`${mode}:search`, { resultVisible, summary });
+              await screenshot(page, `visual-qa/surfaces/${mode}-search-yunxian.jpg`);
+              results.push({ type: "search", mode, resultVisible, summary });
+            } catch (error) {
+              const row = { type: "search", mode, error: String(error) };
+              results.push(row);
+              addFailure(`${mode}:search:exception`, row);
+            }
           }
 
           async function buildContactSheet(mode) {
