@@ -33,12 +33,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Normalize overlapping dynamic route names for local preview
+        run: |
+          mv 'src/app/[category]/[subtopic]' 'src/app/[slug]/[subtopic]'
+          rmdir 'src/app/[category]'
+          sed -i 's/category: category.slug/slug: category.slug/' 'src/app/[slug]/[subtopic]/page.tsx'
+          sed -i 's/Promise<{ category: string; subtopic: string }>/Promise<{ slug: string; subtopic: string }>/g' 'src/app/[slug]/[subtopic]/page.tsx'
+          sed -i 's/{ category: categoryParam, subtopic: subtopicParam }/{ slug: categoryParam, subtopic: subtopicParam }/g' 'src/app/[slug]/[subtopic]/page.tsx'
+
       - name: Install Playwright Chromium
         run: |
           npm install --no-save --package-lock=false playwright@1.52.0
           npx playwright install --with-deps chromium
 
-      - name: Start exact PR preview
+      - name: Start local PR preview
         run: |
           nohup npm run dev -- --hostname 127.0.0.1 --port 3000 > /tmp/batch-03-preview.log 2>&1 &
           for attempt in $(seq 1 60); do
