@@ -40,6 +40,11 @@ jobs:
           sed -i 's/category: category.slug/slug: category.slug/' 'src/app/[slug]/[subtopic]/page.tsx'
           sed -i 's/Promise<{ category: string; subtopic: string }>/Promise<{ slug: string; subtopic: string }>/g' 'src/app/[slug]/[subtopic]/page.tsx'
           sed -i 's/{ category: categoryParam, subtopic: subtopicParam }/{ slug: categoryParam, subtopic: subtopicParam }/g' 'src/app/[slug]/[subtopic]/page.tsx'
+          mv 'src/app/discoveries/[year]/[month]' 'src/app/discoveries/[slug]/[month]'
+          rmdir 'src/app/discoveries/[year]'
+          sed -i 's/year: String(year)/slug: String(year)/' 'src/app/discoveries/[slug]/[month]/page.tsx'
+          sed -i 's/Promise<{ year: string; month: string }>/Promise<{ slug: string; month: string }>/g' 'src/app/discoveries/[slug]/[month]/page.tsx'
+          sed -i 's/{ year: yearParam, month: monthParam }/{ slug: yearParam, month: monthParam }/g' 'src/app/discoveries/[slug]/[month]/page.tsx'
 
       - name: Install Playwright Chromium
         run: |
