@@ -13,6 +13,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: batch-03-visual-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   visual-qa:
     runs-on: ubuntu-latest
@@ -140,12 +144,10 @@ jobs:
                   `${await page.title()}\n${previewText}`,
                 );
                 if (response?.status() === 200 && !authenticationPage) {
-                  await page.locator("img").evaluateAll((images) =>
-                    Promise.all(images.map((image) => image.complete ? true : new Promise((resolve) => {
-                      image.addEventListener("load", () => resolve(true), { once: true });
-                      image.addEventListener("error", () => resolve(false), { once: true });
-                    }))),
-                  ).catch(() => {});
+                  await page.locator("img").evaluateAll((images) => {
+                    for (const image of images) image.loading = "eager";
+                  }).catch(() => {});
+                  await page.waitForTimeout(300);
                   return response;
                 }
               } catch (error) {
