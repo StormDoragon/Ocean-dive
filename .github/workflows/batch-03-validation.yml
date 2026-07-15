@@ -1,0 +1,88 @@
+name: Batch 03 validation
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/batch-03-validation.yml"
+      - "src/content/catalog.ts"
+      - "src/content/categories.ts"
+      - "src/content/discoveries-batch-03-*.ts"
+      - "public/images/discoveries/**"
+      - "docs/discovery-image-rights/batch-03.*"
+      - "imports/discovery-batches/batch-03/**"
+
+permissions:
+  contents: read
+
+jobs:
+  release-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test discovery importer
+        run: npm run test:discovery-import
+
+      - name: Validate content and SEO integrity
+        run: npm run validate
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Check image sources
+        run: npm run check:images
+
+      - name: Run strict validation and compare warnings with main
+        shell: bash
+        run: |
+          set -uo pipefail
+
+          set +e
+          npm run validate:strict 2>&1 | tee /tmp/batch-03-strict.log
+          batch_status=${PIPESTATUS[0]}
+          set -e
+
+          git worktree add --detach /tmp/beyond-signal-main origin/main
+          pushd /tmp/beyond-signal-main
+          npm ci
+          set +e
+          npm run validate:strict 2>&1 | tee /tmp/main-strict.log
+          main_status=${PIPESTATUS[0]}
+          set -e
+          popd
+
+          grep -F "  • " /tmp/main-strict.log | sort -u > /tmp/main-warnings.txt || true
+          grep -F "  • " /tmp/batch-03-strict.log | sort -u > /tmp/batch-03-warnings.txt || true
+
+          echo "main strict exit: ${main_status}"
+          echo "Batch 03 strict exit: ${batch_status}"
+          echo "main warnings: $(wc -l < /tmp/main-warnings.txt)"
+          echo "Batch 03 warnings: $(wc -l < /tmp/batch-03-warnings.txt)"
+
+          if ! diff -u /tmp/main-warnings.txt /tmp/batch-03-warnings.txt; then
+            echo "Batch 03 changes the strict-warning set."
+            exit 1
+          fi
+
+          if [ "${batch_status}" -ne 0 ]; then
+            echo "Batch 03 strict validation failed."
+            exit "${batch_status}"
+          fi
+
+          echo "Strict validation passed with zero new warnings versus main."
