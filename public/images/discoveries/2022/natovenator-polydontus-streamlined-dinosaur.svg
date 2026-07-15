@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Natovenator streamlined swimming dinosaur</title><desc id="desc">A feathered Natovenator swims over a Cretaceous lake bed while its flattened rib cage is highlighted.</desc>
+  <defs><linearGradient id="water" x2="0" y2="1"><stop stop-color="#123e5a"/><stop offset=".55" stop-color="#0d5d64"/><stop offset="1" stop-color="#092d35"/></linearGradient><linearGradient id="body"><stop stop-color="#d9f99d"/><stop offset="1" stop-color="#4d7c0f"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect width="1600" height="1000" fill="url(#water)"/><path d="M0 760c230-75 407 37 622-13 270-64 429-6 978-57v310H0z" fill="#193f36"/><g fill="#2d5f49"><ellipse cx="180" cy="850" rx="150" ry="34"/><ellipse cx="1270" cy="830" rx="250" ry="40"/></g>
+  <g stroke="#67e8f9" opacity=".25" stroke-width="7" fill="none"><path d="M0 270c300 75 540-80 840 0s520-60 760-5"/><path d="M0 355c310 70 555-70 850 0s510-50 750 0"/></g>
+  <g transform="translate(250 270)">
+    <path d="M270 330C460 176 755 180 934 309c70 50 140 60 216 25-56 87-135 139-237 157-211 38-427 8-625-79-100-44-174-47-242-15 38-69 112-91 224-67z" fill="url(#body)" stroke="#d9f99d" stroke-width="10"/>
+    <path d="M850 287c141-60 249-46 324 42-96-31-175-7-239 71" fill="none" stroke="#84cc16" stroke-width="44" stroke-linecap="round"/>
+    <path d="M287 328c-106-73-226-63-267 8 56 84 150 112 278 76" fill="#a3e635" stroke="#d9f99d" stroke-width="10"/>
+    <path d="M37 318 5 253l83 53m34 4 31-63 19 83" fill="#bef264"/>
+    <circle cx="68" cy="333" r="12" fill="#172554"/><circle cx="64" cy="329" r="4" fill="#fff"/>
+    <path d="M18 363c48 15 93 13 136-6" fill="none" stroke="#365314" stroke-width="8"/>
+    <g fill="none" stroke="#fef08a" stroke-width="11" opacity=".85">
+      <path d="M405 273q28 104 12 178"/><path d="M456 250q29 120 10 221"/><path d="M510 235q31 132 12 250"/><path d="M568 229q29 133 11 268"/><path d="M626 234q28 125 10 264"/><path d="M686 247q25 110 8 240"/>
+    </g>
+    <path d="M458 425c-45 83-86 132-169 157m395-95c36 77 94 117 179 127" fill="none" stroke="#84cc16" stroke-width="32" stroke-linecap="round"/>
+    <path d="M260 573l-63 45m78-26-24 66m637-50 70 22m-88-3 43 56" stroke="#bef264" stroke-width="15"/>
+    <path d="M327 319c-52-71-104-117-155-140M355 302c-23-71-50-125-82-163" fill="none" stroke="#bef264" stroke-width="13" stroke-linecap="round"/>
+  </g>
+  <g fill="#a7f3d0" opacity=".65"><circle cx="420" cy="315" r="9"/><circle cx="370" cy="260" r="14"/><circle cx="320" cy="218" r="6"/><circle cx="1350" cy="420" r="8"/><circle cx="1400" cy="350" r="13"/></g>
+  <text x="80" y="105" fill="#ecfdf5" font-family="system-ui,sans-serif" font-size="62" font-weight="750">A DINOSAUR SHAPED FOR WATER</text>
+  <text x="83" y="160" fill="#a7f3d0" font-family="system-ui,sans-serif" font-size="28" letter-spacing="4">NATOVENATOR POLYDONTUS · LATE CRETACEOUS</text>
+  <text x="620" y="840" fill="#fef9c3" font-family="system-ui" font-size="28">backward-swept ribs flatten the torso</text><path d="M765 805 742 703" stroke="#fde68a" stroke-width="5"/>
+</svg>

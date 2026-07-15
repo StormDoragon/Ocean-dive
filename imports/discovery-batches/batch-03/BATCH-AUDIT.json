@@ -1,0 +1,70 @@
+{
+  "batch": "batch-03",
+  "generatedAt": "2026-07-14",
+  "researchCutoff": "2026-07-15",
+  "status": "prepared",
+  "startingCatalogCount": 91,
+  "discoveryCount": 20,
+  "targetCatalogCount": 111,
+  "byYear": {
+    "2022": 4,
+    "2023": 4,
+    "2024": 4,
+    "2025": 4,
+    "2026": 4
+  },
+  "byCategory": {
+    "space": 5,
+    "biology": 4,
+    "technology": 3,
+    "archaeology": 2,
+    "dinosaurs-fossils": 2,
+    "ocean": 2,
+    "earth-science": 1,
+    "physics": 1
+  },
+  "byReviewStatus": {
+    "source-verified": 19,
+    "preliminary": 1,
+    "editor-reviewed": 0
+  },
+  "imageCount": 20,
+  "imageFormat": "SVG",
+  "imageRelation": "illustration",
+  "sourceAccessedAt": "2026-07-14",
+  "slugs": [
+    "airborne-edna-vertebrate-biodiversity",
+    "first-pig-heart-human-xenotransplant",
+    "vfts-243-dormant-black-hole",
+    "natovenator-polydontus-streamlined-dinosaur",
+    "drosophila-larval-brain-connectome",
+    "deepest-fish-izu-ogasawara",
+    "crocodile-facultative-parthenogenesis",
+    "antihydrogen-gravity-alpha-g",
+    "gliese-12-b-temperate-earth-sized",
+    "sulawesi-narrative-cave-art-51200-years",
+    "mammoth-3d-chromosome-architecture",
+    "dark-oxygen-abyssal-seafloor",
+    "olo-novel-color-retinal-stimulation",
+    "snowy-plains-earliest-amniote-tracks",
+    "personalized-crispr-cps1-infant",
+    "toi-6894-b-giant-planet-small-star",
+    "orgueil-meteorite-abiotic-sugars",
+    "yunxian-oldest-in-situ-homo-erectus-crania",
+    "tic-120362137-compact-quadruple-star",
+    "eurasian-ice-sheet-2-4-million-years"
+  ],
+  "checks": {
+    "duplicateSlugsWithinBatch": false,
+    "duplicateSlugsAgainstMain": false,
+    "duplicateTitlesAgainstMain": false,
+    "duplicateDoisAgainstMain": false,
+    "duplicateSourceUrlsAgainstMain": false,
+    "duplicateImageHashesWithinBatch": false,
+    "missingPrimaryOrPaperSource": [],
+    "missingRelatedSlugs": [],
+    "missingTags": [],
+    "missingImages": [],
+    "missingImageRightsRecords": []
+  }
+}
