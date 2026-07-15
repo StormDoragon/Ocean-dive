@@ -296,7 +296,7 @@ jobs:
               await menu.click();
             }
             const visible = await page.evaluate(() => {
-              const required = ["/discoveries", "/categories", "/map"];
+              const required = ["/discoveries", "/map", "/about"];
               return required.every((href) => Array.from(document.querySelectorAll(`header a[href="${href}"]`)).some((a) => {
                 const rect = a.getBoundingClientRect();
                 return rect.width > 0 && rect.height > 0;
