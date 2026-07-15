@@ -1,0 +1,389 @@
+name: Batch 03 visual QA
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/batch-03-visual-qa.yml"
+      - "src/content/catalog.ts"
+      - "src/content/categories.ts"
+      - "src/content/discoveries-batch-03-*.ts"
+      - "public/images/discoveries/**"
+
+permissions:
+  contents: read
+
+jobs:
+  visual-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save --package-lock=false playwright@1.52.0
+          npx playwright install --with-deps chromium
+
+      - name: Audit Batch 03 preview at desktop and mobile widths
+        env:
+          BATCH03_PREVIEW: https://ocean-dive-git-batch-03-discovery-import-storm-dragons-projects.vercel.app
+          VERCEL_SHARE_TOKEN: Lgj1r93aDv8uuHv8Drvp9SqTYQPe7Rrz
+        run: |
+          set -o pipefail
+          mkdir -p visual-qa/desktop visual-qa/mobile visual-qa/surfaces
+
+          cat > visual-qa/capture.mjs <<'EOF'
+          import { chromium } from "playwright";
+          import fs from "node:fs/promises";
+          import path from "node:path";
+          import sharp from "sharp";
+
+          const baseUrl = process.env.BATCH03_PREVIEW;
+          const shareToken = process.env.VERCEL_SHARE_TOKEN;
+
+          const discoveries = [
+            ["airborne-edna-vertebrate-biodiversity", "Airborne eDNA Reveals Terrestrial Vertebrates"],
+            ["first-pig-heart-human-xenotransplant", "The First Gene-Edited Pig Heart Transplant in a Living Human"],
+            ["vfts-243-dormant-black-hole", "VFTS 243, an Extragalactic Dormant Black Hole"],
+            ["natovenator-polydontus-streamlined-dinosaur", "Natovenator, a Streamlined Swimming Dinosaur"],
+            ["drosophila-larval-brain-connectome", "The First Complete Connectome of an Insect Brain"],
+            ["deepest-fish-izu-ogasawara", "The Deepest Fish Ever Filmed"],
+            ["crocodile-facultative-parthenogenesis", "Crocodile Facultative Parthenogenesis Confirmed"],
+            ["antihydrogen-gravity-alpha-g", "Antihydrogen Falls Downward Under Gravity"],
+            ["gliese-12-b-temperate-earth-sized", "Gliese 12 b, a Nearby Temperate Earth-Sized Planet"],
+            ["sulawesi-narrative-cave-art-51200-years", "The 51,200-Year-Old Sulawesi Narrative Cave Art"],
+            ["mammoth-3d-chromosome-architecture", "Three-Dimensional Chromosomes Preserved in Mammoth Skin"],
+            ["dark-oxygen-abyssal-seafloor", "Evidence for 'Dark Oxygen' at the Abyssal Seafloor"],
+            ["olo-novel-color-retinal-stimulation", "Olo, a Color Beyond the Natural Human Gamut"],
+            ["snowy-plains-earliest-amniote-tracks", "The Earliest Known Amniote Trackways"],
+            ["personalized-crispr-cps1-infant", "The First Personalized In Vivo CRISPR Treatment"],
+            ["toi-6894-b-giant-planet-small-star", "TOI-6894 b, a Giant Planet Around a Tiny Star"],
+            ["orgueil-meteorite-abiotic-sugars", "Abiotic Sugars in the Orgueil Meteorite"],
+            ["yunxian-oldest-in-situ-homo-erectus-crania", "Yunxian's 1.77-Million-Year-Old Homo Erectus Crania"],
+            ["tic-120362137-compact-quadruple-star", "The Most Compact Known 3+1 Quadruple Star System"],
+            ["eurasian-ice-sheet-2-4-million-years", "A Continental-Scale Eurasian Ice Sheet 2.4 Million Years Ago"],
+          ];
+
+          const years = {
+            2022: discoveries.slice(0, 4).map(([slug]) => slug),
+            2023: discoveries.slice(4, 8).map(([slug]) => slug),
+            2024: discoveries.slice(8, 12).map(([slug]) => slug),
+            2025: discoveries.slice(12, 16).map(([slug]) => slug),
+            2026: discoveries.slice(16, 20).map(([slug]) => slug),
+          };
+
+          const categories = [
+            "ocean",
+            "space",
+            "dinosaurs-fossils",
+            "biology",
+            "archaeology",
+            "earth-science",
+            "physics",
+            "technology",
+          ];
+
+          const subtopicHubs = [
+            ["/biology/neuroscience", "drosophila-larval-brain-connectome"],
+            ["/technology/biotechnology", "personalized-crispr-cps1-infant"],
+            ["/technology/imaging", "olo-novel-color-retinal-stimulation"],
+            ["/archaeology/human-origins", "yunxian-oldest-in-situ-homo-erectus-crania"],
+          ];
+
+          const viewports = {
+            desktop: { width: 1440, height: 1000 },
+            mobile: { width: 390, height: 844 },
+          };
+
+          const results = [];
+          const failures = [];
+
+          function previewUrl(route) {
+            const url = new URL(route, baseUrl);
+            url.searchParams.set("_vercel_share", shareToken);
+            return url.toString();
+          }
+
+          async function openWithRetry(page, route) {
+            let last;
+            for (let attempt = 1; attempt <= 50; attempt += 1) {
+              try {
+                const response = await page.goto(previewUrl(route), {
+                  waitUntil: "domcontentloaded",
+                  timeout: 60000,
+                });
+                last = response;
+                if (response?.status() === 200 && !/Authentication Required/i.test(await page.title())) {
+                  await page.waitForTimeout(500);
+                  await page.locator("img").evaluateAll((images) =>
+                    Promise.all(images.map((image) => image.complete ? true : new Promise((resolve) => {
+                      image.addEventListener("load", () => resolve(true), { once: true });
+                      image.addEventListener("error", () => resolve(false), { once: true });
+                    }))),
+                  ).catch(() => {});
+                  return response;
+                }
+              } catch (error) {
+                last = error;
+              }
+              await page.waitForTimeout(10000);
+            }
+            throw new Error(`Preview never became ready for ${route}: ${String(last)}`);
+          }
+
+          function addFailure(check, detail) {
+            failures.push({ check, detail });
+          }
+
+          async function screenshot(page, file) {
+            await page.screenshot({
+              path: file,
+              fullPage: true,
+              type: "jpeg",
+              quality: 72,
+              animations: "disabled",
+            });
+          }
+
+          async function auditDiscovery(page, mode, slug, expectedTitle) {
+            const consoleErrors = [];
+            const pageErrors = [];
+            const onConsole = (message) => {
+              if (message.type() === "error") consoleErrors.push(message.text());
+            };
+            const onPageError = (error) => pageErrors.push(String(error));
+            page.on("console", onConsole);
+            page.on("pageerror", onPageError);
+
+            try {
+              const response = await openWithRetry(page, `/discoveries/${slug}`);
+              const audit = await page.evaluate(({ slug, expectedTitle }) => {
+                const h1 = document.querySelector("h1");
+                const hero = document.querySelector("article header img");
+                const body = document.body.innerText;
+                const storyHeadings = Array.from(document.querySelectorAll("article h3"), (node) => node.textContent?.trim());
+                const citationCount = document.querySelectorAll('[aria-label="Editorial and source information"] a[href^="http"]').length;
+                const discoveryLinks = Array.from(document.querySelectorAll('article a[href^="/discoveries/"]'));
+                return {
+                  title: h1?.textContent?.trim() || null,
+                  titleMatches: h1?.textContent?.trim() === expectedTitle,
+                  horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
+                  heroLoaded: Boolean(hero && hero.complete && hero.naturalWidth > 0),
+                  heroSource: hero?.getAttribute("src") || null,
+                  heroMatchesSlug: Boolean(hero?.getAttribute("src")?.includes(slug)),
+                  relationLabelPresent: /illustration|artist impression|reconstruction|data visualization|diagram/i.test(body),
+                  storyComplete: [
+                    "Why scientists were there",
+                    "How they found it",
+                    "What makes it unique",
+                  ].every((heading) => storyHeadings.includes(heading)),
+                  citationCount,
+                  discoveryLinkCount: discoveryLinks.length,
+                  bodyTextLength: body.length,
+                };
+              }, { slug, expectedTitle });
+
+              await screenshot(page, `visual-qa/${mode}/${slug}.jpg`);
+
+              const row = {
+                type: "discovery",
+                mode,
+                slug,
+                status: response?.status() ?? null,
+                consoleErrors,
+                pageErrors,
+                ...audit,
+              };
+              results.push(row);
+
+              for (const [name, passed] of Object.entries({
+                status: row.status === 200,
+                title: row.titleMatches,
+                overflow: !row.horizontalOverflow,
+                hero: row.heroLoaded && row.heroMatchesSlug,
+                label: row.relationLabelPresent,
+                story: row.storyComplete,
+                citations: row.citationCount >= 1,
+                related: row.discoveryLinkCount >= 2,
+                content: row.bodyTextLength >= 1500,
+                pageErrors: row.pageErrors.length === 0,
+              })) {
+                if (!passed) addFailure(`${mode}:${slug}:${name}`, row);
+              }
+            } catch (error) {
+              const row = { type: "discovery", mode, slug, error: String(error), consoleErrors, pageErrors };
+              results.push(row);
+              addFailure(`${mode}:${slug}:exception`, row);
+            } finally {
+              page.off("console", onConsole);
+              page.off("pageerror", onPageError);
+            }
+          }
+
+          async function auditSurface(page, mode, name, route, expectedSlugs = []) {
+            try {
+              const response = await openWithRetry(page, route);
+              const audit = await page.evaluate(({ expectedSlugs }) => {
+                const hrefs = new Set(Array.from(document.querySelectorAll("a[href]"), (a) => a.getAttribute("href")));
+                const h1 = document.querySelector("h1");
+                return {
+                  h1: h1?.textContent?.trim() || null,
+                  h1Visible: Boolean(h1 && h1.getBoundingClientRect().height > 0),
+                  horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth + 1,
+                  expectedSlugsPresent: expectedSlugs.every((slug) => hrefs.has(`/discoveries/${slug}`)),
+                  bodyTextLength: document.body.innerText.length,
+                };
+              }, { expectedSlugs });
+
+              await screenshot(page, `visual-qa/surfaces/${mode}-${name}.jpg`);
+              const row = { type: "surface", mode, name, route, status: response?.status() ?? null, ...audit };
+              results.push(row);
+              if (row.status !== 200 || !row.h1Visible || row.horizontalOverflow || !row.expectedSlugsPresent || row.bodyTextLength < 300) {
+                addFailure(`${mode}:surface:${name}`, row);
+              }
+            } catch (error) {
+              const row = { type: "surface", mode, name, route, error: String(error) };
+              results.push(row);
+              addFailure(`${mode}:surface:${name}:exception`, row);
+            }
+          }
+
+          async function auditNavigation(page, mode) {
+            await openWithRetry(page, "/");
+            if (mode === "mobile") {
+              const menu = page.locator('button[aria-label="Open menu"]');
+              if (!await menu.isVisible()) {
+                addFailure("mobile:navigation:menu-button", { visible: false });
+                return;
+              }
+              await menu.click();
+            }
+            const visible = await page.evaluate(() => {
+              const required = ["/discoveries", "/categories", "/map"];
+              return required.every((href) => Array.from(document.querySelectorAll(`header a[href="${href}"]`)).some((a) => {
+                const rect = a.getBoundingClientRect();
+                return rect.width > 0 && rect.height > 0;
+              }));
+            });
+            if (!visible) addFailure(`${mode}:navigation:links`, { visible });
+            await screenshot(page, `visual-qa/surfaces/${mode}-navigation.jpg`);
+            results.push({ type: "navigation", mode, visible });
+          }
+
+          async function auditSearch(page, mode) {
+            await openWithRetry(page, "/discoveries");
+            const input = page.locator('input[type="search"]');
+            await input.fill("Yunxian");
+            await page.waitForTimeout(700);
+            const resultVisible = await page.locator('a[href="/discoveries/yunxian-oldest-in-situ-homo-erectus-crania"]').isVisible();
+            const summary = await page.locator("text=matching “Yunxian”").first().textContent().catch(() => null);
+            if (!resultVisible || !summary) addFailure(`${mode}:search`, { resultVisible, summary });
+            await screenshot(page, `visual-qa/surfaces/${mode}-search-yunxian.jpg`);
+            results.push({ type: "search", mode, resultVisible, summary });
+          }
+
+          async function buildContactSheet(mode) {
+            const files = discoveries.map(([slug]) => `visual-qa/${mode}/${slug}.jpg`);
+            const cellWidth = 330;
+            const cellHeight = 238;
+            const columns = 4;
+            const rows = 5;
+            const composites = [];
+
+            for (const [index, file] of files.entries()) {
+              const slug = path.basename(file, ".jpg");
+              const thumb = await sharp(file).resize(320, 200, { fit: "cover", position: "top" }).jpeg({ quality: 78 }).toBuffer();
+              const label = Buffer.from(`<svg width="320" height="28" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="28" fill="#111827"/><text x="7" y="19" font-family="sans-serif" font-size="12" fill="#f8fafc">${slug}</text></svg>`);
+              const cell = await sharp({ create: { width: 320, height: 228, channels: 3, background: "#111827" } })
+                .composite([{ input: thumb, top: 0, left: 0 }, { input: label, top: 200, left: 0 }])
+                .jpeg({ quality: 80 })
+                .toBuffer();
+              composites.push({ input: cell, left: (index % columns) * cellWidth, top: Math.floor(index / columns) * cellHeight });
+            }
+
+            await sharp({ create: { width: columns * cellWidth, height: rows * cellHeight, channels: 3, background: "#030712" } })
+              .composite(composites)
+              .jpeg({ quality: 82 })
+              .toFile(`visual-qa/${mode}-contact.jpg`);
+          }
+
+          let browser;
+          try {
+            browser = await chromium.launch({ headless: true });
+
+            for (const [mode, viewport] of Object.entries(viewports)) {
+              const context = await browser.newContext({ viewport, deviceScaleFactor: 1, ignoreHTTPSErrors: true });
+              const page = await context.newPage();
+
+              for (const [slug, title] of discoveries) {
+                await auditDiscovery(page, mode, slug, title);
+              }
+
+              await auditSurface(page, mode, "home", "/");
+              await auditSurface(page, mode, "directory", "/discoveries", discoveries.map(([slug]) => slug));
+              for (const [year, slugs] of Object.entries(years)) {
+                await auditSurface(page, mode, `archive-${year}`, `/scientific-discoveries-${year}`, slugs);
+              }
+              for (const category of categories) {
+                const categorySlugs = discoveries
+                  .filter(([slug]) => ({
+                    ocean: ["deepest-fish-izu-ogasawara", "dark-oxygen-abyssal-seafloor"],
+                    space: ["vfts-243-dormant-black-hole", "gliese-12-b-temperate-earth-sized", "toi-6894-b-giant-planet-small-star", "orgueil-meteorite-abiotic-sugars", "tic-120362137-compact-quadruple-star"],
+                    "dinosaurs-fossils": ["natovenator-polydontus-streamlined-dinosaur", "snowy-plains-earliest-amniote-tracks"],
+                    biology: ["airborne-edna-vertebrate-biodiversity", "drosophila-larval-brain-connectome", "crocodile-facultative-parthenogenesis", "mammoth-3d-chromosome-architecture"],
+                    archaeology: ["sulawesi-narrative-cave-art-51200-years", "yunxian-oldest-in-situ-homo-erectus-crania"],
+                    "earth-science": ["eurasian-ice-sheet-2-4-million-years"],
+                    physics: ["antihydrogen-gravity-alpha-g"],
+                    technology: ["first-pig-heart-human-xenotransplant", "olo-novel-color-retinal-stimulation", "personalized-crispr-cps1-infant"],
+                  })[category].includes(slug))
+                  .map(([slug]) => slug);
+                await auditSurface(page, mode, `category-${category}`, `/categories/${category}`, categorySlugs);
+              }
+              for (const [route, slug] of subtopicHubs) {
+                await auditSurface(page, mode, `subtopic-${route.split("/").pop()}`, route, [slug]);
+              }
+              await auditSurface(page, mode, "organizations", "/organizations");
+              await auditSurface(page, mode, "locations", "/locations");
+              await auditSurface(page, mode, "tags", "/tags");
+              await auditNavigation(page, mode);
+              await auditSearch(page, mode);
+
+              const sitemap = await context.request.get(previewUrl("/sitemap.xml"));
+              const sitemapText = await sitemap.text();
+              const sitemapMissing = discoveries.map(([slug]) => slug).filter((slug) => !sitemapText.includes(`/discoveries/${slug}`));
+              results.push({ type: "sitemap", mode, status: sitemap.status(), missing: sitemapMissing });
+              if (sitemap.status() !== 200 || sitemapMissing.length) addFailure(`${mode}:sitemap`, { status: sitemap.status(), missing: sitemapMissing });
+
+              await context.close();
+            }
+
+            await buildContactSheet("desktop");
+            await buildContactSheet("mobile");
+          } catch (error) {
+            addFailure("fatal", { error: String(error), stack: error?.stack });
+          } finally {
+            if (browser) await browser.close();
+          }
+
+          await fs.writeFile("visual-qa/report.json", JSON.stringify(results, null, 2));
+          await fs.writeFile("visual-qa/failures.json", JSON.stringify(failures, null, 2));
+          console.log(JSON.stringify({ checked: results.length, failures }, null, 2));
+          if (failures.length) process.exitCode = 1;
+          EOF
+
+          node visual-qa/capture.mjs 2>&1 | tee visual-qa/capture.log
+
+      - name: Upload visual QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch-03-visual-qa
+          path: visual-qa
+          if-no-files-found: error
+          retention-days: 3
