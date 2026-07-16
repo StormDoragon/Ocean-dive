@@ -61,7 +61,14 @@ export const categories: Category[] = [
     tagline: "The living world",
     description:
       "New species, genetics, human evolution, and the microbial life that shapes every ecosystem.",
-    subtopics: ["New species", "Genetics", "Human evolution", "Microbiology", "Origins of life"],
+    subtopics: [
+      "New species",
+      "Genetics",
+      "Human evolution",
+      "Microbiology",
+      "Neuroscience",
+      "Origins of life",
+    ],
     color: "#34d399",
   },
   {
@@ -76,6 +83,7 @@ export const categories: Category[] = [
       "Ancient civilizations",
       "Tomb discoveries",
       "Artifacts",
+      "Human origins",
     ],
     color: "#e879a6",
   },
@@ -110,8 +118,15 @@ export const categories: Category[] = [
     emoji: "🤖",
     tagline: "What we build next",
     description:
-      "AI, robotics, quantum computing, and the materials science powering the next era.",
-    subtopics: ["AI", "Robotics", "Quantum computing", "Materials science"],
+      "AI, robotics, biotechnology, imaging, quantum computing, and the materials science powering the next era.",
+    subtopics: [
+      "AI",
+      "Robotics",
+      "Biotechnology",
+      "Imaging",
+      "Quantum computing",
+      "Materials science",
+    ],
     color: "#c084fc",
   },
 ];

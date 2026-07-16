@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Airborne environmental DNA biodiversity monitoring</title>
+  <desc id="desc">Air passes from animal silhouettes through a sampling filter and becomes colored DNA sequence fragments.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071c2e"/><stop offset="1" stop-color="#0b3b46"/></linearGradient>
+    <linearGradient id="air" x1="0" x2="1"><stop stop-color="#6ee7f9" stop-opacity="0"/><stop offset=".55" stop-color="#6ee7f9"/><stop offset="1" stop-color="#c4f1ff" stop-opacity="0"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="220" cy="210" r="145" fill="#0f6b67" opacity=".28"/><circle cx="1320" cy="780" r="220" fill="#155e75" opacity=".23"/>
+  <g fill="#7dd3a7" opacity=".9">
+    <path d="M120 700c20-86 72-134 157-137 45-1 78 19 96 59 31-26 65-35 103-25 54 15 75 56 63 121H120z"/>
+    <path d="M188 560l18-110 18 110zm240 28 36-144 20 151z" opacity=".55"/>
+  </g>
+  <g fill="#d9f99d" stroke="#0b2e37" stroke-width="8">
+    <path d="M240 610c-52-55-30-143 52-155 79-12 134 54 105 124-18 44-64 58-106 44l-10 70h-38l6-69z"/>
+    <path d="M350 470l39-45 9 70zm-100 1-36-49-14 67z"/>
+    <path d="M415 667c45-69 139-68 186 0l-17 31H430z"/>
+    <path d="M480 645l-18-81 46 63 50-66-22 89z"/>
+  </g>
+  <g fill="none" stroke="url(#air)" stroke-width="10" stroke-linecap="round" opacity=".9">
+    <path d="M445 420C630 300 720 550 884 414"/><path d="M410 520C610 430 705 650 882 520"/><path d="M520 675C680 605 735 720 900 650"/>
+  </g>
+  <g fill="#f9a8d4" filter="url(#glow)"><circle cx="545" cy="397" r="10"/><circle cx="612" cy="491" r="8"/><circle cx="690" cy="575" r="11"/><circle cx="777" cy="449" r="8"/></g>
+  <g transform="translate(900 235)">
+    <rect width="260" height="520" rx="42" fill="#dff8ff" stroke="#67e8f9" stroke-width="12"/>
+    <rect x="52" y="70" width="156" height="250" rx="22" fill="#17445a"/>
+    <path d="M76 102h108M76 142h108M76 182h108M76 222h108M76 262h108" stroke="#a5f3fc" stroke-width="11"/>
+    <circle cx="130" cy="405" r="48" fill="#22d3ee"/><path d="M130 374v62m-31-31h62" stroke="#083344" stroke-width="12"/>
+    <path d="M0 260h-70" stroke="#cffafe" stroke-width="34"/><path d="M260 260h90" stroke="#cffafe" stroke-width="34"/>
+  </g>
+  <g transform="translate(1280 270)" fill="none" stroke-width="15" stroke-linecap="round">
+    <path d="M0 0c65 55 65 110 0 165s-65 110 0 165 65 110 0 165" stroke="#f0abfc"/>
+    <path d="M110 0c-65 55-65 110 0 165s65 110 0 165-65 110 0 165" stroke="#67e8f9"/>
+    <path d="M25 35h60M-5 104h120M17 181h76M-5 260h120M20 350h70M0 438h110" stroke="#fff" opacity=".7"/>
+  </g>
+  <text x="90" y="110" fill="#ecfeff" font-family="system-ui,sans-serif" font-size="62" font-weight="750">DNA IN THE AIR</text>
+  <text x="94" y="166" fill="#a5f3fc" font-family="system-ui,sans-serif" font-size="28" letter-spacing="4">FILTER · SEQUENCE · IDENTIFY</text>
+  <text x="895" y="835" fill="#cffafe" font-family="system-ui,sans-serif" font-size="31">air sampler</text>
+  <text x="1258" y="835" fill="#f5d0fe" font-family="system-ui,sans-serif" font-size="31">vertebrate eDNA</text>
+</svg>

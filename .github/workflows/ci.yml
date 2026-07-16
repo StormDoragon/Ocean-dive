@@ -27,5 +27,35 @@ jobs:
         run: npm run validate
       - name: Build
         run: npm run build
+      - name: Smoke test production server (next start)
+        # Guards against the Next.js "different slug names for the same dynamic
+        # path" invariant, which `next build` tolerates but the monolithic
+        # `next start` server 500s on for every route. Fails only on 5xx /
+        # connection errors, so normal content changes (200/404) don't break it.
+        run: |
+          npm run start -- --hostname 127.0.0.1 --port 3000 > next-start.log 2>&1 &
+          server_pid=$!
+          ready=0
+          for _ in $(seq 1 40); do
+            if curl -sf -o /dev/null "http://127.0.0.1:3000/"; then ready=1; break; fi
+            sleep 1
+          done
+          if [ "$ready" != "1" ]; then
+            echo "::error::Production server did not become ready (or / returned non-2xx)"
+            cat next-start.log
+            kill "$server_pid" 2>/dev/null || true
+            exit 1
+          fi
+          fail=0
+          for path in "/" "/discoveries" "/sitemap.xml" "/discoveries/2026/july" "/scientific-discoveries-2026"; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "http://127.0.0.1:3000$path")
+            echo "$code  $path"
+            case "$code" in
+              5*|000|"") echo "::error::$path returned $code"; fail=1 ;;
+            esac
+          done
+          kill "$server_pid" 2>/dev/null || true
+          if [ "$fail" != "0" ]; then cat next-start.log; fi
+          exit "$fail"
       - name: Check remote images resolve
         run: npm run check:images
