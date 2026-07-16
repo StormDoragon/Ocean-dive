@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">VFTS 243 dormant black hole binary</title><desc id="desc">A blue O star follows a nearly circular orbit around an unseen black hole in the Large Magellanic Cloud.</desc>
+  <defs><radialGradient id="space"><stop stop-color="#17305e"/><stop offset=".48" stop-color="#090f2a"/><stop offset="1" stop-color="#03040d"/></radialGradient><radialGradient id="star"><stop stop-color="#fff"/><stop offset=".15" stop-color="#bfdbfe"/><stop offset=".52" stop-color="#3b82f6" stop-opacity=".7"/><stop offset="1" stop-color="#1d4ed8" stop-opacity="0"/></radialGradient><filter id="blur"><feGaussianBlur stdDeviation="18"/></filter></defs>
+  <rect width="1600" height="1000" fill="url(#space)"/>
+  <g fill="#fff" opacity=".75"><circle cx="123" cy="282" r="2"/><circle cx="290" cy="168" r="4"/><circle cx="490" cy="272" r="2"/><circle cx="719" cy="104" r="3"/><circle cx="1022" cy="190" r="3"/><circle cx="1320" cy="119" r="4"/><circle cx="1480" cy="321" r="2"/><circle cx="1410" cy="730" r="3"/><circle cx="1170" cy="850" r="2"/><circle cx="755" cy="884" r="4"/><circle cx="399" cy="805" r="3"/><circle cx="112" cy="738" r="4"/></g>
+  <path d="M103 650c160-95 215-272 410-226 167 39 220-147 414-87 204 63 228-109 529 4" fill="none" stroke="#ec4899" stroke-width="85" opacity=".09" filter="url(#blur)"/>
+  <ellipse cx="820" cy="535" rx="525" ry="270" fill="none" stroke="#93c5fd" stroke-width="7" stroke-dasharray="18 18" opacity=".7" transform="rotate(-8 820 535)"/>
+  <circle cx="980" cy="520" r="115" fill="#000"/><circle cx="980" cy="520" r="138" fill="none" stroke="#c084fc" stroke-width="12" opacity=".55"/><path d="M848 510c35-85 95-130 182-135" fill="none" stroke="#f5d0fe" stroke-width="10" opacity=".35"/>
+  <g transform="translate(405 445)"><circle r="180" fill="url(#star)"/><circle r="50" fill="#e0f2fe"/><path d="M-120 0h240M0-120v240M-86-86 86 86M86-86-86 86" stroke="#bfdbfe" stroke-width="8" opacity=".6"/></g>
+  <path d="M420 634c95 86 205 127 330 135" fill="none" stroke="#60a5fa" stroke-width="12" stroke-linecap="round"/><path d="m735 746 42 27-47 15" fill="#60a5fa"/>
+  <g transform="translate(1140 635)" fill="none" stroke="#a5b4fc" stroke-width="9"><path d="M0 100c60-90 140-90 200 0s140 90 200 0"/><path d="M0 100c60 90 140 90 200 0s140-90 200 0" opacity=".45"/></g>
+  <text x="80" y="104" fill="#eff6ff" font-family="system-ui,sans-serif" font-size="62" font-weight="750">THE QUIET COMPANION</text>
+  <text x="83" y="160" fill="#bfdbfe" font-family="system-ui,sans-serif" font-size="28" letter-spacing="4">VFTS 243 · 10.4-DAY ORBIT · LARGE MAGELLANIC CLOUD</text>
+  <text x="315" y="770" fill="#dbeafe" font-family="system-ui" font-size="28">25 M☉ O star</text><text x="910" y="706" fill="#e9d5ff" font-family="system-ui" font-size="28">≥9 M☉ black hole</text><text x="1200" y="895" fill="#c7d2fe" font-family="system-ui" font-size="25">no bright X-rays</text>
+</svg>

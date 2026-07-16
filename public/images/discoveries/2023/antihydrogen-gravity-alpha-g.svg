@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">ALPHA-g antihydrogen gravity experiment</title><desc id="desc">Antihydrogen atoms are released in a vertical magnetic trap and preferentially annihilate toward Earth.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#071026"/><stop offset="1" stop-color="#251044"/></linearGradient><linearGradient id="tube" x1="0" x2="1"><stop stop-color="#38bdf8" stop-opacity=".2"/><stop offset=".5" stop-color="#e0f2fe" stop-opacity=".85"/><stop offset="1" stop-color="#38bdf8" stop-opacity=".2"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/><g opacity=".18" stroke="#a78bfa"><circle cx="800" cy="540" r="350" fill="none"/><circle cx="800" cy="540" r="440" fill="none"/><path d="M120 540h1360"/></g>
+  <g transform="translate(565 150)"><rect x="85" y="0" width="300" height="700" rx="120" fill="#071828" stroke="#7dd3fc" stroke-width="12"/><rect x="135" y="50" width="200" height="600" rx="90" fill="url(#tube)"/>
+    <g fill="none" stroke="#c084fc" stroke-width="24"><ellipse cx="235" cy="120" rx="170" ry="50"/><ellipse cx="235" cy="250" rx="170" ry="50"/><ellipse cx="235" cy="450" rx="170" ry="50"/><ellipse cx="235" cy="580" rx="170" ry="50"/></g>
+    <g fill="#f0abfc" filter="url(#glow)"><circle cx="235" cy="250" r="16"/><circle cx="205" cy="325" r="14"/><circle cx="265" cy="360" r="16"/><circle cx="223" cy="405" r="13"/><circle cx="250" cy="470" r="15"/></g>
+    <g stroke="#fef08a" stroke-width="8"><path d="M235 270v340"/><path d="m205 570 30 50 30-50" fill="none"/></g>
+    <g fill="#fb7185" filter="url(#glow)"><path d="m135 590-30 14 30 14 30-14z"/><path d="m335 605-30 14 30 14 30-14z"/><path d="m170 650-30 14 30 14 30-14z"/></g>
+  </g>
+  <g transform="translate(110 285)" fill="none" stroke="#94a3b8" stroke-width="8"><path d="M0 0h320v500H0z"/><path d="M25 250h270"/><path d="M160 40v170m0 80v170" stroke="#38bdf8"/><path d="m135 180 25 35 25-35m-50 140 25-35 25 35"/></g>
+  <g transform="translate(1160 315)" font-family="system-ui"><path d="M0 390h330M40 390V0" stroke="#64748b" stroke-width="6"/><path d="M42 330c90-40 150-110 250-280" fill="none" stroke="#f472b6" stroke-width="12"/><circle cx="220" cy="125" r="13" fill="#fff"/><text x="60" y="445" fill="#cbd5e1" font-size="24">release bias</text><text x="-5" y="-15" fill="#cbd5e1" font-size="24">down fraction</text></g>
+  <text x="70" y="105" fill="#f5f3ff" font-family="system-ui" font-size="62" font-weight="750">ANTIMATTER FALLS DOWN</text><text x="73" y="160" fill="#c4b5fd" font-family="system-ui" font-size="27" letter-spacing="4">ALPHA-G · CERN · DIRECT GRAVITY TEST</text>
+  <text x="650" y="910" fill="#fde68a" font-family="system-ui" font-size="30">Earth gravity ↓</text><text x="1190" y="885" fill="#fbcfe8" font-family="system-ui" font-size="25">repulsive antigravity ruled out</text>
+</svg>

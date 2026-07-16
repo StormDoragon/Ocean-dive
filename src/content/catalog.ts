@@ -24,6 +24,11 @@ import { batch022023Discoveries } from "./discoveries-batch-02-2023";
 import { batch022024Discoveries } from "./discoveries-batch-02-2024";
 import { batch022025Discoveries } from "./discoveries-batch-02-2025";
 import { batch022026Discoveries } from "./discoveries-batch-02-2026";
+import { batch032022Discoveries } from "./discoveries-batch-03-2022";
+import { batch032023Discoveries } from "./discoveries-batch-03-2023";
+import { batch032024Discoveries } from "./discoveries-batch-03-2024";
+import { batch032025Discoveries } from "./discoveries-batch-03-2025";
+import { batch032026Discoveries } from "./discoveries-batch-03-2026";
 // scaffold:import (npm run new-month inserts new monthly imports above this line)
 import generated from "./discoveries.generated.json";
 import type { Discovery } from "./types";
@@ -59,6 +64,11 @@ const builtInCatalog: Discovery[] = [
   ...batch022024Discoveries,
   ...batch022025Discoveries,
   ...batch022026Discoveries,
+  ...batch032022Discoveries,
+  ...batch032023Discoveries,
+  ...batch032024Discoveries,
+  ...batch032025Discoveries,
+  ...batch032026Discoveries,
   // scaffold:spread (npm run new-month inserts new monthly spreads above this line)
 ];
 
