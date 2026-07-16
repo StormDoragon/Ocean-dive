@@ -14,7 +14,7 @@ import {
 
 export function generateStaticParams() {
   return getAvailableMonths().map(({ year, month }) => ({
-    year: String(year),
+    slug: String(year),
     month: monthLabel(month).toLowerCase(),
   }));
 }
@@ -32,9 +32,9 @@ function resolveArchive(yearParam: string, monthParam: string) {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ year: string; month: string }>;
+  params: Promise<{ slug: string; month: string }>;
 }): Promise<Metadata> {
-  const { year: yearParam, month: monthParam } = await params;
+  const { slug: yearParam, month: monthParam } = await params;
   const archive = resolveArchive(yearParam, monthParam);
   if (!archive) return { title: "Archive not found" };
 
@@ -53,9 +53,9 @@ export async function generateMetadata({
 export default async function MonthlyDiscoveriesPage({
   params,
 }: {
-  params: Promise<{ year: string; month: string }>;
+  params: Promise<{ slug: string; month: string }>;
 }) {
-  const { year: yearParam, month: monthParam } = await params;
+  const { slug: yearParam, month: monthParam } = await params;
   const archive = resolveArchive(yearParam, monthParam);
   if (!archive) notFound();
 

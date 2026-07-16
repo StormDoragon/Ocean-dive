@@ -15,7 +15,7 @@ import {
 export function generateStaticParams() {
   return categories.flatMap((category) =>
     getSubtopics(category.slug).map((subtopic) => ({
-      category: category.slug,
+      slug: category.slug,
       subtopic: subtopic.slug,
     })),
   );
@@ -31,9 +31,9 @@ function resolveTopic(categoryParam: string, subtopicParam: string) {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ category: string; subtopic: string }>;
+  params: Promise<{ slug: string; subtopic: string }>;
 }): Promise<Metadata> {
-  const { category: categoryParam, subtopic: subtopicParam } = await params;
+  const { slug: categoryParam, subtopic: subtopicParam } = await params;
   const topic = resolveTopic(categoryParam, subtopicParam);
   if (!topic) return { title: "Topic not found" };
   const canonical = canonicalUrl(`/${topic.category.slug}/${topic.subtopic.slug}`);
@@ -48,9 +48,9 @@ export async function generateMetadata({
 export default async function SubtopicPage({
   params,
 }: {
-  params: Promise<{ category: string; subtopic: string }>;
+  params: Promise<{ slug: string; subtopic: string }>;
 }) {
-  const { category: categoryParam, subtopic: subtopicParam } = await params;
+  const { slug: categoryParam, subtopic: subtopicParam } = await params;
   const topic = resolveTopic(categoryParam, subtopicParam);
   if (!topic) notFound();
 
