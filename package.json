@@ -24,6 +24,7 @@
   "dependencies": {
     "@notionhq/client": "^5.22.0",
     "@supabase/supabase-js": "^2.110.0",
+    "@vercel/analytics": "^2.0.1",
     "fuse.js": "^7.0.0",
     "leaflet": "^1.9.4",
     "next": "^15.1.6",
