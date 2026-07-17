@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { DiscoveryMapLoader } from "@/components/map/DiscoveryMapLoader";
 import { GlobeErrorBoundary } from "@/components/globe/GlobeErrorBoundary";
+import { detectWebGL } from "@/lib/webgl";
 import type { MapPoint } from "@/components/map/types";
 
 // Globe is WebGL + three.js, so it is client-only and lazily loaded.
@@ -20,20 +21,6 @@ const DiscoveryGlobe = dynamic(
 );
 
 type View = "globe" | "map";
-
-/** True when the browser can actually create a WebGL context. */
-function detectWebGL(): boolean {
-  if (typeof document === "undefined") return false;
-  try {
-    const canvas = document.createElement("canvas");
-    return Boolean(
-      window.WebGLRenderingContext &&
-        (canvas.getContext("webgl") || canvas.getContext("experimental-webgl")),
-    );
-  } catch {
-    return false;
-  }
-}
 
 export function GeoExplorer({
   points,
