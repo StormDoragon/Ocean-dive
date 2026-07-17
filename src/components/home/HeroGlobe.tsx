@@ -59,8 +59,11 @@ export function HeroGlobe({
           </div>
         </GlobeErrorBoundary>
       ) : null}
+      {/* `inert` (not aria-hidden) once the 3D globe covers the poster: it
+          removes the poster's links from the tab order and the accessibility
+          tree together — aria-hidden alone would leave focusable hidden links. */}
       <div
-        aria-hidden={rendered}
+        inert={rendered}
         className={`relative h-full w-full transition-opacity duration-1000 ${
           rendered ? "pointer-events-none opacity-0" : "opacity-100"
         }`}
