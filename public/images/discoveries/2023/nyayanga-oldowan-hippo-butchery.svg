@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="nyayanga-title nyayanga-desc">
+  <title id="nyayanga-title">Oldowan tools at Nyayanga butchered hippos</title>
+  <desc id="nyayanga-desc">Editorial reconstruction of Oldowan stone tools alongside a hippo bone with cut-mark and percussion-mark callouts at the Nyayanga excavation site.</desc>
+  <defs>
+    <linearGradient id="ny-bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d98b5a"/><stop offset=".55" stop-color="#e8c17c"/><stop offset="1" stop-color="#6f4535"/></linearGradient>
+    <linearGradient id="ny-ground" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#714437"/><stop offset="1" stop-color="#b56a45"/></linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#ny-bg)"/>
+  <circle cx="1255" cy="205" r="75" fill="#fff0ad" opacity=".85"/>
+  <path d="M0 585 C210 540 340 600 510 546 C700 485 855 590 1045 550 C1270 500 1440 552 1600 510 L1600 1000 L0 1000Z" fill="url(#ny-ground)"/>
+  <path d="M0 700 C190 645 390 720 575 674 C760 630 950 718 1160 665 C1360 615 1460 662 1600 640" fill="none" stroke="#e0a265" stroke-width="22" opacity=".7"/>
+  <g fill="#6a7780" stroke="#334149" stroke-width="12">
+    <path d="M280 750 L395 585 L505 762 L402 840Z"/>
+    <path d="M525 806 L628 650 L737 802 L630 883Z"/>
+    <path d="M790 770 L900 615 L1005 778 L900 850Z"/>
+  </g>
+  <g fill="#9bb0b7" opacity=".72"><path d="M320 735 L395 615 L455 742Z"/><path d="M560 795 L630 680 L700 790Z"/><path d="M826 750 L900 650 L970 748Z"/></g>
+  <path d="M1050 745 C1120 635 1300 630 1385 715 C1440 770 1395 868 1285 865 L1160 860 C1075 860 1024 812 1050 745Z" fill="#e7d1a1" stroke="#694e42" stroke-width="16"/>
+  <path d="M1140 715 C1170 750 1195 790 1205 838 M1195 688 C1235 735 1260 785 1268 845 M1260 680 C1300 735 1317 778 1322 838" fill="none" stroke="#9f7058" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="1333" cy="735" r="26" fill="none" stroke="#b94742" stroke-width="11"/>
+  <path d="M1365 720 L1480 632" stroke="#b94742" stroke-width="9" stroke-linecap="round"/>
+  <path d="M1252 680 L1325 570" stroke="#b94742" stroke-width="9" stroke-linecap="round"/>
+</svg>

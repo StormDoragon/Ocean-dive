@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="thalamus-title thalamus-desc">
+  <title id="thalamus-title">The anteromedial thalamus gates long-term memory in mice</title>
+  <desc id="thalamus-desc">Editorial diagram of mouse hippocampus, anteromedial thalamus, and anterior cingulate cortex linked by highlighted pathways during a virtual-reality memory task.</desc>
+  <defs>
+    <linearGradient id="tha-bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#112c58"/><stop offset="1" stop-color="#5a2459"/></linearGradient>
+    <filter id="tha-glow"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#tha-bg)"/>
+  <path d="M255 498 C255 287 414 190 650 215 C806 232 865 286 960 290 C1113 297 1262 410 1245 592 C1227 779 1070 863 865 819 C702 784 650 715 525 720 C353 728 254 639 255 498Z" fill="#b9b9de" opacity=".3" stroke="#dbd5ff" stroke-width="9"/>
+  <path d="M353 495 C370 350 488 286 625 304 C718 316 760 372 835 380 C950 392 1054 476 1028 590 C1005 699 875 750 754 695 C667 655 624 598 539 610 C437 624 345 590 353 495Z" fill="#ecdbef" opacity=".32"/>
+  <path d="M412 565 C490 660 645 690 765 616 C817 584 855 560 905 550" fill="none" stroke="#77e7ed" stroke-width="35" stroke-linecap="round"/>
+  <circle cx="820" cy="495" r="74" fill="#fcdf77" opacity=".36" filter="url(#tha-glow)"/>
+  <circle cx="820" cy="495" r="43" fill="#ffd778"/>
+  <path d="M820 495 C930 420 1053 400 1135 448" fill="none" stroke="#f590d0" stroke-width="22" stroke-linecap="round"/>
+  <path d="M820 495 C738 420 640 390 544 425" fill="none" stroke="#77e7ed" stroke-width="22" stroke-linecap="round"/>
+  <g fill="#d8f8ff"><circle cx="545" cy="425" r="25"/><circle cx="1135" cy="448" r="25"/><circle cx="648" cy="666" r="20"/></g>
+  <g transform="translate(1125 690)" fill="none" stroke="#e8f4ff" stroke-width="12" stroke-linecap="round">
+    <path d="M0 92 C45 44 100 136 145 87 S245 40 285 88"/>
+    <path d="M0 25 C45 -20 100 70 145 20 S245 -24 285 25" opacity=".65"/>
+    <path d="M0 160 H290" stroke="#8ba6d2" stroke-width="6"/>
+  </g>
+</svg>

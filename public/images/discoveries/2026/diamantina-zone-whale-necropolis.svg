@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="whale-title whale-desc">
+  <title id="whale-title">A deep-sea whale necropolis in the Diamantina Zone</title>
+  <desc id="whale-desc">Editorial artist impression of a deep-sea whale fall on the Diamantina Zone seafloor, with fossil bones and a modern bone-community shown as distinct time layers rather than a single observed scene.</desc>
+  <defs>
+    <linearGradient id="whale-bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#03152e"/><stop offset=".55" stop-color="#0a3c56"/><stop offset="1" stop-color="#214e51"/></linearGradient>
+    <filter id="whale-glow"><feGaussianBlur stdDeviation="17"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#whale-bg)"/>
+  <g fill="#bde6ef" opacity=".42"><circle cx="120" cy="220" r="3"/><circle cx="330" cy="330" r="4"/><circle cx="490" cy="180" r="2"/><circle cx="1150" cy="220" r="3"/><circle cx="1380" cy="125" r="4"/><circle cx="1480" cy="525" r="2"/></g>
+  <path d="M0 790 C180 720 345 772 495 720 C670 662 840 782 1030 710 C1260 625 1405 720 1600 630 L1600 1000 L0 1000Z" fill="#1b4a4a"/>
+  <path d="M155 665 C250 535 442 470 666 502 C845 527 1005 638 1156 607 C1230 592 1295 548 1388 476 C1386 614 1310 695 1190 730 C1052 770 920 753 792 713 C550 640 370 728 235 710Z" fill="#607989" opacity=".45"/>
+  <g transform="translate(330 570)" fill="none" stroke="#e7d9b7" stroke-width="26" stroke-linecap="round">
+    <path d="M0 180 C165 84 390 92 570 165"/>
+    <path d="M160 135 L135 28 M240 112 L230 -4 M320 105 L338 -13 M405 115 L448 5"/>
+    <path d="M570 165 L675 86 M570 165 L686 235"/>
+  </g>
+  <g transform="translate(1120 575)" fill="none" stroke-linecap="round">
+    <path d="M0 180 C95 96 270 80 390 140" stroke="#d9cfad" stroke-width="24"/>
+    <path d="M90 145 C55 83 38 38 20 0 M158 120 C145 52 150 5 162 -30 M232 115 C255 55 276 10 302 -20" stroke="#d9cfad" stroke-width="18"/>
+    <path d="M30 235 C70 140 116 120 145 190 C170 250 220 250 240 170" stroke="#cf5c72" stroke-width="24"/>
+    <path d="M278 220 C312 145 355 132 372 198" stroke="#d5d7c1" stroke-width="21"/>
+  </g>
+  <path d="M850 490 C920 410 1020 430 1068 504 C1110 570 1070 635 997 650 C912 668 828 618 814 548 C806 527 820 512 850 490Z" fill="#77c9c6" opacity=".7" filter="url(#whale-glow)"/>
+  <g fill="#bde6ef" opacity=".5"><circle cx="780" cy="645" r="11"/><circle cx="1050" cy="770" r="9"/><circle cx="1190" cy="445" r="10"/><circle cx="270" cy="810" r="8"/></g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="mandrin-title mandrin-desc">
+  <title id="mandrin-title">Modern humans at Grotte Mandrin 54,000 years ago</title>
+  <desc id="mandrin-desc">Editorial reconstruction of a stratified cave-section at Grotte Mandrin, with a human tooth and finely made stone points shown in the dated sediment layer.</desc>
+  <defs>
+    <linearGradient id="mandrin-sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#30233e"/><stop offset="1" stop-color="#d87d5d"/></linearGradient>
+    <linearGradient id="mandrin-rock" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#34272e"/><stop offset="1" stop-color="#191827"/></linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#mandrin-sky)"/>
+  <path d="M0 660 C190 575 300 620 440 570 C590 515 735 588 850 540 C1040 463 1230 540 1600 485 L1600 1000 L0 1000Z" fill="#513940"/>
+  <path d="M0 420 C245 220 438 178 650 312 C805 412 936 325 1140 220 C1300 138 1460 175 1600 230 L1600 690 C1380 650 1200 600 1040 630 C820 670 620 560 400 650 C220 720 90 700 0 740Z" fill="url(#mandrin-rock)"/>
+  <path d="M395 670 C430 412 656 340 895 398 C1140 458 1245 622 1320 852 L320 872Z" fill="#171821"/>
+  <path d="M390 690 C550 640 730 666 930 625 C1090 592 1210 640 1305 744" fill="none" stroke="#b87853" stroke-width="74"/>
+  <path d="M385 760 C585 708 758 746 952 699 C1090 667 1208 700 1330 796" fill="none" stroke="#d7b070" stroke-width="62"/>
+  <path d="M370 827 C570 785 794 818 1000 770 C1135 740 1260 780 1350 850" fill="none" stroke="#855340" stroke-width="62"/>
+  <path d="M500 698 C575 660 660 650 732 675 C700 780 625 824 520 796 C494 765 490 730 500 698Z" fill="#eee0bf" stroke="#4d3540" stroke-width="12"/>
+  <path d="M522 714 C580 680 648 686 704 708 M514 748 C576 720 655 725 710 747" fill="none" stroke="#a87b5e" stroke-width="10"/>
+  <g fill="#d8e8e3" stroke="#4d5b68" stroke-width="10">
+    <path d="M935 735 L1000 620 L1055 735 L995 785Z"/>
+    <path d="M1060 750 L1125 647 L1175 755 L1115 800Z"/>
+    <path d="M1175 720 L1235 630 L1285 735 L1225 775Z"/>
+  </g>
+  <path d="M1125 559 C1125 508 1136 473 1159 440" fill="none" stroke="#f3d281" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="1160" cy="422" r="20" fill="#f3d281"/>
+</svg>

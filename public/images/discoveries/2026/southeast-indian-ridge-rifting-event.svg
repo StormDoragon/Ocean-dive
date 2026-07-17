@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="ridge-title ridge-desc">
+  <title id="ridge-title">Seafloor spreading captured at the Southeast Indian Ridge</title>
+  <desc id="ridge-desc">Editorial cross-section diagram of the Southeast Indian Ridge showing measured valley subsidence, horizontal extension, and newly mapped lava flows, with the sill-and-dyke explanation clearly presented as an interpretation.</desc>
+  <defs>
+    <linearGradient id="ridge-water" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#05223f"/><stop offset="1" stop-color="#167391"/></linearGradient>
+    <linearGradient id="ridge-rock" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#5c4558"/><stop offset="1" stop-color="#231e36"/></linearGradient>
+    <filter id="ridge-glow"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#ridge-water)"/>
+  <path d="M0 445 C220 462 350 420 535 458 C710 495 858 500 1030 458 C1212 415 1400 470 1600 445 L1600 1000 L0 1000Z" fill="url(#ridge-rock)"/>
+  <path d="M0 470 C235 490 370 438 540 488 C710 538 865 540 1040 488 C1210 435 1405 500 1600 470" fill="none" stroke="#9a7881" stroke-width="24"/>
+  <path d="M580 476 C680 650 700 740 795 870 C885 742 910 650 1020 477" fill="#542e4d" stroke="#e87872" stroke-width="12"/>
+  <path d="M770 870 C778 670 790 565 797 465 C806 565 820 670 833 870Z" fill="#f26e55" opacity=".82" filter="url(#ridge-glow)"/>
+  <path d="M750 480 C754 620 770 720 795 820 M845 480 C840 620 825 720 800 820" fill="none" stroke="#ffb66a" stroke-width="13"/>
+  <path d="M500 600 L300 600 M1100 600 L1300 600" stroke="#c9f5f0" stroke-width="16" stroke-linecap="round"/>
+  <path d="M300 600 L352 565 M300 600 L352 635 M1300 600 L1248 565 M1300 600 L1248 635" stroke="#c9f5f0" stroke-width="16" stroke-linecap="round"/>
+  <path d="M800 375 V540" stroke="#f0d77e" stroke-width="16" stroke-linecap="round"/>
+  <path d="M765 495 L800 540 L835 495" fill="none" stroke="#f0d77e" stroke-width="16" stroke-linecap="round"/>
+  <g fill="#e8faff"><circle cx="285" cy="452" r="14"/><circle cx="540" cy="472" r="14"/><circle cx="1040" cy="472" r="14"/><circle cx="1315" cy="452" r="14"/></g>
+  <path d="M600 510 C670 470 720 476 775 500 M830 500 C885 476 935 470 1000 510" fill="none" stroke="#f39768" stroke-width="20" opacity=".8"/>
+</svg>

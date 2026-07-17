@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="bridge-title bridge-desc">
+  <title id="bridge-title">Bridge RNAs link DNA targets and donors for programmable recombination</title>
+  <desc id="bridge-desc">Editorial molecular diagram of an IS110 bridge RNA using two separate loops to match a donor DNA segment and a target DNA segment for recombination.</desc>
+  <defs>
+    <linearGradient id="bridge-bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071e46"/><stop offset="1" stop-color="#103a5d"/></linearGradient>
+    <filter id="bridge-glow"><feGaussianBlur stdDeviation="14"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bridge-bg)"/>
+  <g transform="translate(170 230)" fill="none" stroke-linecap="round">
+    <path d="M0 110 C80 30 160 190 240 110 S400 30 480 110 S640 190 720 110" stroke="#93d7ff" stroke-width="23"/>
+    <path d="M0 195 C80 115 160 275 240 195 S400 115 480 195 S640 275 720 195" stroke="#dbf7ff" stroke-width="23"/>
+    <path d="M50 100 L50 207 M145 115 L145 230 M240 100 L240 207 M335 115 L335 230 M430 100 L430 207 M525 115 L525 230 M620 100 L620 207" stroke="#8fc4d2" stroke-width="8"/>
+  </g>
+  <g transform="translate(710 540)" fill="none" stroke-linecap="round">
+    <path d="M0 95 C95 15 190 175 285 95 S475 15 570 95" stroke="#f6d477" stroke-width="23"/>
+    <path d="M0 180 C95 100 190 260 285 180 S475 100 570 180" stroke="#ffeec2" stroke-width="23"/>
+    <path d="M48 85 L48 192 M143 100 L143 215 M238 85 L238 192 M333 100 L333 215 M428 85 L428 192 M523 100 L523 215" stroke="#d6ae67" stroke-width="8"/>
+  </g>
+  <path d="M662 445 C538 535 555 685 720 690 C850 694 893 586 827 518 C775 464 723 476 662 445Z" fill="none" stroke="#ee8fd2" stroke-width="31"/>
+  <path d="M960 460 C1072 368 1255 417 1260 575 C1264 705 1138 748 1060 684 C998 632 1015 535 960 460Z" fill="none" stroke="#ee8fd2" stroke-width="31"/>
+  <path d="M713 517 C765 478 810 486 839 528 M1028 525 C1078 487 1140 487 1182 535" fill="none" stroke="#fff2ff" stroke-width="12"/>
+  <circle cx="770" cy="570" r="58" fill="#ec83cf" opacity=".3" filter="url(#bridge-glow)"/><circle cx="1110" cy="568" r="58" fill="#ec83cf" opacity=".3" filter="url(#bridge-glow)"/>
+  <path d="M600 425 C680 300 760 290 815 345 M1200 635 C1275 675 1335 635 1410 570" fill="none" stroke="#ec83cf" stroke-width="14" stroke-linecap="round"/>
+  <g fill="#e6fbff"><circle cx="558" cy="438" r="18"/><circle cx="1420" cy="564" r="18"/></g>
+</svg>

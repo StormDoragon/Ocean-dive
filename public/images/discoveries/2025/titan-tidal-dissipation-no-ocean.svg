@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="titan-title titan-desc">
+  <title id="titan-title">Cassini gravity data reveal strong tidal dissipation in Titan</title>
+  <desc id="titan-desc">Editorial diagram of Titan flexing under Saturn’s tidal pull, with a gravitational-data trace and layered ice-and-slush interior shown as a model rather than a direct interior photograph.</desc>
+  <defs>
+    <radialGradient id="titan-bg" cx=".72" cy=".2"><stop stop-color="#53418c"/><stop offset=".48" stop-color="#1d2c62"/><stop offset="1" stop-color="#07142e"/></radialGradient>
+    <radialGradient id="titan-body"><stop stop-color="#e6c17b"/><stop offset=".68" stop-color="#c78050"/><stop offset="1" stop-color="#755268"/></radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#titan-bg)"/>
+  <g fill="#ebf5ff" opacity=".6"><circle cx="135" cy="156" r="3"/><circle cx="285" cy="290" r="4"/><circle cx="570" cy="125" r="3"/><circle cx="1080" cy="158" r="4"/><circle cx="1450" cy="220" r="3"/><circle cx="1415" cy="770" r="4"/></g>
+  <g transform="translate(260 500)" fill="none" stroke="#c9ab83" opacity=".82">
+    <ellipse rx="310" ry="123" stroke-width="38"/>
+    <ellipse rx="360" ry="145" stroke-width="13"/>
+  </g>
+  <circle cx="1045" cy="510" r="240" fill="url(#titan-body)" stroke="#f2d18d" stroke-width="9"/>
+  <path d="M845 510 C920 445 1170 445 1243 510" fill="none" stroke="#e7f2ff" stroke-width="34" opacity=".7"/>
+  <path d="M860 570 C940 635 1155 630 1230 570" fill="none" stroke="#b7d7df" stroke-width="34" opacity=".74"/>
+  <path d="M886 630 C950 675 1140 677 1200 630" fill="none" stroke="#a86f78" stroke-width="30" opacity=".72"/>
+  <path d="M820 340 C740 390 725 445 752 492 M1270 330 C1365 400 1360 450 1330 502" fill="none" stroke="#8ce8ff" stroke-width="16" stroke-linecap="round"/>
+  <g transform="translate(170 690)">
+    <rect width="560" height="190" rx="28" fill="#0c1a3c" stroke="#8edbed" stroke-width="6"/>
+    <path d="M44 132 C103 133 125 104 176 105 C234 106 257 45 312 58 C372 72 385 126 448 103 C490 88 500 55 518 39" fill="none" stroke="#f6ce79" stroke-width="14" stroke-linecap="round"/>
+    <path d="M42 150 H520" stroke="#7da0d1" stroke-width="6"/>
+  </g>
+</svg>
