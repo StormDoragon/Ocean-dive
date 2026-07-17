@@ -33,7 +33,9 @@ export default function DiscoveriesPage() {
           The full catalog — search by keyword, species, place, or filter by field.
         </p>
       </header>
-      <SearchableDirectory discoveries={discoveries} categories={categories} />
+      <div id="search" className="scroll-mt-24">
+        <SearchableDirectory discoveries={discoveries} categories={categories} />
+      </div>
     </div>
   );
 }

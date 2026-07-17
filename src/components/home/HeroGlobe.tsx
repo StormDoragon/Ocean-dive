@@ -35,7 +35,7 @@ export function HeroGlobe({
     if (!detectWebGL()) return;
 
     const start = () => setWanted(true);
-    if ("requestIdleCallback" in window) {
+    if (typeof window.requestIdleCallback === "function") {
       const id = window.requestIdleCallback(start, { timeout: 2500 });
       return () => window.cancelIdleCallback(id);
     }
