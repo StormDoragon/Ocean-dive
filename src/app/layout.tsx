@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Archivo, Martian_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -7,6 +8,21 @@ import { site } from "@/lib/site";
 import { editorialTeam } from "@/content/editorial";
 import { canonicalUrl, serializeJsonLd, siteUrl } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/next";
+
+// Site voice: Archivo (variable weight + width — wide instances act as the
+// display face) and Martian Mono for data labels: depths, dates, counts.
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  axes: ["wdth"],
+  display: "swap",
+});
+
+const martianMono = Martian_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -69,8 +85,15 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${archivo.variable} ${martianMono.variable}`}>
       <body className="flex min-h-screen flex-col">
+        {/* Marks JS availability before first paint so scroll-reveal styles
+            only hide content when the script that reveals it can run. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: serializeJsonLd(siteJsonLd) }}

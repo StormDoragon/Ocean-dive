@@ -1,8 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Discovery } from "@/content/types";
 import { getCategory } from "@/content/categories";
 import { imagePresentation } from "@/lib/images";
+import { ResilientImage } from "./ResilientImage";
+import { ReviewBadge } from "./ReviewBadge";
 
 export function DiscoveryCard({ discovery }: { discovery: Discovery }) {
   const category = getCategory(discovery.categorySlug);
@@ -14,8 +15,9 @@ export function DiscoveryCard({ discovery }: { discovery: Discovery }) {
       className="card group flex flex-col overflow-hidden transition-transform hover:-translate-y-1 hover:border-signal/40"
     >
       <div className="relative aspect-[16/9] overflow-hidden">
-        <Image
+        <ResilientImage
           src={image.src}
+          fallbackSrc={`/images/categories/${discovery.categorySlug}.svg`}
           alt={image.alt}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
@@ -34,12 +36,18 @@ export function DiscoveryCard({ discovery }: { discovery: Discovery }) {
         </span>
       </div>
       <div className="flex flex-1 flex-col p-4">
-        <div className="flex items-center gap-2 text-xs text-slate-400">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] uppercase tracking-wider text-slate-400">
           <span>{discovery.year}</span>
           <span aria-hidden>·</span>
           <span className="truncate">{discovery.location.name}</span>
+          {discovery.reviewStatus ? (
+            <>
+              <span aria-hidden>·</span>
+              <ReviewBadge status={discovery.reviewStatus} />
+            </>
+          ) : null}
         </div>
-        <h3 className="mt-1 font-semibold text-white transition-colors group-hover:text-signal">
+        <h3 className="mt-1.5 font-semibold text-white transition-colors group-hover:text-signal">
           {discovery.title}
         </h3>
         <p className="mt-2 line-clamp-3 flex-1 text-sm text-slate-400">

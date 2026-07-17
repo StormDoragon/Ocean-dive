@@ -14,12 +14,25 @@ import type { MapPoint } from "@/components/map/types";
 export default function DiscoveryGlobe({
   points,
   className = "h-[70vh] min-h-[480px]",
+  enableZoom = true,
+  autoRotateSpeed = 0.6,
+  chrome = true,
+  onReady,
 }: {
   points: MapPoint[];
   className?: string;
+  /** Disable in embedded contexts (e.g. the homepage hero) so the wheel scrolls the page. */
+  enableZoom?: boolean;
+  autoRotateSpeed?: number;
+  /** When false, skips the standalone border/background so the globe can sit inside a hero. */
+  chrome?: boolean;
+  /** Fires once the WebGL globe has mounted, so a poster underneath can fade out. */
+  onReady?: () => void;
 }) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const containerRef = useRef<HTMLDivElement>(null);
+  // Held in a ref so the ready signal fires exactly once, on first mount.
+  const onReadyRef = useRef(onReady);
   const [size, setSize] = useState({ width: 0, height: 0 });
 
   // Measure the container so the canvas fills it (and tracks resizes).
@@ -40,10 +53,12 @@ export default function DiscoveryGlobe({
     if (!g) return;
     const controls = g.controls();
     controls.autoRotate = true;
-    controls.autoRotateSpeed = 0.6;
-    controls.enableZoom = true;
+    controls.autoRotateSpeed = autoRotateSpeed;
+    controls.enableZoom = enableZoom;
     g.pointOfView({ lat: 15, lng: 0, altitude: 2.4 }, 0);
-  }, [size.width]);
+    onReadyRef.current?.();
+    onReadyRef.current = undefined;
+  }, [size.width, autoRotateSpeed, enableZoom]);
 
   // A solid on-brand sphere material so the globe is always visible, even if
   // the realistic Earth texture (loaded from a CDN) is slow or unavailable.
@@ -79,7 +94,9 @@ export default function DiscoveryGlobe({
   return (
     <div
       ref={containerRef}
-      className={`${className} overflow-hidden rounded-xl border border-white/10 bg-abyss-950`}
+      className={`${className} overflow-hidden ${
+        chrome ? "rounded-xl border border-white/10 bg-abyss-950" : ""
+      }`}
     >
       {size.width > 0 ? (
         <Globe
