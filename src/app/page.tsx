@@ -5,6 +5,7 @@ import { GuideCard } from "@/components/GuideCard";
 import { ResilientImage } from "@/components/ResilientImage";
 import { ReviewBadge } from "@/components/ReviewBadge";
 import { CountUpValue } from "@/components/home/CountUpValue";
+import { DeepLayer } from "@/components/home/DeepLayer";
 import { DepthNav } from "@/components/home/DepthNav";
 import { GlobePoster } from "@/components/home/GlobePoster";
 import { HeroGlobe } from "@/components/home/HeroGlobe";
@@ -49,6 +50,8 @@ export default function HomePage() {
     <div className="relative overflow-hidden">
       {/* The descent: sunlit teal fading to near black down the page. */}
       <div aria-hidden className="descent-bg pointer-events-none absolute inset-0 -z-10" />
+      {/* Dive 04: WebGL deep layer painted between the gradient and the content. */}
+      <DeepLayer />
       <DepthNav />
 
       {/* ZONE — SURFACE */}
