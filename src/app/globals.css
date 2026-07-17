@@ -2,12 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* --font-sans / --font-mono are set on <html> by next/font (src/app/layout.tsx).
+   This fallback only applies if the font pipeline is ever removed. */
 :root {
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -34,6 +43,56 @@ body {
 
   .link-glow {
     @apply text-signal transition-colors hover:text-signal-400;
+  }
+
+  /* Wide display voice for headlines (Archivo's width axis, loaded in layout). */
+  .font-display {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-stretch: 125%;
+  }
+
+  /* Mono "instrument" eyebrow used for section labels instead of emoji. */
+  .label-mono {
+    @apply font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-signal;
+  }
+}
+
+/* ---- The descent -----------------------------------------------------------
+   Homepage-only background layer: sunlit teal at the surface fading to near
+   black at the bottom of the page. Painted by a static gradient — it responds
+   to native scrolling and never controls it. */
+.descent-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 78, 108, 0.4) 0%,
+    rgba(10, 44, 70, 0.24) 14%,
+    rgba(4, 16, 34, 0) 38%,
+    rgba(2, 6, 14, 0.5) 68%,
+    rgba(0, 1, 4, 0.88) 100%
+  );
+}
+
+/* ---- Scroll reveals ---------------------------------------------------------
+   Hidden state only applies when JS is present (html.js, set in layout before
+   paint), so content is never invisible without the script that reveals it.
+   Reduced-motion users see everything immediately. */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  transition-delay: calc(var(--reveal-i, 0) * 70ms);
+}
+html.js .reveal.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
