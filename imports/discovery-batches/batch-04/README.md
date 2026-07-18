@@ -76,7 +76,7 @@ Batch 04 is an additive import of 20 discoveries into Beyond Signal. It starts f
 
 ## Source policy
 
-Every selection has a DOI-linked peer-reviewed paper as its paper source, with a distinct official agency, research institute, university, or project source for supporting context. Records use the final version of record where available, identify the reported discovery date, and record `2026-07-17` as the source-access date. General reporting is not used as a primary scientific source.
+Every selection has a DOI-linked peer-reviewed paper or publisher version of record as its primary scientific source. Supporting context uses distinct institutional or project sources where available; limited cases use a bibliographic reference or reputable reporting for context only. Records use the final version of record where available, identify the reported discovery date, and record `2026-07-17` as the source-access date. General reporting is never used as a primary scientific source.
 
 ## Image policy
 
