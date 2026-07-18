@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="rna-title rna-desc">
+  <title id="rna-title">A global ocean census of RNA viruses</title>
+  <desc id="rna-desc">Editorial data visualization of a global ocean transect with colored RNA sequence threads rising from seawater samples into a branching viral family tree.</desc>
+  <defs>
+    <linearGradient id="rna-bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#052c4d"/><stop offset="1" stop-color="#071d37"/></linearGradient>
+    <linearGradient id="rna-water" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#1fb4c2"/><stop offset=".55" stop-color="#1377ad"/><stop offset="1" stop-color="#083e75"/></linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#rna-bg)"/>
+  <path d="M0 600 C200 535 310 650 505 588 C710 522 840 655 1055 575 C1230 510 1375 590 1600 525 L1600 1000 L0 1000Z" fill="url(#rna-water)"/>
+  <path d="M0 622 C225 560 330 675 520 610 C695 550 855 677 1060 600 C1250 530 1400 620 1600 550" fill="none" stroke="#9cf7f0" stroke-width="8" opacity=".75"/>
+  <g fill="#dffdfb">
+    <circle cx="190" cy="680" r="14"/><circle cx="470" cy="727" r="12"/><circle cx="760" cy="658" r="14"/><circle cx="1070" cy="730" r="12"/><circle cx="1370" cy="650" r="14"/>
+  </g>
+  <g fill="none" stroke-linecap="round">
+    <path d="M190 670 C245 550 285 460 330 333 C370 222 420 183 540 124" stroke="#6ce9d3" stroke-width="16"/>
+    <path d="M470 716 C525 620 535 500 610 418 C690 330 755 285 805 178" stroke="#91c9ff" stroke-width="16"/>
+    <path d="M760 648 C760 545 805 492 890 410 C960 342 1000 270 1060 128" stroke="#f5ce82" stroke-width="16"/>
+    <path d="M1070 720 C1110 610 1190 525 1210 425 C1235 298 1305 260 1390 155" stroke="#e99de0" stroke-width="16"/>
+    <path d="M1370 640 C1330 515 1320 445 1270 340 C1210 215 1160 180 1135 105" stroke="#80e6a0" stroke-width="16"/>
+  </g>
+  <g fill="none" stroke="#d9fbff" stroke-width="7" opacity=".82">
+    <path d="M170 670 q20 -20 40 0 t40 0"/><path d="M450 716 q20 -20 40 0 t40 0"/><path d="M740 648 q20 -20 40 0 t40 0"/><path d="M1050 720 q20 -20 40 0 t40 0"/><path d="M1350 640 q20 -20 40 0 t40 0"/>
+  </g>
+  <g stroke="#d3f8ff" stroke-width="7" fill="none" opacity=".88">
+    <path d="M540 124 L635 180 L700 124"/><path d="M805 178 L700 124"/><path d="M1060 128 L990 205 L930 130"/><path d="M1135 105 L1060 128"/><path d="M1390 155 L1300 212 L1210 160"/>
+  </g>
+  <g fill="#eaffff"><circle cx="540" cy="124" r="17"/><circle cx="700" cy="124" r="17"/><circle cx="805" cy="178" r="17"/><circle cx="930" cy="130" r="17"/><circle cx="1060" cy="128" r="17"/><circle cx="1135" cy="105" r="17"/><circle cx="1210" cy="160" r="17"/><circle cx="1390" cy="155" r="17"/></g>
+</svg>

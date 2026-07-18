@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="landau-title landau-desc">
+  <title id="landau-title">Landau–phonon polaritons imaged in graphene heterostructures</title>
+  <desc id="landau-desc">Editorial data visualization of infrared wavefronts in a graphene and boron-nitride heterostructure, with magnetic-field-tunable hybrid modes represented by avoided crossings.</desc>
+  <defs>
+    <linearGradient id="landau-bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071833"/><stop offset="1" stop-color="#3c1758"/></linearGradient>
+    <linearGradient id="landau-layer" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#3bd0e4"/><stop offset=".5" stop-color="#f3c578"/><stop offset="1" stop-color="#d87cd6"/></linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#landau-bg)"/>
+  <g transform="translate(160 150)">
+    <path d="M0 470 L1000 280 L1200 420 L200 610Z" fill="#123b5b" stroke="#8ee9ef" stroke-width="7"/>
+    <path d="M80 540 L1080 350 L1200 420 L200 610Z" fill="url(#landau-layer)" opacity=".78"/>
+    <path d="M30 640 L1030 450 L1150 520 L150 710Z" fill="#6051a4" opacity=".8"/>
+    <g fill="none" stroke="#d8faff" stroke-width="14" opacity=".85">
+      <path d="M145 500 C300 370 455 612 600 475 S900 385 1060 425"/>
+      <path d="M170 578 C335 448 480 685 625 550 S930 460 1090 500"/>
+      <path d="M205 655 C360 525 510 755 660 625 S955 535 1120 575"/>
+    </g>
+  </g>
+  <g transform="translate(1080 150)">
+    <rect width="360" height="330" rx="30" fill="#0b1835" stroke="#82d4f1" stroke-width="6"/>
+    <path d="M42 285 C110 248 155 205 205 142 C250 86 287 55 320 35" fill="none" stroke="#f2c674" stroke-width="15"/>
+    <path d="M42 35 C102 92 150 135 202 192 C248 240 283 266 320 285" fill="none" stroke="#cc80df" stroke-width="15"/>
+    <path d="M42 285 C135 235 174 195 210 164 C248 130 281 80 320 35" fill="none" stroke="#8ae7ef" stroke-width="9"/>
+    <path d="M42 35 C140 85 178 127 214 160 C248 194 290 244 320 285" fill="none" stroke="#8ae7ef" stroke-width="9"/>
+    <circle cx="210" cy="163" r="13" fill="#effcff"/>
+  </g>
+  <g stroke="#f2d370" stroke-width="12" stroke-linecap="round"><path d="M110 245 V85"/><path d="M60 135 L110 85 L160 135"/></g>
+</svg>

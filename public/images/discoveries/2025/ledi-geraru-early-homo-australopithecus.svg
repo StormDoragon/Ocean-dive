@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="ledi-title ledi-desc">
+  <title id="ledi-title">Early Homo and an unnamed Australopithecus at Ledi-Geraru</title>
+  <desc id="ledi-desc">Editorial reconstruction of two distinct but unnamed hominin tooth groups in a dated Ledi-Geraru landscape, emphasizing coexistence rather than a direct ancestor-descendant line.</desc>
+  <defs>
+    <linearGradient id="ledi-sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#253153"/><stop offset=".54" stop-color="#e08760"/><stop offset="1" stop-color="#f0c174"/></linearGradient>
+    <linearGradient id="ledi-tooth" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3e4bd"/><stop offset="1" stop-color="#c6986b"/></linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#ledi-sky)"/>
+  <circle cx="1270" cy="180" r="88" fill="#fff2b9" opacity=".86"/>
+  <path d="M0 640 C180 560 318 625 475 562 C642 495 820 604 1000 540 C1180 474 1340 558 1600 500 L1600 1000 L0 1000Z" fill="#8b513b"/>
+  <path d="M0 710 C170 640 360 702 520 642 C670 584 870 695 1030 625 C1190 555 1390 650 1600 590" fill="none" stroke="#b8734b" stroke-width="32"/>
+  <path d="M0 830 C190 765 350 834 550 770 C730 710 880 825 1060 758 C1250 685 1380 760 1600 700" fill="none" stroke="#e3ab69" stroke-width="30"/>
+  <g transform="translate(370 450)" fill="url(#ledi-tooth)" stroke="#69493f" stroke-width="14">
+    <path d="M-100 150 C-130 60 -88 -130 20 -145 C130 -160 177 -55 144 55 C125 117 85 181 8 189 C-44 195 -80 178 -100 150Z"/>
+    <path d="M-48 -22 C-5 -83 47 -70 88 -20 M-55 38 C0 5 64 15 112 55" fill="none" stroke="#a57256" stroke-width="12"/>
+  </g>
+  <g transform="translate(875 450)" fill="url(#ledi-tooth)" stroke="#69493f" stroke-width="14">
+    <path d="M-100 150 C-130 60 -88 -130 20 -145 C130 -160 177 -55 144 55 C125 117 85 181 8 189 C-44 195 -80 178 -100 150Z"/>
+    <path d="M-48 -22 C-5 -83 47 -70 88 -20 M-55 38 C0 5 64 15 112 55" fill="none" stroke="#a57256" stroke-width="12"/>
+  </g>
+  <path d="M540 540 C630 500 690 500 760 540" fill="none" stroke="#f8df92" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="544" cy="540" r="16" fill="#f8df92"/><circle cx="760" cy="540" r="16" fill="#f8df92"/>
+  <g fill="#f6d993" opacity=".6"><circle cx="170" cy="255" r="4"/><circle cx="520" cy="205" r="3"/><circle cx="975" cy="190" r="4"/><circle cx="1440" cy="280" r="4"/></g>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="methyl-title methyl-desc">
+  <title id="methyl-title">JWST detects the methyl cation in a protoplanetary disk</title>
+  <desc id="methyl-desc">Editorial artist impression of a young star and its protoplanetary disk, with a highlighted methyl-cation symbol shown as a schematic spectral detection rather than a photographed molecule.</desc>
+  <defs>
+    <radialGradient id="methyl-bg" cx=".58" cy=".45"><stop stop-color="#713c88"/><stop offset=".4" stop-color="#261a58"/><stop offset="1" stop-color="#08152e"/></radialGradient>
+    <radialGradient id="methyl-star"><stop stop-color="#fff9d3"/><stop offset=".45" stop-color="#ffcf73"/><stop offset="1" stop-color="#ee7659"/></radialGradient>
+    <filter id="methyl-glow"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#methyl-bg)"/>
+  <ellipse cx="800" cy="520" rx="525" ry="170" fill="#a35fca" opacity=".23" transform="rotate(-12 800 520)"/>
+  <ellipse cx="800" cy="520" rx="420" ry="122" fill="none" stroke="#e3a3e8" stroke-width="38" opacity=".4" transform="rotate(-12 800 520)"/>
+  <ellipse cx="800" cy="520" rx="295" ry="82" fill="none" stroke="#72d5ec" stroke-width="22" opacity=".48" transform="rotate(-12 800 520)"/>
+  <circle cx="800" cy="520" r="118" fill="#ffba73" opacity=".42" filter="url(#methyl-glow)"/>
+  <circle cx="800" cy="520" r="74" fill="url(#methyl-star)"/>
+  <g fill="#d9fbff" opacity=".8"><circle cx="170" cy="175" r="3"/><circle cx="300" cy="325" r="4"/><circle cx="470" cy="140" r="2"/><circle cx="1150" cy="125" r="4"/><circle cx="1370" cy="270" r="3"/><circle cx="1460" cy="760" r="5"/><circle cx="255" cy="780" r="3"/></g>
+  <g transform="translate(1128 530)" stroke="#c7f6ff" stroke-width="13" fill="none" stroke-linecap="round">
+    <circle cx="0" cy="0" r="37" fill="#8ce7f1"/>
+    <circle cx="92" cy="-55" r="25" fill="#f9dd88"/>
+    <circle cx="98" cy="64" r="25" fill="#f9dd88"/>
+    <circle cx="-88" cy="35" r="25" fill="#f9dd88"/>
+    <path d="M29 -24 L67 -46 M34 22 L75 49 M-35 18 L-66 29"/>
+    <path d="M175 -16 H235 M205 -47 V15" stroke="#fff1b4" stroke-width="16"/>
+  </g>
+  <path d="M230 835 C440 770 580 865 790 806 C1020 742 1230 800 1450 730" fill="none" stroke="#93d9ee" stroke-width="8" opacity=".62"/>
+</svg>

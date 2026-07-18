@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="hadal-title hadal-desc">
+  <title id="hadal-title">Chemosynthetic communities found across hadal trenches</title>
+  <desc id="hadal-desc">Editorial artist impression of a dark hadal trench seafloor with tube worms and clams clustered around fault-fed chemical fluids, explicitly shown as an illustration rather than an expedition photograph.</desc>
+  <defs>
+    <linearGradient id="hadal-bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#030c27"/><stop offset=".65" stop-color="#062945"/><stop offset="1" stop-color="#0c4d55"/></linearGradient>
+    <filter id="hadal-glow"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#hadal-bg)"/>
+  <g fill="#eef9ff" opacity=".5"><circle cx="150" cy="190" r="3"/><circle cx="330" cy="330" r="2"/><circle cx="520" cy="135" r="4"/><circle cx="890" cy="230" r="3"/><circle cx="1230" cy="155" r="4"/><circle cx="1470" cy="360" r="2"/></g>
+  <path d="M0 850 C235 730 360 790 525 730 C700 665 840 812 1030 745 C1245 665 1405 740 1600 650 L1600 1000 L0 1000Z" fill="#153e4f"/>
+  <path d="M0 880 C225 780 345 832 530 780 C685 735 825 865 1020 790 C1230 710 1390 790 1600 700" fill="none" stroke="#346a68" stroke-width="28"/>
+  <path d="M760 800 C740 650 785 535 800 385 C815 510 863 650 842 800" fill="#73d7bf" opacity=".55" filter="url(#hadal-glow)"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M625 806 C592 701 600 614 645 530" stroke="#dc566e" stroke-width="31"/>
+    <path d="M700 808 C650 702 672 605 725 484" stroke="#e1e8dd" stroke-width="29"/>
+    <path d="M780 808 C755 700 800 588 820 440" stroke="#c5cece" stroke-width="30"/>
+    <path d="M860 806 C900 690 890 620 868 505" stroke="#d95b6e" stroke-width="29"/>
+    <path d="M934 812 C974 716 1000 612 980 540" stroke="#e5e8d3" stroke-width="28"/>
+  </g>
+  <g fill="#f2f4df" stroke="#9fbaae" stroke-width="9">
+    <path d="M475 838 C425 785 452 742 511 750 C572 758 586 810 545 840Z"/>
+    <path d="M1075 846 C1022 794 1050 746 1107 756 C1160 766 1182 816 1140 849Z"/>
+    <path d="M1215 805 C1168 755 1190 710 1248 720 C1300 730 1323 777 1280 812Z"/>
+  </g>
+  <g fill="#7acfb6" opacity=".65"><circle cx="735" cy="654" r="18"/><circle cx="855" cy="620" r="14"/><circle cx="916" cy="695" r="19"/><circle cx="680" cy="720" r="11"/></g>
+</svg>

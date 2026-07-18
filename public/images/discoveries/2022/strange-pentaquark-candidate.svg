@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="penta-title penta-desc">
+  <title id="penta-title">LHCb’s strange pentaquark candidate</title>
+  <desc id="penta-desc">Editorial diagram of a particle-collision decay chain culminating in a highlighted resonance peak for the strange pentaquark candidate reported by LHCb.</desc>
+  <defs>
+    <radialGradient id="penta-bg"><stop stop-color="#1c2859"/><stop offset="1" stop-color="#071126"/></radialGradient>
+    <filter id="penta-blur"><feGaussianBlur stdDeviation="14"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#penta-bg)"/>
+  <circle cx="420" cy="495" r="170" fill="#8447e8" opacity=".35" filter="url(#penta-blur)"/>
+  <circle cx="420" cy="495" r="38" fill="#f4d56d"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M420 495 C560 350 610 250 800 165" stroke="#67d8ff" stroke-width="17"/>
+    <path d="M420 495 C610 492 760 480 925 497" stroke="#e99bf2" stroke-width="17"/>
+    <path d="M420 495 C580 670 665 750 840 836" stroke="#7ef2b2" stroke-width="17"/>
+    <path d="M420 495 C550 585 600 610 690 710" stroke="#ffcc77" stroke-width="12"/>
+    <path d="M925 497 C1050 430 1100 390 1225 340" stroke="#f0f4ff" stroke-width="13"/>
+    <path d="M925 497 C1070 545 1130 616 1260 715" stroke="#f0f4ff" stroke-width="13"/>
+  </g>
+  <g fill="#edfaff">
+    <circle cx="800" cy="165" r="18"/><circle cx="840" cy="836" r="18"/><circle cx="690" cy="710" r="14"/><circle cx="1225" cy="340" r="17"/><circle cx="1260" cy="715" r="17"/>
+  </g>
+  <g transform="translate(1020 115)">
+    <rect width="455" height="275" rx="28" fill="#0a1837" stroke="#8bd5ff" stroke-width="5"/>
+    <path d="M42 215 C120 215 172 212 220 210 C262 208 277 185 293 112 C305 60 330 48 357 106 C372 138 382 204 415 215" fill="none" stroke="#f5ce74" stroke-width="14" stroke-linecap="round"/>
+    <path d="M42 215 H415" stroke="#87a6d9" stroke-width="6"/>
+    <path d="M42 45 V215" stroke="#87a6d9" stroke-width="6"/>
+    <circle cx="305" cy="62" r="16" fill="#f5ce74"/>
+  </g>
+  <g fill="#f8d8ff" opacity=".75"><circle cx="202" cy="168" r="3"/><circle cx="126" cy="320" r="5"/><circle cx="220" cy="765" r="4"/><circle cx="760" cy="400" r="3"/><circle cx="1530" cy="570" r="4"/></g>
+</svg>

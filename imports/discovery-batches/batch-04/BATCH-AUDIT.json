@@ -1,0 +1,126 @@
+{
+  "batchIdentifier": "batch-04",
+  "generatedDate": "2026-07-17",
+  "researchCutoff": "2026-07-17",
+  "status": "prepared",
+  "startingCatalogCount": 111,
+  "discoveryCount": 20,
+  "expectedFinalCatalogCount": 131,
+  "countsByYear": {
+    "2022": 4,
+    "2023": 4,
+    "2024": 4,
+    "2025": 4,
+    "2026": 4
+  },
+  "countsByCategory": {
+    "archaeology": 4,
+    "biology": 2,
+    "dinosaurs-fossils": 2,
+    "earth-science": 2,
+    "ocean": 2,
+    "physics": 3,
+    "space": 3,
+    "technology": 2
+  },
+  "countsByReviewStatus": {
+    "source-verified": 16,
+    "preliminary": 4,
+    "editor-reviewed": 0
+  },
+  "preliminaryEntries": {
+    "strange-pentaquark-candidate": "Observed resonance; internal structure remains unresolved and the source calls it a candidate.",
+    "ledi-geraru-early-homo-australopithecus": "The unnamed Australopithecus form is based on limited dental material and has not been formally named.",
+    "titan-tidal-dissipation-no-ocean": "Interior implications beyond the measured tidal dissipation remain model-dependent.",
+    "casablanca-773000-year-hominins": "The evolutionary placement is a morphology-based phylogenetic inference rather than a direct observation."
+  },
+  "imageCount": 20,
+  "imageFormat": "SVG",
+  "imageRelation": "illustration",
+  "sourceAccessedAt": "2026-07-17",
+  "slugs": [
+    "wasp-39b-carbon-dioxide",
+    "global-ocean-rna-viruses",
+    "mandrin-modern-human-incursion",
+    "strange-pentaquark-candidate",
+    "methyl-cation-protoplanetary-disk",
+    "nyayanga-oldowan-hippo-butchery",
+    "anteromedial-thalamus-memory-consolidation",
+    "human-lung-bud-microarrays",
+    "pebanista-yacuruna-giant-river-dolphin",
+    "bicyclus-anynana-sex-determination",
+    "bridge-rna-programmable-recombination",
+    "landau-phonon-polaritons-graphene",
+    "hadal-trench-chemosynthetic-communities",
+    "ledi-geraru-early-homo-australopithecus",
+    "titan-tidal-dissipation-no-ocean",
+    "arctic-new-coastlines-glacier-retreat",
+    "diamantina-zone-whale-necropolis",
+    "casablanca-773000-year-hominins",
+    "southeast-indian-ridge-rifting-event",
+    "magnetic-field-boosted-graphene-superconductors"
+  ],
+  "duplicateSlugResult": {
+    "withinBatch": "pass",
+    "againstExistingCatalog": "pass"
+  },
+  "duplicateTitleResult": {
+    "normalizedWithinBatch": "pass",
+    "normalizedAgainstExistingCatalog": "pass"
+  },
+  "duplicateDOIResult": {
+    "withinBatch": "pass",
+    "normalizedAgainstExistingCatalog": "pass"
+  },
+  "duplicateSourceResult": {
+    "withinBatch": "pass",
+    "normalizedAgainstExistingCatalog": "pass"
+  },
+  "duplicateImageHashResult": {
+    "withinBatch": "pass",
+    "againstCatalog": "pass"
+  },
+  "missingImageResult": {
+    "result": "pass",
+    "missing": []
+  },
+  "missingSourceResult": {
+    "result": "pass",
+    "missing": []
+  },
+  "missingTagResult": {
+    "result": "pass",
+    "missing": []
+  },
+  "missingRelatedSlugResult": {
+    "result": "pass",
+    "missing": []
+  },
+  "missingRightsRecordResult": {
+    "result": "pass",
+    "missing": []
+  },
+  "existingCatalogDuplicateResult": {
+    "result": "pass",
+    "normalizedSlug": "pass",
+    "normalizedTitle": "pass",
+    "scientificNameOrAlias": "pass",
+    "sourceUrl": "pass",
+    "doi": "pass"
+  },
+  "imageRightsManifestVerification": {
+    "jsonRecords": 20,
+    "csvRecords": 20,
+    "allPathsResolve": true,
+    "dimensionsAndByteSizesMatch": true,
+    "sha256ValuesMatch": true,
+    "duplicateHashes": []
+  },
+  "pendingRemoteReleaseGates": [
+    "final-head GitHub CI",
+    "READY Vercel preview",
+    "40 discovery-page desktop/mobile views",
+    "supporting-page visual QA",
+    "final review and unresolved-thread inspection"
+  ]
+}

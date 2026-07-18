@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="butterfly-title butterfly-desc">
+  <title id="butterfly-title">A new sex-determination mechanism in an African butterfly</title>
+  <desc id="butterfly-desc">Editorial genetics diagram of a Bicyclus anynana butterfly with two contrasting Masculinizer gene variants shown as paired sequence ribbons, without portraying the mechanism as a universal butterfly rule.</desc>
+  <defs>
+    <linearGradient id="but-bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#183c59"/><stop offset=".5" stop-color="#24595f"/><stop offset="1" stop-color="#432a61"/></linearGradient>
+    <linearGradient id="but-wing" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e5b869"/><stop offset=".45" stop-color="#c97b84"/><stop offset="1" stop-color="#5f4c9f"/></linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#but-bg)"/>
+  <g transform="translate(555 500)" stroke="#fff0c9" stroke-width="9">
+    <path d="M-38 -16 C-247 -248 -436 -205 -394 22 C-365 184 -188 219 -40 55Z" fill="url(#but-wing)"/>
+    <path d="M38 -16 C247 -248 436 -205 394 22 C365 184 188 219 40 55Z" fill="url(#but-wing)"/>
+    <path d="M-35 40 C-278 170 -214 410 -10 318 C95 266 74 116 30 36Z" fill="#648fc1"/>
+    <path d="M35 40 C278 170 214 410 10 318 C-95 266 -74 116 -30 36Z" fill="#648fc1"/>
+    <path d="M0 -95 L0 180" stroke="#2d2949" stroke-width="22" stroke-linecap="round"/>
+  </g>
+  <g fill="#253252" stroke="#ffe19a" stroke-width="9"><circle cx="276" cy="480" r="47"/><circle cx="838" cy="480" r="47"/><circle cx="300" cy="625" r="38"/><circle cx="813" cy="625" r="38"/></g>
+  <g transform="translate(980 260)" fill="none" stroke-linecap="round">
+    <path d="M0 84 C85 -12 170 180 255 84 S425 -12 510 84" stroke="#7de5d8" stroke-width="24"/>
+    <path d="M0 158 C85 62 170 254 255 158 S425 62 510 158" stroke="#f2c66d" stroke-width="24"/>
+    <path d="M0 84 C85 180 170 -12 255 84 S425 180 510 84" stroke="#d8f7f0" stroke-width="9"/>
+    <path d="M0 158 C85 254 170 62 255 158 S425 254 510 158" stroke="#fff0c2" stroke-width="9"/>
+  </g>
+  <path d="M1000 620 C1120 535 1335 535 1460 630" fill="none" stroke="#d5f5ff" stroke-width="13"/>
+  <circle cx="1085" cy="574" r="20" fill="#7de5d8"/><circle cx="1215" cy="550" r="20" fill="#f2c66d"/><circle cx="1350" cy="574" r="20" fill="#7de5d8"/>
+  <g fill="#d9fff0" opacity=".67"><circle cx="160" cy="190" r="4"/><circle cx="870" cy="165" r="5"/><circle cx="1420" cy="210" r="4"/><circle cx="1460" cy="810" r="5"/><circle cx="210" cy="805" r="4"/></g>
+</svg>

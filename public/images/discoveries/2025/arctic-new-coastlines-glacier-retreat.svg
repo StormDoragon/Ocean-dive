@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="coast-title coast-desc">
+  <title id="coast-title">Glacier retreat exposed thousands of kilometres of new Arctic coastline</title>
+  <desc id="coast-desc">Editorial satellite-map-style visualization of a retreating marine-terminating glacier revealing a newly exposed coastline, with no claim that the simplified outline represents one named glacier.</desc>
+  <defs>
+    <linearGradient id="coast-water" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#063b67"/><stop offset="1" stop-color="#0b7c9b"/></linearGradient>
+    <linearGradient id="coast-ice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e7fcff"/><stop offset="1" stop-color="#a8dae7"/></linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#coast-water)"/>
+  <path d="M0 0 H670 C640 140 735 225 650 345 C574 450 695 550 615 695 C560 795 650 870 535 1000 H0Z" fill="#526b56"/>
+  <path d="M0 0 H515 C475 125 573 233 490 342 C422 436 522 555 455 672 C402 764 470 842 390 1000 H0Z" fill="url(#coast-ice)"/>
+  <path d="M455 0 C395 118 495 235 425 340 C356 442 454 553 386 670 C334 762 406 842 330 1000" fill="none" stroke="#f0a758" stroke-width="26" stroke-dasharray="18 17"/>
+  <path d="M520 0 C475 122 575 244 495 355 C425 453 526 571 456 686 C402 778 480 860 405 1000" fill="none" stroke="#e8f4d7" stroke-width="10" opacity=".85"/>
+  <g fill="#d4fbff" opacity=".72"><circle cx="820" cy="150" r="4"/><circle cx="1120" cy="275" r="3"/><circle cx="1360" cy="160" r="5"/><circle cx="1450" cy="670" r="3"/><circle cx="970" cy="855" r="4"/></g>
+  <g transform="translate(825 580)" fill="none" stroke="#bceff0" stroke-width="12" opacity=".85">
+    <path d="M0 0 C110 -80 205 90 310 10 S510 -80 620 5"/>
+    <path d="M0 95 C110 15 205 185 310 105 S510 15 620 100"/>
+  </g>
+  <path d="M1030 370 L1110 290 L1190 370" fill="none" stroke="#f0a758" stroke-width="20" stroke-linecap="round"/>
+  <path d="M1110 290 V465" stroke="#f0a758" stroke-width="20" stroke-linecap="round"/>
+</svg>
