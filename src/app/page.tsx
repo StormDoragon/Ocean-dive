@@ -54,36 +54,36 @@ export default function HomePage() {
       <DepthNav />
 
       {/* ZONE — SURFACE */}
-      <section data-zone="Surface" data-depth="0" className="container-page scroll-mt-20 pb-4 pt-10 sm:pt-14">
+      <section data-zone="Surface" data-depth="0" className="container-page scroll-mt-20 pb-4 pt-5 sm:pt-14">
         <div className="grid items-center gap-4 sm:gap-7 lg:gap-10 lg:grid-cols-[minmax(0,1fr),minmax(0,460px)]">
           <div>
             <SectionLabel>A living atlas of discovery</SectionLabel>
-            <h1 className="font-display mt-5 text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-5xl xl:text-6xl">
+            <h1 className="font-display mt-3 text-4xl sm:mt-5 font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-5xl xl:text-6xl">
               Every discovery has coordinates
               <span className="text-signal">.</span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg text-slate-300">
+            <p className="mt-3 max-w-xl text-base leading-relaxed text-slate-300 sm:mt-5 sm:text-lg">
               New species, exoplanets, lost cities, particles — {site.name} is a
               source-linked directory of scientific discovery, mapped where each
               find happened, from the sea floor to deep space.
             </p>
-            <div className="mt-7 flex flex-wrap items-center gap-3">
+            <div className="mt-4 flex flex-wrap items-center gap-2 sm:mt-7 sm:gap-3">
               <Link
                 href="/discoveries"
-                className="rounded-full bg-signal px-6 py-3 text-sm font-semibold text-abyss-950 shadow-[0_0_24px_rgba(56,225,255,0.35)] transition-all hover:-translate-y-0.5 hover:bg-signal-400"
+                className="rounded-full bg-signal px-4 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 text-abyss-950 shadow-[0_0_24px_rgba(56,225,255,0.35)] transition-all hover:-translate-y-0.5 hover:bg-signal-400"
               >
                 Explore discoveries
               </Link>
               <Link
                 href="/discoveries#search"
-                className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-signal/60 hover:text-signal"
+                className="rounded-full border border-white/20 px-4 py-2.5 text-sm sm:px-6 sm:py-3 font-semibold text-white transition-colors hover:border-signal/60 hover:text-signal"
               >
                 Search the archive
               </Link>
             </div>
           </div>
 
-          <div className="relative mx-auto aspect-square w-full max-w-[380px] lg:max-w-[460px]">
+          <div className="relative mx-auto aspect-square w-full max-w-[330px] sm:max-w-[380px] lg:max-w-[460px]">
             <HeroGlobe points={points} />
           </div>
         </div>

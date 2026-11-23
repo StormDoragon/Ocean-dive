@@ -32,6 +32,7 @@ function meridian(longitude: number, view: number) {
 export function GlobePoster({ points, active }: { points: MapPoint[]; active: boolean }) {
   const svgRef = useRef<SVGSVGElement>(null);
   const view = useRef(INITIAL_LONGITUDE);
+  const [interactive, setInteractive] = useState(false);
   const [paused, setPaused] = useState(false);
   const locations = useMemo(() => points.map(p => ({
     point: p,
@@ -138,6 +139,7 @@ export function GlobePoster({ points, active }: { points: MapPoint[]; active: bo
     document.addEventListener("visibilitychange", sync);
     paint();
     sync();
+    setInteractive(true);
     return () => {
       observer.disconnect();
       cancelAnimationFrame(frame);
@@ -197,7 +199,7 @@ export function GlobePoster({ points, active }: { points: MapPoint[]; active: bo
           ))}
         </g>
       </svg>
-      {active && <button type="button" onClick={() => setPaused(v => !v)} aria-pressed={paused}
+      {active && interactive && <button type="button" onClick={() => setPaused(v => !v)} aria-pressed={paused}
         className="globe-motion absolute bottom-0 right-1 rounded-full border border-white/15 bg-abyss-950/80 px-3 py-2 text-xs text-slate-300">
         {paused ? "Resume rotation" : "Pause rotation"}
       </button>}

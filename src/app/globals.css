@@ -118,7 +118,7 @@ html.js .reveal.reveal-in {
 /* Mobile surface light uses a single composited layer behind the hero. */
 .globe-motion { display: none; }
 @media (prefers-reduced-motion: no-preference) {
-  html.js .globe-motion { display: block; }
+  .globe-motion { display: block; }
 }
 @media (max-width: 1023px) {
   section[data-zone="Surface"] { position: relative; isolation: isolate; }
