@@ -5,7 +5,7 @@ import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Editorial standards",
-  description: "How Beyond Signal selects, explains, reviews, cites, and corrects scientific discovery entries.",
+  description: "How The Nucleon selects, explains, reviews, cites, and corrects scientific discovery entries.",
   alternates: { canonical: canonicalUrl("/editorial-standards") },
 };
 
@@ -14,7 +14,7 @@ export default function EditorialStandardsPage() {
     <div className="container-page max-w-4xl py-12">
       <p className="text-sm font-medium uppercase tracking-[0.2em] text-signal">Trust and provenance</p>
       <h1 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Editorial standards</h1>
-      <p className="mt-4 text-lg leading-relaxed text-slate-300">Beyond Signal is a structured science directory, not a replacement for the underlying research. These standards explain how the editorial team presents evidence, uncertainty, sources, images, and corrections.</p>
+      <p className="mt-4 text-lg leading-relaxed text-slate-300">The Nucleon is a structured science directory, not a replacement for the underlying research. These standards explain how the editorial team presents evidence, uncertainty, sources, images, and corrections.</p>
 
       <section className="mt-10">
         <h2 className="text-xl font-semibold text-white">Our core rule</h2>

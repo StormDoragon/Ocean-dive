@@ -6,7 +6,7 @@ import { canonicalUrl, itemListJsonLd, serializeJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Categories",
   description:
-    "Browse Beyond Signal by field of science: oceans, space, dinosaurs, biology, archaeology, earth science, physics, and technology.",
+    "Browse The Nucleon by field of science: oceans, space, dinosaurs, biology, archaeology, earth science, physics, and technology.",
   alternates: { canonical: canonicalUrl("/categories") },
 };
 

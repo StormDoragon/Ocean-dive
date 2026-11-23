@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { nav, site } from "@/lib/site";
 import { SavedNavLink } from "@/components/account/SavedNavLink";
@@ -7,10 +8,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-[1000] border-b border-white/10 bg-abyss-950/80 backdrop-blur-md">
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="grid h-8 w-8 place-items-center rounded-lg border border-signal/40 bg-signal/10 text-signal">
-            ◎
-          </span>
+        <Link href="/" className="flex shrink-0 items-center gap-2 whitespace-nowrap font-semibold tracking-tight">
+          <Image src="/icon.svg" alt="" width={34} height={34} unoptimized />
           <span className="text-lg text-white">{site.name}</span>
         </Link>
 

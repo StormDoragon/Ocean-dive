@@ -1,9 +1,9 @@
 export const editorialTeam = {
-  name: "Beyond Signal Editorial Team",
-  slug: "beyond-signal-editorial-team",
+  name: "The Nucleon Editorial Team",
+  slug: "the-nucleon-editorial-team",
   description:
-    "The Beyond Signal Editorial Team organizes scientific discoveries into source-linked entries. The team separates reported facts, scientific interpretation, and editorial explanation so readers can see what is known and how it is supported.",
-  url: "/authors/beyond-signal-editorial-team",
+    "The Nucleon Editorial Team organizes scientific discoveries into source-linked entries. The team separates reported facts, scientific interpretation, and editorial explanation so readers can see what is known and how it is supported.",
+  url: "/authors/the-nucleon-editorial-team",
 } as const;
 
 export const sourceHierarchy = [
@@ -57,14 +57,14 @@ export const reviewStatuses = {
 export const correctionPolicy = {
   title: "Corrections and updates",
   paragraphs: [
-    "Science changes as new evidence appears. Beyond Signal records substantive updates instead of silently rewriting an entry, and it distinguishes a correction of an error from an ordinary change in interpretation or source availability.",
+    "Science changes as new evidence appears. The Nucleon records substantive updates instead of silently rewriting an entry, and it distinguishes a correction of an error from an ordinary change in interpretation or source availability.",
     "If you identify an inaccurate date, name, location, attribution, image credit, or source link, send the page URL and the supporting evidence through the correction channel. The editorial team will compare the claim with the source record, update the entry when warranted, and record the change in the page history when a correction is made.",
     "A correction request is not itself evidence that a claim is wrong. Until reviewed, the existing status remains visible and readers should consult the linked primary or institutional source.",
   ],
 } as const;
 
 export const methodology = {
-  title: "How Beyond Signal builds discovery pages",
+  title: "How The Nucleon builds discovery pages",
   paragraphs: [
     "Each entry starts with a specific discovery claim: an organism, object, event, structure, measurement, or method that can be connected to a date and a research setting. The catalogue stores the claim as structured data so it can be searched, grouped by topic, mapped, and linked to related findings.",
     "Editors prefer primary scientific evidence and official institutional records. Established reporting can provide useful context, but a headline or secondary summary is not treated as a substitute for the underlying evidence when the claim depends on a paper, dataset, specimen, or mission record.",

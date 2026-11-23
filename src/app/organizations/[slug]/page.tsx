@@ -49,7 +49,7 @@ export default async function OrganizationPage({ params }: { params: Promise<{ s
         eyebrow="Discovering organization"
         title={organization.name}
         intro={[
-          `${organization.name} appears in Beyond Signal as a documented contributor to ${organization.discoveries.length} catalogued ${organization.discoveries.length === 1 ? "discovery" : "discoveries"}. This page keeps the institution connected to the places, methods, and scientific questions represented in those entries rather than treating its name as a standalone label.`,
+          `${organization.name} appears in The Nucleon as a documented contributor to ${organization.discoveries.length} catalogued ${organization.discoveries.length === 1 ? "discovery" : "discoveries"}. This page keeps the institution connected to the places, methods, and scientific questions represented in those entries rather than treating its name as a standalone label.`,
           `The linked work spans ${fields.length} scientific ${fields.length === 1 ? "field" : "fields"} and runs from ${years[0]} to ${years[years.length - 1]}. Open each discovery to follow the primary source and see how the organisation contributed to observation, analysis, expedition work, or collaboration.`,
         ]}
         facts={[

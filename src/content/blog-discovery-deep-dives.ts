@@ -102,7 +102,7 @@ export const discoveryDeepDivePosts: BlogPost[] = [
         url: "https://www.genome.gov/about-genomics/telomere-to-telomere",
       },
       {
-        label: "Beyond Signal discovery record",
+        label: "The Nucleon discovery record",
         url: "/discoveries/telomere-to-telomere-complete-human-genome",
       },
     ],
@@ -199,7 +199,7 @@ export const discoveryDeepDivePosts: BlogPost[] = [
         url: "https://science.nasa.gov/planetary-defense-dart/",
       },
       {
-        label: "Beyond Signal discovery record",
+        label: "The Nucleon discovery record",
         url: "/discoveries/dart-dimorphos-orbit-change",
       },
     ],
@@ -296,7 +296,7 @@ export const discoveryDeepDivePosts: BlogPost[] = [
         url: "https://news.liverpool.ac.uk/2023/09/20/archaeologists-discover-worlds-oldest-wooden-structure/",
       },
       {
-        label: "Beyond Signal discovery record",
+        label: "The Nucleon discovery record",
         url: "/discoveries/kalambo-falls-wooden-structure",
       },
     ],
@@ -393,7 +393,7 @@ export const discoveryDeepDivePosts: BlogPost[] = [
         url: "https://science.nasa.gov/missions/webb/nasas-james-webb-space-telescope-finds-most-distant-known-galaxy/",
       },
       {
-        label: "Beyond Signal discovery record",
+        label: "The Nucleon discovery record",
         url: "/discoveries/jades-gs-z14-0",
       },
     ],
@@ -490,7 +490,7 @@ export const discoveryDeepDivePosts: BlogPost[] = [
         url: "https://oceancensus.org/expeditions/gosouth/",
       },
       {
-        label: "Beyond Signal discovery record",
+        label: "The Nucleon discovery record",
         url: "/discoveries/juvenile-colossal-squid-filmed",
       },
     ],

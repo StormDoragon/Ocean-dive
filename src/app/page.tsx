@@ -133,7 +133,7 @@ export default function HomePage() {
       {/* ZONE — TWILIGHT: featured + on this day */}
       <section data-zone="Twilight" data-depth="200" className="container-page scroll-mt-20 pt-16">
         <Reveal>
-          <SectionLabel>The signal · featured discovery</SectionLabel>
+          <SectionLabel>Featured discovery</SectionLabel>
         </Reveal>
         <div className="mt-5 grid gap-6 lg:grid-cols-3">
           <Reveal className="lg:col-span-2">

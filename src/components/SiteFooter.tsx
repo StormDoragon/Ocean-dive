@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { categories } from "@/content/categories";
 import { site } from "@/lib/site";
@@ -8,9 +9,7 @@ export function SiteFooter() {
       <div className="container-page grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-2 font-semibold text-white">
-            <span className="grid h-7 w-7 place-items-center rounded-lg border border-signal/40 bg-signal/10 text-signal">
-              ◎
-            </span>
+            <Image src="/icon.svg" alt="" width={30} height={30} unoptimized />
             {site.name}
           </div>
           <p className="mt-3 max-w-xs text-sm text-slate-400">{site.tagline}</p>
@@ -51,8 +50,8 @@ export function SiteFooter() {
         <div>
           <h3 className="text-sm font-semibold text-white">About</h3>
           <p className="mt-3 text-sm text-slate-400">
-            A non-commercial educational prototype. Discovery facts are source-linked,
-            and review status is shown honestly on every entry.
+            Explore the sources behind each discovery, see who reviewed it, and find
+            out how to suggest a correction.
           </p>
         </div>
       </div>

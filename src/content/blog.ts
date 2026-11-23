@@ -82,17 +82,17 @@ const originalBlogPosts: BlogPost[] = [
     slug: "welcome-to-the-discovery-hub",
     title: "Welcome to the Discovery Hub",
     description:
-      "The Discovery hub gathers every part of Beyond Signal in one place and is home to our growing library of science guides and explainers.",
+      "The Discovery hub gathers every part of The Nucleon in one place and is home to our growing library of science guides and explainers.",
     datePublished: "2026-07-12",
     emoji: "🧭",
     tags: ["guide", "getting started"],
     intro:
-      "The Discovery hub is the front door to everything on Beyond Signal. From here you can jump into any section of the site, and it is where every new guide and explainer we publish will appear — numbered in the order it was written so the whole library is easy to follow start to finish.",
+      "The Discovery hub is the front door to everything on The Nucleon. From here you can jump into any section of the site, and it is where every new guide and explainer we publish will appear — numbered in the order it was written so the whole library is easy to follow start to finish.",
     sections: [
       {
         heading: "Everything in one place",
         paragraphs: [
-          "Beyond Signal has grown into a handful of distinct ways to explore scientific discovery: a searchable catalog, a timeline, an ocean depth explorer, a tree of life, an interactive map and globe, and an AI-powered question box. The Discovery hub links to all of them from a single page so you never have to hunt through the menu.",
+          "The Nucleon has grown into a handful of distinct ways to explore scientific discovery: a searchable catalog, a timeline, an ocean depth explorer, a tree of life, an interactive map and globe, and an AI-powered question box. The Discovery hub links to all of them from a single page so you never have to hunt through the menu.",
           "Every section is also reachable from the navigation bar at the top and from the footer at the bottom of any page — the hub simply brings them together with a short description of what each one does.",
         ],
       },
@@ -106,7 +106,7 @@ const originalBlogPosts: BlogPost[] = [
       {
         heading: "How to use this page",
         paragraphs: [
-          "If you are new, start with the section cards above and pick whichever area sounds most interesting. If you are here to read, browse the numbered guides and open any that catch your eye. Everything on Beyond Signal is free to read and linked back to a source wherever possible.",
+          "If you are new, start with the section cards above and pick whichever area sounds most interesting. If you are here to read, browse the numbered guides and open any that catch your eye. Everything on The Nucleon is free to read and linked back to a source wherever possible.",
         ],
       },
     ],

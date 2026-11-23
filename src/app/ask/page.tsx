@@ -16,7 +16,7 @@ export default function AskPage() {
   return (
     <div className="container-page py-10">
       <header className="mb-6">
-        <h1 className="text-3xl font-bold text-white">✨ Ask Beyond Signal</h1>
+        <h1 className="text-3xl font-bold text-white">✨ Ask The Nucleon</h1>
         <p className="mt-2 max-w-2xl text-slate-400">
           Ask in plain English. The built-in engine understands depth
           (&ldquo;deeper than 3,000 m&rdquo;), fields, time (&ldquo;since

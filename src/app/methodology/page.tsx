@@ -4,7 +4,7 @@ import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Methodology",
-  description: "The research and editorial method used to build Beyond Signal discovery entries.",
+  description: "The research and editorial method used to build The Nucleon discovery entries.",
   alternates: { canonical: canonicalUrl("/methodology") },
 };
 

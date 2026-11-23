@@ -5,7 +5,7 @@ import { canonicalUrl, itemListJsonLd, serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Scientific discovery locations",
-  description: "Explore the places, observatories, habitats, and expedition sites connected to Beyond Signal discoveries.",
+  description: "Explore the places, observatories, habitats, and expedition sites connected to The Nucleon discoveries.",
   alternates: { canonical: canonicalUrl("/locations") },
 };
 

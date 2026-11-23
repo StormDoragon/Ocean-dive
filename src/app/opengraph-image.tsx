@@ -1,3 +1,4 @@
+import { readBrandMark } from "@/lib/social-mark";
 import { ImageResponse } from "next/og";
 import { site } from "@/lib/site";
 
@@ -12,7 +13,7 @@ export const contentType = "image/png";
  * preview when a link is shared. Applies to every route that doesn't define its
  * own OpenGraph image.
  */
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
   return new ImageResponse(
     (
       <div
@@ -37,18 +38,9 @@ export default function OpengraphImage() {
             fontWeight: 600,
             color: "#38e1ff",
             letterSpacing: "0.08em",
-            textTransform: "uppercase",
           }}
         >
-          <div
-            style={{
-              width: "18px",
-              height: "18px",
-              borderRadius: "9999px",
-              background: "#38e1ff",
-              boxShadow: "0 0 24px #38e1ff",
-            }}
-          />
+          <img src={await readBrandMark()} width={64} height={64} alt="" />
           {site.name}
         </div>
         <div
@@ -61,7 +53,7 @@ export default function OpengraphImage() {
             maxWidth: "900px",
           }}
         >
-          A searchable directory of scientific discovery.
+          An atlas of scientific discovery
         </div>
         <div
           style={{
@@ -70,7 +62,7 @@ export default function OpengraphImage() {
             color: "#94a3b8",
           }}
         >
-          A searchable directory of scientific discovery.
+          Explore discoveries by place, year, and field.
         </div>
       </div>
     ),

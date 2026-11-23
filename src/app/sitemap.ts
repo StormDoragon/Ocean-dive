@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/editorial-standards",
     "/methodology",
     "/corrections",
-    "/authors/beyond-signal-editorial-team",
+    "/authors/the-nucleon-editorial-team",
   ].map((path) => ({
     url: canonicalUrl(path),
     changeFrequency: "weekly",

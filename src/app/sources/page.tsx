@@ -7,7 +7,7 @@ import { canonicalUrl, itemListJsonLd, serializeJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Source index",
   description:
-    "The publishers, institutions, and archives that back discoveries in the Beyond Signal directory, grouped by source tier.",
+    "The publishers, institutions, and archives that back discoveries in The Nucleon directory, grouped by source tier.",
   alternates: { canonical: canonicalUrl("/sources") },
 };
 
@@ -16,7 +16,7 @@ export default function SourcesPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     ...itemListJsonLd(
-      "Beyond Signal source index",
+      "The Nucleon source index",
       directory.slice(0, 50).map((entry) => ({ name: entry.publisher, path: "/sources" })),
     ),
   };

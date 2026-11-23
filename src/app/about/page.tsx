@@ -8,7 +8,7 @@ import { canonicalUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "What Beyond Signal is, how it is built, and how it plans to stay free and sustainable.",
+    "What The Nucleon is, how it is built, and how it plans to stay free and sustainable.",
   alternates: { canonical: canonicalUrl("/about") },
 };
 
@@ -18,7 +18,7 @@ export default function AboutPage() {
       <div className="overflow-hidden rounded-2xl border border-white/10">
         <Image
           src="/images/about/hero.svg"
-          alt="Illustration representing Beyond Signal, a searchable encyclopedia of scientific discovery."
+          alt="Illustration representing The Nucleon, a searchable encyclopedia of scientific discovery."
           width={1200}
           height={630}
           priority
@@ -28,10 +28,8 @@ export default function AboutPage() {
 
       <h1 className="mt-8 text-3xl font-bold text-white">About {site.name}</h1>
       <p className="mt-4 text-lg text-slate-300">
-        {site.name} is a searchable encyclopedia of scientific discovery — think
-        of it as IMDb for science. Instead of a stream of articles that scrolls
-        past and disappears, it turns discoveries into a living database you can
-        search, filter, map, and explore from any angle.
+        {site.name} is an atlas of scientific discovery. Find a discovery on the map,
+        see when it happened, and follow the sources that document it.
       </p>
 
       <Section
@@ -40,12 +38,12 @@ export default function AboutPage() {
         imageAlt="Illustration of an open catalog of scientific discoveries."
       >
         <p>
-          Beyond Signal is a v1 foundation: a browsable catalog of real,
+          The Nucleon brings together
           well-documented discoveries across eight fields — ocean, space,
           physics, biology, technology, earth science, archaeology, and
           dinosaurs &amp; fossils. Every entry has its own detail page with quick
           facts, the full story, a gallery, a map, and links to related
-          discoveries. It is small on purpose and built to grow.
+          discoveries.
         </p>
       </Section>
 
@@ -64,22 +62,17 @@ export default function AboutPage() {
       </Section>
 
       <Section
-        title="On the roadmap"
+        title="Explore the atlas"
         image="/images/about/roadmap.svg"
         imageAlt="Illustration of a compass charting an exploration roadmap."
       >
         <p className="mb-3">
-          The catalog is the starting point. Next comes everything that turns it
-          into a place to explore rather than just read:
+          Choose a starting point for your next question.
         </p>
         <ul className="list-disc space-y-1.5 pl-5">
-          <li>AI search — ask questions about science in plain English</li>
-          <li>Accounts: save discoveries, build collections, and earn badges</li>
-          <li>
-            A discovery timeline, an ocean depth explorer, and an interactive
-            tree of life
-          </li>
-          <li>A 3D globe plotting every discovery on Earth</li>
+          <li><Link className="text-signal underline" href="/ask">Ask a science question</Link> and follow the sources in the answer.</li>
+          <li><Link className="text-signal underline" href="/timeline">Browse the timeline</Link> to see discoveries in chronological order.</li>
+          <li><Link className="text-signal underline" href="/map">Open the map</Link> to explore discoveries by location.</li>
         </ul>
       </Section>
 
@@ -89,7 +82,7 @@ export default function AboutPage() {
         imageAlt="Illustration of a growing sprout representing sustainable funding."
       >
         <p>
-          Beyond Signal is free to read, and the plan is to keep it that way. The
+          The Nucleon is free to read, and the plan is to keep it that way. The
           long-term model combines modest display ads on informational pages,
           clearly-labeled affiliate links for books and science gear, an optional
           premium tier (advanced filters, datasets, and alerts), and transparent

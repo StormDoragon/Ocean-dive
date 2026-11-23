@@ -1,27 +1,11 @@
-const FALLBACK_URL = "https://beyond-signal.example.com";
-
-// Loudly warn if we're building for production without a real canonical URL,
-// so sitemap.xml / robots.txt / canonical + OG tags don't silently ship
-// pointing at the example.com placeholder. Set NEXT_PUBLIC_SITE_URL in the
-// deploy environment (e.g. Vercel) to the real domain.
-if (
-  process.env.NODE_ENV === "production" &&
-  !process.env.NEXT_PUBLIC_SITE_URL
-) {
-  console.warn(
-    "[beyond-signal] NEXT_PUBLIC_SITE_URL is not set — canonical URLs, the " +
-      `sitemap, and robots.txt will use the placeholder ${FALLBACK_URL}.`,
-  );
-}
-
 export const site = {
-  name: "Beyond Signal",
-  tagline: "A growing, source-linked directory of scientific discovery.",
+  name: "The Nucleon",
+  tagline: "Explore scientific discoveries by place, year, and field. Follow each entry back to its sources.",
   description:
-    "Beyond Signal is a searchable directory of scientific discovery — from deep-sea species to exoplanets, fossils, and breakthroughs in physics. Browse, search, and map the milestones of human knowledge.",
+    "The Nucleon is a searchable directory of scientific discovery — from deep-sea species to exoplanets, fossils, and breakthroughs in physics. Browse, search, and map the milestones of human knowledge.",
   // Used for canonical/OpenGraph URLs. Override with NEXT_PUBLIC_SITE_URL.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? FALLBACK_URL,
-  editorialTeam: "Beyond Signal Editorial Team",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://thenucleon.com",
+  editorialTeam: "The Nucleon Editorial Team",
 } as const;
 
 export const nav = [
@@ -87,6 +71,6 @@ export const sections = [
     href: "/about",
     label: "About",
     emoji: "🛰",
-    description: "What Beyond Signal is, how it is built, and how it stays free.",
+    description: "What The Nucleon is, how it is built, and how it stays free.",
   },
 ] as const;

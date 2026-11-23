@@ -8,7 +8,7 @@ import { canonicalUrl, itemListJsonLd, serializeJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Discovery",
   description:
-    "The Discovery hub gathers every section of Beyond Signal in one place, alongside our growing library of numbered science guides and explainers.",
+    "The Discovery hub gathers every section of The Nucleon in one place, alongside our growing library of numbered science guides and explainers.",
   alternates: { canonical: canonicalUrl("/discovery") },
 };
 
@@ -17,7 +17,7 @@ export default function DiscoveryHubPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     ...itemListJsonLd(
-      "Beyond Signal guides",
+      "The Nucleon guides",
       posts.map((post) => ({ name: post.title, path: `/discovery/${post.slug}` })),
     ),
   };

@@ -10,7 +10,7 @@ export const categoryGuides: Record<string, CategoryGuide> = {
   ocean: {
     overview: [
       "Ocean discovery is the study of a world that is physically close to us but still difficult to reach. Pressure, darkness, cold, distance from shore, and the cost of operating a research vessel all limit what scientists can observe. As a result, a new ocean discovery can be a species, a habitat, a geological process, or a clue about how life survives without sunlight. The catalogue brings these findings together so a named animal can be understood alongside the seafloor, expedition, and chemistry that make its existence possible.",
-      "The strongest ocean discoveries connect field observation with careful identification. A remotely operated vehicle may record an unusual animal, but taxonomy, genetics, microscopy, and repeat observations are what establish whether it is genuinely new. This distinction matters in the deep sea, where a striking appearance is not by itself proof of a new species. Beyond Signal follows that chain from where a discovery was made to what it changes about our understanding of marine life.",
+      "The strongest ocean discoveries connect field observation with careful identification. A remotely operated vehicle may record an unusual animal, but taxonomy, genetics, microscopy, and repeat observations are what establish whether it is genuinely new. This distinction matters in the deep sea, where a striking appearance is not by itself proof of a new species. The Nucleon follows that chain from where a discovery was made to what it changes about our understanding of marine life.",
     ],
     sections: [
       { heading: "From sunlight to the hadal zone", body: "The ocean is not one uniform environment. Coral reefs, open-water habitats, abyssal plains, hydrothermal vents, and trenches each impose different physical and biological conditions. Depth is therefore a useful organising principle: it helps explain why a transparent fish, iron-armoured snail, or pigmentless octopus can evolve traits that would be unnecessary or impossible near the surface." },
@@ -41,7 +41,7 @@ export const categoryGuides: Record<string, CategoryGuide> = {
   },
   "dinosaurs-fossils": {
     overview: [
-      "Fossils are not simply old bones; they are preserved evidence of bodies, environments, behaviour, and geological time. A new dinosaur or fossil mammal can change a family tree, extend the known range of a group, or reveal an adaptation that was previously invisible. Beyond Signal presents fossil discoveries with the rock layer, location, and reconstruction choices that allow scientists to move from a fragment in the ground to a testable account of ancient life.",
+      "Fossils are not simply old bones; they are preserved evidence of bodies, environments, behaviour, and geological time. A new dinosaur or fossil mammal can change a family tree, extend the known range of a group, or reveal an adaptation that was previously invisible. The Nucleon presents fossil discoveries with the rock layer, location, and reconstruction choices that allow scientists to move from a fragment in the ground to a testable account of ancient life.",
       "Interpretation is especially important in palaeontology because the original organism is incomplete. Teeth, footprints, skin impressions, and sediment can each tell a different part of the story. A responsible reconstruction distinguishes what is directly preserved from what is inferred by comparing living relatives, biomechanics, and the surrounding environment.",
     ],
     sections: [
@@ -73,7 +73,7 @@ export const categoryGuides: Record<string, CategoryGuide> = {
   },
   archaeology: {
     overview: [
-      "Archaeological discovery is the reconstruction of human lives from material traces. A settlement, burial, tool, inscription, or ritual site becomes meaningful only when its position, surrounding objects, and chronology are recorded together. Beyond Signal focuses on the evidence that lets researchers distinguish a dramatic interpretation from a conclusion supported by context.",
+      "Archaeological discovery is the reconstruction of human lives from material traces. A settlement, burial, tool, inscription, or ritual site becomes meaningful only when its position, surrounding objects, and chronology are recorded together. The Nucleon focuses on the evidence that lets researchers distinguish a dramatic interpretation from a conclusion supported by context.",
       "New technology has widened what archaeology can recover. Remote sensing can identify structures beneath vegetation, chemical analysis can trace materials across trade routes, and careful excavation can reveal activity that left no written record. These techniques do not replace fieldwork; they help researchers ask sharper questions while protecting the relationship between an object and the place where it was found.",
     ],
     sections: [
@@ -105,7 +105,7 @@ export const categoryGuides: Record<string, CategoryGuide> = {
   },
   physics: {
     overview: [
-      "Physics discoveries test the rules that connect matter, energy, space, and time. Some are made by observing a rare particle in a collider; others emerge when a quantum system behaves in a way classical intuition cannot explain. Beyond Signal presents these findings with the measurement and theoretical question that made them significant, so a result is not reduced to an impressive name or a single number.",
+      "Physics discoveries test the rules that connect matter, energy, space, and time. Some are made by observing a rare particle in a collider; others emerge when a quantum system behaves in a way classical intuition cannot explain. The Nucleon presents these findings with the measurement and theoretical question that made them significant, so a result is not reduced to an impressive name or a single number.",
       "The field advances through increasingly precise disagreement. A new result matters when it survives calibration checks, independent analysis, and comparison with existing theory. That is why discovery-level claims are often followed by years of confirmation and refinement. The catalogue keeps the distinction between an observation, an interpretation, and a settled physical principle visible to readers.",
     ],
     sections: [
@@ -121,7 +121,7 @@ export const categoryGuides: Record<string, CategoryGuide> = {
   },
   technology: {
     overview: [
-      "Technology discoveries are changes in what humans can build, measure, automate, or compute. They are scientific when the underlying material, algorithm, or process is tested and explained—not simply because a product is new. Beyond Signal places technical breakthroughs beside the research problem they address, the constraints that shaped the solution, and the evidence that demonstrates it works.",
+      "Technology discoveries are changes in what humans can build, measure, automate, or compute. They are scientific when the underlying material, algorithm, or process is tested and explained—not simply because a product is new. The Nucleon places technical breakthroughs beside the research problem they address, the constraints that shaped the solution, and the evidence that demonstrates it works.",
       "A useful technology page should also show its limits. A laboratory prototype may prove a principle without being ready for mass production; a benchmark may demonstrate speed without establishing reliability in the real world. Keeping those distinctions clear makes the catalogue more valuable than a stream of hype and helps readers understand what has actually changed.",
     ],
     sections: [

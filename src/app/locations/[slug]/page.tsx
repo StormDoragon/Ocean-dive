@@ -53,7 +53,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         eyebrow="Discovery location"
         title={location.name}
         intro={[
-          `${location.name} is a connected research setting in the Beyond Signal catalogue, with ${location.discoveries.length} documented ${location.discoveries.length === 1 ? "discovery" : "discoveries"}. A location page is useful because discoveries are shaped by their environment: depth, climate, geology, access, and the instruments that can operate there.`,
+          `${location.name} is a connected research setting in The Nucleon catalogue, with ${location.discoveries.length} documented ${location.discoveries.length === 1 ? "discovery" : "discoveries"}. A location page is useful because discoveries are shaped by their environment: depth, climate, geology, access, and the instruments that can operate there.`,
           `The entries associated with this place span ${categories.length} scientific ${categories.length === 1 ? "field" : "fields"}. Read them together to see how observations from one region can illuminate species, habitats, planetary processes, or the history of human research.`,
         ]}
         facts={[

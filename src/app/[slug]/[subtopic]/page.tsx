@@ -86,7 +86,7 @@ export default async function SubtopicPage({
           {subtopic.name} discoveries in {category.name}
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-slate-300">
-          This topic hub follows {discoveries.length} catalogued {subtopic.name.toLowerCase()} {discoveries.length === 1 ? "discovery" : "discoveries"} across the Beyond Signal directory. Each entry connects the finding to its location, discovering institution, scientific source, and related work.
+          This topic hub follows {discoveries.length} catalogued {subtopic.name.toLowerCase()} {discoveries.length === 1 ? "discovery" : "discoveries"} across The Nucleon directory. Each entry connects the finding to its location, discovering institution, scientific source, and related work.
         </p>
       </header>
 
@@ -110,7 +110,7 @@ export default async function SubtopicPage({
           <div className="mt-4 space-y-4">
             <div className="card p-5">
               <h3 className="font-medium text-white">How many {subtopic.name.toLowerCase()} discoveries are catalogued?</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-300">Beyond Signal currently lists {discoveries.length}. The total changes as new source-checked entries are added.</p>
+              <p className="mt-2 text-sm leading-relaxed text-slate-300">The Nucleon currently lists {discoveries.length}. The total changes as new source-checked entries are added.</p>
             </div>
             <div className="card p-5">
               <h3 className="font-medium text-white">Where have these discoveries been made?</h3>

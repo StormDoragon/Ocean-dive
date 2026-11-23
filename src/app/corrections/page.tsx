@@ -4,7 +4,7 @@ import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Corrections policy",
-  description: "How Beyond Signal handles factual corrections, source changes, image credits, and scientific updates.",
+  description: "How The Nucleon handles factual corrections, source changes, image credits, and scientific updates.",
   alternates: { canonical: canonicalUrl("/corrections") },
 };
 

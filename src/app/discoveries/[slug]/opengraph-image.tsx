@@ -1,9 +1,10 @@
+import { readBrandMark } from "@/lib/social-mark";
 import { ImageResponse } from "next/og";
 import { getAll, getBySlug } from "@/lib/discoveries";
 import { getCategory } from "@/content/categories";
 import { site } from "@/lib/site";
 
-export const alt = `A ${site.name} discovery`;
+export const alt = `Discovery from ${site.name}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -155,11 +156,15 @@ export default async function DiscoveryOpengraphImage({
         <div
           style={{
             position: "relative",
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
             marginTop: "24px",
             fontSize: "26px",
             color: "#94a3b8",
           }}
         >
+          <img src={await readBrandMark()} width={38} height={38} alt="" />
           {site.name}
         </div>
       </div>

@@ -5,7 +5,7 @@ import { canonicalUrl } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Saved & badges",
   description:
-    "Your saved discoveries, collections, and the badges you earn by exploring Beyond Signal.",
+    "Your saved discoveries, collections, and the badges you earn by exploring The Nucleon.",
   alternates: { canonical: canonicalUrl("/saved") },
   // Per-visitor content — nothing here is useful in search results.
   robots: { index: false, follow: true },

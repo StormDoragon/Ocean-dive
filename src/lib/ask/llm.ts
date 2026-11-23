@@ -56,7 +56,7 @@ export async function answerWithClaude(query: string): Promise<AskResult> {
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY is not set");
 
   const system =
-    "You are the search assistant for Beyond Signal, a directory of scientific " +
+    "You are the search assistant for The Nucleon, a directory of scientific " +
     "discoveries. You are given a JSON catalog of discoveries and a user question. " +
     "Answer ONLY from the catalog. Respond with a single JSON object and nothing " +
     'else, in the shape: {"interpretation": string, "answer": string, "slugs": ' +

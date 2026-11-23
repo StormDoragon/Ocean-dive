@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   description: site.description,
   authors: [{ name: editorialTeam.name, url: editorialTeam.url }],
   applicationName: site.name,
-  icons: { icon: "/icon.svg" },
+  icons: { icon: { url: "/icon.svg?v=nucleon", type: "image/svg+xml", sizes: "any" } },
   openGraph: {
     type: "website",
     siteName: site.name,
