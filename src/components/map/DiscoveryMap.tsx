@@ -39,12 +39,26 @@ export default function DiscoveryMap({
         worldCopyJump
         style={{ height: "100%", width: "100%" }}
       >
+        {/* The local world tile stays beneath the detailed tiles at every zoom. */}
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+          url="/maps/world-overview.svg"
+          attribution='Map data: <a href="https://www.naturalearthdata.com/">Natural Earth</a>'
+          minNativeZoom={0}
+          maxNativeZoom={0}
+          maxZoom={19}
+          zIndex={1}
+        />
+        <TileLayer
+          minZoom={4}
+          maxZoom={19}
+          zIndex={2}
+          className="discovery-detail-tiles"
+          errorTileUrl={L.Util.emptyImageUrl}
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+          url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {points.map((p) => (
-          <Marker key={p.slug} position={[p.lat, p.lng]} icon={markerIcon(p.color)}>
+          <Marker key={p.slug} title={p.title} alt={p.title} position={[p.lat, p.lng]} icon={markerIcon(p.color)}>
             <Popup>
               <div style={{ minWidth: 180 }}>
                 <div style={{ fontSize: 11, opacity: 0.7 }}>

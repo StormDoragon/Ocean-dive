@@ -101,6 +101,10 @@ html.js .reveal.reveal-in {
   background: #070b1a;
   font-family: var(--font-sans);
 }
+/* Keep street and terrain detail legible against the atlas's dark ocean. */
+.discovery-detail-tiles {
+  filter: invert(100%) hue-rotate(165deg) saturate(65%) brightness(85%) contrast(95%);
+}
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
   background: #0c1326;

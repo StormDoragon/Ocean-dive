@@ -2,10 +2,10 @@
 // violations (in the browser console) without breaking the map tiles, the
 // WebGL globe, or Next's inline hydration, so it can be tightened and then
 // enforced once the reports are clean. Hosts mirror images.remotePatterns plus
-// the CARTO basemap tiles used by the Leaflet map.
+// the OpenStreetMap detail tiles used by the Leaflet map.
 const contentSecurityPolicy = [
   "default-src 'self'",
-  "img-src 'self' data: https://upload.wikimedia.org https://home.cern https://www.asi.it https://*.basemaps.cartocdn.com",
+  "img-src 'self' data: https://upload.wikimedia.org https://home.cern https://www.asi.it https://tile.openstreetmap.org",
   "style-src 'self' 'unsafe-inline'",
   "script-src 'self' 'unsafe-inline'",
   "connect-src 'self'",
