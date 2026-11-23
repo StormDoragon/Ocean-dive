@@ -64,12 +64,16 @@ export interface DiscoveryCorrection {
 export interface Discovery {
   slug: string;
   title: string;
+  /** Optional search headline when the display title needs more context. */
+  searchTitle?: string;
   categorySlug: CategorySlug;
   subtopic: string;
   /** Year of the discovery/announcement. */
   year: number;
   /** ISO date (YYYY-MM-DD) used for "on this day" + recency. */
   dateDiscovered: string;
+  /** First production publication of this atlas entry (YYYY-MM-DD, UTC). */
+  datePublished?: string;
   /** ISO date of the latest substantive editorial update, when available. */
   dateUpdated?: string;
   /** Editorial/source confidence label shown to readers. */

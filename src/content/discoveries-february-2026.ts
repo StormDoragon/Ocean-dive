@@ -3,6 +3,7 @@ import type { Discovery } from "./types";
 export const february2026Discoveries: Discovery[] = [
   {
     slug: "lhs-1903-inside-out-system",
+    datePublished: "2026-07-17",
     title: "The Inside-Out LHS 1903 Planetary System",
     categorySlug: "space",
     subtopic: "Exoplanets",
@@ -42,6 +43,7 @@ export const february2026Discoveries: Discovery[] = [
   },
   {
     slug: "self-copying-polymerase-ribozyme",
+    datePublished: "2026-07-17",
     title: "A Tiny RNA Enzyme That Can Copy Itself",
     categorySlug: "biology",
     subtopic: "Origins of life",

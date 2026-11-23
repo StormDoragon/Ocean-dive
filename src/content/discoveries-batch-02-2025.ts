@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch022025Discoveries: Discovery[] = [
   {
     "slug": "juvenile-colossal-squid-filmed",
+    "datePublished": "2026-07-17",
     "title": "A Colossal Squid Filmed Alive in Its Natural Habitat",
     "categorySlug": "ocean",
     "subtopic": "Ocean mysteries",
@@ -55,6 +56,7 @@ export const batch022025Discoveries: Discovery[] = [
   },
   {
     "slug": "penghu-denisovan-jaw",
+    "datePublished": "2026-07-17",
     "title": "The Penghu Jaw Is Identified as Denisovan",
     "categorySlug": "biology",
     "subtopic": "Human evolution",
@@ -105,6 +107,7 @@ export const batch022025Discoveries: Discovery[] = [
   },
   {
     "slug": "vulcanidris-cratensis-oldest-ant",
+    "datePublished": "2026-07-17",
     "title": "Vulcanidris Cratensis, the Oldest Known Ant",
     "categorySlug": "dinosaurs-fossils",
     "subtopic": "Fossil discoveries",
@@ -155,6 +158,7 @@ export const batch022025Discoveries: Discovery[] = [
   },
   {
     "slug": "thutmose-ii-tomb-identified",
+    "datePublished": "2026-07-17",
     "title": "The Tomb of Pharaoh Thutmose II Identified",
     "categorySlug": "archaeology",
     "subtopic": "Tomb discoveries",

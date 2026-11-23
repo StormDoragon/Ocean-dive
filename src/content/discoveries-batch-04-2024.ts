@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch042024Discoveries: Discovery[] = [
   {
     slug: "pebanista-yacuruna-giant-river-dolphin",
+    datePublished: "2026-07-18",
     title: "Pebanista yacuruna, the Largest Known River Dolphin",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Ancient mammals",
@@ -68,6 +69,7 @@ export const batch042024Discoveries: Discovery[] = [
   },
   {
     slug: "bicyclus-anynana-sex-determination",
+    datePublished: "2026-07-18",
     title: "A New Sex-Determination Mechanism in an African Butterfly",
     categorySlug: "biology",
     subtopic: "Genetics",
@@ -131,6 +133,7 @@ export const batch042024Discoveries: Discovery[] = [
   },
   {
     slug: "bridge-rna-programmable-recombination",
+    datePublished: "2026-07-18",
     title: "Bridge RNAs Link DNA Targets and Donors for Programmable Recombination",
     categorySlug: "technology",
     subtopic: "Biotechnology",
@@ -194,6 +197,7 @@ export const batch042024Discoveries: Discovery[] = [
   },
   {
     slug: "landau-phonon-polaritons-graphene",
+    datePublished: "2026-07-18",
     title: "Landau–Phonon Polaritons Imaged in Graphene Heterostructures",
     categorySlug: "physics",
     subtopic: "Quantum research",

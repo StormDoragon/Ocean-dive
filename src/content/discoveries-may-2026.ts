@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const may2026Discoveries: Discovery[] = [
   {
     slug: "microeledone-galapagensis",
+    datePublished: "2026-07-17",
     title: "A Tiny Blue Octopus from the Galápagos Deep",
     categorySlug: "ocean",
     subtopic: "New species",
@@ -46,6 +47,7 @@ export const may2026Discoveries: Discovery[] = [
   },
   {
     slug: "golden-orb-relicanthus-anemone",
+    datePublished: "2026-07-17",
     title: "The Deep-Sea ‘Golden Orb’ Identified",
     categorySlug: "ocean",
     subtopic: "Ocean mysteries",
@@ -87,6 +89,7 @@ export const may2026Discoveries: Discovery[] = [
   },
   {
     slug: "jwst-rules-out-2024-yr4-lunar-impact",
+    datePublished: "2026-07-17",
     title: "JWST Rules Out a 2032 Lunar Impact",
     categorySlug: "space",
     subtopic: "Planetary defense",

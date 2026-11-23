@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch022024Discoveries: Discovery[] = [
   {
     "slug": "oldest-amniote-skin-richards-spur",
+    "datePublished": "2026-07-17",
     "title": "The Oldest Known Fossilized Amniote Skin",
     "categorySlug": "dinosaurs-fossils",
     "subtopic": "Fossil discoveries",
@@ -54,6 +55,7 @@ export const batch022024Discoveries: Discovery[] = [
   },
   {
     "slug": "nitroplast-nitrogen-fixing-organelle",
+    "datePublished": "2026-07-17",
     "title": "The Nitroplast, a Nitrogen-Fixing Organelle",
     "categorySlug": "biology",
     "subtopic": "Microbiology",
@@ -103,6 +105,7 @@ export const batch022024Discoveries: Discovery[] = [
   },
   {
     "slug": "ichthyotitan-severnensis",
+    "datePublished": "2026-07-17",
     "title": "Ichthyotitan Severnensis, a Blue-Whale-Sized Marine Reptile",
     "categorySlug": "dinosaurs-fossils",
     "subtopic": "Fossil discoveries",
@@ -153,6 +156,7 @@ export const batch022024Discoveries: Discovery[] = [
   },
   {
     "slug": "jades-gs-z14-0",
+    "datePublished": "2026-07-17",
     "title": "JWST Confirms JADES-GS-z14-0 at Cosmic Dawn",
     "categorySlug": "space",
     "subtopic": "Galaxies",

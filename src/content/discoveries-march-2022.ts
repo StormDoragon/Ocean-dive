@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const march2022Discoveries: Discovery[] = [
   {
     slug: "endurance-shipwreck-found",
+    datePublished: "2026-07-17",
     title: "Shackleton's Endurance Found in the Weddell Sea",
     categorySlug: "ocean",
     subtopic: "Shipwrecks",

@@ -23,8 +23,10 @@ export function discoveryCanonicalUrl(discovery: Discovery): string {
   return canonicalUrl(`/discoveries/${discovery.slug}`);
 }
 
-export function discoveryLastModified(discovery: Discovery): string {
-  return discovery.dateUpdated ?? discovery.dateDiscovered;
+export function discoveryLastModified(discovery: Discovery): string | undefined {
+  const { datePublished, dateUpdated } = discovery;
+  if (datePublished && dateUpdated && dateUpdated < datePublished) return datePublished;
+  return dateUpdated ?? datePublished;
 }
 
 export function monthLabel(month: number): string {
@@ -64,7 +66,7 @@ export function discoveryArticleJsonLd(discovery: Discovery) {
     headline: discovery.title,
     description: discovery.summary,
     image: [absoluteImageUrl(discovery.heroImage)],
-    datePublished: discovery.dateDiscovered,
+    datePublished: discovery.datePublished,
     dateModified: discoveryLastModified(discovery),
     mainEntityOfPage: canonical,
     author: {

@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const july2022Discoveries: Discovery[] = [
   {
     slug: "qikiqtania-wakei",
+    datePublished: "2026-07-17",
     title: "Qikiqtania Wakei Returned to Open Water",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Fossil discoveries",

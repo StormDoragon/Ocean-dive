@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch032024Discoveries: Discovery[] = [
   {
     slug: "gliese-12-b-temperate-earth-sized",
+    datePublished: "2026-07-17",
     title: "Gliese 12 b, a Nearby Temperate Earth-Sized Planet",
     categorySlug: "space",
     subtopic: "Exoplanets",
@@ -66,6 +67,7 @@ export const batch032024Discoveries: Discovery[] = [
   },
   {
     slug: "sulawesi-narrative-cave-art-51200-years",
+    datePublished: "2026-07-17",
     title: "The 51,200-Year-Old Sulawesi Narrative Cave Art",
     categorySlug: "archaeology",
     subtopic: "Artifacts",
@@ -128,6 +130,7 @@ export const batch032024Discoveries: Discovery[] = [
   },
   {
     slug: "mammoth-3d-chromosome-architecture",
+    datePublished: "2026-07-17",
     title: "Three-Dimensional Chromosomes Preserved in Mammoth Skin",
     categorySlug: "biology",
     subtopic: "Genetics",
@@ -191,6 +194,7 @@ export const batch032024Discoveries: Discovery[] = [
   },
   {
     slug: "dark-oxygen-abyssal-seafloor",
+    datePublished: "2026-07-17",
     title: "Evidence for 'Dark Oxygen' at the Abyssal Seafloor",
     categorySlug: "ocean",
     subtopic: "Ocean mysteries",

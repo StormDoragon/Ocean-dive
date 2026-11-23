@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const october2024Discoveries: Discovery[] = [
   {
     slug: "valeriana-maya-city-lidar",
+    datePublished: "2026-07-17",
     title: "Valeriana, a Maya City Revealed in Old LiDAR Data",
     categorySlug: "archaeology",
     subtopic: "Lost cities",

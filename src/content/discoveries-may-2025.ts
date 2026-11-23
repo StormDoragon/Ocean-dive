@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const may2025Discoveries: Discovery[] = [
   {
     slug: "mosura-fentoni",
+    datePublished: "2026-07-17",
     title: "Mosura Fentoni, a Three-Eyed Cambrian Predator",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Fossil discoveries",

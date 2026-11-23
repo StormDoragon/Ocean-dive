@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const august2023Discoveries: Discovery[] = [
   {
     slug: "perucetus-colossus",
+    datePublished: "2026-07-17",
     title: "Perucetus Colossus, an Exceptionally Heavy Early Whale",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Ancient mammals",
@@ -46,6 +47,7 @@ export const august2023Discoveries: Discovery[] = [
   },
   {
     slug: "alaska-golden-orb-discovery",
+    datePublished: "2026-07-17",
     title: "The Gulf of Alaska's Mysterious Golden Orb",
     categorySlug: "ocean",
     subtopic: "Ocean mysteries",

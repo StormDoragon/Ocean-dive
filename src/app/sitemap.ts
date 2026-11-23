@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { getAll, getAvailableMonths, getByCategory, getByMonth } from "@/lib/discoveries";
+import type { Discovery } from "@/content/types";
 import { categories } from "@/content/categories";
-import { getAnnualDiscoveries, getLocations, getOrganizations, getSubtopics, getTags, getYears, slugify } from "@/lib/hubs";
+import { getAnnualDiscoveries, getLocations, getOrganizations, getSubtopics, getTags, getYears, isIndexableEntityHub, slugify } from "@/lib/hubs";
 import { getAllBlogPosts, blogLastModified } from "@/content/blog";
 import { canonicalUrl, discoveryLastModified, monthSlug } from "@/lib/seo";
 
@@ -30,10 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const categoryRoutes: MetadataRoute.Sitemap = categories.map((c) => ({
     url: canonicalUrl(`/categories/${c.slug}`),
-    lastModified: getByCategory(c.slug).reduce(
-      (latest, d) => (discoveryLastModified(d) > latest ? discoveryLastModified(d) : latest),
-      "1970-01-01",
-    ),
+    lastModified: latestDate(getByCategory(c.slug)),
     changeFrequency: "weekly",
     priority: 0.6,
   }));
@@ -55,10 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const monthRoutes: MetadataRoute.Sitemap = getAvailableMonths().map(({ year, month }) => {
     const discoveries = getByMonth(year, month);
-    const lastModified = discoveries.reduce(
-      (latest, d) => (discoveryLastModified(d) > latest ? discoveryLastModified(d) : latest),
-      "1970-01-01",
-    );
+    const lastModified = latestDate(discoveries);
     return {
       url: canonicalUrl(`/discoveries/${year}/${monthSlug(month)}`),
       lastModified,
@@ -110,7 +105,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const organizationRoutes: MetadataRoute.Sitemap = [
     { url: canonicalUrl("/organizations"), changeFrequency: "monthly" as const, priority: 0.5 },
-    ...getOrganizations().map((organization) => ({
+    ...getOrganizations().filter(isIndexableEntityHub).map((organization) => ({
       url: canonicalUrl(`/organizations/${organization.slug}`),
       lastModified: latestDate(organization.discoveries),
       changeFrequency: "monthly" as const,
@@ -120,7 +115,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const locationRoutes: MetadataRoute.Sitemap = [
     { url: canonicalUrl("/locations"), changeFrequency: "monthly" as const, priority: 0.5 },
-    ...getLocations().map((location) => ({
+    ...getLocations().filter(isIndexableEntityHub).map((location) => ({
       url: canonicalUrl(`/locations/${location.slug}`),
       lastModified: latestDate(location.discoveries),
       changeFrequency: "monthly" as const,
@@ -130,7 +125,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const tagRoutes: MetadataRoute.Sitemap = [
     { url: canonicalUrl("/tags"), changeFrequency: "monthly" as const, priority: 0.5 },
-    ...getTags().map((tag) => ({
+    ...getTags().filter(isIndexableEntityHub).map((tag) => ({
       url: canonicalUrl(`/tags/${tag.slug}`),
       lastModified: latestDate(tag.discoveries),
       changeFrequency: "monthly" as const,
@@ -152,12 +147,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 }
 
-function latestDate(discoveries: Array<{ dateDiscovered: string; dateUpdated?: string }>): string {
-  return discoveries.reduce(
-    (latest, discovery) => {
-      const date = discovery.dateUpdated ?? discovery.dateDiscovered;
-      return date > latest ? date : latest;
-    },
-    "1970-01-01",
-  );
+function latestDate(discoveries: Discovery[]): string | undefined {
+  let latest: string | undefined;
+  for (const discovery of discoveries) {
+    const date = discoveryLastModified(discovery);
+    if (date && (!latest || date > latest)) latest = date;
+  }
+  return latest;
 }

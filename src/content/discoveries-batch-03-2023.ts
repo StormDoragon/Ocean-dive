@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch032023Discoveries: Discovery[] = [
   {
     slug: "drosophila-larval-brain-connectome",
+    datePublished: "2026-07-17",
     title: "The First Complete Connectome of an Insect Brain",
     categorySlug: "biology",
     subtopic: "Neuroscience",
@@ -66,6 +67,7 @@ export const batch032023Discoveries: Discovery[] = [
   },
   {
     slug: "deepest-fish-izu-ogasawara",
+    datePublished: "2026-07-17",
     title: "The Deepest Fish Ever Filmed",
     categorySlug: "ocean",
     subtopic: "Deep-sea expeditions",
@@ -122,6 +124,7 @@ export const batch032023Discoveries: Discovery[] = [
   },
   {
     slug: "crocodile-facultative-parthenogenesis",
+    datePublished: "2026-07-17",
     title: "Crocodile Facultative Parthenogenesis Confirmed",
     categorySlug: "biology",
     subtopic: "Genetics",
@@ -185,6 +188,7 @@ export const batch032023Discoveries: Discovery[] = [
   },
   {
     slug: "antihydrogen-gravity-alpha-g",
+    datePublished: "2026-07-17",
     title: "Antihydrogen Falls Downward Under Gravity",
     categorySlug: "physics",
     subtopic: "Particle discoveries",

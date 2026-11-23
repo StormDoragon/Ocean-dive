@@ -24,6 +24,8 @@
  *   ScientificName   rich_text     (optional)
  *   Classification   rich_text     (optional)
  *   Conservation     rich_text     (optional)
+ *   Published        date          (optional first atlas publication)
+ *   Search Title     rich_text     (optional search headline)
  *   Summary          rich_text
  *   StoryWhy         rich_text
  *   StoryHow         rich_text
@@ -97,10 +99,12 @@ function toDiscovery(page) {
   return {
     slug,
     title: title(p.Title),
+    searchTitle: rich(p["Search Title"]) || undefined,
     categorySlug,
     subtopic: rich(p.Subtopic),
     year: num(p.Year) ?? new Date(dateDiscovered || Date.now()).getUTCFullYear(),
     dateDiscovered,
+    datePublished: (date(p.Published) || "").slice(0, 10) || undefined,
     location: {
       name: rich(p.LocationName),
       lat: num(p.Lat) ?? 0,

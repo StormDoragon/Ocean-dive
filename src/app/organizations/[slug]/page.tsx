@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { EntityHub } from "@/components/EntityHub";
-import { getOrganizations } from "@/lib/hubs";
+import { getOrganizations, isIndexableEntityHub } from "@/lib/hubs";
 import { breadcrumbJsonLd, canonicalUrl, itemListJsonLd, serializeJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${organization.name}: Discoveries and Research`,
     description: `Explore scientific discoveries associated with ${organization.name}, including locations, dates, fields, and source-backed context.`,
     alternates: { canonical },
+    robots: { index: isIndexableEntityHub(organization), follow: true },
     openGraph: { type: "website", url: canonical },
   };
 }

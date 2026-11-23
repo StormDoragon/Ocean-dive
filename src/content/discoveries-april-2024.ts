@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const april2024Discoveries: Discovery[] = [
   {
     slug: "vasuki-indicus-giant-snake",
+    datePublished: "2026-07-17",
     title: "Vasuki Indicus, a Giant Eocene Snake",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Fossil discoveries",

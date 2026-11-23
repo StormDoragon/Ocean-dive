@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch042023Discoveries: Discovery[] = [
   {
     slug: "methyl-cation-protoplanetary-disk",
+    datePublished: "2026-07-18",
     title: "JWST Detects the Methyl Cation in a Protoplanetary Disk",
     categorySlug: "space",
     subtopic: "Space missions",
@@ -67,6 +68,7 @@ export const batch042023Discoveries: Discovery[] = [
   },
   {
     slug: "nyayanga-oldowan-hippo-butchery",
+    datePublished: "2026-07-18",
     title: "Oldowan Tools at Nyayanga Butchered Hippos",
     categorySlug: "archaeology",
     subtopic: "Artifacts",
@@ -129,6 +131,7 @@ export const batch042023Discoveries: Discovery[] = [
   },
   {
     slug: "anteromedial-thalamus-memory-consolidation",
+    datePublished: "2026-07-18",
     title: "The Anteromedial Thalamus Gates Long-Term Memory in Mice",
     categorySlug: "biology",
     subtopic: "Neuroscience",
@@ -184,6 +187,7 @@ export const batch042023Discoveries: Discovery[] = [
   },
   {
     slug: "human-lung-bud-microarrays",
+    datePublished: "2026-07-18",
     title: "Human Lung-Bud Microarrays Expose a BMP-Linked Infection Signal",
     categorySlug: "technology",
     subtopic: "Biotechnology",

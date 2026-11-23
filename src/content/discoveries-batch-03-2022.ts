@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch032022Discoveries: Discovery[] = [
   {
     slug: "airborne-edna-vertebrate-biodiversity",
+    datePublished: "2026-07-17",
     title: "Airborne eDNA Reveals Terrestrial Vertebrates",
     categorySlug: "biology",
     subtopic: "Genetics",
@@ -66,6 +67,7 @@ export const batch032022Discoveries: Discovery[] = [
   },
   {
     slug: "first-pig-heart-human-xenotransplant",
+    datePublished: "2026-07-17",
     title: "The First Gene-Edited Pig Heart Transplant in a Living Human",
     categorySlug: "technology",
     subtopic: "Biotechnology",
@@ -128,6 +130,7 @@ export const batch032022Discoveries: Discovery[] = [
   },
   {
     slug: "vfts-243-dormant-black-hole",
+    datePublished: "2026-07-17",
     title: "VFTS 243, an Extragalactic Dormant Black Hole",
     categorySlug: "space",
     subtopic: "Black holes",
@@ -190,6 +193,7 @@ export const batch032022Discoveries: Discovery[] = [
   },
   {
     slug: "natovenator-polydontus-streamlined-dinosaur",
+    datePublished: "2026-07-17",
     title: "Natovenator, a Streamlined Swimming Dinosaur",
     categorySlug: "dinosaurs-fossils",
     subtopic: "New dinosaur species",

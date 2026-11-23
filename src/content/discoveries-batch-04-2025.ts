@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch042025Discoveries: Discovery[] = [
   {
     slug: "hadal-trench-chemosynthetic-communities",
+    datePublished: "2026-07-18",
     title: "Chemosynthetic Communities Found Across Hadal Trenches",
     categorySlug: "ocean",
     subtopic: "Deep-sea expeditions",
@@ -59,6 +60,7 @@ export const batch042025Discoveries: Discovery[] = [
   },
   {
     slug: "ledi-geraru-early-homo-australopithecus",
+    datePublished: "2026-07-18",
     title: "Early Homo and an Unnamed Australopithecus at Ledi-Geraru",
     categorySlug: "archaeology",
     subtopic: "Human origins",
@@ -121,6 +123,7 @@ export const batch042025Discoveries: Discovery[] = [
   },
   {
     slug: "titan-tidal-dissipation-no-ocean",
+    datePublished: "2026-07-18",
     title: "Cassini Gravity Data Reveal Strong Tidal Dissipation in Titan",
     categorySlug: "space",
     subtopic: "Space missions",
@@ -184,6 +187,7 @@ export const batch042025Discoveries: Discovery[] = [
   },
   {
     slug: "arctic-new-coastlines-glacier-retreat",
+    datePublished: "2026-07-18",
     title: "Glacier Retreat Exposed Thousands of Kilometres of New Arctic Coastline",
     categorySlug: "earth-science",
     subtopic: "Climate records",

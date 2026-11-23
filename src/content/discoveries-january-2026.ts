@@ -3,6 +3,7 @@ import type { Discovery } from "./types";
 export const january2026Discoveries: Discovery[] = [
   {
     slug: "comet-c-2026-a1-maps",
+    datePublished: "2026-07-17",
     title: "C/2026 A1 (MAPS), an Early-Spotted Sungrazer",
     categorySlug: "space",
     subtopic: "Comets",
@@ -47,6 +48,7 @@ export const january2026Discoveries: Discovery[] = [
   },
   {
     slug: "prototaxites-extinct-eukaryotic-lineage",
+    datePublished: "2026-07-17",
     title: "Prototaxites May Represent an Extinct Eukaryotic Lineage",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Fossil reinterpretation",
@@ -86,6 +88,7 @@ export const january2026Discoveries: Discovery[] = [
   },
   {
     slug: "woolly-rhino-genome-wolf-stomach",
+    datePublished: "2026-07-17",
     title: "Woolly Rhino Genome Recovered from a Wolf's Stomach",
     categorySlug: "biology",
     subtopic: "Genetics",
@@ -135,6 +138,7 @@ export const january2026Discoveries: Discovery[] = [
   },
   {
     slug: "homo-habilis-knm-er-64061",
+    datePublished: "2026-07-17",
     title: "The Most Complete Homo Habilis Skeleton",
     categorySlug: "biology",
     subtopic: "Human evolution",

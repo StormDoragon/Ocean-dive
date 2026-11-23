@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch042022Discoveries: Discovery[] = [
   {
     slug: "wasp-39b-carbon-dioxide",
+    datePublished: "2026-07-18",
     title: "Webb Detects Carbon Dioxide in WASP-39 b’s Atmosphere",
     categorySlug: "space",
     subtopic: "Exoplanets",
@@ -59,6 +60,7 @@ export const batch042022Discoveries: Discovery[] = [
   },
   {
     slug: "global-ocean-rna-viruses",
+    datePublished: "2026-07-18",
     title: "A Global Ocean Census of RNA Viruses",
     categorySlug: "ocean",
     subtopic: "Ocean mysteries",
@@ -121,6 +123,7 @@ export const batch042022Discoveries: Discovery[] = [
   },
   {
     slug: "mandrin-modern-human-incursion",
+    datePublished: "2026-07-18",
     title: "Modern Humans at Grotte Mandrin 54,000 Years Ago",
     categorySlug: "archaeology",
     subtopic: "Human origins",
@@ -176,6 +179,7 @@ export const batch042022Discoveries: Discovery[] = [
   },
   {
     slug: "strange-pentaquark-candidate",
+    datePublished: "2026-07-18",
     title: "LHCb’s Strange Pentaquark Candidate",
     categorySlug: "physics",
     subtopic: "Particle discoveries",

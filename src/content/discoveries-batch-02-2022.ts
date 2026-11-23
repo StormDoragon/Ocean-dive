@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch022022Discoveries: Discovery[] = [
   {
     "slug": "telomere-to-telomere-complete-human-genome",
+    "datePublished": "2026-07-17",
     "title": "The First Gapless Human Genome Sequence",
     "categorySlug": "biology",
     "subtopic": "Genetics",
@@ -53,6 +54,7 @@ export const batch022022Discoveries: Discovery[] = [
   },
   {
     "slug": "thiomargarita-magnifica-giant-bacterium",
+    "datePublished": "2026-07-17",
     "title": "Thiomargarita Magnifica, the Giant Bacterium",
     "categorySlug": "biology",
     "subtopic": "Microbiology",
@@ -102,6 +104,7 @@ export const batch022022Discoveries: Discovery[] = [
   },
   {
     "slug": "meraxes-gigas",
+    "datePublished": "2026-07-17",
     "title": "Meraxes Gigas, a Giant Short-Armed Predator",
     "categorySlug": "dinosaurs-fossils",
     "subtopic": "New dinosaur species",
@@ -152,6 +155,7 @@ export const batch022022Discoveries: Discovery[] = [
   },
   {
     "slug": "dart-dimorphos-orbit-change",
+    "datePublished": "2026-07-17",
     "title": "DART Successfully Changes an Asteroid's Orbit",
     "categorySlug": "space",
     "subtopic": "Planetary defense",

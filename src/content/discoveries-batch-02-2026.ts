@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch022026Discoveries: Discovery[] = [
   {
     "slug": "alphagenome-regulatory-dna-model",
+    "datePublished": "2026-07-17",
     "title": "AlphaGenome Predicts How DNA Variants Alter Gene Regulation",
     "categorySlug": "technology",
     "subtopic": "AI",
@@ -53,6 +54,7 @@ export const batch022026Discoveries: Discovery[] = [
   },
   {
     "slug": "little-red-dots-gas-cocoon",
+    "datePublished": "2026-07-17",
     "title": "Dense Gas Cocoons Explain Many Little Red Dots",
     "categorySlug": "space",
     "subtopic": "Black holes",
@@ -102,6 +104,7 @@ export const batch022026Discoveries: Discovery[] = [
   },
   {
     "slug": "four-eyed-cambrian-vertebrates",
+    "datePublished": "2026-07-17",
     "title": "Cambrian Vertebrates Had Four Camera-Type Eyes",
     "categorySlug": "dinosaurs-fossils",
     "subtopic": "Fossil reinterpretation",
@@ -152,6 +155,7 @@ export const batch022026Discoveries: Discovery[] = [
   },
   {
     "slug": "interstellar-organosulfur-molecule",
+    "datePublished": "2026-07-17",
     "title": "The Largest Interstellar Sulfur-Bearing Molecule Yet",
     "categorySlug": "space",
     "subtopic": "Nebulae",

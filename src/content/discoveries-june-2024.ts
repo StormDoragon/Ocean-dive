@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const june2024Discoveries: Discovery[] = [
   {
     slug: "earth-inner-core-backtracking",
+    datePublished: "2026-07-17",
     title: "Earth's Inner Core Began Backtracking",
     categorySlug: "earth-science",
     subtopic: "Earthquakes",

@@ -20,6 +20,7 @@ import {
   absoluteImageUrl,
   discoveryArticleJsonLd,
   discoveryCanonicalUrl,
+  discoveryLastModified,
   monthLabel,
   serializeJsonLd,
 } from "@/lib/seo";
@@ -38,14 +39,16 @@ export async function generateMetadata({
   if (!discovery) return { title: "Discovery not found" };
 
   const canonical = discoveryCanonicalUrl(discovery);
-  const seoTitle = `${discovery.title}: Discovery, Location and Scientific Significance`;
-  const seoDescription = `${discovery.summary} Learn where it was found, how scientists identified it, and why the discovery matters.`;
+  const seoTitle = discovery.searchTitle ?? discovery.title;
+  const seoDescription = discovery.summary;
   return {
     title: seoTitle,
     description: seoDescription,
     alternates: { canonical },
     openGraph: {
       type: "article",
+      publishedTime: discovery.datePublished,
+      modifiedTime: discoveryLastModified(discovery),
       url: canonical,
       title: seoTitle,
       description: seoDescription,
@@ -280,11 +283,13 @@ function EditorialSources({ discovery }: { discovery: ReturnType<typeof getBySlu
     <section className="card p-4" aria-label="Editorial and source information">
       <h2 className="text-sm font-semibold text-white">Editorial record</h2>
       <dl className="mt-3 space-y-2 text-xs text-slate-400">
-        <div className="flex justify-between gap-4">
-          <dt>Published</dt>
-          <dd className="text-right text-slate-300">{discovery.dateDiscovered}</dd>
-        </div>
-        {discovery.dateUpdated ? (
+        {discovery.datePublished ? (
+          <div className="flex justify-between gap-4">
+            <dt>Published</dt>
+            <dd className="text-right text-slate-300"><time dateTime={discovery.datePublished}>{discovery.datePublished}</time></dd>
+          </div>
+        ) : null}
+        {discovery.dateUpdated && (!discovery.datePublished || discovery.dateUpdated > discovery.datePublished) ? (
           <div className="flex justify-between gap-4">
             <dt>Updated</dt>
             <dd className="text-right text-slate-300">{discovery.dateUpdated}</dd>

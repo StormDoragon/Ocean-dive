@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const february2023Discoveries: Discovery[] = [
   {
     slug: "quaoar-ring-outside-roche-limit",
+    datePublished: "2026-07-17",
     title: "Quaoar's Ring Beyond the Roche Limit",
     categorySlug: "space",
     subtopic: "Asteroids",

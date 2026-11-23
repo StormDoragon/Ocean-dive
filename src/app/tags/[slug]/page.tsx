@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { EntityHub } from "@/components/EntityHub";
-import { getTags } from "@/lib/hubs";
+import { getTags, isIndexableEntityHub } from "@/lib/hubs";
 import { breadcrumbJsonLd, canonicalUrl, itemListJsonLd, serializeJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${tag.name}: Scientific Discoveries and Research`,
     description: `Browse source-backed scientific discoveries tagged ${tag.name.toLowerCase()}, with related topics, locations, and research context.`,
     alternates: { canonical },
+    robots: { index: isIndexableEntityHub(tag), follow: true },
     openGraph: { type: "website", url: canonical },
   };
 }

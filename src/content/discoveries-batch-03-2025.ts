@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch032025Discoveries: Discovery[] = [
   {
     slug: "olo-novel-color-retinal-stimulation",
+    datePublished: "2026-07-17",
     title: "Olo, a Color Beyond the Natural Human Gamut",
     categorySlug: "technology",
     subtopic: "Imaging",
@@ -66,6 +67,7 @@ export const batch032025Discoveries: Discovery[] = [
   },
   {
     slug: "snowy-plains-earliest-amniote-tracks",
+    datePublished: "2026-07-17",
     title: "The Earliest Known Amniote Trackways",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Evolution timeline",
@@ -129,6 +131,7 @@ export const batch032025Discoveries: Discovery[] = [
   },
   {
     slug: "personalized-crispr-cps1-infant",
+    datePublished: "2026-07-17",
     title: "The First Personalized In Vivo CRISPR Treatment",
     categorySlug: "technology",
     subtopic: "Biotechnology",
@@ -191,6 +194,7 @@ export const batch032025Discoveries: Discovery[] = [
   },
   {
     slug: "toi-6894-b-giant-planet-small-star",
+    datePublished: "2026-07-17",
     title: "TOI-6894 b, a Giant Planet Around a Tiny Star",
     categorySlug: "space",
     subtopic: "Exoplanets",

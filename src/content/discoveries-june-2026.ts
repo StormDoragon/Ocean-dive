@@ -8,6 +8,7 @@ import type { Discovery } from "./types";
 export const june2026Discoveries: Discovery[] = [
   {
     slug: "dudgeons-walking-shark",
+    datePublished: "2026-07-17",
     title: "Dudgeon's Walking Shark",
     categorySlug: "ocean",
     subtopic: "New species",
@@ -56,6 +57,7 @@ export const june2026Discoveries: Discovery[] = [
   },
   {
     slug: "brazil-midwater-31-species",
+    datePublished: "2026-07-17",
     title: "31 New Species Found in Brazil's Ocean Midwater",
     categorySlug: "ocean",
     subtopic: "New species",
@@ -104,6 +106,7 @@ export const june2026Discoveries: Discovery[] = [
   },
   {
     slug: "praearcturus-giant-scorpion-reidentified",
+    datePublished: "2026-07-17",
     title: "The Metre-Long Scorpion Praearcturus",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Fossil reinterpretation",
@@ -153,6 +156,7 @@ export const june2026Discoveries: Discovery[] = [
   },
   {
     slug: "giants-causeway-volcanic-timeline",
+    datePublished: "2026-07-17",
     title: "A New Timeline for the Giant's Causeway Eruptions",
     categorySlug: "earth-science",
     subtopic: "Volcanoes",

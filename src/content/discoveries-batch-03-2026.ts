@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch032026Discoveries: Discovery[] = [
   {
     slug: "orgueil-meteorite-abiotic-sugars",
+    datePublished: "2026-07-17",
     title: "Abiotic Sugars in the Orgueil Meteorite",
     categorySlug: "space",
     subtopic: "Asteroids",
@@ -58,6 +59,7 @@ export const batch032026Discoveries: Discovery[] = [
   },
   {
     slug: "yunxian-oldest-in-situ-homo-erectus-crania",
+    datePublished: "2026-07-17",
     title: "Yunxian's 1.77-Million-Year-Old Homo Erectus Crania",
     categorySlug: "archaeology",
     subtopic: "Human origins",
@@ -121,6 +123,7 @@ export const batch032026Discoveries: Discovery[] = [
   },
   {
     slug: "tic-120362137-compact-quadruple-star",
+    datePublished: "2026-07-17",
     title: "The Most Compact Known 3+1 Quadruple Star System",
     categorySlug: "space",
     subtopic: "Space missions",
@@ -175,6 +178,7 @@ export const batch032026Discoveries: Discovery[] = [
   },
   {
     slug: "eurasian-ice-sheet-2-4-million-years",
+    datePublished: "2026-07-17",
     title: "A Continental-Scale Eurasian Ice Sheet 2.4 Million Years Ago",
     categorySlug: "earth-science",
     subtopic: "Climate records",

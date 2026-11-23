@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const july2026Discoveries: Discovery[] = [
   {
     slug: "demogorgon-cavefish",
+    datePublished: "2026-07-17",
     title: "Demogorgonichthys Arcanus, the Demon Cavefish",
     categorySlug: "biology",
     subtopic: "New species",

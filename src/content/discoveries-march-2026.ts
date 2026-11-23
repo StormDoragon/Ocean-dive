@@ -3,6 +3,7 @@ import type { Discovery } from "./types";
 export const march2026Discoveries: Discovery[] = [
   {
     slug: "gj-887-d-habitable-zone-super-earth",
+    datePublished: "2026-07-17",
     title: "GJ 887 d, a Nearby Habitable-Zone Super-Earth",
     categorySlug: "space",
     subtopic: "Exoplanets",
@@ -42,6 +43,7 @@ export const march2026Discoveries: Discovery[] = [
   },
   {
     slug: "xi-cc-plus-doubly-charmed-baryon",
+    datePublished: "2026-07-17",
     title: "The Doubly Charmed Baryon Ξcc+",
     categorySlug: "physics",
     subtopic: "Particle discoveries",

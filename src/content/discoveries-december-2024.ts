@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const december2024Discoveries: Discovery[] = [
   {
     slug: "willow-below-threshold-quantum-error-correction",
+    datePublished: "2026-07-17",
     title: "Willow Demonstrates Below-Threshold Quantum Error Correction",
     categorySlug: "technology",
     subtopic: "Quantum computing",

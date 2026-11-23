@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const january2025Discoveries: Discovery[] = [
   {
     slug: "bennu-life-building-blocks",
+    datePublished: "2026-07-17",
     title: "Bennu Samples Contain Life's Chemical Building Blocks",
     categorySlug: "space",
     subtopic: "Space missions",
@@ -56,6 +57,7 @@ export const january2025Discoveries: Discovery[] = [
   },
   {
     slug: "beyond-epica-oldest-ice-core",
+    datePublished: "2026-07-17",
     title: "Beyond EPICA Reaches a 1.2-Million-Year Ice Record",
     categorySlug: "earth-science",
     subtopic: "Ice cores",

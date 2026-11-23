@@ -3,6 +3,7 @@ import type { Discovery } from "./types";
 export const april2026Discoveries: Discovery[] = [
   {
     slug: "proba-3-speedy-slow-solar-wind",
+    datePublished: "2026-07-17",
     title: "Proba-3 Reveals a Faster Slow Solar Wind",
     categorySlug: "space",
     subtopic: "Solar physics",

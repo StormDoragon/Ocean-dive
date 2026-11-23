@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const june2023Discoveries: Discovery[] = [
   {
     slug: "enceladus-ocean-phosphates",
+    datePublished: "2026-07-17",
     title: "Phosphates Detected in Enceladus's Ocean",
     categorySlug: "space",
     subtopic: "Space missions",

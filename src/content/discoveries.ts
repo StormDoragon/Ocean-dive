@@ -15,6 +15,7 @@ const discoveriesData: RawDiscovery[] = [
   // ───────────────────────────── Ocean ─────────────────────────────
   {
     slug: "casper-ghost-octopus",
+    datePublished: "2026-07-17",
     title: "\"Casper\" the Ghost Octopus",
     categorySlug: "ocean",
     subtopic: "New species",
@@ -54,6 +55,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "lost-city-hydrothermal-field",
+    datePublished: "2026-07-17",
     title: "The Lost City Hydrothermal Field",
     categorySlug: "ocean",
     subtopic: "Hydrothermal vents",
@@ -93,6 +95,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "scaly-foot-gastropod",
+    datePublished: "2026-07-17",
     title: "The Scaly-foot Snail",
     categorySlug: "ocean",
     subtopic: "New species",
@@ -134,6 +137,7 @@ const discoveriesData: RawDiscovery[] = [
   // ───────────────────────────── Space ─────────────────────────────
   {
     slug: "trappist-1-system",
+    datePublished: "2026-07-17",
     title: "The TRAPPIST-1 Planetary System",
     categorySlug: "space",
     subtopic: "Exoplanets",
@@ -172,6 +176,8 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "m87-black-hole-image",
+    datePublished: "2026-07-17",
+    searchTitle: "How Astronomers Captured the First Image of M87’s Black Hole",
     title: "First Image of a Black Hole (M87*)",
     categorySlug: "space",
     subtopic: "Black holes",
@@ -210,6 +216,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "sagittarius-a-image",
+    datePublished: "2026-07-17",
     title: "Image of Our Galaxy's Black Hole (Sgr A*)",
     categorySlug: "space",
     subtopic: "Black holes",
@@ -250,6 +257,7 @@ const discoveriesData: RawDiscovery[] = [
   // ──────────────────────── Dinosaurs & Fossils ────────────────────
   {
     slug: "spinosaurus-swimming-tail",
+    datePublished: "2026-07-17",
     title: "Spinosaurus: the Swimming Dinosaur",
     categorySlug: "dinosaurs-fossils",
     subtopic: "New dinosaur species",
@@ -288,6 +296,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "dreadnoughtus-titanosaur",
+    datePublished: "2026-07-17",
     title: "Dreadnoughtus, a Colossal Titanosaur",
     categorySlug: "dinosaurs-fossils",
     subtopic: "New dinosaur species",
@@ -328,6 +337,7 @@ const discoveriesData: RawDiscovery[] = [
   // ──────────────────────────── Biology ────────────────────────────
   {
     slug: "eumillipes-persephone",
+    datePublished: "2026-07-17",
     title: "The First True Millipede (1,306 Legs)",
     categorySlug: "biology",
     subtopic: "New species",
@@ -366,6 +376,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "homo-naledi",
+    datePublished: "2026-07-17",
     title: "Homo naledi, a New Human Relative",
     categorySlug: "biology",
     subtopic: "Human evolution",
@@ -406,6 +417,7 @@ const discoveriesData: RawDiscovery[] = [
   // ────────────────────────── Archaeology ──────────────────────────
   {
     slug: "gobekli-tepe",
+    datePublished: "2026-07-17",
     title: "Göbekli Tepe, the First Temple",
     categorySlug: "archaeology",
     subtopic: "Ancient civilizations",
@@ -444,6 +456,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "sanxingdui-sacrificial-pits",
+    datePublished: "2026-07-17",
     title: "New Sanxingdui Sacrificial Pits",
     categorySlug: "archaeology",
     subtopic: "Artifacts",
@@ -484,6 +497,7 @@ const discoveriesData: RawDiscovery[] = [
   // ───────────────────────── Earth Science ─────────────────────────
   {
     slug: "lake-vostok-reached",
+    datePublished: "2026-07-17",
     title: "Reaching Subglacial Lake Vostok",
     categorySlug: "earth-science",
     subtopic: "Ice cores",
@@ -522,6 +536,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "hunga-tonga-eruption",
+    datePublished: "2026-07-17",
     title: "The Hunga Tonga Eruption",
     categorySlug: "earth-science",
     subtopic: "Volcanoes",
@@ -562,6 +577,8 @@ const discoveriesData: RawDiscovery[] = [
   // ──────────────────────────── Physics ────────────────────────────
   {
     slug: "higgs-boson",
+    datePublished: "2026-07-17",
+    searchTitle: "How CERN Discovered the Higgs Boson in 2012",
     title: "Discovery of the Higgs Boson",
     categorySlug: "physics",
     subtopic: "Particle discoveries",
@@ -600,6 +617,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "gravitational-waves-gw150914",
+    datePublished: "2026-07-17",
     title: "First Detection of Gravitational Waves",
     categorySlug: "physics",
     subtopic: "Particle discoveries",
@@ -638,6 +656,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "nif-fusion-ignition",
+    datePublished: "2026-07-17",
     title: "Fusion Ignition at the NIF",
     categorySlug: "physics",
     subtopic: "Fusion energy",
@@ -678,6 +697,7 @@ const discoveriesData: RawDiscovery[] = [
   // ────────────────────────── Technology ───────────────────────────
   {
     slug: "alphafold-protein-structures",
+    datePublished: "2026-07-17",
     title: "AlphaFold Solves Protein Folding",
     categorySlug: "technology",
     subtopic: "AI",
@@ -716,6 +736,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "sycamore-quantum-supremacy",
+    datePublished: "2026-07-17",
     title: "Quantum 'Supremacy' with Sycamore",
     categorySlug: "technology",
     subtopic: "Quantum computing",
@@ -756,6 +777,7 @@ const discoveriesData: RawDiscovery[] = [
   // ───────────────── Ocean (depth-explorer coverage) ────────────────
   {
     slug: "cape-york-detached-reef",
+    datePublished: "2026-07-17",
     title: "A 500-Metre Detached Coral Reef",
     categorySlug: "ocean",
     subtopic: "Coral reefs",
@@ -796,6 +818,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "giant-squid-filmed",
+    datePublished: "2026-07-17",
     title: "Giant Squid Filmed in the Deep",
     categorySlug: "ocean",
     subtopic: "Ocean mysteries",
@@ -836,6 +859,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "macropinna-barreleye",
+    datePublished: "2026-07-17",
     title: "The Barreleye Fish with a Transparent Head",
     categorySlug: "ocean",
     subtopic: "Ocean mysteries",
@@ -875,6 +899,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "kiwa-yeti-crab",
+    datePublished: "2026-07-17",
     title: "The Yeti Crab",
     categorySlug: "ocean",
     subtopic: "New species",
@@ -914,6 +939,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "osedax-bone-worms",
+    datePublished: "2026-07-17",
     title: "Bone-Eating 'Zombie' Worms",
     categorySlug: "ocean",
     subtopic: "New species",
@@ -953,6 +979,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "dumbo-octopus-deep",
+    datePublished: "2026-07-17",
     title: "The Deepest Octopus Ever Seen",
     categorySlug: "ocean",
     subtopic: "Ocean mysteries",
@@ -992,6 +1019,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "mariana-snailfish",
+    datePublished: "2026-07-17",
     title: "The Mariana Snailfish, Deepest Fish",
     categorySlug: "ocean",
     subtopic: "New species",
@@ -1032,6 +1060,7 @@ const discoveriesData: RawDiscovery[] = [
   // ──────────────────────── 2025 Discoveries ────────────────────────
   {
     slug: "wasp-127b-supersonic-winds",
+    datePublished: "2026-07-17",
     title: "Supersonic Winds on WASP-127b",
     categorySlug: "space",
     subtopic: "Exoplanets",
@@ -1086,6 +1115,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "wasp-127b-3d-atmosphere",
+    datePublished: "2026-07-17",
     title: "A 3D Weather Map of Exoplanet Tylos",
     categorySlug: "space",
     subtopic: "Exoplanets",
@@ -1140,6 +1170,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "saturn-128-new-moons",
+    datePublished: "2026-07-17",
     title: "Saturn's 128 New Moons",
     categorySlug: "space",
     subtopic: "Space missions",
@@ -1194,6 +1225,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "eos-molecular-cloud",
+    datePublished: "2026-07-17",
     title: "Eos: A Hidden Molecular Cloud Near the Sun",
     categorySlug: "space",
     subtopic: "Nebulae",
@@ -1256,6 +1288,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "lead-to-gold-alice",
+    datePublished: "2026-07-17",
     title: "Lead Turned into Gold at the LHC",
     categorySlug: "physics",
     subtopic: "Particle discoveries",
@@ -1310,6 +1343,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "solar-orbiter-sun-south-pole",
+    datePublished: "2026-07-17",
     title: "The First Views of the Sun's South Pole",
     categorySlug: "space",
     subtopic: "Space missions",
@@ -1364,6 +1398,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "hops-315-planet-formation",
+    datePublished: "2026-07-17",
     title: "Planet Formation Caught at the Start around HOPS-315",
     categorySlug: "space",
     subtopic: "Exoplanets",
@@ -1418,6 +1453,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "uranus-new-moon-2025",
+    datePublished: "2026-07-17",
     title: "A New Moon around Uranus",
     categorySlug: "space",
     subtopic: "Space missions",
@@ -1472,6 +1508,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "repeating-gamma-ray-burst-2025",
+    datePublished: "2026-07-17",
     title: "A Strange Repeating Gamma-Ray Explosion",
     categorySlug: "space",
     subtopic: "Galaxies",
@@ -1526,6 +1563,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "rogue-planet-growth-spurt",
+    datePublished: "2026-07-17",
     title: "A Rogue Planet's Record Growth Spurt",
     categorySlug: "space",
     subtopic: "Exoplanets",
@@ -1580,6 +1618,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "jurassic-midge-gondwana",
+    datePublished: "2026-07-17",
     title: "A Jurassic Midge from Gondwana",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Fossil discoveries",
@@ -1629,6 +1668,7 @@ const discoveriesData: RawDiscovery[] = [
   },
   {
     slug: "flu-virus-live-imaging",
+    datePublished: "2026-07-17",
     title: "Watching Influenza Enter a Living Cell",
     categorySlug: "biology",
     subtopic: "Microbiology",

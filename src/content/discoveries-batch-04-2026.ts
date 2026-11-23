@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch042026Discoveries: Discovery[] = [
   {
     slug: "diamantina-zone-whale-necropolis",
+    datePublished: "2026-07-18",
     title: "A Deep-Sea Whale Necropolis in the Diamantina Zone",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Fossil discoveries",
@@ -59,6 +60,7 @@ export const batch042026Discoveries: Discovery[] = [
   },
   {
     slug: "casablanca-773000-year-hominins",
+    datePublished: "2026-07-18",
     title: "773,000-Year-Old Hominins from Casablanca",
     categorySlug: "archaeology",
     subtopic: "Human origins",
@@ -122,6 +124,7 @@ export const batch042026Discoveries: Discovery[] = [
   },
   {
     slug: "southeast-indian-ridge-rifting-event",
+    datePublished: "2026-07-18",
     title: "Seafloor Spreading Captured at the Southeast Indian Ridge",
     categorySlug: "earth-science",
     subtopic: "Earthquakes",
@@ -185,6 +188,7 @@ export const batch042026Discoveries: Discovery[] = [
   },
   {
     slug: "magnetic-field-boosted-graphene-superconductors",
+    datePublished: "2026-07-18",
     title: "Magnetic Fields Boost Superconductivity in Rhombohedral Graphene",
     categorySlug: "physics",
     subtopic: "Quantum research",

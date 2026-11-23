@@ -4,6 +4,7 @@ import type { Discovery } from "./types";
 export const batch022023Discoveries: Discovery[] = [
   {
     "slug": "human-pangenome-reference",
+    "datePublished": "2026-07-17",
     "title": "A More Diverse Human Pangenome Reference",
     "categorySlug": "biology",
     "subtopic": "Genetics",
@@ -53,6 +54,7 @@ export const batch022023Discoveries: Discovery[] = [
   },
   {
     "slug": "nanograv-gravitational-wave-background",
+    "datePublished": "2026-07-17",
     "title": "NANOGrav Finds Evidence of a Cosmic Gravitational-Wave Background",
     "categorySlug": "space",
     "subtopic": "Black holes",
@@ -102,6 +104,7 @@ export const batch022023Discoveries: Discovery[] = [
   },
   {
     "slug": "kalambo-falls-wooden-structure",
+    "datePublished": "2026-07-17",
     "title": "The 476,000-Year-Old Wooden Structure at Kalambo Falls",
     "categorySlug": "archaeology",
     "subtopic": "Artifacts",
@@ -151,6 +154,7 @@ export const batch022023Discoveries: Discovery[] = [
   },
   {
     "slug": "dinkinesh-selam-contact-binary",
+    "datePublished": "2026-07-17",
     "title": "Lucy Discovers Selam, Dinkinesh's Contact-Binary Moon",
     "categorySlug": "space",
     "subtopic": "Asteroids",

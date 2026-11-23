@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const june2025Discoveries: Discovery[] = [
   {
     slug: "twa-7-b-direct-imaging",
+    datePublished: "2026-07-17",
     title: "JWST Images a Sub-Jovian Planet Candidate at TWA 7",
     categorySlug: "space",
     subtopic: "Exoplanets",

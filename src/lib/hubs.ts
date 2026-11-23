@@ -33,6 +33,11 @@ export function getYears(): number[] {
   return [...new Set(getAll().map((d) => d.year))].sort((a, b) => b - a);
 }
 
+/** Single-entry taxonomy pages remain available from the atlas directories. */
+export function isIndexableEntityHub(hub: { discoveries: Discovery[] }): boolean {
+  return hub.discoveries.length >= 2;
+}
+
 export function getOrganizations() {
   const grouped = new Map<string, Discovery[]>();
   for (const discovery of getAll()) {

@@ -3,6 +3,7 @@ import type { Discovery } from "./types";
 export const atlasAdditions: Discovery[] = [
   {
     "slug": "guangxi-homo-erectus-rainforest-teeth",
+    "datePublished": "2026-11-23",
     "title": "Eight Teeth Place Homo erectus in a Guangxi Rainforest",
     "categorySlug": "archaeology",
     "subtopic": "Human origins",
@@ -71,6 +72,7 @@ export const atlasAdditions: Discovery[] = [
   },
   {
     "slug": "euclid-dr1-strong-gravitational-lens-candidates",
+    "datePublished": "2026-11-23",
     "title": "Euclid Identifies 15,072 Strong Gravitational Lens Candidates",
     "categorySlug": "space",
     "subtopic": "Galaxies",
@@ -138,6 +140,7 @@ export const atlasAdditions: Discovery[] = [
   },
   {
     "slug": "at-2016blu-x-ray-outbursts",
+    "datePublished": "2026-11-23",
     "title": "Chandra Catches AT 2016blu During a Recurring Outburst",
     "categorySlug": "space",
     "subtopic": "Galaxies",
@@ -205,6 +208,7 @@ export const atlasAdditions: Discovery[] = [
   },
   {
     "slug": "james-ross-island-titanosaur-tail-vertebra",
+    "datePublished": "2026-11-23",
     "title": "A Tail Bone Identifies a Titanosaur on James Ross Island",
     "categorySlug": "dinosaurs-fossils",
     "subtopic": "Fossil reinterpretation",

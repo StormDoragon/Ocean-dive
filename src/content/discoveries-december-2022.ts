@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const december2022Discoveries: Discovery[] = [
   {
     slug: "greenland-two-million-year-dna",
+    datePublished: "2026-07-17",
     title: "Greenland's Two-Million-Year-Old Environmental DNA",
     categorySlug: "biology",
     subtopic: "Genetics",
@@ -44,6 +45,7 @@ export const december2022Discoveries: Discovery[] = [
   },
   {
     slug: "national-ignition-facility-fusion-ignition",
+    datePublished: "2026-07-17",
     title: "National Ignition Facility Achieves Fusion Ignition",
     categorySlug: "physics",
     subtopic: "Fusion energy",
