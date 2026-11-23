@@ -70,17 +70,17 @@ export function getLocations() {
 }
 
 export function getTags() {
-  const grouped = new Map<string, Discovery[]>();
+  const grouped = new Map<string, { name: string; slug: string; discoveries: Discovery[] }>();
   for (const discovery of getAll()) {
     for (const tag of discovery.tags) {
-      const entries = grouped.get(tag) ?? [];
-      entries.push(discovery);
-      grouped.set(tag, entries);
+      const slug = slugify(tag);
+      if (!slug) continue;
+      const hub = grouped.get(slug) ?? { name: tag, slug, discoveries: [] };
+      if (!hub.discoveries.includes(discovery)) hub.discoveries.push(discovery);
+      grouped.set(slug, hub);
     }
   }
-  return [...grouped.entries()]
-    .map(([name, discoveries]) => ({ name, slug: slugify(name), discoveries }))
-    .sort((a, b) => a.name.localeCompare(b.name));
+  return [...grouped.values()].sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export function getCategoryContext(categorySlug: CategorySlug) {
