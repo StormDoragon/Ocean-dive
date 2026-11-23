@@ -39,6 +39,8 @@ const STRICT = process.argv.includes("--strict");
  * route-group segment (dynamic routes are covered by the data enumeration). */
 function staticPageRoutes(): Set<string> {
   const routes = new Set<string>(["/"]);
+  // Next.js serves the root sitemap metadata file at /sitemap.xml.
+  if (existsSync(join(APP_DIR, "sitemap.ts"))) routes.add("/sitemap.xml");
   const walk = (dir: string, segments: string[]) => {
     for (const entry of readdirSync(dir, { withFileTypes: true })) {
       if (!entry.isDirectory()) continue;
