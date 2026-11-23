@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">Yana River · Russia</title>
+  <desc id="desc">Locator map for Yana Rhinoceros Horn Site, lower Yana River, Russia, at 70.72° N, 135.43° E. Basemap derived from Natural Earth, public domain.</desc>
+  <rect width="1000" height="520" fill="#0c2031"/>
+  <g fill="#28465b" stroke="#678292" stroke-width="1.2" fill-rule="evenodd" stroke-linejoin="round"><path d="M0.0 520.0L0.0 75.5L1.6 75.3L24.5 52.0L56.2 45.3L59.9 32.0L91.2 27.4L100.7 38.6L127.4 12.4L149.1 13.2L151.0 0.0L224.6 0.0L225.7 10.3L235.0 0.0L273.0 0.0L298.2 23.6L307.4 42.0L304.5 66.6L291.6 80.3L260.3 105.3L251.6 118.2L266.2 124.5L283.7 135.3L294.5 127.0L300.3 154.1L305.7 143.2L324.5 136.6L362.8 143.6L365.3 162.8L414.9 169.1L415.7 137.4L440.7 144.9L459.9 144.5L479.1 166.1L484.5 192.0L477.4 208.2L492.4 237.8L510.7 252.4L522.4 213.6L541.6 230.3L561.6 220.3L584.5 232.0L593.2 221.6L612.8 226.6L604.1 191.1L619.9 174.1L726.6 199.5L737.0 222.4L767.8 250.3L815.7 243.6L839.5 249.5L849.1 264.5L847.8 289.9L862.4 299.5L878.2 292.4L899.1 291.6L921.6 298.2L944.1 294.5L964.9 324.1L979.5 313.6L969.9 292.0L974.9 277.0L1000.0 283.3L1000.0 520.0L899.1 520.0L904.1 501.6L889.9 503.6L884.3 520.0ZM600.3 27.8L631.6 29.9L674.5 55.7L665.3 89.9L621.6 88.6L602.0 99.5L578.2 69.9L584.5 37.0L600.3 27.8ZM711.6 65.7L741.2 77.8L727.8 95.7L708.7 92.0L686.6 73.6L689.5 58.6L711.6 65.7ZM612.4 152.8L623.7 136.1L638.7 132.4L655.3 148.2L657.0 159.1L639.1 159.5L614.5 154.9L612.4 152.8Z"/></g>
+  <path d="M21.6 0v520M199.3 0v520M377.1 0v520M554.9 0v520M732.7 0v520M910.5 0v520M0 280.2h1000" stroke="#89afbe" opacity=".2" fill="none"/>
+  <g font-family="system-ui,sans-serif" font-size="12" letter-spacing="2" text-anchor="middle" fill="#bfd1d7"></g>
+  <g transform="translate(560 254.8)" stroke="#f699b4"><circle r="21" fill="none" stroke-width="2"/><circle r="9" fill="#f699b4" stroke="#102531" stroke-width="3"/></g>
+  <rect x="0" y="441" width="1000" height="79" fill="#0b1724" opacity=".94"/>
+  <g font-family="system-ui,sans-serif" fill="#f2f6f7">
+    <text x="28" y="473" font-size="23" font-weight="600">Yana River</text>
+    <text x="28" y="499" font-size="17" fill="#b9cbd4">Russia</text>
+    <text x="970" y="486" text-anchor="end" font-size="20">70.72° N  ·  135.43° E</text>
+  </g>
+</svg>

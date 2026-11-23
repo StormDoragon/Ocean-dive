@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="520" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">Taimyr Peninsula · Russia</title>
+  <desc id="desc">Locator map for Bolshaya Balakhnaya River, Taimyr Peninsula, Russia, at 73.52° N, 104.54° E. Basemap derived from Natural Earth, public domain.</desc>
+  <rect width="1000" height="520" fill="#0c2031"/>
+  <g fill="#28465b" stroke="#678292" stroke-width="1.2" fill-rule="evenodd" stroke-linejoin="round"><path d="M0.0 520.0L0.0 439.9L0.2 439.9L18.1 426.1L31.4 445.7L44.8 424.4L32.7 404.9L38.5 393.6L73.5 404.0L90.2 414.4L133.1 451.9L141.0 434.9L128.9 417.4L128.5 410.3L114.3 406.9L118.1 391.1L111.8 363.6L111.4 351.9L133.5 318.2L141.0 282.4L149.8 274.4L181.4 285.3L183.9 306.9L172.7 337.8L179.8 349.9L183.9 374.9L181.0 421.5L193.9 441.5L188.9 462.8L166.0 506.1L179.3 510.3L183.9 499.9L197.3 491.9L200.2 476.9L210.6 462.4L203.5 444.0L209.3 422.8L196.0 419.9L193.5 401.1L202.7 366.1L187.3 336.5L208.5 311.1L206.0 282.8L211.8 281.9L218.1 304.0L213.5 340.7L226.0 347.4L220.6 320.3L240.6 305.3L265.2 303.2L286.8 325.3L276.4 292.8L275.2 249.4L296.0 240.7L324.3 242.8L350.2 237.4L340.2 214.4L353.9 184.9L367.7 183.6L390.6 160.3L422.3 153.6L426.0 140.3L457.3 135.7L466.8 146.9L493.5 120.7L515.2 121.5L518.5 99.0L529.8 76.5L557.7 54.0L578.1 71.9L561.8 85.3L588.9 93.2L591.8 118.6L602.7 106.5L637.7 106.9L664.3 131.9L673.5 150.3L670.6 174.9L657.7 188.6L626.4 213.6L617.7 226.5L632.3 232.8L649.8 243.6L660.6 235.3L666.4 262.4L671.8 251.5L690.6 244.9L728.9 251.9L731.4 271.1L781.0 277.4L781.8 245.7L806.8 253.2L826.0 252.8L845.2 274.4L850.6 300.3L843.5 316.5L858.5 346.1L876.8 360.7L888.5 321.9L907.7 338.6L927.7 328.6L950.6 340.3L959.3 329.9L978.9 334.9L970.2 299.4L986.0 282.4L1000.0 285.7L1000.0 520.0ZM569.1 0.0L566.4 19.4L499.3 41.5L510.8 0.0ZM966.4 136.1L997.7 138.2L1000.0 139.6L1000.0 197.3L987.7 196.9L968.1 207.8L944.3 178.2L950.6 145.3L966.4 136.1ZM978.5 261.1L989.8 244.4L1000.0 241.9L1000.0 266.8L980.6 263.2L978.5 261.1ZM0.0 167.9L6.8 161.5L46.0 130.3L85.6 120.7L105.6 101.9L128.9 95.3L136.8 115.7L128.9 131.1L87.3 155.3L51.0 178.2L13.9 221.1L0.0 253.9L0.0 359.2L3.1 363.2L0.0 364.5Z"/></g>
+  <path d="M32.1 0v520M209.9 0v520M387.7 0v520M565.5 0v520M743.2 0v520M921.0 0v520M0 388.5h1000" stroke="#89afbe" opacity=".2" fill="none"/>
+  <g font-family="system-ui,sans-serif" font-size="12" letter-spacing="2" text-anchor="middle" fill="#bfd1d7"><text x="743.2" y="91.9">LAPTEV SEA</text>
+<text x="150.6" y="388.5">YAMAL</text></g>
+  <g transform="translate(560 254.8)" stroke="#62e8bb"><circle r="21" fill="none" stroke-width="2"/><circle r="9" fill="#62e8bb" stroke="#102531" stroke-width="3"/></g>
+  <rect x="0" y="441" width="1000" height="79" fill="#0b1724" opacity=".94"/>
+  <g font-family="system-ui,sans-serif" fill="#f2f6f7">
+    <text x="28" y="473" font-size="23" font-weight="600">Taimyr Peninsula</text>
+    <text x="28" y="499" font-size="17" fill="#b9cbd4">Russia</text>
+    <text x="970" y="486" text-anchor="end" font-size="20">73.52° N  ·  104.54° E</text>
+  </g>
+</svg>
