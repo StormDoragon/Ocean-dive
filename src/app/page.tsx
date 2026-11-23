@@ -7,7 +7,6 @@ import { ReviewBadge } from "@/components/ReviewBadge";
 import { CountUpValue } from "@/components/home/CountUpValue";
 import { DeepLayer } from "@/components/home/DeepLayer";
 import { DepthNav } from "@/components/home/DepthNav";
-import { GlobePoster } from "@/components/home/GlobePoster";
 import { HeroGlobe } from "@/components/home/HeroGlobe";
 import { Reveal } from "@/components/home/Reveal";
 import { SectionLabel } from "@/components/home/SectionLabel";
@@ -56,7 +55,7 @@ export default function HomePage() {
 
       {/* ZONE — SURFACE */}
       <section data-zone="Surface" data-depth="0" className="container-page scroll-mt-20 pb-4 pt-10 sm:pt-14">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr),minmax(0,460px)]">
+        <div className="grid items-center gap-4 sm:gap-7 lg:gap-10 lg:grid-cols-[minmax(0,1fr),minmax(0,460px)]">
           <div>
             <SectionLabel>A living atlas of discovery</SectionLabel>
             <h1 className="font-display mt-5 text-4xl font-extrabold uppercase leading-[0.95] tracking-tight text-white sm:text-5xl xl:text-6xl">
@@ -85,9 +84,7 @@ export default function HomePage() {
           </div>
 
           <div className="relative mx-auto aspect-square w-full max-w-[380px] lg:max-w-[460px]">
-            <HeroGlobe points={points}>
-              <GlobePoster points={points} />
-            </HeroGlobe>
+            <HeroGlobe points={points} />
           </div>
         </div>
 

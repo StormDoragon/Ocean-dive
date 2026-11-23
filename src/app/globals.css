@@ -114,3 +114,32 @@ html.js .reveal.reveal-in {
 .leaflet-popup-content a {
   color: #38e1ff;
 }
+
+/* Mobile surface light uses a single composited layer behind the hero. */
+.globe-motion { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  html.js .globe-motion { display: block; }
+}
+@media (max-width: 1023px) {
+  section[data-zone="Surface"] { position: relative; isolation: isolate; }
+  section[data-zone="Surface"]::before {
+    content: "";
+    position: absolute;
+    inset: 0 -6% 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(2px 2px at 18% 17%, #d7f1ff 45%, transparent),
+      radial-gradient(1.5px 1.5px at 74% 41%, #a4c2de 45%, transparent),
+      linear-gradient(108deg, transparent 20%, #89c9e017 32%, transparent 44%, #a8d6fa1a 60%, transparent 76%);
+    background-size: 107px 143px, 173px 119px, 100% 100%;
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 74%, transparent);
+  }
+}
+@media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
+  section[data-zone="Surface"]::before { animation: surface-drift 15s ease-in-out infinite alternate; }
+  @keyframes surface-drift {
+    from { transform: translateX(-2%); opacity: .6; }
+    to { transform: translateX(2%); opacity: 1; }
+  }
+}
