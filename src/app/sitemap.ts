@@ -9,6 +9,7 @@ import { canonicalUrl, discoveryLastModified, monthSlug } from "@/lib/seo";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     "",
+    "/sitemap",
     "/discovery",
     "/ask",
     "/discoveries",
