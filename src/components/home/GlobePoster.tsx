@@ -43,7 +43,7 @@ export function GlobePoster({ points, active }: { points: MapPoint[]; active: bo
   useEffect(() => {
     const svg = svgRef.current;
     if (!active || !svg) return;
-    const pins = Array.from(svg.querySelectorAll<SVGAElement>("a[data-pin]"));
+    const pins = Array.from(svg.querySelectorAll<SVGGElement>("g[data-pin]"));
     const lines = Array.from(svg.querySelectorAll<SVGPathElement>("path[data-meridian]"));
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let visible = true;
@@ -184,14 +184,16 @@ export function GlobePoster({ points, active }: { points: MapPoint[]; active: bo
             {MERIDIANS.map(lng => <path key={lng} data-meridian="" d={meridian(lng, INITIAL_LONGITUDE)} />)}
           </g>
           {locations.map(({ point: p, initial }) => (
-            <a key={p.slug} data-pin="" href={`/discoveries/${p.slug}`} aria-label={`${p.title} (${p.year})`}
+            <g key={p.slug} data-pin=""
               transform={`translate(${initial.x.toFixed(2)} ${initial.y.toFixed(2)})`}
               style={{ display: initial.visible ? undefined : "none" }}>
-              <title>{p.title} ({p.year})</title>
-              <circle r="20" fill="transparent" />
-              <circle r="11" fill={p.color} opacity=".65" filter="url(#pin-glow)" />
-              <circle r="8" fill={p.color} stroke="#0a1123" strokeWidth="2.8" />
-            </a>
+              <a href={`/discoveries/${p.slug}`} aria-label={`${p.title} (${p.year})`}>
+                <title>{p.title} ({p.year})</title>
+                <circle r="20" fill="transparent" />
+                <circle r="11" fill={p.color} opacity=".65" filter="url(#pin-glow)" />
+                <circle r="8" fill={p.color} stroke="#0a1123" strokeWidth="2.8" />
+              </a>
+            </g>
           ))}
         </g>
       </svg>
