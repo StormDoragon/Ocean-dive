@@ -21,8 +21,9 @@ export default function MapPage() {
         <h1 className="text-3xl font-bold text-white">🌐 Discovery globe & map</h1>
         <p className="mt-2 max-w-2xl text-slate-400">
           Spin the globe or switch to a flat map. Every glowing point marks where
-          a discovery was made — click one to open it. Space discoveries are
-          pinned to the Earth-based observatory that made them.
+          a discovery was made or observed. Select a point to read the discovery
+          and see the location it represents. For studies spanning several sites,
+          the entry identifies the site or region shown.
         </p>
       </header>
 
