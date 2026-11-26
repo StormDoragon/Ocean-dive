@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const september2025Discoveries: Discovery[] = [
   {
     slug: "uruguay-cold-water-coral-reef-mounds",
+    "datePublished": "2026-11-26",
     title: "Video Surveys Reveal Large Cold-Water Coral Reefs off Uruguay",
     categorySlug: "ocean",
     subtopic: "Coral reefs",

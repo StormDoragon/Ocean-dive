@@ -58,6 +58,7 @@ export const july2026Discoveries: Discovery[] = [
   },
   {
     slug: "doldrums-fracture-zone-hydrothermal-fields",
+    "datePublished": "2026-11-26",
     title: "Explorers Find Two Vent Fields in the Doldrums Fracture Zone",
     categorySlug: "ocean",
     subtopic: "Hydrothermal vents",

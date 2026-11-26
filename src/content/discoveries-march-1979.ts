@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const march1979Discoveries: Discovery[] = [
   {
     slug: "galapagos-rift-first-hydrothermal-vents",
+    "datePublished": "2026-11-26",
     title: "Galápagos Rift Dives Reveal Ecosystems Fueled by Vent Chemistry",
     categorySlug: "ocean",
     subtopic: "Hydrothermal vents",

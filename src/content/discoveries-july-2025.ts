@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const july2025Discoveries: Discovery[] = [
   {
     slug: "lhcb-baryon-cp-violation",
+    "datePublished": "2026-11-26",
     title: "LHCb Observes Matter–Antimatter Asymmetry in Baryon Decays",
     categorySlug: "physics",
     subtopic: "Particle discoveries",

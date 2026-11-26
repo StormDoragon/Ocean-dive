@@ -45,6 +45,7 @@ export const october2026Discoveries: Discovery[] = [
   },
   {
     slug: "victoria-colombiana-orinoco-waterlily",
+    "datePublished": "2026-11-26",
     title: "A Giant Waterlily Is Named from Colombia’s Orinoco Basin",
     categorySlug: "biology",
     subtopic: "New species",

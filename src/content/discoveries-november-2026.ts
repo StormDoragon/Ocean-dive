@@ -378,6 +378,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "dry-elastomer-ultrasound-coupling",
+    "datePublished": "2026-11-26",
     title: "A Dry Elastomer Keeps Ultrasound Coupling Stable in Bench Tests",
     categorySlug: "technology",
     subtopic: "Materials science",
@@ -415,6 +416,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "romanche-sunken-fossil-coral-atoll",
+    "datePublished": "2026-11-26",
     title: "A Fossil Coral Atoll Is Found Deep in the Equatorial Atlantic",
     categorySlug: "ocean",
     subtopic: "Coral reefs",

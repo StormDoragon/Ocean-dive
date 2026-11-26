@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const march2025Discoveries: Discovery[] = [
   {
     slug: "a84-iceberg-shelf-seafloor-life",
+    "datePublished": "2026-11-26",
     title: "A Calving Iceberg Reveals Established Antarctic Seafloor Communities",
     categorySlug: "ocean",
     subtopic: "Deep-sea expeditions",

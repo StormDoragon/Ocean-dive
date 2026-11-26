@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const june2017Discoveries: Discovery[] = [
   {
     slug: "jebel-irhoud-early-homo-sapiens-fossils",
+    "datePublished": "2026-11-26",
     title: "Moroccan Fossils Push Back the Record of Early Homo sapiens",
     categorySlug: "archaeology",
     subtopic: "Human origins",

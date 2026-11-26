@@ -47,6 +47,7 @@ export const may2025Discoveries: Discovery[] = [
   },
   {
     slug: "south-sandwich-new-vent-fields",
+    "datePublished": "2026-11-26",
     title: "A South Sandwich Expedition Finds New Hydrothermal Vents",
     categorySlug: "ocean",
     subtopic: "Hydrothermal vents",
