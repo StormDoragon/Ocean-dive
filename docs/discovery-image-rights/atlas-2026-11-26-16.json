@@ -1,0 +1,168 @@
+[
+  {
+    "slug": "vitreosalpa-gemini-deep-sea-glass-salp",
+    "title": "The Glass Salp Lives Entirely in Deep Water",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/vitreosalpa-gemini-deep-sea-glass-salp.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/vitreosalpa-gemini-deep-sea-glass-salp.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15454,
+    "sha256": "9a6aea38bba91a7fb9177f8d5dba7ec45dfab4c49ed8c9ad91faf58719d307b6",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1007/s12526-026-01709-2"
+    ],
+    "primarySourceUrl": "https://www.mbari.org/news/mbari-technology-reveals-remarkable-new-species-of-deep-sea-salp/"
+  },
+  {
+    "slug": "bargmannia-siphonophore-depth-diversity",
+    "title": "Two New Siphonophores Reveal Hidden Diversity Across Ocean Depths",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/bargmannia-siphonophore-depth-diversity.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/bargmannia-siphonophore-depth-diversity.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 14968,
+    "sha256": "cbdec168a6b753041bb8287beef3b61c593447421bb7da0be1b73af675f2aebc",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1093/zoolinnean/zlag150"
+    ],
+    "primarySourceUrl": "https://www.mbari.org/news/new-research-reveals-the-hidden-diversity-of-deep-sea-siphonophores/"
+  },
+  {
+    "slug": "midwater-hyperiid-amphipod-eyes-and-camouflage",
+    "title": "Free-Swimming Amphipods Link Eye Shape and Camouflage to Their Way of Life",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/midwater-hyperiid-amphipod-eyes-and-camouflage.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/midwater-hyperiid-amphipod-eyes-and-camouflage.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15326,
+    "sha256": "37e26497791713b0827dd57ed8a3598404ef806e405f7439cf57ea61babefa0c",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1098/rspb.2025.2837"
+    ],
+    "primarySourceUrl": "https://www.mbari.org/news/new-research-reveals-factors-driving-the-evolution-of-remarkable-eyes-in-deep-sea-amphipods/"
+  },
+  {
+    "slug": "galapagos-swimming-sea-cucumber-carbon-flux",
+    "title": "Swimming Sea Cucumbers Catch Sinking Food Before It Reaches the Seafloor",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/galapagos-swimming-sea-cucumber-carbon-flux.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/galapagos-swimming-sea-cucumber-carbon-flux.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15744,
+    "sha256": "da1c375e37c0303fa7873a5ba59af7f1711914935a468a6dd8e7b5dd52b27de8",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1002/ecy.70536"
+    ],
+    "primarySourceUrl": "https://www.mbari.org/news/new-research-reveals-surprising-link-in-ocean-carbon-cycle-swimming-sea-cucumbers/"
+  },
+  {
+    "slug": "atolla-reynoldsi-pacific-crown-jelly",
+    "title": "A Crown Jelly Without a Long Trailing Tentacle Was Named in the Pacific",
+    "year": 2022,
+    "localImagePath": "/images/discoveries/2022/atolla-reynoldsi-pacific-crown-jelly.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2022/atolla-reynoldsi-pacific-crown-jelly.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 14506,
+    "sha256": "4c97cdac3ff3e35e4416b65743ebbf19fecc5581b19d5b226870cf18740bfd8f",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.3390/ani12060742"
+    ],
+    "primarySourceUrl": "https://www.mbari.org/news/scientists-discover-a-new-species-of-deep-sea-crown-jelly-in-monterey-bay/"
+  },
+  {
+    "slug": "nankai-trough-methane-seep-diversity-survey",
+    "title": "Five Nankai Trough Seeps Reveal More Animal Diversity Than Previously Recorded",
+    "year": 2025,
+    "localImagePath": "/images/discoveries/2025/nankai-trough-methane-seep-diversity-survey.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2025/nankai-trough-methane-seep-diversity-survey.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15044,
+    "sha256": "a2f88509583beb39db28947a56e4b0701b1a06843a6bba549748e5f5980f85f4",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1002/ecs2.70451"
+    ],
+    "primarySourceUrl": "https://esajournals.onlinelibrary.wiley.com/doi/10.1002/ecs2.70451"
+  },
+  {
+    "slug": "getsuyo-seamount-glass-sponge-two-worms",
+    "title": "Two Newly Named Worms Shared One Glass Sponge on Getsuyo Seamount",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/getsuyo-seamount-glass-sponge-two-worms.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/getsuyo-seamount-glass-sponge-two-worms.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 13418,
+    "sha256": "5584b8dd7819e6917d2c92e0f5beafc5cf94aa4d3fe507188da78ee4dae8f774",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1093/zoolinnean/zlag028"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1093/zoolinnean/zlag028"
+  },
+  {
+    "slug": "antarctic-ozone-hole-2026-seasonal-measurement",
+    "title": "Antarctica’s 2026 Ozone Hole Was Larger Than in Most Monitored Years",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/antarctic-ozone-hole-2026-seasonal-measurement.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/antarctic-ozone-hole-2026-seasonal-measurement.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 16240,
+    "sha256": "34cd6962b9450e94ed90396d04c22e12e3d6313bc50101a8ebb400290774d572",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [],
+    "primarySourceUrl": "https://www.noaa.gov/news-release/noaa-nasa-release-measurements-of-2026-ozone-hole"
+  }
+]
