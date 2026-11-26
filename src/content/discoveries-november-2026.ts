@@ -541,6 +541,7 @@ export const november2026Discoveries: Discovery[] = [
       lat: -71.17597,
       lng: -109.86454,
       country: "Antarctica",
+      depthMeters: 1020,
     },
     discoveringOrg: "Lenka Nealova and the Natural History Museum-led expedition research team",
     scientificName: "Bathyadmetella dollypartonae",
