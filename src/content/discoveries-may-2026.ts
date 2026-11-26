@@ -129,6 +129,7 @@ export const may2026Discoveries: Discovery[] = [
   },
   {
     slug: "castillo-huarmey-wari-hairless-dogs",
+    "datePublished": "2026-11-26",
     title: "Mummified and Skeletal Remains Identify Hairless Dogs at a Wari Site",
     categorySlug: "archaeology",
     subtopic: "Ancient civilizations",

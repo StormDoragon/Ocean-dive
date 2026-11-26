@@ -93,6 +93,7 @@ export const october2026Discoveries: Discovery[] = [
   },
   {
     slug: "hokkaido-simple-cubic-silver",
+    "datePublished": "2026-11-26",
     title: "Electron Microscopy Reveals a Simple-Cubic Arrangement of Silver",
     categorySlug: "technology",
     subtopic: "Materials science",

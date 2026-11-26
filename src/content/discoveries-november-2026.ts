@@ -490,6 +490,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "iklaina-second-linear-b-tablet",
+    "datePublished": "2026-11-26",
     title: "A Second Linear B Tablet Points to Local Administration at Iklaina",
     categorySlug: "archaeology",
     subtopic: "Artifacts",
@@ -526,6 +527,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "bathyadmetella-dollypartonae-scale-worm",
+    "datePublished": "2026-11-26",
     title: "A New Deep-Sea Scale Worm Is Named from Antarctica’s Amundsen Sea",
     categorySlug: "ocean",
     subtopic: "New species",
@@ -573,6 +575,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "kilauea-heavy-carbon-isotopes",
+    "datePublished": "2026-11-26",
     title: "Hawaiian Lava Inclusions Point to an Unusually Heavy Carbon Source",
     categorySlug: "earth-science",
     subtopic: "Volcanoes",
@@ -610,6 +613,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "oreocharis-vesiculosa-fujian-cliff",
+    "datePublished": "2026-11-26",
     title: "A Plant with Blistered Leaves Is Named from a Fujian Cliff Habitat",
     categorySlug: "biology",
     subtopic: "New species",

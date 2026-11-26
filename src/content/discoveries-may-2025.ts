@@ -84,6 +84,7 @@ export const may2025Discoveries: Discovery[] = [
   },
   {
     slug: "yeghegis-copper-age-local-herding",
+    "datePublished": "2026-11-26",
     title: "Isotopes Point to Local Herding at a Copper Age Site in Armenia",
     categorySlug: "archaeology",
     subtopic: "Ancient civilizations",

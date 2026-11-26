@@ -2,4 +2,8 @@
 
 Seven sourced articles cover archaeology, botany, marine taxonomy, materials science and volcanic geochemistry. Articles distinguish the source report date from excavation or collection dates where relevant. Research proxies and regional markers are labeled in the entries. The charts are original editorial diagrams.
 
-Publication dates will be assigned on the UTC day the batch is released.
+The production publication date is 2026-11-26 UTC.
+
+The local production build returned HTTP 200 for all 609 sitemap URLs and preserved every URL in the 179-article production baseline. The preview had 194 distinct articles. All seven new canonicals and original image URLs passed. The named Amundsen Sea station was noindex and outside the sitemap.
+
+The homepage, map, timeline and locations index showed no horizontal overflow at a 390 × 844 viewport. The Amundsen Sea flat-map marker opened the correct article by keyboard. Mobile-UA compressed HTML in the local preview was 40,126 bytes on the homepage, 17,911 on the map and 221,718 on the timeline. The locations index page succeeded after one retry during build.
