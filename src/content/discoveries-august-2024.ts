@@ -1,0 +1,55 @@
+import type { Discovery } from "./types";
+
+/**
+ * Scientific discoveries announced or published during August 2024.
+ * Imported via `npm run import:discoveries`. Run `npm run validate` before release.
+ */
+export const august2024Discoveries: Discovery[] = [
+  {
+    slug: "mololo-waigeo-ancient-resin-artefact",
+    "datePublished": "2026-11-26",
+    title: "A Resin Artefact on Waigeo Dates to an Early Pacific Migration Route",
+    categorySlug: "archaeology",
+    subtopic: "Artifacts",
+    year: 2024,
+    dateDiscovered: "2024-08-13",
+    reviewStatus: "source-verified",
+    sourceTier: "Tier 1",
+    sourceAccessedAt: "2026-11-26",
+    location: {
+      name: "Waigeo, Raja Ampat (regional cave marker)",
+      lat: -0.22,
+      lng: 130.84,
+      country: "Indonesia",
+    },
+    discoveringOrg: "Dylan Gaffney, Daud Tanudirjo and the Raja Ampat Archaeological Project",
+    heroImage: "/images/discoveries/2024/mololo-waigeo-ancient-resin-artefact.webp",
+    imageAlt: "Original editorial diagram for Worked resin in the Pacific. 55,000–50,000 years ago: period examined at Mololo Cave. Plant resin: preserved evidence of working.",
+    imageCredit: "The Nucleon Editorial Graphics",
+    imageSourceUrl: "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2024/mololo-waigeo-ancient-resin-artefact.webp",
+    imageLicense: "Original editorial artwork, The Nucleon",
+    imageType: "diagram",
+    imageRelation: "illustration",
+    summary: "Archaeologists found worked plant resin in a cave on Waigeo Island. Dated deposits place people on this part of the northern route toward Sahul about 55,000 to 50,000 years ago.",
+    story: {
+      whyThere: "Waigeo was among the islands that people could have used to travel between Southeast Asia and Sahul. Excavated layers in Mololo Cave preserve a record from that period.",
+      howFound: "The team dated deposits and examined scores and breaks in the resin. Chemical comparisons supported a plant source, and its shape and marks suggest the material was intentionally worked.",
+      whatMakesUnique: "The original purpose of the object remains uncertain. Its preservation gives direct evidence that plant materials contributed to the technology of people living on these islands.",
+    },
+    gallery: ["/images/discoveries/2024/mololo-waigeo-ancient-resin-artefact.webp"],
+    primarySourceUrl: "https://www.cambridge.org/core/journals/antiquity/article/human-dispersal-and-plant-processing-in-the-pacific-55-00050-000-years-ago/49D5AEACCEA56622FEB88C0F248C63EE",
+    supportingSources: [
+      {
+        title: "Oxford’s account of the Mololo excavation",
+        url: "https://www.ox.ac.uk/news/2024-08-15-oldest-plant-artefact-found-outside-africa-reveals-pacifics-role-early-human",
+        publisher: "University of Oxford",
+        tier: "Tier 2",
+        sourceType: "institutional",
+        accessedAt: "2026-11-26",
+      },
+    ],
+    videoUrls: [],
+    relatedSlugs: ["sulawesi-narrative-cave-art-51200-years"],
+    tags: ["plant processing", "island archaeology", "human migration"],
+  },
+];
