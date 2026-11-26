@@ -53,6 +53,8 @@ import { april2025Discoveries } from "./discoveries-april-2025";
 import { february2025Discoveries } from "./discoveries-february-2025";
 import { may2024Discoveries } from "./discoveries-may-2024";
 import { november2013Discoveries } from "./discoveries-november-2013";
+import { november2025Discoveries } from "./discoveries-november-2025";
+import { october2025Discoveries } from "./discoveries-october-2025";
 // scaffold:import (npm run new-month inserts new monthly imports above this line)
 import generated from "./discoveries.generated.json";
 import type { Discovery } from "./types";
@@ -117,6 +119,8 @@ const builtInCatalog: Discovery[] = [
   ...february2025Discoveries,
   ...may2024Discoveries,
   ...november2013Discoveries,
+  ...november2025Discoveries,
+  ...october2025Discoveries,
   // scaffold:spread (npm run new-month inserts new monthly spreads above this line)
 ];
 
