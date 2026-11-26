@@ -95,6 +95,7 @@ export const july2026Discoveries: Discovery[] = [
   },
   {
     slug: "hillsborough-asteroid-brines",
+    "datePublished": "2026-11-26",
     title: "A New Jersey Meteorite Records Salty Fluids on an Asteroid",
     categorySlug: "space",
     subtopic: "Asteroids",

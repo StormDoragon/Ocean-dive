@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const april2012Discoveries: Discovery[] = [
   {
     slug: "sutters-mill-weather-radar-meteorite",
+    "datePublished": "2026-11-26",
     title: "Weather Radar Guides Searchers to the Sutter’s Mill Meteorites",
     categorySlug: "space",
     subtopic: "Asteroids",

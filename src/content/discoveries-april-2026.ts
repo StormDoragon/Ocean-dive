@@ -86,6 +86,7 @@ export const april2026Discoveries: Discovery[] = [
   },
   {
     slug: "pohlsepia-nautiloid-reassessment",
+    "datePublished": "2026-11-26",
     title: "Hidden Teeth Reclassify a Fossil Once Called the Oldest Octopus",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Fossil reinterpretation",

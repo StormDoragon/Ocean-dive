@@ -453,6 +453,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "nist-boulder-quantum-position-verification",
+    "datePublished": "2026-11-26",
     title: "Entangled Photons Help Verify Position in a Boulder Experiment",
     categorySlug: "physics",
     subtopic: "Quantum research",

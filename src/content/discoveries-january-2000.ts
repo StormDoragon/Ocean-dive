@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const january2000Discoveries: Discovery[] = [
   {
     slug: "tagish-lake-frozen-lake-meteorite",
+    "datePublished": "2026-11-26",
     title: "A Frozen Lake Preserves Fragments of an Unusual Meteorite",
     categorySlug: "space",
     subtopic: "Asteroids",

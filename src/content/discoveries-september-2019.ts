@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const september2019Discoveries: Discovery[] = [
   {
     slug: "flensburg-early-asteroid-carbonates",
+    "datePublished": "2026-11-26",
     title: "A Meteorite Found in Flensburg Preserves Early Asteroid Carbonates",
     categorySlug: "space",
     subtopic: "Asteroids",

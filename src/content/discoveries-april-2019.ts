@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const april2019Discoveries: Discovery[] = [
   {
     slug: "aguas-zarcas-carbonaceous-meteorite",
+    "datePublished": "2026-11-26",
     title: "Volcano Cameras Record the Aguas Zarcas Meteorite Fall",
     categorySlug: "space",
     subtopic: "Asteroids",

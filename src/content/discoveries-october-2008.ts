@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const october2008Discoveries: Discovery[] = [
   {
     slug: "almahata-sitta-predicted-asteroid-fall",
+    "datePublished": "2026-11-26",
     title: "An Asteroid Spotted in Space Leaves Meteorites in Sudan",
     categorySlug: "space",
     subtopic: "Planetary defense",
