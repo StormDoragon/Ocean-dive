@@ -1,0 +1,168 @@
+[
+  {
+    "slug": "hokkaido-one-electron-carbon-bond",
+    "title": "A Crystal Study Finds Evidence of a One-Electron Carbon–Carbon Bond",
+    "year": 2024,
+    "localImagePath": "/images/discoveries/2024/hokkaido-one-electron-carbon-bond.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2024/hokkaido-one-electron-carbon-bond.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15414,
+    "sha256": "2ed4977a3163239363f19b6d376130dc9d106188ed569689b74e6d4ba27daa3e",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [],
+    "primarySourceUrl": "https://www.global.hokudai.ac.jp/news/8470/"
+  },
+  {
+    "slug": "nist-integrated-photonics-wavelength-layers",
+    "title": "Layered Photonic Circuits Convert Infrared Light into Visible Colours",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/nist-integrated-photonics-wavelength-layers.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/nist-integrated-photonics-wavelength-layers.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 14116,
+    "sha256": "7f95643ad0945e18e6813877c326ae81cc6f3890247796e36ef6dbaaac42ddaa",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1038/s41586-026-10379-w"
+    ],
+    "primarySourceUrl": "https://www.nist.gov/news-events/news/2026/04/any-color-you-nist-scientists-create-any-wavelength-lasers-tiny-circuits"
+  },
+  {
+    "slug": "nist-photonic-chip-fiber-bond-tests",
+    "title": "A Fibre Bond Keeps Photonic Chip Connections Working in Severe Lab Tests",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/nist-photonic-chip-fiber-bond-tests.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/nist-photonic-chip-fiber-bond-tests.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 14432,
+    "sha256": "582c1184da53f756d0ab85466fc45c51889dbe23ad301f8e88e783e89c297390",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1364/prj.565679"
+    ],
+    "primarySourceUrl": "https://www.nist.gov/news-events/news/2026/03/nist-researchers-develop-photonic-chip-packaging-can-withstand-extreme"
+  },
+  {
+    "slug": "van-der-waals-room-temperature-multiferroicity",
+    "title": "Layered Crystals Link Electric and Magnetic Order at Room Temperature",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/van-der-waals-room-temperature-multiferroicity.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/van-der-waals-room-temperature-multiferroicity.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15180,
+    "sha256": "29548e5d22b0db5da9dd48226408090d594d101b852629a19088481483a4cf95",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1126/science.adq0420"
+    ],
+    "primarySourceUrl": "https://www.nist.gov/publications/room-temperature-multiferroicity-all-van-der-waals-heterostructures"
+  },
+  {
+    "slug": "eth-xenon-single-atom-mechanical-detection",
+    "title": "A Levitated Glass Bead Detects Impacts from Individual Xenon Atoms",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/eth-xenon-single-atom-mechanical-detection.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/eth-xenon-single-atom-mechanical-detection.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15872,
+    "sha256": "585d3e9fd766d7a51c0f51bd6fc39b1e5660fffb342b7a712e963d514ef1db04",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/tpvm-t75j"
+    ],
+    "primarySourceUrl": "https://ee.ethz.ch/news-and-events/d-itet-news-channel/2026/11/atomic-beam-meets-nanosphere-eth-researchers-detect-individual-atoms.html"
+  },
+  {
+    "slug": "liang-bua-megapodius-rokusi-fossil",
+    "title": "A Fossil Leg Bone Reveals a Large Prehistoric Megapode on Flores",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/liang-bua-megapodius-rokusi-fossil.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/liang-bua-megapodius-rokusi-fossil.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15424,
+    "sha256": "4bd0a3759775f53cc75d4691f6ba0763881a0ef2a976d052dfde355a8eb9fbd8",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1080/03115518.2026.2741158"
+    ],
+    "primarySourceUrl": "https://www.tandfonline.com/doi/full/10.1080/03115518.2026.2741158"
+  },
+  {
+    "slug": "herugavialis-cairensis-egyptian-fossil-ct",
+    "title": "CT Scans Help Reclassify an Eocene Crocodilian from Egypt",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/herugavialis-cairensis-egyptian-fossil-ct.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/herugavialis-cairensis-egyptian-fossil-ct.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15374,
+    "sha256": "b3c96aba5db7d36e9966a1bde6b1fcfb687b3c90ab0104f92675f2830c373465",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1098/rsos.261173"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1098/rsos.261173"
+  },
+  {
+    "slug": "aratasaurus-heme-signatures-mineralized-bone",
+    "title": "Chemical Traces of Heme Are Reported Inside a Fossilised Dinosaur Bone",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/aratasaurus-heme-signatures-mineralized-bone.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/aratasaurus-heme-signatures-mineralized-bone.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 17606,
+    "sha256": "b1c825e0921a6c8138dc5ea0d6f8ad0184cbfaae238eccb6a9f96421a202af9f",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1073/pnas.2614248123"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1073/pnas.2614248123"
+  }
+]
