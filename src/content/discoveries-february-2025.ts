@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const february2025Discoveries: Discovery[] = [
   {
     slug: "gaia-4b-astrometric-exoplanet",
+    "datePublished": "2026-11-26",
     title: "Gaia’s Measurements of a Wobbling Star Lead to a New Planet",
     categorySlug: "space",
     subtopic: "Exoplanets",

@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const may2024Discoveries: Discovery[] = [
   {
     slug: "namibe-basin-south-atlantic-opening",
+    "datePublished": "2026-11-26",
     title: "Volcanic Rocks and Fossils Trace the Opening of the South Atlantic",
     categorySlug: "earth-science",
     subtopic: "Volcanoes",

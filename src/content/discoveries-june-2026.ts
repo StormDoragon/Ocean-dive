@@ -253,6 +253,7 @@ export const june2026Discoveries: Discovery[] = [
   },
   {
     slug: "tomiyamichthys-oriens-east-java-shrimpgoby",
+    "datePublished": "2026-11-26",
     title: "Two Small Fish Reveal a Previously Unnamed East Java Shrimpgoby",
     categorySlug: "ocean",
     subtopic: "New species",
@@ -291,6 +292,7 @@ export const june2026Discoveries: Discovery[] = [
   },
   {
     slug: "labrador-ancient-graphite-isotope-variation",
+    "datePublished": "2026-11-26",
     title: "Individual Graphite Grains Complicate Claims About Early Life in Labrador",
     categorySlug: "biology",
     subtopic: "Origins of life",

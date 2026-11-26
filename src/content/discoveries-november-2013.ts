@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const november2013Discoveries: Discovery[] = [
   {
     slug: "icecube-first-high-energy-astrophysical-neutrinos",
+    "datePublished": "2026-11-26",
     title: "IceCube Finds Evidence for High-Energy Neutrinos from Beyond Earth",
     categorySlug: "physics",
     subtopic: "Particle discoveries",

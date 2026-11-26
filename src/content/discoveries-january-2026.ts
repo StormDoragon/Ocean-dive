@@ -178,6 +178,7 @@ export const january2026Discoveries: Discovery[] = [
   },
   {
     slug: "gj-4274-spirou-two-planets",
+    "datePublished": "2026-11-26",
     title: "Infrared Spectra Reveal Two Planets Around the Red Dwarf GJ 4274",
     categorySlug: "space",
     subtopic: "Exoplanets",

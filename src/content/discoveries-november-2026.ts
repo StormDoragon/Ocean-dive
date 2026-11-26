@@ -662,6 +662,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "lanonia-eclipsata-tuyen-quang-palm",
+    "datePublished": "2026-11-26",
     title: "Pollen and Field Comparisons Distinguish a New Palm from Northern Vietnam",
     categorySlug: "biology",
     subtopic: "New species",

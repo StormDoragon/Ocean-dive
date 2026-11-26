@@ -131,6 +131,7 @@ export const october2026Discoveries: Discovery[] = [
   },
   {
     slug: "telipogon-eastern-ecuador-miniature-orchids",
+    "datePublished": "2026-11-26",
     title: "Two Miniature Orchids Are Distinguished from Ecuador’s Eastern Foothills",
     categorySlug: "biology",
     subtopic: "New species",
@@ -168,6 +169,7 @@ export const october2026Discoveries: Discovery[] = [
   },
   {
     slug: "eureiandra-orientalis-coastal-east-africa",
+    "datePublished": "2026-11-26",
     title: "A Distinct Cucumber Relative Is Recognized from Coastal East Africa",
     categorySlug: "biology",
     subtopic: "New species",
@@ -216,6 +218,7 @@ export const october2026Discoveries: Discovery[] = [
   },
   {
     slug: "borneo-paradiestrammena-cave-crickets",
+    "datePublished": "2026-11-26",
     title: "A Taxonomic Review Identifies Three New Cave Crickets from Borneo",
     categorySlug: "biology",
     subtopic: "New species",

@@ -83,6 +83,7 @@ export const february2026Discoveries: Discovery[] = [
   },
   {
     slug: "toi-5734-density-characterization",
+    "datePublished": "2026-11-26",
     title: "Spectra Confirm a Hot Sub-Neptune with Earth-Like Density",
     categorySlug: "space",
     subtopic: "Exoplanets",

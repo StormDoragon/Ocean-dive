@@ -88,6 +88,7 @@ export const march2026Discoveries: Discovery[] = [
   },
   {
     slug: "wispit-2c-young-planet-imaged",
+    "datePublished": "2026-11-26",
     title: "A Second Forming Planet Is Confirmed in the WISPIT 2 Disc",
     categorySlug: "space",
     subtopic: "Exoplanets",

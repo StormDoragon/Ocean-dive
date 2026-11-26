@@ -54,6 +54,7 @@ export const july2025Discoveries: Discovery[] = [
   },
   {
     slug: "toi-2431-ultrashort-rocky-orbit",
+    "datePublished": "2026-11-26",
     title: "An Exoplanet Around TOI-2431 Orbits in Under Six Hours",
     categorySlug: "space",
     subtopic: "Exoplanets",

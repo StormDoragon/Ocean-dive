@@ -54,6 +54,7 @@ export const march2025Discoveries: Discovery[] = [
   },
   {
     slug: "barnard-star-four-sub-earth-planets",
+    "datePublished": "2026-11-26",
     title: "Precision Spectra Reveal Four Small Planets Around Barnard’s Star",
     categorySlug: "space",
     subtopic: "Exoplanets",

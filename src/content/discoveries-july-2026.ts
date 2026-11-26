@@ -143,6 +143,7 @@ export const july2026Discoveries: Discovery[] = [
   },
   {
     slug: "acanthosaura-syrax-mae-wong-lizard",
+    "datePublished": "2026-11-26",
     title: "A Small Mountain Horned Lizard Is Named from Western Thailand",
     categorySlug: "biology",
     subtopic: "New species",

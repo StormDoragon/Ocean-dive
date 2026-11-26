@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const april2025Discoveries: Discovery[] = [
   {
     slug: "bd05-4868-disintegrating-rocky-planet",
+    "datePublished": "2026-11-26",
     title: "Changing Transits Reveal a Rocky Planet with a Long Dust Tail",
     categorySlug: "space",
     subtopic: "Exoplanets",
