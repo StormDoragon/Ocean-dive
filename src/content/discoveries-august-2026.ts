@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const august2026Discoveries: Discovery[] = [
   {
     slug: "trinidad-tobago-deep-sea-cold-seeps",
+    datePublished: "2026-11-26",
     title: "A Trinidad and Tobago Expedition Confirms 25 Deep-Sea Cold Seeps",
     categorySlug: "ocean",
     subtopic: "Deep-sea expeditions",

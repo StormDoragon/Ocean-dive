@@ -47,6 +47,7 @@ export const april2026Discoveries: Discovery[] = [
   },
   {
     slug: "bicharracosaurus-dionidei",
+    datePublished: "2026-11-26",
     title: "A Jurassic Spine Reveals a New Patagonian Sauropod",
     categorySlug: "dinosaurs-fossils",
     subtopic: "New dinosaur species",

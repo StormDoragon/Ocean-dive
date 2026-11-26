@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const november2026Discoveries: Discovery[] = [
   {
     slug: "euclid-dun-aonghasa-quasar",
+    datePublished: "2026-11-26",
     title: "Euclid Finds a 360-Million-Solar-Mass Black Hole in the Early Universe",
     categorySlug: "space",
     subtopic: "Black holes",
@@ -54,6 +55,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "hera-dimorphos-impact-crater",
+    datePublished: "2026-11-26",
     title: "Hera Finds a Stadium-Sized Crater Across Dimorphos",
     categorySlug: "space",
     subtopic: "Planetary defense",
@@ -100,6 +102,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "cassiopeia-a-webb-dust-shell-merger",
+    datePublished: "2026-11-26",
     title: "Webb Finds Clues to a Star’s Final Hours in Cassiopeia A",
     categorySlug: "space",
     subtopic: "Nebulae",
@@ -146,6 +149,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "iras-06530-alma-dying-star-gas-shell",
+    datePublished: "2026-11-26",
     title: "ALMA Maps a Half-Light-Year Gas Shell Around a Dying Star",
     categorySlug: "space",
     subtopic: "Nebulae",
@@ -193,6 +197,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "iwo-jima-2026-eruption-new-beach",
+    datePublished: "2026-11-26",
     title: "A Submarine Eruption Adds About 50 Hectares to Iwo Jima",
     categorySlug: "earth-science",
     subtopic: "Volcanoes",
@@ -239,6 +244,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "meilynodraco-amonamarthi",
+    datePublished: "2026-11-26",
     title: "Neutron Scans Identify a Small Jurassic Reptile from Wyoming",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Fossil discoveries",
@@ -287,6 +293,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "rodhals-man-isotopes-farming-transition",
+    datePublished: "2026-11-26",
     title: "Sejerø Isotopes Trace a Forager’s Changing Diet as Farming Arrived",
     categorySlug: "archaeology",
     subtopic: "Ancient civilizations",
@@ -334,6 +341,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "lhcb-bd-two-muons-evidence",
+    datePublished: "2026-11-26",
     title: "LHCb Finds Evidence for a Rare Beauty-Meson Decay to Muons",
     categorySlug: "physics",
     subtopic: "Particle discoveries",

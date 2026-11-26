@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const october2026Discoveries: Discovery[] = [
   {
     slug: "paludohadros-proudlovii",
+    datePublished: "2026-11-26",
     title: "A Surrey Clay Pit Yields a New Early Hadrosauroid",
     categorySlug: "dinosaurs-fossils",
     subtopic: "New dinosaur species",

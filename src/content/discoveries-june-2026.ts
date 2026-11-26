@@ -206,6 +206,7 @@ export const june2026Discoveries: Discovery[] = [
   },
   {
     slug: "iberian-cave-walls-ancient-human-dna",
+    datePublished: "2026-11-26",
     title: "Rock-Art Cave Walls Preserve Traces of Ancient Human DNA",
     categorySlug: "archaeology",
     subtopic: "Human origins",
