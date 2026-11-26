@@ -126,6 +126,7 @@ export const march2026Discoveries: Discovery[] = [
   },
   {
     slug: "nist-photonic-chip-fiber-bond-tests",
+    "datePublished": "2026-11-26",
     title: "A Fibre Bond Keeps Photonic Chip Connections Working in Severe Lab Tests",
     categorySlug: "technology",
     subtopic: "Materials science",

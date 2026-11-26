@@ -44,6 +44,7 @@ export const august2026Discoveries: Discovery[] = [
   },
   {
     slug: "hydrobiomorpha-bachmanni-corrientes-beetle",
+    "datePublished": "2026-11-26",
     title: "Detailed Imaging Reveals a Water Scavenger Beetle from Argentina and Paraguay",
     categorySlug: "biology",
     subtopic: "New species",
@@ -81,6 +82,7 @@ export const august2026Discoveries: Discovery[] = [
   },
   {
     slug: "carajas-cave-snails-eastern-amazon",
+    "datePublished": "2026-11-26",
     title: "A Three-Year Survey Finds Two New Land Snails in Brazil’s Carajás Caves",
     categorySlug: "biology",
     subtopic: "New species",
@@ -117,6 +119,7 @@ export const august2026Discoveries: Discovery[] = [
   },
   {
     slug: "van-der-waals-room-temperature-multiferroicity",
+    "datePublished": "2026-11-26",
     title: "Layered Crystals Link Electric and Magnetic Order at Room Temperature",
     categorySlug: "technology",
     subtopic: "Materials science",

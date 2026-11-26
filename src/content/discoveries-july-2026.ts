@@ -182,6 +182,7 @@ export const july2026Discoveries: Discovery[] = [
   },
   {
     slug: "taiwan-gnathophis-three-conger-eels",
+    "datePublished": "2026-11-26",
     title: "A Deep-Water Specimen Survey Distinguishes Three New Eels off Taiwan",
     categorySlug: "ocean",
     subtopic: "New species",
@@ -218,6 +219,7 @@ export const july2026Discoveries: Discovery[] = [
   },
   {
     slug: "nesticus-yamabushi-central-japan-spider",
+    "datePublished": "2026-11-26",
     title: "A Previously Unnamed Nesticus Spider Is Described from Central Japan",
     categorySlug: "biology",
     subtopic: "New species",

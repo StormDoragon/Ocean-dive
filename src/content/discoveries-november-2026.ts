@@ -701,6 +701,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "eth-xenon-single-atom-mechanical-detection",
+    "datePublished": "2026-11-26",
     title: "A Levitated Glass Bead Detects Impacts from Individual Xenon Atoms",
     categorySlug: "physics",
     subtopic: "Quantum research",
@@ -738,6 +739,7 @@ export const november2026Discoveries: Discovery[] = [
   },
   {
     slug: "aratasaurus-heme-signatures-mineralized-bone",
+    "datePublished": "2026-11-26",
     title: "Chemical Traces of Heme Are Reported Inside a Fossilised Dinosaur Bone",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Fossil reinterpretation",

@@ -216,6 +216,7 @@ export const january2026Discoveries: Discovery[] = [
   },
   {
     slug: "vincetoxicum-samothracicum-mount-saos",
+    "datePublished": "2026-11-26",
     title: "A Mountain Survey Finds a Distinct Flowering Plant on Samothraki",
     categorySlug: "biology",
     subtopic: "New species",

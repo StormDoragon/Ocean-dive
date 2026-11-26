@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const september2024Discoveries: Discovery[] = [
   {
     slug: "hokkaido-one-electron-carbon-bond",
+    "datePublished": "2026-11-26",
     title: "A Crystal Study Finds Evidence of a One-Electron Carbon–Carbon Bond",
     categorySlug: "technology",
     subtopic: "Materials science",

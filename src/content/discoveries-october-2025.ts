@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const october2025Discoveries: Discovery[] = [
   {
     slug: "south-african-prosoeca-pollinator-flies",
+    "datePublished": "2026-11-26",
     title: "A Revision of South African Pollinator Flies Names Three Spring Species",
     categorySlug: "biology",
     subtopic: "New species",
@@ -43,6 +44,7 @@ export const october2025Discoveries: Discovery[] = [
   },
   {
     slug: "carlephyton-sajoreciae-daraina-forest",
+    "datePublished": "2026-11-26",
     title: "A Forest-Floor Aroid from Northern Madagascar Is Named",
     categorySlug: "biology",
     subtopic: "New species",
@@ -90,6 +92,7 @@ export const october2025Discoveries: Discovery[] = [
   },
   {
     slug: "parasesarma-otiense-exmouth-mangrove-crab",
+    "datePublished": "2026-11-26",
     title: "An Exmouth Gulf Mangrove Crab Is Distinguished by Its Claw",
     categorySlug: "ocean",
     subtopic: "New species",

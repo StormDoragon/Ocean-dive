@@ -330,6 +330,7 @@ export const june2026Discoveries: Discovery[] = [
   },
   {
     slug: "microlicia-almedae-chapada-diamantina",
+    "datePublished": "2026-11-26",
     title: "Leaf-Shape Analysis Helps Identify a New Plant in Bahia’s Rocky Highlands",
     categorySlug: "biology",
     subtopic: "New species",

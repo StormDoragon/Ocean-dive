@@ -256,6 +256,7 @@ export const october2026Discoveries: Discovery[] = [
   },
   {
     slug: "liang-bua-megapodius-rokusi-fossil",
+    "datePublished": "2026-11-26",
     title: "A Fossil Leg Bone Reveals a Large Prehistoric Megapode on Flores",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Fossil discoveries",
@@ -293,6 +294,7 @@ export const october2026Discoveries: Discovery[] = [
   },
   {
     slug: "herugavialis-cairensis-egyptian-fossil-ct",
+    "datePublished": "2026-11-26",
     title: "CT Scans Help Reclassify an Eocene Crocodilian from Egypt",
     categorySlug: "dinosaurs-fossils",
     subtopic: "Fossil reinterpretation",

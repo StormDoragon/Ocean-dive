@@ -7,6 +7,7 @@ import type { Discovery } from "./types";
 export const november2025Discoveries: Discovery[] = [
   {
     slug: "batanta-papuanatula-mayfly-collection",
+    "datePublished": "2026-11-26",
     title: "A Long-Running Batanta Survey Uncovers Six New Mayfly Species",
     categorySlug: "biology",
     subtopic: "New species",

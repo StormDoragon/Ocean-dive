@@ -125,6 +125,7 @@ export const april2026Discoveries: Discovery[] = [
   },
   {
     slug: "nist-integrated-photonics-wavelength-layers",
+    "datePublished": "2026-11-26",
     title: "Layered Photonic Circuits Convert Infrared Light into Visible Colours",
     categorySlug: "technology",
     subtopic: "Materials science",
