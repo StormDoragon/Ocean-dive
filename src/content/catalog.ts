@@ -39,6 +39,11 @@ import { atlasAdditions } from "./discoveries-atlas-2026-11";
 import { august2026Discoveries } from "./discoveries-august-2026";
 import { november2026Discoveries } from "./discoveries-november-2026";
 import { october2026Discoveries } from "./discoveries-october-2026";
+import { july2025Discoveries } from "./discoveries-july-2025";
+import { june2017Discoveries } from "./discoveries-june-2017";
+import { march1979Discoveries } from "./discoveries-march-1979";
+import { march2025Discoveries } from "./discoveries-march-2025";
+import { september2025Discoveries } from "./discoveries-september-2025";
 // scaffold:import (npm run new-month inserts new monthly imports above this line)
 import generated from "./discoveries.generated.json";
 import type { Discovery } from "./types";
@@ -89,6 +94,11 @@ const builtInCatalog: Discovery[] = [
   ...august2026Discoveries,
   ...november2026Discoveries,
   ...october2026Discoveries,
+  ...july2025Discoveries,
+  ...june2017Discoveries,
+  ...march1979Discoveries,
+  ...march2025Discoveries,
+  ...september2025Discoveries,
   // scaffold:spread (npm run new-month inserts new monthly spreads above this line)
 ];
 

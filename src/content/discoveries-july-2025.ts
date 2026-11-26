@@ -1,0 +1,54 @@
+import type { Discovery } from "./types";
+
+/**
+ * Scientific discoveries announced or published during July 2025.
+ * Imported via `npm run import:discoveries`. Run `npm run validate` before release.
+ */
+export const july2025Discoveries: Discovery[] = [
+  {
+    slug: "lhcb-baryon-cp-violation",
+    title: "LHCb Observes Matter–Antimatter Asymmetry in Baryon Decays",
+    categorySlug: "physics",
+    subtopic: "Particle discoveries",
+    year: 2025,
+    dateDiscovered: "2025-07-16",
+    reviewStatus: "source-verified",
+    sourceTier: "Tier 1",
+    sourceAccessedAt: "2026-11-26",
+    location: {
+      name: "CERN Meyrin campus (research campus proxy)",
+      lat: 46.233,
+      lng: 6.055,
+      country: "Switzerland",
+    },
+    discoveringOrg: "LHCb Collaboration",
+    heroImage: "/images/discoveries/2025/lhcb-baryon-cp-violation.webp",
+    imageAlt: "Original editorial diagram for Beauty baryon decay. Matter: one measured decay rate. Antimatter: a different measured decay rate.",
+    imageCredit: "The Nucleon Editorial Graphics",
+    imageSourceUrl: "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2025/lhcb-baryon-cp-violation.webp",
+    imageLicense: "Original editorial artwork, The Nucleon",
+    imageType: "diagram",
+    imageRelation: "illustration",
+    summary: "LHCb measured different decay rates for a beauty baryon and its antimatter partner. The result is the first reported observation of charge-parity violation in a baryon decay.",
+    story: {
+      whyThere: "A baryon consists of three quarks. Experiments had already observed charge-parity asymmetries in quark-antiquark particles called mesons. CERN's campus serves as a marker for the collider experiment.",
+      howFound: "The team compared the four-particle final states from beauty baryons and antibaryons produced in collisions. It tested whether the difference persisted after accounting for experimental effects.",
+      whatMakesUnique: "The finding extends a known matter–antimatter asymmetry to another class of particles. Its size can test theoretical predictions, but this measurement alone does not explain why ordinary matter dominates the observable universe.",
+    },
+    gallery: ["/images/discoveries/2025/lhcb-baryon-cp-violation.webp"],
+    primarySourceUrl: "https://www.nature.com/articles/s41586-025-09119-3",
+    supportingSources: [
+      {
+        title: "LHCb announcement",
+        url: "https://home.cern/new-piece-matter-antimatter-puzzle/",
+        publisher: "CERN",
+        tier: "Tier 2",
+        sourceType: "institutional",
+        accessedAt: "2026-11-26",
+      },
+    ],
+    videoUrls: [],
+    relatedSlugs: ["lhcb-bd-two-muons-evidence", "antihydrogen-gravity-alpha-g"],
+    tags: ["cern", "lhcb", "baryon", "charge-parity violation"],
+  },
+];
