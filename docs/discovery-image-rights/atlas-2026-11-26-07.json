@@ -1,0 +1,63 @@
+[
+  {
+    "slug": "namibe-basin-south-atlantic-opening",
+    "title": "Volcanic Rocks and Fossils Trace the Opening of the South Atlantic",
+    "year": 2024,
+    "localImagePath": "/images/discoveries/2024/namibe-basin-south-atlantic-opening.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2024/namibe-basin-south-atlantic-opening.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15742,
+    "sha256": "ca0812adf4614402be9de919596dc747ee4e3df201df61d401347dff4c63bc3b",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [],
+    "primarySourceUrl": "https://www.smu.edu/news/research/angola-geology-reveals-ancient-africa-south-america-split"
+  },
+  {
+    "slug": "labrador-ancient-graphite-isotope-variation",
+    "title": "Individual Graphite Grains Complicate Claims About Early Life in Labrador",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/labrador-ancient-graphite-isotope-variation.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/labrador-ancient-graphite-isotope-variation.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 16656,
+    "sha256": "fcdd9c65057f9a886374fb86c1a38bd25b4e0286ea76ccbe001adc97ea9ac164",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1016/j.precamres.2026.108074"
+    ],
+    "primarySourceUrl": "https://research.tcu.ac.jp/en/publications/reassessing-early-traces-of-life-from-the-eoarchean-metasedimenta/"
+  },
+  {
+    "slug": "icecube-first-high-energy-astrophysical-neutrinos",
+    "title": "IceCube Finds Evidence for High-Energy Neutrinos from Beyond Earth",
+    "year": 2013,
+    "localImagePath": "/images/discoveries/2013/icecube-first-high-energy-astrophysical-neutrinos.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2013/icecube-first-high-energy-astrophysical-neutrinos.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 17284,
+    "sha256": "52b0ec1b4ab4567e7e8445075064660ba17393fe4b6a60bc438982ef57f68a08",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1126/science.1242856"
+    ],
+    "primarySourceUrl": "https://icecube.wisc.edu/news/press-releases/2013/11/icecube-pushes-neutrinos-to-forefront-of-astronomy/"
+  }
+]
