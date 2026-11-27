@@ -1,0 +1,149 @@
+[
+  {
+    "slug": "amsterdam-mechatronic-sheet-spontaneous-time-crystal",
+    "title": "A Sheet of Mechanical Units Falls Into a Shared Rhythm",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/amsterdam-mechatronic-sheet-spontaneous-time-crystal.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/amsterdam-mechatronic-sheet-spontaneous-time-crystal.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 14604,
+    "sha256": "a7d732fb2e217da23594597e5f7c7472d7d36e3836f2574eb6a85737817fa83d",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1038/s41586-026-11163-6"
+    ],
+    "primarySourceUrl": "https://www.phy.cam.ac.uk/news/vibrating-material-organises-itself-into-a-single-beat/"
+  },
+  {
+    "slug": "grenoble-esrf-joint-xray-holotomography-20nm-layers",
+    "title": "Joint X-Ray Reconstruction Separates Layers Only 20 Nanometres Thick",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/grenoble-esrf-joint-xray-holotomography-20nm-layers.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/grenoble-esrf-joint-xray-holotomography-20nm-layers.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 14790,
+    "sha256": "b4aaa227247c8b2e4376a436e672462765a455956cf23b3f32231fb6a6725ebe",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1364/optica.603920"
+    ],
+    "primarySourceUrl": "https://www.aps.anl.gov/APS-Science-Highlight/2026-09-17/scaling-up-high-resolution-x-ray-nanoimaging"
+  },
+  {
+    "slug": "belfast-fused-silica-small-hemispherical-resonators",
+    "title": "A Glass Suspension Produces Small Fused-Silica Resonators",
+    "year": 2024,
+    "localImagePath": "/images/discoveries/2024/belfast-fused-silica-small-hemispherical-resonators.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2024/belfast-fused-silica-small-hemispherical-resonators.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 16270,
+    "sha256": "2eb1f2b09e7b9840fe82688d9ce9d209b2c18f31f56807b28d1b2fc9db471b00",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1088/1361-6439/ad5b6a"
+    ],
+    "primarySourceUrl": "https://pure.qub.ac.uk/en/publications/manufacturing-fused-silica-hemispherical-resonators-using-polymer/"
+  },
+  {
+    "slug": "slac-wavelet-neural-compression-scientific-xray-data",
+    "title": "Neural Compression Keeps Selected Fine Detail in Scientific Data",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/slac-wavelet-neural-compression-scientific-xray-data.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/slac-wavelet-neural-compression-scientific-xray-data.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 14484,
+    "sha256": "d31da10c60ce68151a55a0a3034034591a71fac308e47d7a5bcae0dd3a07dc03",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1038/s42256-026-01287-9"
+    ],
+    "primarySourceUrl": "https://www6.slac.stanford.edu/news/2026-08-24-slac-researchers-develop-ai-based-tool-compress-data-without-losing-detail"
+  },
+  {
+    "slug": "grenoble-xrf-multichannel-denoising-element-maps",
+    "title": "Separate Detector Views Reveal Fainter Detail in Element Maps",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/grenoble-xrf-multichannel-denoising-element-maps.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/grenoble-xrf-multichannel-denoising-element-maps.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 17256,
+    "sha256": "2791aae8f88b95b7107fb0432351bc707d59283b312e8e5dfa88ad468e0ee50e",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1021/acs.analchem.5c05552"
+    ],
+    "primarySourceUrl": "https://www.esrf.fr/home/news/tech-talk/content-news/tech-talk/deep-learning-improves-the-quality-of-xrf-microscopy-by-one-order-of-magnitude.html"
+  },
+  {
+    "slug": "dresden-catalog-twistable-two-dimensional-materials",
+    "title": "Calculations Identify More Than 1,600 Candidates for Twisted Materials",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/dresden-catalog-twistable-two-dimensional-materials.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/dresden-catalog-twistable-two-dimensional-materials.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 16548,
+    "sha256": "3df41781ff347f852133c82f19a1a7f49626f13539e1af74816ff65f1728cf87",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1126/science.adu1550"
+    ],
+    "primarySourceUrl": "https://www.cpfs.mpg.de/3769681/20260924"
+  },
+  {
+    "slug": "death-valley-origami-hydrogel-panel-water-from-air",
+    "title": "A Passive Hydrogel Panel Collects Water in a Death Valley Field Test",
+    "year": 2025,
+    "localImagePath": "/images/discoveries/2025/death-valley-origami-hydrogel-panel-water-from-air.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2025/death-valley-origami-hydrogel-panel-water-from-air.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15280,
+    "sha256": "faae3ea8e003d8e40044318e41316a82e71c295da7874e60e588052656a860d6",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1038/s44221-025-00447-2"
+    ],
+    "primarySourceUrl": "https://news.mit.edu/2025/window-sized-device-taps-air-safe-drinking-water-0611"
+  }
+]
