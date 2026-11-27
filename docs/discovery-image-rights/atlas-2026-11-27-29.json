@@ -1,0 +1,105 @@
+[
+  {
+    "slug": "canberra-helium-atomic-motion-bell-inequality-test",
+    "title": "A Bell Test Probes Entanglement in the Motion of Helium Atoms",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/canberra-helium-atomic-motion-bell-inequality-test.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/canberra-helium-atomic-motion-bell-inequality-test.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 12690,
+    "sha256": "15e456cd248517e1457e559976bd0e1722dd73a5b42038d577877d62ae671ad1",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [],
+    "primarySourceUrl": "https://arxiv.org/abs/2609.02009"
+  },
+  {
+    "slug": "uc-san-diego-correlated-electrons-soft-x-ray-harmonics",
+    "title": "Correlated Electrons Extend High-Harmonic Light Into the Soft X-Ray Range",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/uc-san-diego-correlated-electrons-soft-x-ray-harmonics.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/uc-san-diego-correlated-electrons-soft-x-ray-harmonics.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 16008,
+    "sha256": "8489e7f21918219632e44b955d902322cd7f46260d012c07647e9d7fa19f99b8",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1038/s41566-026-01976-2"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1038/s41566-026-01976-2"
+  },
+  {
+    "slug": "regensburg-crsbr-magnetic-polariton-condensate",
+    "title": "A Magnetic Field Tunes a Condensate of Light–Matter Hybrids",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/regensburg-crsbr-magnetic-polariton-condensate.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/regensburg-crsbr-magnetic-polariton-condensate.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 16048,
+    "sha256": "8431581bc5eb6939147a1a3b19eabd793a5717616761087578a0afd10055ea15",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1038/s41563-026-02751-y"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1038/s41563-026-02751-y"
+  },
+  {
+    "slug": "oxford-bismuth-sulfide-electron-hole-recombination",
+    "title": "Bismuth Sulfide’s Band Structure Slows the Loss of Light-Generated Charges",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/oxford-bismuth-sulfide-electron-hole-recombination.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/oxford-bismuth-sulfide-electron-hole-recombination.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 18104,
+    "sha256": "ac9f49e0152691adc0a3dbc630e074a7271033d31bb867f12f8c1aae5f222b6f",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1038/s41586-026-11223-x"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1038/s41586-026-11223-x"
+  },
+  {
+    "slug": "cern-cms-quark-gluon-plasma-jet-diffusion-wake",
+    "title": "CMS Finds a Depleted Particle Wake in Quark–Gluon Plasma",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/cern-cms-quark-gluon-plasma-jet-diffusion-wake.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/cern-cms-quark-gluon-plasma-jet-diffusion-wake.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 16666,
+    "sha256": "6ce34ca23eaab08269ce6793880a7438b94c63a9053249fb3d2138e84c4e6e74",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/g49y-8cjl"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/g49y-8cjl"
+  }
+]
