@@ -110,6 +110,32 @@ import { april2021Discoveries } from "./discoveries-april-2021";
 import { december2020Discoveries } from "./discoveries-december-2020";
 import { june2006Discoveries } from "./discoveries-june-2006";
 import { september2016Discoveries } from "./discoveries-september-2016";
+import { february2021Discoveries } from "./discoveries-february-2021";
+import { june2015Discoveries } from "./discoveries-june-2015";
+import { june2021Discoveries } from "./discoveries-june-2021";
+import { november2012Discoveries } from "./discoveries-november-2012";
+import { april2018Discoveries } from "./discoveries-april-2018";
+import { january2022Discoveries } from "./discoveries-january-2022";
+import { july2018Discoveries } from "./discoveries-july-2018";
+import { may2020Discoveries } from "./discoveries-may-2020";
+import { november2018Discoveries } from "./discoveries-november-2018";
+import { april2020Discoveries } from "./discoveries-april-2020";
+import { may2018Discoveries } from "./discoveries-may-2018";
+import { january2020Discoveries } from "./discoveries-january-2020";
+import { june2016Discoveries } from "./discoveries-june-2016";
+import { may2012Discoveries } from "./discoveries-may-2012";
+import { november2008Discoveries } from "./discoveries-november-2008";
+import { november2019Discoveries } from "./discoveries-november-2019";
+import { september2020Discoveries } from "./discoveries-september-2020";
+import { december2012Discoveries } from "./discoveries-december-2012";
+import { october2018Discoveries } from "./discoveries-october-2018";
+import { february2015Discoveries } from "./discoveries-february-2015";
+import { july2006Discoveries } from "./discoveries-july-2006";
+import { july2023Discoveries } from "./discoveries-july-2023";
+import { june2019Discoveries } from "./discoveries-june-2019";
+import { february2022Discoveries } from "./discoveries-february-2022";
+import { march2019Discoveries } from "./discoveries-march-2019";
+import { november2020Discoveries } from "./discoveries-november-2020";
 // scaffold:import (npm run new-month inserts new monthly imports above this line)
 import generated from "./discoveries.generated.json";
 import type { Discovery } from "./types";
@@ -231,6 +257,32 @@ const builtInCatalog: Discovery[] = [
   ...december2020Discoveries,
   ...june2006Discoveries,
   ...september2016Discoveries,
+  ...february2021Discoveries,
+  ...june2015Discoveries,
+  ...june2021Discoveries,
+  ...november2012Discoveries,
+  ...april2018Discoveries,
+  ...january2022Discoveries,
+  ...july2018Discoveries,
+  ...may2020Discoveries,
+  ...november2018Discoveries,
+  ...april2020Discoveries,
+  ...may2018Discoveries,
+  ...january2020Discoveries,
+  ...june2016Discoveries,
+  ...may2012Discoveries,
+  ...november2008Discoveries,
+  ...november2019Discoveries,
+  ...september2020Discoveries,
+  ...december2012Discoveries,
+  ...october2018Discoveries,
+  ...february2015Discoveries,
+  ...july2006Discoveries,
+  ...july2023Discoveries,
+  ...june2019Discoveries,
+  ...february2022Discoveries,
+  ...march2019Discoveries,
+  ...november2020Discoveries,
   // scaffold:spread (npm run new-month inserts new monthly spreads above this line)
 ];
 
