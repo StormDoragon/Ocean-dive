@@ -227,6 +227,21 @@ import { january1986Discoveries } from "./discoveries-january-1986";
 import { october1991Discoveries } from "./discoveries-october-1991";
 import { september2011Discoveries } from "./discoveries-september-2011";
 import { september2006Discoveries } from "./discoveries-september-2006";
+import { february1994Discoveries } from "./discoveries-february-1994";
+import { february2006Discoveries } from "./discoveries-february-2006";
+import { july2008Discoveries } from "./discoveries-july-2008";
+import { march2015Discoveries } from "./discoveries-march-2015";
+import { june2003Discoveries } from "./discoveries-june-2003";
+import { november2014Discoveries } from "./discoveries-november-2014";
+import { january2008Discoveries } from "./discoveries-january-2008";
+import { august1947Discoveries } from "./discoveries-august-1947";
+import { may1951Discoveries } from "./discoveries-may-1951";
+import { october2011Discoveries } from "./discoveries-october-2011";
+import { december2008Discoveries } from "./discoveries-december-2008";
+import { july1998Discoveries } from "./discoveries-july-1998";
+import { november1999Discoveries } from "./discoveries-november-1999";
+import { october1993Discoveries } from "./discoveries-october-1993";
+import { august2014Discoveries } from "./discoveries-august-2014";
 // scaffold:import (npm run new-month inserts new monthly imports above this line)
 import generated from "./discoveries.generated.json";
 import type { Discovery } from "./types";
@@ -465,6 +480,21 @@ const builtInCatalog: Discovery[] = [
   ...october1991Discoveries,
   ...september2011Discoveries,
   ...september2006Discoveries,
+  ...february1994Discoveries,
+  ...february2006Discoveries,
+  ...july2008Discoveries,
+  ...march2015Discoveries,
+  ...june2003Discoveries,
+  ...november2014Discoveries,
+  ...january2008Discoveries,
+  ...august1947Discoveries,
+  ...may1951Discoveries,
+  ...october2011Discoveries,
+  ...december2008Discoveries,
+  ...july1998Discoveries,
+  ...november1999Discoveries,
+  ...october1993Discoveries,
+  ...august2014Discoveries,
   // scaffold:spread (npm run new-month inserts new monthly spreads above this line)
 ];
 
