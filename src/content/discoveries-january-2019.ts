@@ -1,0 +1,57 @@
+import type { Discovery } from "./types";
+
+/**
+ * Scientific discoveries announced or published during January 2019.
+ * Imported via `npm run import:discoveries`. Run `npm run validate` before release.
+ */
+export const january2019Discoveries: Discovery[] = [
+  {
+    slug: "rapa-nui-monument-platforms-proximity-coastal-water-seepage",
+    "datePublished": "2026-11-27",
+    title: "Rapa Nui's monument platforms clustered near freshwater sources",
+    categorySlug: "archaeology",
+    subtopic: "Ancient civilizations",
+    year: 2019,
+    dateDiscovered: "2019-01-10",
+    reviewStatus: "source-verified",
+    sourceTier: "Tier 1",
+    sourceAccessedAt: "2026-11-27",
+    location: {
+      name: "Rapa Nui (island map proxy for the study area)",
+      lat: -27.113,
+      lng: -109.353,
+      country: "Chile",
+    },
+    discoveringOrg: "Robert J. DiNapoli and the Rapa Nui spatial archaeology team",
+    heroImage: "/images/discoveries/2019/rapa-nui-monument-platforms-proximity-coastal-water-seepage.webp",
+    imageAlt: "Original editorial diagram for Ahu and access to freshwater. 93 platforms: spatial analysis. Freshwater: strongest tested relationship.",
+    imageCredit: "The Nucleon Editorial Graphics",
+    imageSourceUrl: "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2019/rapa-nui-monument-platforms-proximity-coastal-water-seepage.webp",
+    imageLicense: "Original editorial artwork, The Nucleon",
+    imageType: "diagram",
+    imageRelation: "illustration",
+    summary: "A spatial analysis found freshwater availability best explained the distribution of 93 monument platforms in the study area on Rapa Nui.",
+    story: {
+      whyThere: "Many ahu, the platforms associated with ceremonial life and moai, sit near the island's coast. Much of the water that falls on the island moves underground and emerges near the shore, where it can mix with seawater.",
+      howFound: "DiNapoli and colleagues compared the positions of 93 ahu with mapped water sources, marine resources and areas suitable for gardens. Freshwater proximity gave the strongest explanation among the variables considered.",
+      whatMakesUnique: "The analysis helps explain both coastal and some inland placements. It shows an association in the surveyed area, and other cultural or social reasons for building each monument can coexist with it.",
+    },
+    gallery: [
+      "/images/discoveries/2019/rapa-nui-monument-platforms-proximity-coastal-water-seepage.webp",
+    ],
+    primarySourceUrl: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0210409",
+    supportingSources: [
+      {
+        title: "Institutional account from the research team",
+        url: "https://news.arizona.edu/news/solving-ancient-mysteries-easter-island",
+        publisher: "University of Arizona",
+        tier: "Tier 2",
+        sourceType: "reference",
+        accessedAt: "2026-11-27",
+      },
+    ],
+    videoUrls: [],
+    relatedSlugs: ["wairau-bar-marlborough-isotope-diet-and-mobility"],
+    tags: ["Polynesian archaeology", "monuments", "freshwater"],
+  },
+];
