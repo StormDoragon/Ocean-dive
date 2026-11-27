@@ -136,6 +136,27 @@ import { june2019Discoveries } from "./discoveries-june-2019";
 import { february2022Discoveries } from "./discoveries-february-2022";
 import { march2019Discoveries } from "./discoveries-march-2019";
 import { november2020Discoveries } from "./discoveries-november-2020";
+import { august2016Discoveries } from "./discoveries-august-2016";
+import { june2014Discoveries } from "./discoveries-june-2014";
+import { march2016Discoveries } from "./discoveries-march-2016";
+import { january2023Discoveries } from "./discoveries-january-2023";
+import { april2000Discoveries } from "./discoveries-april-2000";
+import { august2006Discoveries } from "./discoveries-august-2006";
+import { january1994Discoveries } from "./discoveries-january-1994";
+import { january2017Discoveries } from "./discoveries-january-2017";
+import { march2004Discoveries } from "./discoveries-march-2004";
+import { september2007Discoveries } from "./discoveries-september-2007";
+import { july2017Discoveries } from "./discoveries-july-2017";
+import { october2016Discoveries } from "./discoveries-october-2016";
+import { february1925Discoveries } from "./discoveries-february-1925";
+import { january2014Discoveries } from "./discoveries-january-2014";
+import { may1994Discoveries } from "./discoveries-may-1994";
+import { january1992Discoveries } from "./discoveries-january-1992";
+import { july2003Discoveries } from "./discoveries-july-2003";
+import { june2004Discoveries } from "./discoveries-june-2004";
+import { june2008Discoveries } from "./discoveries-june-2008";
+import { october1992Discoveries } from "./discoveries-october-1992";
+import { october2012Discoveries } from "./discoveries-october-2012";
 // scaffold:import (npm run new-month inserts new monthly imports above this line)
 import generated from "./discoveries.generated.json";
 import type { Discovery } from "./types";
@@ -283,6 +304,27 @@ const builtInCatalog: Discovery[] = [
   ...february2022Discoveries,
   ...march2019Discoveries,
   ...november2020Discoveries,
+  ...august2016Discoveries,
+  ...june2014Discoveries,
+  ...march2016Discoveries,
+  ...january2023Discoveries,
+  ...april2000Discoveries,
+  ...august2006Discoveries,
+  ...january1994Discoveries,
+  ...january2017Discoveries,
+  ...march2004Discoveries,
+  ...september2007Discoveries,
+  ...july2017Discoveries,
+  ...october2016Discoveries,
+  ...february1925Discoveries,
+  ...january2014Discoveries,
+  ...may1994Discoveries,
+  ...january1992Discoveries,
+  ...july2003Discoveries,
+  ...june2004Discoveries,
+  ...june2008Discoveries,
+  ...october1992Discoveries,
+  ...october2012Discoveries,
   // scaffold:spread (npm run new-month inserts new monthly spreads above this line)
 ];
 
