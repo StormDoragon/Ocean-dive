@@ -307,7 +307,7 @@ export const april2020Discoveries: Discovery[] = [
       whatMakesUnique: "Frogs add direct vertebrate evidence for freshwater habitats in an ancient Antarctic ecosystem. These few fragments do not reveal all details of local climate or diversity.",
     },
     gallery: ["/images/discoveries/2020/seymour-island-eocene-helmeted-frog-fossils.webp"],
-    primarySourceUrl: "https://www.nature.com/articles/s41598-020-61973-5.",
+    primarySourceUrl: "https://www.nature.com/articles/s41598-020-61973-5",
     videoUrls: [],
     relatedSlugs: ["senekal-spion-kop-pulanesaura-sauropod-anatomy"],
     tags: ["Eocene fossils", "amphibians", "Antarctic fossils"],
