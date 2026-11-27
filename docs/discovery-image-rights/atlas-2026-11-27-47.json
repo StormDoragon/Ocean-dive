@@ -1,0 +1,147 @@
+[
+  {
+    "slug": "fermilab-sbnd-low-energy-argon-dark-matter-sensitivity-model",
+    "title": "A Calculation Identifies a New Way to Search for Light Dark Matter",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/fermilab-sbnd-low-energy-argon-dark-matter-sensitivity-model.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/fermilab-sbnd-low-energy-argon-dark-matter-sensitivity-model.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15926,
+    "sha256": "befcf2d75b06963a334daba6e2c93ced071b8adff4b6cd36cf99265ba21b0306",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/pppb-9sm1"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/pppb-9sm1"
+  },
+  {
+    "slug": "brown-bilayer-anyon-current-noise-statistics-proposal",
+    "title": "A Proposal Uses Current Fluctuations to Probe Neutral Anyons",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/brown-bilayer-anyon-current-noise-statistics-proposal.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/brown-bilayer-anyon-current-noise-statistics-proposal.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15208,
+    "sha256": "75356509951579d7cc13eda7f47e0d8ee0c220e2626330482e477daee1d6c6b3",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/fd6s-x6k3"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/fd6s-x6k3"
+  },
+  {
+    "slug": "manchester-quantum-stochastic-models-rare-event-sampling",
+    "title": "A Quantum Model Reduces the Theoretical Cost of Sampling Rare Events",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/manchester-quantum-stochastic-models-rare-event-sampling.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/manchester-quantum-stochastic-models-rare-event-sampling.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 13042,
+    "sha256": "2e652b80375eb9c1283213dbf7805ca140c4fbfa7ef2ad6f51d1643e8bf4b88c",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/7zh3-zvnd"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/7zh3-zvnd"
+  },
+  {
+    "slug": "xiamen-samarium-nickelate-terahertz-dwave-evidence",
+    "title": "Terahertz Measurements Give Evidence for d-Wave Pairing in a Nickelate",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/xiamen-samarium-nickelate-terahertz-dwave-evidence.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/xiamen-samarium-nickelate-terahertz-dwave-evidence.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 14446,
+    "sha256": "f51dbe8ba1c01bba2b4c857d7288cc09fac1adca9b15fadcd07fe86df47c49fd",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/fz8w-w61f"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/fz8w-w61f"
+  },
+  {
+    "slug": "princeton-graphene-quantum-hall-edge-state-imaging",
+    "title": "A Microscope Reveals How Graphene’s Quantum Hall Edges Rearrange",
+    "year": 2025,
+    "localImagePath": "/images/discoveries/2025/princeton-graphene-quantum-hall-edge-state-imaging.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2025/princeton-graphene-quantum-hall-edge-state-imaging.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 16552,
+    "sha256": "c0d3aaa863e66bf2a760be132be15ed5a6569234f80bc451f67b492ec48c8d5d",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1038/s41586-025-09858-3"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1038/s41586-025-09858-3"
+  },
+  {
+    "slug": "jefferson-lab-clas12-proton-resonances-high-momentum",
+    "title": "Proton Resonance Signals Persist at High Momentum Transfer",
+    "year": 2025,
+    "localImagePath": "/images/discoveries/2025/jefferson-lab-clas12-proton-resonances-high-momentum.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2025/jefferson-lab-clas12-proton-resonances-high-momentum.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 14944,
+    "sha256": "2c68e2b914a01399b10469ed8b7f5f226e1d0eeea80ead3ecc31f4215a2bc785",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/qy4p-dyjt"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/qy4p-dyjt"
+  },
+  {
+    "slug": "cern-alice-deuterons-from-decay-products-in-collisions",
+    "title": "Particle Correlations Explain How Fragile Nuclei Form at the LHC",
+    "year": 2025,
+    "localImagePath": "/images/discoveries/2025/cern-alice-deuterons-from-decay-products-in-collisions.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2025/cern-alice-deuterons-from-decay-products-in-collisions.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 17192,
+    "sha256": "ad16d28ec8e2eb1a0fe8fcb150b16585ddba98196959b242abd2e10a798e4108",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [],
+    "primarySourceUrl": "https://home.cern/alice-solves-mystery-light-nuclei-survival/"
+  }
+]
