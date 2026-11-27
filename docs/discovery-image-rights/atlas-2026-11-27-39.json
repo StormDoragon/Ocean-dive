@@ -1,0 +1,191 @@
+[
+  {
+    "slug": "cern-alice-kaon-deuteron-strong-scattering",
+    "title": "ALICE Measures How Charged Kaons Scatter from Deuterons",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/cern-alice-kaon-deuteron-strong-scattering.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/cern-alice-kaon-deuteron-strong-scattering.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15742,
+    "sha256": "407997a6af42027a2fde4f95a57447a7d3d861ea60bab7e4b6920c46ab3dfa7b",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/5w12-tbm8"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/5w12-tbm8"
+  },
+  {
+    "slug": "uc-santa-barbara-matter-wave-cavity-horizon-analogue",
+    "title": "A Driven Matter-Wave Cavity Produces Patterns Analogous to Event Horizons",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/uc-santa-barbara-matter-wave-cavity-horizon-analogue.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/uc-santa-barbara-matter-wave-cavity-horizon-analogue.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 16200,
+    "sha256": "1730f69f30c83e23ef18d9f192ad38a110773b0f30b10d154e033baf45f81716",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/44mq-jfp1"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/44mq-jfp1"
+  },
+  {
+    "slug": "parkes-pulsar-timing-cosmic-dawn-binary-black-hole-limits",
+    "title": "Parkes Pulsar Timing Sets Limits on Black Hole Pairs at Cosmic Dawn",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/parkes-pulsar-timing-cosmic-dawn-binary-black-hole-limits.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/parkes-pulsar-timing-cosmic-dawn-binary-black-hole-limits.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 16174,
+    "sha256": "f94482ea019b3ecf987141b3c2a702ac9ca79b28127deef78d9ffe9e657d57d6",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/5z5g-shly"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/5z5g-shly"
+  },
+  {
+    "slug": "wuhan-cadmium-electron-fluid-viscosity",
+    "title": "Electrical Measurements Reveal Viscous Electron Flow in Cadmium",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/wuhan-cadmium-electron-fluid-viscosity.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/wuhan-cadmium-electron-fluid-viscosity.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15788,
+    "sha256": "875ace52e67962e2c41c2e920c2a38acedb7918dc4ad31167e9f0ad73069c123",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/g32f-j6q2"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/g32f-j6q2"
+  },
+  {
+    "slug": "boulder-metal-vacuum-gap-phonon-heat-transfer-limits",
+    "title": "Measurements Set a Limit on Heat Transfer by Vibrations Across a Vacuum Gap",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/boulder-metal-vacuum-gap-phonon-heat-transfer-limits.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/boulder-metal-vacuum-gap-phonon-heat-transfer-limits.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 17032,
+    "sha256": "3703adcb205965295cc38cf9e7b838d558c0b714e7fc8fb4ad39682cacb0715c",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/yk31-1s6y"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/yk31-1s6y"
+  },
+  {
+    "slug": "stockholm-photonic-chip-dissipative-topology-interference",
+    "title": "A Photonic Chip Reads Topological Phases in the Presence of Strong Loss",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/stockholm-photonic-chip-dissipative-topology-interference.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/stockholm-photonic-chip-dissipative-topology-interference.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15278,
+    "sha256": "b1269316f95722f6d9dd96497240679484cf700773bac07b26883e03ba2a0f10",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/xkht-64kc"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/xkht-64kc"
+  },
+  {
+    "slug": "tianjin-twisted-cuprate-multicomponent-superconductivity-model",
+    "title": "A Model Predicts Unusual Pairing in Twisted Layers of a Cuprate",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/tianjin-twisted-cuprate-multicomponent-superconductivity-model.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/tianjin-twisted-cuprate-multicomponent-superconductivity-model.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 16068,
+    "sha256": "07e0170c41a605d4839a69a4218aa9099fe001c67d9b38cf087d75beab9b6cb1",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/6cyn-zbpm"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/6cyn-zbpm"
+  },
+  {
+    "slug": "zurich-30-metre-selective-microwave-photon-link",
+    "title": "A 30-Metre Quantum Link Selects Photons by Their Shape in Time",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/zurich-30-metre-selective-microwave-photon-link.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/zurich-30-metre-selective-microwave-photon-link.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 17872,
+    "sha256": "ab05605f6287e8e13dc16c58736832a76dcec521b1ba452500a7650371bd7938",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/fw4j-bf3k"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/fw4j-bf3k"
+  },
+  {
+    "slug": "hannover-fermi-psr-j1622-7204-lattice-search",
+    "title": "A New Search of Fermi Data Finds a Pulsar Spinning 261 Times a Second",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/hannover-fermi-psr-j1622-7204-lattice-search.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/hannover-fermi-psr-j1622-7204-lattice-search.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 16094,
+    "sha256": "d47b3f6d323620384f20a59cf4ef0f269ca520214abfe05d3aad5be56af13291",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/vlt2-xzgk"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/vlt2-xzgk"
+  }
+]
