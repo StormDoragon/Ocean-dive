@@ -1,0 +1,108 @@
+import type { Discovery } from "./types";
+
+/**
+ * Scientific discoveries announced or published during January 2024.
+ * Imported via `npm run import:discoveries`. Run `npm run validate` before release.
+ */
+export const january2024Discoveries: Discovery[] = [
+  {
+    slug: "blake-plateau-million-mounds-cold-water-coral-mapping",
+    "datePublished": "2026-11-27",
+    title: "Sonar mapped tens of thousands of potential coral mounds on the Blake Plateau",
+    categorySlug: "ocean",
+    subtopic: "Coral reefs",
+    year: 2024,
+    dateDiscovered: "2024-01-12",
+    reviewStatus: "source-verified",
+    sourceTier: "Tier 1",
+    sourceAccessedAt: "2026-11-27",
+    location: {
+      name: "Blake Plateau, western Atlantic (regional map proxy)",
+      lat: 31,
+      lng: -78,
+      country: "United States",
+    },
+    discoveringOrg: "Derek C. Sowers and the Blake Plateau coral mapping collaboration",
+    heroImage: "/images/discoveries/2024/blake-plateau-million-mounds-cold-water-coral-mapping.webp",
+    imageAlt: "Original editorial diagram for Mapping the Blake Plateau. 31 sonar surveys: combined into one regional map. 83,908 peak features: potential mounds across the study area.",
+    imageCredit: "The Nucleon Editorial Graphics",
+    imageSourceUrl: "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2024/blake-plateau-million-mounds-cold-water-coral-mapping.webp",
+    imageLicense: "Original editorial artwork, The Nucleon",
+    imageType: "diagram",
+    imageRelation: "illustration",
+    summary: "A synthesis of 31 seafloor surveys measured the scale of a vast cold-water coral mound province off the southeastern United States.",
+    story: {
+      whyThere: "Corals can build mounds in cold deep water, where sunlight does not reach. Patchy seafloor maps had made it difficult to tell how large the Blake Plateau mound province was.",
+      howFound: "The researchers combined 31 multibeam sonar surveys and counted 83,908 peak features that could be associated with coral mounds. The densest part of the mapped area includes the region known as Million Mounds.",
+      whatMakesUnique: "Sonar identifies shapes on the seafloor. Video provides a separate way to establish where living coral grows, and a count of peaks is distinct from a count of live coral colonies.",
+    },
+    gallery: ["/images/discoveries/2024/blake-plateau-million-mounds-cold-water-coral-mapping.webp"],
+    primarySourceUrl: "https://www.mdpi.com/2673-7418/4/1/2",
+    supportingSources: [
+      {
+        title: "Expedition agency’s mapping account and data context",
+        url: "https://oceanexplorer.noaa.gov/news/million-mounds-news/",
+        publisher: "NOAA Ocean Exploration",
+        tier: "Tier 2",
+        sourceType: "institutional",
+        accessedAt: "2026-11-27",
+      },
+    ],
+    videoUrls: [],
+    relatedSlugs: [
+      "gulf-of-aqaba-neom-brine-pools-sediment-record",
+      "knipovich-ridge-jotul-first-hydrothermal-vent-field",
+    ],
+    tags: ["cold-water corals", "coral mounds", "seafloor mapping"],
+  },
+  {
+    slug: "upper-upano-ecuador-earthen-platforms-road-network",
+    "datePublished": "2026-11-27",
+    title: "Lidar traced a network of early settlements in Ecuador’s Upper Amazon",
+    categorySlug: "archaeology",
+    subtopic: "Ancient civilizations",
+    year: 2024,
+    dateDiscovered: "2024-01-11",
+    reviewStatus: "source-verified",
+    sourceTier: "Tier 1",
+    sourceAccessedAt: "2026-11-27",
+    location: {
+      name: "Upper Upano Valley, Ecuador (regional archaeological map proxy)",
+      lat: -2.29,
+      lng: -78.06,
+      country: "Ecuador",
+    },
+    discoveringOrg: "Stéphen Rostain and the Upper Upano archaeology team",
+    heroImage: "/images/discoveries/2024/upper-upano-ecuador-earthen-platforms-road-network.webp",
+    imageAlt: "Original editorial diagram for Settlements beneath the canopy. Earthen platforms: mapped in the Upper Upano Valley. Roads and fields: connected settlement clusters.",
+    imageCredit: "The Nucleon Editorial Graphics",
+    imageSourceUrl: "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2024/upper-upano-ecuador-earthen-platforms-road-network.webp",
+    imageLicense: "Original editorial artwork, The Nucleon",
+    imageType: "diagram",
+    imageRelation: "illustration",
+    summary: "Airborne mapping and fieldwork revealed thousands of earthen platforms and roads linking settlements in Ecuador’s Upper Amazon.",
+    story: {
+      whyThere: "Vegetation obscures many earthworks in the Upano Valley. Researchers used lidar to map the ground beneath the canopy and compared those maps with archaeological observations.",
+      howFound: "The resulting map showed thousands of platforms, along with plazas, agricultural features and long routes connecting clusters of buildings. Excavated deposits supplied evidence of when communities occupied parts of this landscape.",
+      whatMakesUnique: "The study supports a form of urban settlement spread across the valley. The landforms show how communities were connected while population estimates remain less certain.",
+    },
+    gallery: ["/images/discoveries/2024/upper-upano-ecuador-earthen-platforms-road-network.webp"],
+    primarySourceUrl: "https://www.science.org/doi/10.1126/science.adi6317",
+    supportingSources: [
+      {
+        title: "Author manuscript hosted by Ifremer",
+        url: "https://archimer.ifremer.fr/doc/00872/98412/118237.pdf",
+        publisher: "Ifremer",
+        tier: "Tier 1",
+        sourceType: "reference",
+        accessedAt: "2026-11-27",
+      },
+    ],
+    videoUrls: [],
+    relatedSlugs: [
+      "casma-chankillo-thirteen-towers-solar-horizon",
+      "copan-honduras-maya-lime-plaster-plant-additives",
+    ],
+    tags: ["Amazon archaeology", "earthworks", "lidar"],
+  },
+];

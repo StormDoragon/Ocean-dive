@@ -1,0 +1,49 @@
+import type { Discovery } from "./types";
+
+/**
+ * Scientific discoveries announced or published during October 2023.
+ * Imported via `npm run import:discoveries`. Run `npm run validate` before release.
+ */
+export const october2023Discoveries: Discovery[] = [
+  {
+    slug: "long-valley-california-fiber-optic-seismic-crustal-lid",
+    "datePublished": "2026-11-27",
+    title: "Fiber-optic seismic data imaged a layer above Long Valley’s magma chamber",
+    categorySlug: "earth-science",
+    subtopic: "Volcanoes",
+    year: 2023,
+    dateDiscovered: "2023-10-18",
+    reviewStatus: "source-verified",
+    sourceTier: "Tier 1",
+    sourceAccessedAt: "2026-11-27",
+    location: {
+      name: "Long Valley Caldera, eastern California (regional map proxy)",
+      lat: 37.7,
+      lng: -118.88,
+      country: "United States",
+    },
+    discoveringOrg: "Ettore Biondi and the Long Valley seismic imaging team",
+    heroImage: "/images/discoveries/2023/long-valley-california-fiber-optic-seismic-crustal-lid.webp",
+    imageAlt: "Original editorial diagram for Looking below Long Valley. Fiber-optic cable: recorded seismic waves. About 12 kilometers: depth of the imaged magma body.",
+    imageCredit: "The Nucleon Editorial Graphics",
+    imageSourceUrl: "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2023/long-valley-california-fiber-optic-seismic-crustal-lid.webp",
+    imageLicense: "Original editorial artwork, The Nucleon",
+    imageType: "diagram",
+    imageRelation: "illustration",
+    summary: "A fiber-optic survey resolved a separation between shallow hot-water circulation and a deeper magma body beneath the caldera.",
+    story: {
+      whyThere: "Long Valley Caldera experiences ground movement and earthquake swarms. Researchers used seismic signals recorded along a fiber-optic cable to examine the structures beneath it.",
+      howFound: "The resulting images distinguished a shallow hydrothermal system from a much deeper magma chamber, about 12 kilometers below the surface. The authors interpreted the intervening crust as separating the two.",
+      whatMakesUnique: "The study favors fluids released at depth as an explanation for the unrest examined. The images provide a basis for comparing that interpretation with other evidence from the caldera.",
+    },
+    gallery: ["/images/discoveries/2023/long-valley-california-fiber-optic-seismic-crustal-lid.webp"],
+    paperUrl: "https://doi.org/10.1126/sciadv.adi9878",
+    primarySourceUrl: "https://pubmed.ncbi.nlm.nih.gov/37851798/",
+    videoUrls: [],
+    relatedSlugs: [
+      "kilauea-2018-caldera-collapse-small-magma-withdrawal",
+      "ol-doinyo-lengai-tanzania-satellite-summit-subsidence",
+    ],
+    tags: ["Long Valley", "seismic imaging", "fiber-optic sensing"],
+  },
+];
