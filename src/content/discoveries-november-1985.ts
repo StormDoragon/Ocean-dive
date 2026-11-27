@@ -1,0 +1,46 @@
+import type { Discovery } from "./types";
+
+/**
+ * Scientific discoveries announced or published during November 1985.
+ * Imported via `npm run import:discoveries`. Run `npm run validate` before release.
+ */
+export const november1985Discoveries: Discovery[] = [
+  {
+    slug: "lightning-ridge-steropodon-opalized-monotreme-jaw",
+    "datePublished": "2026-11-27",
+    title: "An Opalized Jaw Put Monotremes in Cretaceous Australia",
+    categorySlug: "dinosaurs-fossils",
+    subtopic: "Fossil discoveries",
+    year: 1985,
+    dateDiscovered: "1985-11-28",
+    reviewStatus: "source-verified",
+    sourceTier: "Tier 1",
+    sourceAccessedAt: "2026-11-27",
+    location: {
+      name: "Lightning Ridge, New South Wales (fossil-area proxy)",
+      lat: -29.43,
+      lng: 147.98,
+      country: "Australia",
+    },
+    discoveringOrg: "Michael Archer, Timothy F. Flannery, Alex Ritchie and Ralph E. Molnar",
+    scientificName: "Steropodon galmani",
+    heroImage: "/images/discoveries/1985/lightning-ridge-steropodon-opalized-monotreme-jaw.webp",
+    imageAlt: "Original editorial diagram for Opal preserved an early monotreme jaw. Lower jaw: retains diagnostic teeth. Cretaceous rocks: record early Australian mammals.",
+    imageCredit: "The Nucleon Editorial Graphics",
+    imageSourceUrl: "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/1985/lightning-ridge-steropodon-opalized-monotreme-jaw.webp",
+    imageLicense: "Original editorial artwork, The Nucleon",
+    imageType: "diagram",
+    imageRelation: "illustration",
+    summary: "A small fossil lower jaw with distinctive teeth was identified as Steropodon galmani, an early monotreme from Australian Cretaceous rocks.",
+    story: {
+      whyThere: "The specimen came from the opal fields at Lightning Ridge. Mineral replacement preserved the shape of the partial jaw and its teeth.",
+      howFound: "Tooth form allowed comparison with monotremes and other early mammals. The specimen established a Mesozoic record of mammals on the continent at the time it was described.",
+      whatMakesUnique: "The fragment gives direct evidence about the jaw and teeth. Much of the animal’s body and behavior are still unknown.",
+    },
+    gallery: ["/images/discoveries/1985/lightning-ridge-steropodon-opalized-monotreme-jaw.webp"],
+    primarySourceUrl: "https://www.nature.com/articles/318363a0",
+    videoUrls: [],
+    relatedSlugs: ["lufeng-hadrocodium-skull-jaw-middle-ear-evolution"],
+    tags: ["monotremes", "opalized fossils", "Australian fossils"],
+  },
+];
