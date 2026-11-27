@@ -1,0 +1,147 @@
+[
+  {
+    "slug": "meerkat-webb-frb-20240304b-redshift-host-galaxy",
+    "title": "Webb Identifies the Host of a Fast Radio Burst From the Early Universe",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/meerkat-webb-frb-20240304b-redshift-host-galaxy.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/meerkat-webb-frb-20240304b-redshift-host-galaxy.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 17034,
+    "sha256": "0d04ad59e8f33311eefd5c84d44b47456788e0ca35241d66b53ad84a8c841a07",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1126/science.adz2675"
+    ],
+    "primarySourceUrl": "https://science.nasa.gov/missions/webb/webb-measures-distance-to-farthest-fast-radio-burst-suggesting-origin/"
+  },
+  {
+    "slug": "webb-extreme-debris-disks-silica-planetary-collisions",
+    "title": "Webb’s Dust Spectra Distinguish Two Kinds of Extreme Debris Disk",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/webb-extreme-debris-disks-silica-planetary-collisions.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/webb-extreme-debris-disks-silica-planetary-collisions.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15632,
+    "sha256": "2953cd2a515785548eecf156c13926817e1f133e02a2e2f8fee3027149442ad2",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.3847/1538-4357/ae88fe"
+    ],
+    "primarySourceUrl": "https://doi.org/10.3847/1538-4357/ae88fe"
+  },
+  {
+    "slug": "webb-ngc-7129-hidden-protostars-jet-outflows",
+    "title": "Webb Reveals Hidden Protostars and Jets in NGC 7129",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/webb-ngc-7129-hidden-protostars-jet-outflows.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/webb-ngc-7129-hidden-protostars-jet-outflows.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 17970,
+    "sha256": "a96c734056c1766906c8f2315663c4e348ded377f15ce65666dbf41f69d57d01",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [],
+    "primarySourceUrl": "https://www.stsci.edu/contents/news-releases/2026/news-2026-129"
+  },
+  {
+    "slug": "yukon-tanana-river-apatite-crustal-cooling-history",
+    "title": "Alaskan River Sand Preserves Two Histories of Crustal Cooling",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/yukon-tanana-river-apatite-crustal-cooling-history.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/yukon-tanana-river-apatite-crustal-cooling-history.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 15734,
+    "sha256": "090c95045d146e157dbef6398ab8a1b9ff0524dc21974859578ec4302f064069",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1029/2026tc009553"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1029/2026TC009553"
+  },
+  {
+    "slug": "great-wall-bay-winter-krill-rhythms-seabed-camera",
+    "title": "A Seabed Camera Records Winter Activity Rhythms in Antarctic Krill",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/great-wall-bay-winter-krill-rhythms-seabed-camera.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/great-wall-bay-winter-krill-rhythms-seabed-camera.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 14372,
+    "sha256": "4d4a6c9be75847c1b317653b047962d1fc8a3b654528247981bf4b6d9ac7ac76",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1038/s41598-026-62036-x"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1038/s41598-026-62036-x"
+  },
+  {
+    "slug": "northeast-pacific-marine-heatwave-winter-ocean-memory",
+    "title": "Why Persistent Northeast Pacific Heatwaves Often Begin in Winter",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/northeast-pacific-marine-heatwave-winter-ocean-memory.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/northeast-pacific-marine-heatwave-winter-ocean-memory.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 14170,
+    "sha256": "e475a016a07c35d210617e3f8b73786d92bdad685243da3018824694b4e554f1",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1038/s43247-026-03442-x"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1038/s43247-026-03442-x"
+  },
+  {
+    "slug": "southern-oceans-marine-heatwaves-seasonal-productivity",
+    "title": "Marine Heatwaves Have Opposite Productivity Effects Across Southern Latitudes",
+    "year": 2026,
+    "localImagePath": "/images/discoveries/2026/southern-oceans-marine-heatwaves-seasonal-productivity.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2026/southern-oceans-marine-heatwaves-seasonal-productivity.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 16174,
+    "sha256": "eb1ac5121106ebdd9ff944684963dbea678db8882c567331665681e7c307e1f0",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1038/s43247-026-03792-6"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1038/s43247-026-03792-6"
+  }
+]
