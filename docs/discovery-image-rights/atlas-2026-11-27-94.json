@@ -1,0 +1,147 @@
+[
+  {
+    "slug": "boulder-jila-rubidium-first-dilute-gas-bose-einstein-condensate",
+    "title": "A Rubidium Gas Condensed Into a Shared Quantum State",
+    "year": 1995,
+    "localImagePath": "/images/discoveries/1995/boulder-jila-rubidium-first-dilute-gas-bose-einstein-condensate.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/1995/boulder-jila-rubidium-first-dilute-gas-bose-einstein-condensate.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 11830,
+    "sha256": "18049fdcd44ce0eee12cded48c6551d4351df875beaf6f8e140621cd9636e719",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [],
+    "primarySourceUrl": "https://pubmed.ncbi.nlm.nih.gov/17789847/"
+  },
+  {
+    "slug": "stanford-sodium-atom-interferometer-separated-matter-wave-paths",
+    "title": "Separated Sodium Atom Waves Formed an Interferometer",
+    "year": 1991,
+    "localImagePath": "/images/discoveries/1991/stanford-sodium-atom-interferometer-separated-matter-wave-paths.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/1991/stanford-sodium-atom-interferometer-separated-matter-wave-paths.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 13020,
+    "sha256": "87dbce26d992304d085c5d1996e3625c73b7def667def0bde717cc1e778c1c44",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/physrevlett.67.181"
+    ],
+    "primarySourceUrl": "https://link.aps.org/doi/10.1103/PhysRevLett.67.181"
+  },
+  {
+    "slug": "grenoble-silicon-quantized-hall-resistance-plateaus",
+    "title": "Silicon’s Hall Resistance Landed on Quantum Plateaus",
+    "year": 1980,
+    "localImagePath": "/images/discoveries/1980/grenoble-silicon-quantized-hall-resistance-plateaus.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/1980/grenoble-silicon-quantized-hall-resistance-plateaus.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 12582,
+    "sha256": "364b6a273d5956839c7e9bf250f5ba1398f599c77e387a36537227ec42c4ee97",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/physrevlett.45.494"
+    ],
+    "primarySourceUrl": "https://link.aps.org/doi/10.1103/PhysRevLett.45.494"
+  },
+  {
+    "slug": "orsay-aspect-bell-test-time-varying-polarization-analyzers",
+    "title": "A Fast-Switching Polarization Test Violated a Bell Inequality",
+    "year": 1982,
+    "localImagePath": "/images/discoveries/1982/orsay-aspect-bell-test-time-varying-polarization-analyzers.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/1982/orsay-aspect-bell-test-time-varying-polarization-analyzers.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 12824,
+    "sha256": "b49d8e1a06046200742180254f65a14bfb15328f29ee1c086478e7b18229b882",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/physrevlett.49.1804"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1103/PhysRevLett.49.1804"
+  },
+  {
+    "slug": "kamioka-super-kamiokande-atmospheric-muon-neutrino-oscillation",
+    "title": "Atmospheric Muon Neutrinos Went Missing on Longer Paths",
+    "year": 1998,
+    "localImagePath": "/images/discoveries/1998/kamioka-super-kamiokande-atmospheric-muon-neutrino-oscillation.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/1998/kamioka-super-kamiokande-atmospheric-muon-neutrino-oscillation.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 13588,
+    "sha256": "9cd3ca929c17aa5d4ec2b68d75a3c254a442be9e404e2f99a27953ac879b01a4",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/physrevlett.81.1562"
+    ],
+    "primarySourceUrl": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.81.1562"
+  },
+  {
+    "slug": "sudbury-sno-neutral-current-solar-neutrino-flavor-measurement",
+    "title": "Heavy Water Revealed the Solar Neutrinos That Changed Flavor",
+    "year": 2002,
+    "localImagePath": "/images/discoveries/2002/sudbury-sno-neutral-current-solar-neutrino-flavor-measurement.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2002/sudbury-sno-neutral-current-solar-neutrino-flavor-measurement.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 12378,
+    "sha256": "98cc452be94567b18355e6092fb2fda457de4d35f8537894e486b808180419d1",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1103/physrevlett.89.011301"
+    ],
+    "primarySourceUrl": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.89.011301"
+  },
+  {
+    "slug": "batavia-fermilab-donut-first-direct-tau-neutrino-interactions",
+    "title": "Four Candidate Events Revealed Direct Tau Neutrino Interactions",
+    "year": 2001,
+    "localImagePath": "/images/discoveries/2001/batavia-fermilab-donut-first-direct-tau-neutrino-interactions.webp",
+    "imageSourcePage": "https://github.com/StormDoragon/Ocean-dive/blob/main/public/images/discoveries/2001/batavia-fermilab-donut-first-direct-tau-neutrino-interactions.webp",
+    "creatorOrInstitution": "The Nucleon Editorial Graphics",
+    "licenceOrReuseStatus": "Original editorial artwork, The Nucleon",
+    "imageType": "diagram",
+    "imageRelation": "illustration",
+    "sourceDownloadDate": "",
+    "width": 1200,
+    "height": 800,
+    "fileSizeBytes": 12652,
+    "sha256": "613b04a31219b12a72c88df87f000fc63ab7f8f2ef6c5d41d632cfe4c0d8ce5f",
+    "notes": "Original information graphic drawn from the article evidence. No source images reproduced.",
+    "dois": [
+      "10.1016/s0370-2693(01)00307-0"
+    ],
+    "primarySourceUrl": "https://doi.org/10.1016/S0370-2693(01)00307-0"
+  }
+]

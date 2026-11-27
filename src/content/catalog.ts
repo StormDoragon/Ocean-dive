@@ -157,6 +157,35 @@ import { june2004Discoveries } from "./discoveries-june-2004";
 import { june2008Discoveries } from "./discoveries-june-2008";
 import { october1992Discoveries } from "./discoveries-october-1992";
 import { october2012Discoveries } from "./discoveries-october-2012";
+import { january2012Discoveries } from "./discoveries-january-2012";
+import { november2010Discoveries } from "./discoveries-november-2010";
+import { april1997Discoveries } from "./discoveries-april-1997";
+import { february2001Discoveries } from "./discoveries-february-2001";
+import { march1994Discoveries } from "./discoveries-march-1994";
+import { october2004Discoveries } from "./discoveries-october-2004";
+import { september1987Discoveries } from "./discoveries-september-1987";
+import { august2019Discoveries } from "./discoveries-august-2019";
+import { december2013Discoveries } from "./discoveries-december-2013";
+import { july2001Discoveries } from "./discoveries-july-2001";
+import { june2012Discoveries } from "./discoveries-june-2012";
+import { november2001Discoveries } from "./discoveries-november-2001";
+import { april2001Discoveries } from "./discoveries-april-2001";
+import { september2018Discoveries } from "./discoveries-september-2018";
+import { august2013Discoveries } from "./discoveries-august-2013";
+import { december1995Discoveries } from "./discoveries-december-1995";
+import { may2006Discoveries } from "./discoveries-may-2006";
+import { october2017Discoveries } from "./discoveries-october-2017";
+import { september2012Discoveries } from "./discoveries-september-2012";
+import { july2019Discoveries } from "./discoveries-july-2019";
+import { march2018Discoveries } from "./discoveries-march-2018";
+import { may2011Discoveries } from "./discoveries-may-2011";
+import { october2005Discoveries } from "./discoveries-october-2005";
+import { august1980Discoveries } from "./discoveries-august-1980";
+import { august1998Discoveries } from "./discoveries-august-1998";
+import { december1982Discoveries } from "./discoveries-december-1982";
+import { july1991Discoveries } from "./discoveries-july-1991";
+import { july1995Discoveries } from "./discoveries-july-1995";
+import { june2002Discoveries } from "./discoveries-june-2002";
 // scaffold:import (npm run new-month inserts new monthly imports above this line)
 import generated from "./discoveries.generated.json";
 import type { Discovery } from "./types";
@@ -325,6 +354,35 @@ const builtInCatalog: Discovery[] = [
   ...june2008Discoveries,
   ...october1992Discoveries,
   ...october2012Discoveries,
+  ...january2012Discoveries,
+  ...november2010Discoveries,
+  ...april1997Discoveries,
+  ...february2001Discoveries,
+  ...march1994Discoveries,
+  ...october2004Discoveries,
+  ...september1987Discoveries,
+  ...august2019Discoveries,
+  ...december2013Discoveries,
+  ...july2001Discoveries,
+  ...june2012Discoveries,
+  ...november2001Discoveries,
+  ...april2001Discoveries,
+  ...september2018Discoveries,
+  ...august2013Discoveries,
+  ...december1995Discoveries,
+  ...may2006Discoveries,
+  ...october2017Discoveries,
+  ...september2012Discoveries,
+  ...july2019Discoveries,
+  ...march2018Discoveries,
+  ...may2011Discoveries,
+  ...october2005Discoveries,
+  ...august1980Discoveries,
+  ...august1998Discoveries,
+  ...december1982Discoveries,
+  ...july1991Discoveries,
+  ...july1995Discoveries,
+  ...june2002Discoveries,
   // scaffold:spread (npm run new-month inserts new monthly spreads above this line)
 ];
 
