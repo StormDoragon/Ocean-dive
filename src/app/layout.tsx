@@ -85,7 +85,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${archivo.variable} ${martianMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${archivo.variable} ${martianMono.variable}`}>
       <body className="flex min-h-screen flex-col">
         {/* Marks JS availability before first paint so scroll-reveal styles
             only hide content when the script that reveals it can run. */}
