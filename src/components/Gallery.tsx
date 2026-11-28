@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ContentImage";
 import { isPlaceholderImage } from "@/lib/images";
 
 export function Gallery({

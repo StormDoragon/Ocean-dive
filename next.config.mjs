@@ -30,6 +30,8 @@ const securityHeaders = [
 const nextConfig = {
   reactStrictMode: true,
   images: {
+    // Keep existing remote variants and allow compact screens to choose 480px.
+    deviceSizes: [480, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     remotePatterns: [
       { protocol: "https", hostname: "upload.wikimedia.org" },
       { protocol: "https", hostname: "home.cern" },
@@ -37,7 +39,10 @@ const nextConfig = {
     ],
   },
   async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    return [
+      { source: "/:path*", headers: securityHeaders },
+      { source: "/images/resized/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
+    ];
   },
 };
 

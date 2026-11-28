@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image from "@/components/ContentImage";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { editorialTeam } from "@/content/editorial";
