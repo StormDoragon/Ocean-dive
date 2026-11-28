@@ -280,8 +280,9 @@ export default function HomePage() {
                   The discovery map
                 </h2>
                 <p className="mt-1 text-slate-400">
-                  Every glowing point marks where a discovery was made — also explorable as a
-                  3D globe.
+                  Markers show the find site where known; some use an explicitly identified
+                  representative or approximate location. Open an entry for details. Also
+                  explorable as a 3D globe.
                 </p>
               </div>
               <Link href="/map" className="link-glow whitespace-nowrap text-sm font-medium">

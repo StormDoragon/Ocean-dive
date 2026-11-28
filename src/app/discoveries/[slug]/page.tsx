@@ -188,6 +188,13 @@ export default async function DiscoveryPage({
             </div>
           </section>
 
+          <section aria-label="Evidence and sources">
+            <h2 className="text-lg font-semibold text-white">Evidence &amp; sources</h2>
+            <div className="mt-4">
+              <EditorialSources discovery={discovery} />
+            </div>
+          </section>
+
           {/* Gallery */}
           <section>
             <h2 className="text-lg font-semibold text-white">Gallery</h2>
@@ -201,7 +208,7 @@ export default async function DiscoveryPage({
 
           {/* Map */}
           <section>
-            <h2 className="text-lg font-semibold text-white">Where it was found</h2>
+            <h2 className="text-lg font-semibold text-white">Mapped location</h2>
             <p className="mt-1 text-sm text-slate-400">{discovery.location.name}</p>
             <div className="mt-4">
               <DiscoveryMapLoader
@@ -245,8 +252,6 @@ export default async function DiscoveryPage({
         <aside className="space-y-6 lg:sticky lg:top-20 lg:self-start">
           <QuickFacts discovery={discovery} />
 
-          <EditorialSources discovery={discovery} />
-
           <AffiliateCallout
             items={[
               "Field guide to the topic",
@@ -281,7 +286,7 @@ function EditorialSources({ discovery }: { discovery: ReturnType<typeof getBySlu
 
   return (
     <section className="card p-4" aria-label="Editorial and source information">
-      <h2 className="text-sm font-semibold text-white">Editorial record</h2>
+      <h3 className="text-sm font-semibold text-white">Editorial record</h3>
       <dl className="mt-3 space-y-2 text-xs text-slate-400">
         {discovery.datePublished ? (
           <div className="flex justify-between gap-4">
@@ -312,7 +317,7 @@ function EditorialSources({ discovery }: { discovery: ReturnType<typeof getBySlu
       )}
       {sources.length ? (
         <div className="mt-4 border-t border-white/10 pt-3">
-          <p className="text-xs font-medium text-slate-300">External citations</p>
+          <p className="text-xs font-medium text-slate-300">Sources used for this article</p>
           <ul className="mt-2 space-y-2 text-xs">
             {sources.map((source) => (
               <li key={source.url}>

@@ -57,7 +57,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-white/5 py-6 text-center text-xs text-slate-500">
         <div className="container-page flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-          <span>© {new Date().getFullYear()} {site.name}. Built for curiosity.</span>
+          <span>© {new Date().getUTCFullYear()} {site.name}. Built for curiosity.</span>
           <Link href="/sitemap" className="py-2 text-slate-300 hover:text-white">Sitemap</Link>
           <a href="/sitemap.xml" className="py-2 text-slate-300 hover:text-white">XML sitemap</a>
         </div>

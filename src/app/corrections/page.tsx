@@ -24,7 +24,8 @@ export default function CorrectionsPage() {
           <li>A reliable supporting source or explanation of the discrepancy</li>
           <li>Your preferred contact method if follow-up is needed</li>
         </ul>
-        <a href="https://github.com/StormDoragon/Ocean-dive/issues/new" target="_blank" rel="noopener noreferrer" className="mt-5 inline-block rounded-full bg-signal px-5 py-2.5 text-sm font-semibold text-abyss-950 hover:bg-signal-400">Submit a correction request ↗</a>
+        <a href="https://github.com/StormDoragon/Ocean-dive/issues/new" target="_blank" rel="noopener noreferrer" className="mt-5 inline-block rounded-full bg-signal px-5 py-2.5 text-sm font-semibold text-abyss-950 hover:bg-signal-400">Open the GitHub correction form ↗</a>
+        <p className="mt-2 text-sm text-slate-400">This opens The Nucleon project’s GitHub issue form; GitHub sign-in is required to submit a request.</p>
       </section>
     </div>
   );
