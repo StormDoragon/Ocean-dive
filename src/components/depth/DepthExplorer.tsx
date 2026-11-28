@@ -97,7 +97,7 @@ export function DepthExplorer({ zones }: { zones: ZoneWithDiscoveries[] }) {
             ref={(el) => {
               bandRefs.current[i] = el;
             }}
-            className="scroll-mt-20 rounded-2xl border border-white/10 p-6 sm:p-8"
+            className="min-w-0 scroll-mt-20 rounded-2xl border border-white/10 p-4 sm:p-8"
             style={{
               background: `linear-gradient(180deg, ${zone.color} 0%, ${zone.color}cc 100%)`,
               marginBottom: i < zones.length - 1 ? "1.25rem" : 0,
@@ -105,7 +105,7 @@ export function DepthExplorer({ zones }: { zones: ZoneWithDiscoveries[] }) {
           >
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h2 className="text-2xl font-bold text-white">{zone.name}</h2>
-              <span className="pill">{zone.scientific}</span>
+              <span className="pill max-w-full whitespace-normal break-words">{zone.scientific}</span>
             </div>
             <p className="mt-2 max-w-2xl text-slate-200/90">{zone.blurb}</p>
 
@@ -132,7 +132,7 @@ function DepthCard({ discovery }: { discovery: Discovery }) {
   return (
     <Link
       href={`/discoveries/${discovery.slug}`}
-      className="group flex gap-4 rounded-xl border border-white/10 bg-abyss-950/50 p-3 transition-colors hover:border-signal/40"
+      className="group flex min-w-0 gap-4 rounded-xl border border-white/10 bg-abyss-950/50 p-3 transition-colors hover:border-signal/40"
     >
       <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-lg">
         <Image
@@ -146,7 +146,7 @@ function DepthCard({ discovery }: { discovery: Discovery }) {
           ▼ {depth.toLocaleString()} m
         </span>
       </div>
-      <div className="min-w-0">
+      <div className="min-w-0 flex-1">
         <div className="text-xs text-slate-400">{discovery.subtopic}</div>
         <h3 className="truncate font-semibold text-white group-hover:text-signal">
           {discovery.title}

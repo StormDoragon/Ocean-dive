@@ -56,6 +56,7 @@ function rayTexture(): THREE.Texture {
 }
 
 const PLANKTON_VERT = /* glsl */ `
+  precision mediump float;
   attribute float phase;
   attribute float pointScale;
   varying float vPhase;

@@ -20,10 +20,10 @@ export default function MapPage() {
       <header className="mb-6">
         <h1 className="text-3xl font-bold text-white">🌐 Discovery globe & map</h1>
         <p className="mt-2 max-w-2xl text-slate-400">
-          Spin the globe or switch to a flat map. Every glowing point marks where
-          a discovery was made or observed. Select a point to read the discovery
-          and see the location it represents. For studies spanning several sites,
-          the entry identifies the site or region shown.
+          Spin the globe or switch to a flat map. Markers show the find site where
+          known; some use an explicitly identified representative or approximate
+          location. Select a point and open its entry for details. For studies
+          spanning several sites, the entry identifies the site or region shown.
         </p>
       </header>
 

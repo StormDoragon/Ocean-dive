@@ -190,7 +190,7 @@ export function GlobePoster({ points, active }: { points: MapPoint[]; active: bo
               transform={`translate(${initial.x.toFixed(2)} ${initial.y.toFixed(2)})`}
               style={{ display: initial.visible ? undefined : "none" }}>
               <a href={`/discoveries/${p.slug}`} aria-label={`${p.title} (${p.year})`}>
-                <title>{p.title} ({p.year})</title>
+                <title>{p.title + " (" + p.year + ")"}</title>
                 <circle r="20" fill="transparent" />
                 <circle r="11" fill={p.color} opacity=".65" filter="url(#pin-glow)" />
                 <circle r="8" fill={p.color} stroke="#0a1123" strokeWidth="2.8" />
