@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ContentImage";
 import Link from "next/link";
 import type { BlogPost } from "@/content/blog";
 import { getCategory } from "@/content/categories";

@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npm run validate",
+    "prebuild": "npm run validate && npm run prepare:images",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -19,7 +19,10 @@
     "audit:discovery-batch": "tsx scripts/audit-discovery-batch.ts",
     "test:discovery-import": "tsx scripts/test/discovery-import.test.ts",
     "new-month": "node scripts/new-month.mjs",
-    "sync:notion": "node scripts/sync-notion.mjs"
+    "sync:notion": "node scripts/sync-notion.mjs",
+    "prepare:images": "node scripts/prepare-images.mjs",
+    "predev": "npm run prepare:images",
+    "test:images": "tsx scripts/test/pre-sized-images.test.ts"
   },
   "dependencies": {
     "@notionhq/client": "^5.22.0",

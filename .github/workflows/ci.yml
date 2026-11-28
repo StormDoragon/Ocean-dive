@@ -21,6 +21,10 @@ jobs:
           cache: "npm"
       - name: Install dependencies
         run: npm ci
+      - name: Prepare responsive images
+        run: npm run prepare:images
+      - name: Test responsive images
+        run: npm run test:images
       - name: Lint
         run: npm run lint
       - name: Validate content + SEO integrity

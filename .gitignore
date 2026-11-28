@@ -34,3 +34,6 @@ next-env.d.ts
 # discovery import pipeline (transient staging + test scratch, always in-repo)
 .import-stage-*
 .import-tests/
+
+# Responsive image files are regenerated before dev/build.
+/public/images/resized/
